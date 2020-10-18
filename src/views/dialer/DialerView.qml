@@ -36,7 +36,7 @@ Maui.Page
         id: _textField
         Layout.fillWidth: true
         inputMethodHints: Qt.ImhDialableCharactersOnly
-        placeholderText: qsTr("Number...")
+        placeholderText: i18n("Number...")
         readOnly: true
         font.bold: true
         font.weight: Font.Bold

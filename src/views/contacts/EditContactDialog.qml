@@ -19,8 +19,8 @@ Maui.Dialog
 
     onRejected: control.close()
 
-    acceptButton.text: qsTr("Save")
-    rejectButton.text: qsTr("Cancel")
+    acceptButton.text: i18n("Save")
+    rejectButton.text: i18n("Cancel")
 
     onAccepted:
     {
@@ -182,7 +182,7 @@ Maui.Dialog
                     visible: isAndroid
                     Label
                     {
-                        text: qsTr("Account")
+                        text: i18n("Account")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.bold: true
                         font.weight: Font.Bold
@@ -204,7 +204,7 @@ Maui.Dialog
                     spacing: Maui.Style.space.small
                     Label
                     {
-                        text: qsTr("Name")
+                        text: i18n("Name")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.bold: true
                         font.weight: Font.Bold
@@ -225,7 +225,7 @@ Maui.Dialog
                     spacing: Maui.Style.space.small
                     Label
                     {
-                        text: qsTr("Phone")
+                        text: i18n("Phone")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.bold: true
                         font.weight: Font.Bold
@@ -247,7 +247,7 @@ Maui.Dialog
                     spacing: Maui.Style.space.small
                     Label
                     {
-                        text: qsTr("Email")
+                        text: i18n("Email")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.bold: true
                         font.weight: Font.Bold
@@ -268,7 +268,7 @@ Maui.Dialog
                     spacing: Maui.Style.space.small
                     Label
                     {
-                        text: qsTr("Organization")
+                        text: i18n("Organization")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.bold: true
                         font.weight: Font.Bold
@@ -290,7 +290,7 @@ Maui.Dialog
                 //                        spacing: space.small
                 //                        Label
                 //                        {
-                //                            text: qsTr("Phone")
+                //                            text: i18n("Phone")
                 //                            font.pointSize: fontSizes.default
                 //                            font.bold: true
                 //                            font.weight: Font.Bold
@@ -312,7 +312,7 @@ Maui.Dialog
                 //                        spacing: space.small
                 //                        Label
                 //                        {
-                //                            text: qsTr("Address")
+                //                            text: i18n("Address")
                 //                            font.pointSize: fontSizes.default
                 //                            font.bold: true
                 //                            font.weight: Font.Bold

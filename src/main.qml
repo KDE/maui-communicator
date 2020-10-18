@@ -15,7 +15,7 @@ Maui.ApplicationWindow
 {
     id: root
     title: Maui.App.displayName
-    Maui.App.description: qsTr("Contacts keeps your contacts synced across devices and allows you to make calls, send messages and organize")
+    Maui.App.description: i18n("Contacts keeps your contacts synced across devices and allows you to make calls, send messages and organize")
     Maui.App.iconName: "qrc:/contacts.svg"
 
     readonly property var views : ({
@@ -50,20 +50,20 @@ Maui.ApplicationWindow
         {
             id: _favsButton
             icon.name: "draw-star"
-            text: qsTr("Favorites")
+            text: i18n("Favorites")
         }
 
         Action
         {
             id: _logButton
             icon.name: "view-media-recent"
-            text: qsTr("Recent")
+            text: i18n("Recent")
         }
 
         Action
         {
             icon.name: "view-pim-contacts"
-            text: qsTr("Contacts")
+            text: i18n("Contacts")
         }
         
     }
@@ -91,8 +91,8 @@ Maui.ApplicationWindow
             headBar.visible: false
             gridView: true
             holder.emoji: "qrc:/star.svg"
-            holder.title: qsTr("There's no favorite contacts")
-            holder.body: qsTr("You can mark as favorite your contacts to quickly access them")
+            holder.title: i18n("There's no favorite contacts")
+            holder.body: i18n("You can mark as favorite your contacts to quickly access them")
         }
 
         LogsView
@@ -107,8 +107,8 @@ Maui.ApplicationWindow
             list.query: ""
             showAccountFilter: isAndroid
             holder.emoji: "qrc:/list-add-user.svg"
-            holder.title: qsTr("There's no contacts")
-            holder.body: qsTr("You can add new contacts")
+            holder.title: i18n("There's no contacts")
+            holder.body: i18n("You can add new contacts")
 
             Maui.FloatingButton
             {
@@ -126,7 +126,7 @@ Maui.ApplicationWindow
                 id: _searchField
                 Layout.preferredWidth: isWide ? _contacsView.width * 0.8 : _contacsView.view.width
                 focusReason : Qt.PopupFocusReason
-                placeholderText: qsTr("Search %1 contacts... ".arg(_contacsView.view.count))
+                placeholderText: i18n("Search %1 contacts... ".arg(_contacsView.view.count))
                 onAccepted: _contacsView.listModel.filter = text
                 onCleared: _contacsView.listModel.filter = ""
             }
@@ -145,7 +145,7 @@ Maui.ApplicationWindow
         onNewContact:
         {
             _contacsView.list.insert(contact)
-            notify("list-add-user", qsTr("New contact added"), contact.n)
+            notify("list-add-user", i18n("New contact added"), contact.n)
         }
     }
 

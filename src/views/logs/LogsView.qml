@@ -15,8 +15,8 @@ Maui.Page
         id: _holder
         emoji: "qrc:/amarok_artist.svg"
         isMask: true
-        title: qsTr("There's no recent contacts")
-        body: qsTr("Recently used contacts will appear here")
+        title: i18n("There's no recent contacts")
+        body: i18n("Recently used contacts will appear here")
         emojiSize: Maui.Style.iconSizes.huge
         visible: !_listView.count
         onActionTriggered: _newContactDialog.open()
@@ -38,7 +38,7 @@ Maui.Page
         id: _menu
         MenuItem
         {
-            text: qsTr("Call")
+            text: i18n("Call")
             icon.name: "dialer-call"
             onTriggered:
             {
@@ -49,7 +49,7 @@ Maui.Page
 
         MenuItem
         {
-            text: qsTr("Save as..")
+            text: i18n("Save as..")
             icon.name: "list-add-user"
             onTriggered:
             {

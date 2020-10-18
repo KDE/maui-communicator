@@ -26,7 +26,7 @@ Maui.Dialog
             else if(_combobox.currentText === contact.tel)
             {
                 Qt.openUrlExternally("sms:" + contact.tel +"&sms_body:" + _editor.text)
-                notify("emblem-info", qsTr("Message sent"), contact.tel)
+                notify("emblem-info", i18n("Message sent"), contact.tel)
             }
         }else
         {
@@ -38,7 +38,7 @@ Maui.Dialog
         close();
     }
 
-    acceptButton.text: qsTr("Send...")
+    acceptButton.text: i18n("Send...")
     acceptButton.icon.name: "mail-send"
     rejectButton.visible: false
 
@@ -75,7 +75,7 @@ Maui.Dialog
             visible: _combobox.currentText === contact.email
             Layout.fillWidth: true
             Layout.preferredHeight: Maui.Style.toolBarHeightAlt
-            placeholderText: qsTr("Subject")
+            placeholderText: i18n("Subject")
             font.bold: true
             font.weight: Font.Bold
             font.pointSize: Maui.Style.fontSizes.big

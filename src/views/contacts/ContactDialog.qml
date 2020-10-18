@@ -23,7 +23,7 @@ Maui.Dialog
         ToolButton
         {
             icon.name: "draw-star"
-            text: qsTr("Fav")
+            text: i18n("Fav")
             checked: contact.fav == "1"
             checkable: false
             //                Kirigami.Theme.textColor: checked ? "#FFD700" : Kirigami.Theme.textColor
@@ -40,7 +40,7 @@ Maui.Dialog
         ToolButton
         {
             icon.name: "document-share"
-            text: qsTr("Share")
+            text: i18n("Share")
         }
     ]
 
@@ -50,7 +50,7 @@ Maui.Dialog
         {
             icon.name: "dialer-call"
             visible: contact.tel
-            text: qsTr("Call")
+            text: i18n("Call")
             onClicked:
             {
                 if(isAndroid)
@@ -64,7 +64,7 @@ Maui.Dialog
         {
             icon.name: "send-email"
             visible: contact.email
-            text: qsTr("Email")
+            text: i18n("Email")
             onClicked:
             {
                 _messageComposer.contact = control.contact
@@ -76,7 +76,7 @@ Maui.Dialog
         {
             icon.name: "send-sms"
             visible: contact.tel
-            text: qsTr("SMS")
+            text: i18n("SMS")
             onClicked:
             {
                 _messageComposer.contact = control.contact
@@ -91,14 +91,14 @@ Maui.Dialog
         MenuItem
         {
             icon.name: "document-edit"
-            text: qsTr("Edit")
+            text: i18n("Edit")
             onTriggered: _editContactDialog.open()
             icon.color: Kirigami.Theme.positiveTextColor
         }
 
         MenuItem
         {
-            text: qsTr("Delete")
+            text: i18n("Delete")
             icon.name: "user-trash"
             icon.color: Kirigami.Theme.negativeTextColor
             onTriggered: _removeDialog.open()
@@ -110,11 +110,11 @@ Maui.Dialog
     {
         id: _removeDialog
 
-        title: qsTr("Remove contact...")
-        message: qsTr("Are you sure you want to remove this contact? This action can not be undone.")
+        title: i18n("Remove contact...")
+        message: i18n("Are you sure you want to remove this contact? This action can not be undone.")
 
-        acceptButton.text: qsTr("Cancel")
-        rejectButton.text: qsTr("Remove")
+        acceptButton.text: i18n("Cancel")
+        rejectButton.text: i18n("Remove")
         onAccepted: close()
         onRejected:
         {
@@ -142,7 +142,7 @@ Maui.Dialog
         headBar.rightContent:  Button
         {
             icon.name: "user-trash"
-            //            text: qsTr("Remove")
+            //            text: i18n("Remove")
             onClicked:  _removeDialog.open()
             Kirigami.Theme.backgroundColor: Kirigami.Theme.negativeTextColor
             Kirigami.Theme.textColor: "#fff"
@@ -257,7 +257,7 @@ Maui.Dialog
         //           {
         //               anchors.centerIn: parent
         //               icon.name: "document-edit"
-        //               text: qsTr("Edit")
+        //               text: i18n("Edit")
         //               onClicked: _editContactDialog.open()
         //               colorScheme.backgroundColor: suggestedColor
         //               colorScheme.textColor: "#fff"
@@ -292,7 +292,7 @@ Maui.Dialog
                     {
                         Layout.fillHeight: true
                         Layout.fillWidth: true
-                        text: qsTr("Account")
+                        text: i18n("Account")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.weight: Font.Light
                         color: Kirigami.Theme.textColor
@@ -321,7 +321,7 @@ Maui.Dialog
                     {
                         Layout.fillHeight: true
                         Layout.fillWidth: true
-                        text: qsTr("Name")
+                        text: i18n("Name")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.weight: Font.Light
                         color: Kirigami.Theme.textColor
@@ -350,7 +350,7 @@ Maui.Dialog
                     {
                         Layout.fillHeight: true
                         Layout.fillWidth: true
-                        text: qsTr("Phone")
+                        text: i18n("Phone")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.weight: Font.Light
                         color: Kirigami.Theme.textColor
@@ -378,7 +378,7 @@ Maui.Dialog
                     {
                         Layout.fillHeight: true
                         Layout.fillWidth: true
-                        text: qsTr("Email")
+                        text: i18n("Email")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.weight: Font.Light
                         color: Kirigami.Theme.textColor
@@ -407,7 +407,7 @@ Maui.Dialog
                     {
                         Layout.fillHeight: true
                         Layout.fillWidth: true
-                        text: qsTr("Organization")
+                        text: i18n("Organization")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.weight: Font.Light
                         color: Kirigami.Theme.textColor
@@ -435,7 +435,7 @@ Maui.Dialog
                     {
                         Layout.fillHeight: parent.visible
                         Layout.fillWidth: parent.visible
-                        text: qsTr("Title")
+                        text: i18n("Title")
                         font.pointSize: Maui.Style.fontSizes.default
                         font.weight: Font.Light
                         color: Kirigami.Theme.textColor
