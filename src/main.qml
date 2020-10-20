@@ -15,8 +15,6 @@ Maui.ApplicationWindow
 {
     id: root
     title: Maui.App.displayName
-    Maui.App.description: i18n("Contacts keeps your contacts synced across devices and allows you to make calls, send messages and organize")
-    Maui.App.iconName: "qrc:/contacts.svg"
 
     readonly property var views : ({
                                        favs: 0,
@@ -65,7 +63,7 @@ Maui.ApplicationWindow
             icon.name: "view-pim-contacts"
             text: i18n("Contacts")
         }
-        
+
     }
 
     SwipeView
