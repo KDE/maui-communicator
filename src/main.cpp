@@ -1,6 +1,7 @@
 #include <QQmlApplicationEngine>
 #include <QIcon>
 #include <QCommandLineParser>
+#include <QQmlContext>
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
@@ -92,6 +93,7 @@ int main(int argc, char *argv[])
 #ifdef STATIC_MAUIKIT
 	MauiKit::getInstance().registerTypes();
 #endif
+	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
 	engine.addImageProvider("contact", new ContactImage(QQuickImageProvider::ImageType::Image));
 	qmlRegisterType<ContactsModel>(COMMUNICATOR_URI, 1, 0, "ContactsList");

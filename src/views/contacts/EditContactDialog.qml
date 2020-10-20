@@ -12,7 +12,7 @@ Maui.Dialog
 
     maxWidth: Maui.Style.unit * 700
     maxHeight: Maui.Style.unit * 800
-    page.padding: Maui.Style.space.large
+    page.margins: Maui.Style.space.large
 
     property var contact : ({})
     signal newContact(var contact)

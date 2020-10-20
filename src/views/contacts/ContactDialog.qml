@@ -14,11 +14,10 @@ Maui.Dialog
     maxHeight: Maui.Style.unit * 800
 
     property var contact : ({})
-    rejectButton.visible: false
-    acceptButton.visible: false
+    defaultButtons: false
 
-    page.padding: Maui.Style.space.large
-
+    page.margins: Maui.Style.space.large
+    headBar.visible: true
     headBar.middleContent: [
         ToolButton
         {
@@ -44,6 +43,7 @@ Maui.Dialog
         }
     ]
 
+    footBar.visible: true
     footBar.middleContent: [
 
         ToolButton

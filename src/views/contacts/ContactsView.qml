@@ -1,7 +1,7 @@
 import QtQuick 2.10
 import QtQuick.Controls 2.10
 import org.kde.mauikit 1.0 as Maui
-import UnionModels 1.0
+import org.maui.communicator 1.0
 
 Maui.Page
 {
@@ -15,7 +15,7 @@ Maui.Page
     property bool gridView : false
 
     property bool showAccountFilter: false
-    padding: Maui.Style.space.big
+    margins: Maui.Style.space.big
 
     Maui.BaseModel
     {
@@ -148,7 +148,6 @@ Maui.Page
             cellWidth: Maui.Style.unit * 120
             cellHeight: Maui.Style.unit * 120
             itemSize: Math.min(Maui.Style.unit * 120)
-            spacing: Maui.Style.space.medium
             adaptContent: true
             visible: count > 0
 

@@ -1,8 +1,8 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.3
 import org.kde.mauikit 1.0 as Maui
-import org.kde.kirigami 2.6 as Kirigami
-//import org.mauikit.accounts 1.0 as Accounts
+import org.kde.mauikit 1.1 as MauiLab
+import org.kde.kirigami 2.8 as Kirigami
 import QtQuick.Layouts 1.3
 
 import "views/contacts"
@@ -24,58 +24,23 @@ Maui.ApplicationWindow
                                    })
     /** UI PROPS**/
     property color cardColor: Qt.darker(Maui.Style.buttonBackgroundColor, 1.05)
-    leftIcon.checked: footBar.visible
-    leftIcon.visible: true
+
 
     headBar.rightContent:  ToolButton
     {
         id: _dialerButton
         icon.name: "dialer-call"
-        checked: _actionGroup.currentIndex === views.dialer
-        onClicked: _actionGroup.currentIndex = views.dialer
+        checked: swipeView.currentIndex === views.dialer
+        onClicked: swipeView.currentIndex = views.dialer
     }
 
-    headBar.middleContent: Maui.ActionGroup
-    {
-        id: _actionGroup
-        Layout.fillHeight: true
-        //        Layout.fillWidth: true
-        Layout.minimumWidth: implicitWidth
-        currentIndex : swipeView.currentIndex
-        onCurrentIndexChanged: swipeView.currentIndex = currentIndex
-
-        Action
-        {
-            id: _favsButton
-            icon.name: "draw-star"
-            text: i18n("Favorites")
-        }
-
-        Action
-        {
-            id: _logButton
-            icon.name: "view-media-recent"
-            text: i18n("Recent")
-        }
-
-        Action
-        {
-            icon.name: "view-pim-contacts"
-            text: i18n("Contacts")
-        }
-
-    }
-
-    SwipeView
+    MauiLab.AppViews
     {
         id: swipeView
         anchors.fill : parent
-        currentIndex: _actionGroup.currentIndex
-        interactive: Maui.Handy.isTouch
 
         onCurrentIndexChanged:
         {
-            _actionGroup.currentIndex = currentIndex
             if(currentIndex === views.contacts)
                 _contacsView.list.query = ""
             else if(currentIndex === views.dialer)
@@ -85,6 +50,9 @@ Maui.ApplicationWindow
         ContactsView
         {
             id: _favsView
+            MauiLab.AppView.iconName: "draw-star"
+            MauiLab.AppView.title: qsTr("Favorites")
+
             list.query : "fav=1"
             headBar.visible: false
             gridView: true
@@ -96,12 +64,15 @@ Maui.ApplicationWindow
         LogsView
         {
             id: _logView
-
+            MauiLab.AppView.iconName: "view-media-recent"
+            MauiLab.AppView.title: qsTr("Recent")
         }
 
         ContactsView
         {
             id: _contacsView
+            MauiLab.AppView.iconName: "view-pim-contacts"
+            MauiLab.AppView.title: qsTr("Contacts")
             list.query: ""
             showAccountFilter: isAndroid
             holder.emoji: "qrc:/list-add-user.svg"
