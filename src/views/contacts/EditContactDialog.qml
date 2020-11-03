@@ -3,48 +3,40 @@ import QtQuick.Controls 2.3
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
-import org.kde.mauikit 1.0 as Maui
+import org.kde.mauikit 1.2 as Maui
 import org.kde.kirigami 2.7 as Kirigami
 
-Maui.Dialog
+Maui.Page
 {
     id: control
-
-    maxWidth: Maui.Style.unit * 700
-    maxHeight: Maui.Style.unit * 800
-    page.margins: Maui.Style.space.large
 
     property var contact : ({})
     signal newContact(var contact)
 
-    onRejected: control.close()
 
-    acceptButton.text: i18n("Save")
-    rejectButton.text: i18n("Cancel")
 
-    onAccepted:
-    {
-        var contact =({
-                          n: _nameField.text,
-                          tel: _telField.text,
-                          email: _emailField.text,
-                          org: _orgField.text,
-                          //                          adr: _adrField.text,
-                          photo: control.contact.photo,
-                          account: isAndroid ? _accountsCombobox.model[_accountsCombobox.currentIndex] :({})
-                      })
+//    onAccepted:
+//    {
+//        var contact =({
+//                          n: _nameField.text,
+//                          tel: _telField.text,
+//                          email: _emailField.text,
+//                          org: _orgField.text,
+//                          //                          adr: _adrField.text,
+//                          photo: control.contact.photo,
+//                          account: Maui.Handy.isAndroid ? _accountsCombobox.model[_accountsCombobox.currentIndex] :({})
+//                      })
 
-        if(contact.n.length && contact.tel.length)
-            newContact(contact)
-        control.clear()
-    }
+//        if(contact.n.length && contact.tel.length)
+//            newContact(contact)
+//        control.clear()
+//    }
 
 
     ColumnLayout
     {
         id: _layout
-        height: parent.height
-        width: parent.width
+        anchors.fill:parent
 
         Item
         {
@@ -66,10 +58,9 @@ Maui.Dialog
                     anchors.fill: parent
                     onClicked:{
 
-                        _fileDialog.mode = _fileDialog.modes.OPEN
-                        _fileDialog.settings.filterType= Maui.FMList.IMAGE
-                        _fileDialog.settings.singleSelection = true
-                        _fileDialog.show(function(paths)
+                        _dialogLoader.sourceComponent = _fileDialogComponent
+
+                        dialog.show(function(paths)
                         {
                             console.log("selected image", paths)
                             contact.photo = paths[0]
@@ -179,7 +170,7 @@ Maui.Dialog
                 {
                     Layout.fillWidth: true
                     spacing: Maui.Style.space.small
-                    visible: isAndroid
+                    visible: Maui.Handy.isAndroid
                     Label
                     {
                         text: i18n("Account")

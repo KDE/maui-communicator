@@ -6,17 +6,11 @@ import QtGraphicalEffects 1.0
 import org.kde.mauikit 1.0 as Maui
 import org.kde.kirigami 2.7 as Kirigami
 
-Maui.Dialog
+Maui.Page
 {
     id: control
-
-    maxWidth: Maui.Style.unit * 500
-    maxHeight: Maui.Style.unit * 800
-
     property var contact : ({})
-    defaultButtons: false
 
-    page.margins: Maui.Style.space.large
     headBar.visible: true
     headBar.middleContent: [
         ToolButton
@@ -30,7 +24,7 @@ Maui.Dialog
             onClicked:
             {
                 contact["fav"] = contact.fav == "1" ? "0" : "1"
-                list.update(contact,  view.currentIndex)
+                list.update(contact,  _contactsPage.currentIndex)
                 control.contact = contact;
                 _favsView.list.refresh()
             }
@@ -53,7 +47,7 @@ Maui.Dialog
             text: i18n("Call")
             onClicked:
             {
-                if(isAndroid)
+                if(Maui.Handy.isAndroid)
                     Maui.Android.call(contact.tel)
                 else
                     Qt.openUrlExternally("call://" + contact.tel)
@@ -67,8 +61,9 @@ Maui.Dialog
             text: i18n("Email")
             onClicked:
             {
-                _messageComposer.contact = control.contact
-                _messageComposer.open()
+                _dialogLoader.sourceComponent =  _messageComposerComponent
+                dialog.contact = control.contact
+                dialog.open()
             }
         },
 
@@ -79,8 +74,9 @@ Maui.Dialog
             text: i18n("SMS")
             onClicked:
             {
-                _messageComposer.contact = control.contact
-                _messageComposer.open()
+                _dialogLoader.sourceComponent =  _messageComposerComponent
+                dialog.contact = control.contact
+                dialog.open()
             }
         }
     ]
@@ -120,7 +116,7 @@ Maui.Dialog
         {
             close()
             _contactDialog.close()
-            list.remove(view.currentIndex)
+            list.remove(_contactsPage.currentIndex)
         }
     }
 
@@ -134,8 +130,8 @@ Maui.Dialog
             var id = control.contact.id
             con["id"] = id
             console.log("trying to edit contact", id)
-            list.update(con, view.currentIndex)
-            control.contact =  list.get(view.currentIndex)
+            list.update(con, _contactsPage.currentIndex)
+            control.contact =  list.get(_contactsPage.currentIndex)
             _editContactDialog.close()
         }
 

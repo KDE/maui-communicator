@@ -19,7 +19,6 @@ Maui.Page
         body: i18n("Recently used contacts will appear here")
         emojiSize: Maui.Style.iconSizes.huge
         visible: !_listView.count
-        onActionTriggered: _newContactDialog.open()
     }
 
     Maui.BaseModel
@@ -42,7 +41,7 @@ Maui.Page
             icon.name: "dialer-call"
             onTriggered:
             {
-                if(isAndroid)
+                if(Maui.Handy.isAndroid)
                     Maui.Android.call(_callLogsModel.get(_listView.currentIndex).tel)
             }
         }
@@ -53,8 +52,8 @@ Maui.Page
             icon.name: "list-add-user"
             onTriggered:
             {
-                _newContactDialog.contact = _callLogsModel.get(_listView.currentIndex)
-                _newContactDialog.open()
+//                _newContactDialog.contact = _callLogsModel.get(_listView.currentIndex)
+//                _newContactDialog.open()
             }
         }
     }
@@ -101,9 +100,8 @@ Maui.Page
             height: Maui.Style.unit * 60
             width: isWide ? control.width * 0.8 : control.width * 0.95
             anchors.horizontalCenter: parent.horizontalCenter
-            showMenuIcon: false
 
-            quickButtons: ToolButton
+            quickActions: Action
             {
                 icon.name: switch (model.type)
                           {
@@ -122,15 +120,12 @@ Maui.Page
                            }
             }
 
-            Connections
-            {
-                target: _delegate
                 onClicked:
                 {
                     _listView.currentIndex = index
                     _menu.popup()
                 }
-            }
+
         }
 
         ScrollBar.vertical: ScrollBar {}
