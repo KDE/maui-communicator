@@ -18,10 +18,8 @@
 #endif
 
 #if defined Q_OS_MACOS || defined Q_OS_WIN
-#include <KF5/KI18n/KLocalizedContext>
 #include <KF5/KI18n/KLocalizedString>
 #else
-#include <KI18n/KLocalizedContext>
 #include <KI18n/KLocalizedString>
 #endif
 
@@ -93,7 +91,6 @@ int main(int argc, char *argv[])
 #ifdef STATIC_MAUIKIT
 	MauiKit::getInstance().registerTypes();
 #endif
-	engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
 	engine.addImageProvider("contact", new ContactImage(QQuickImageProvider::ImageType::Image));
 	qmlRegisterType<ContactsModel>(COMMUNICATOR_URI, 1, 0, "ContactsList");
