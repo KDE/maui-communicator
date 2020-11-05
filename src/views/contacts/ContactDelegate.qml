@@ -19,7 +19,7 @@ Maui.SwipeBrowserDelegate
 
     signal favClicked(int index)
 
-    property int radius : Maui.Style.radiusV * 2
+    property int radius : Maui.Style.radiusV
 
     iconSizeHint: Maui.Style.iconSizes.huge
     label1.text: model.n
@@ -52,22 +52,14 @@ iconVisible:  control.width > Kirigami.Units.gridUnit * 15
 
         Rectangle
         {
-            height: parent.height * 0.7
+            Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+            Kirigami.Theme.inherit: false
+            height: parent.height * 0.8
             width: height
             anchors.centerIn: parent
             radius: control.radius
-            color:
-            {
-                var c = Qt.rgba(Math.random(),Math.random(),Math.random(),1)
-                return Qt.hsla(c.hslHue, 0.7, c.hslLightness, c.a);
-            }
-
-            //                    color: Qt.hsl(Math.random(),Math.random(),Math.random(),1);
-            //                    color: "hsl(" + 360 * Math.random() + ',' +
-            //                           (25 + 70 * Math.random()) + '%,' +
-            //                           (85 + 10 * Math.random()) + '%)';
+            color: Kirigami.Theme.backgroundColor
             border.color: Qt.darker(color, 1.5)
-
 
             Loader
             {
@@ -128,7 +120,7 @@ iconVisible:  control.width > Kirigami.Units.gridUnit * 15
                     anchors.fill: parent
                     horizontalAlignment: Qt.AlignHCenter
                     verticalAlignment: Qt.AlignVCenter
-                    color: "white"
+                    color: Kirigami.Theme.textColor
                     font.pointSize: Maui.Style.fontSizes.huge
                     font.bold: true
                     font.weight: Font.Bold
@@ -141,23 +133,16 @@ iconVisible:  control.width > Kirigami.Units.gridUnit * 15
 
 
     quickActions: [
-        Action
-        {
-            icon.name: "draw-star"
-            onTriggered:
-            {
-                control.favClicked(index)
-            }
+//        Action
+//        {
+//            icon.name: "draw-star"
+//            onTriggered:
+//            {
+//                control.favClicked(index)
+//            }
 
-            icon.color: model.fav == "1" ? "yellow" : Kirigami.Theme.textColor
-        },
-
-        Action
-        {
-            icon.name: "document-share"
-            onTriggered: if(Maui.Handy.isAndroid) Maui.Android.shareContact(model.id)
-            icon.color: Kirigami.Theme.textColor
-        },
+//            icon.color: model.fav == "1" ? "yellow" : Kirigami.Theme.textColor
+//        },
 
         Action
         {
@@ -173,6 +158,7 @@ iconVisible:  control.width > Kirigami.Units.gridUnit * 15
 
         Action
         {
+            enabled: Kirigami.Settings.isMobile
             icon.name: "call-start"
             icon.color: Kirigami.Theme.textColor
 

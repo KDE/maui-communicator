@@ -53,6 +53,7 @@ Maui.ApplicationWindow
             Maui.AppView.iconName: "view-pim-contacts"
             Maui.AppView.title: qsTr("Contacts")
             list.query: ""
+            showNewButton: true
             showAccountFilter: Maui.Handy.isAndroid
             holder.emoji: "qrc:/list-add-user.svg"
             holder.title: i18n("There's no contacts")

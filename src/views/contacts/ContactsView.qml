@@ -17,6 +17,7 @@ StackView
     property alias viewType: _contactsPage.viewType
 
     property bool showAccountFilter: false
+    property bool showNewButton: false
 
     property var currentContact : ({})
 
@@ -79,6 +80,7 @@ StackView
 
         Maui.FloatingButton
         {
+            visible: control.showNewButton
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             anchors.margins: Maui.Style.space.big
@@ -87,7 +89,7 @@ StackView
             icon.name: "list-add-user"
             onClicked:
             {
-                control.push(_newContactPage)
+                control.openContact(({}))
             }
         }
 
@@ -183,7 +185,7 @@ StackView
 
         }
 
-        listDelegate:ContactDelegate
+        listDelegate: ContactDelegate
         {
             id: _delegate
 
@@ -223,28 +225,6 @@ StackView
 
     Component
     {
-        id: _newContactPage
-        EditContactDialog
-        {
-            headBar.farLeftContent: ToolButton
-            {
-                icon.name: "go-previous"
-                onClicked:
-                {
-                    control.pop()
-                }
-            }
-
-            onNewContact:
-            {
-                _contacsView.list.insert(contact)
-                notify("list-add-user", i18n("New contact added"), contact.n)
-            }
-        }
-    }
-
-    Component
-    {
         id: _contactPage
         ContactPage
         {
@@ -256,6 +236,20 @@ StackView
                 {
                     control.pop()
                 }
+            }
+
+            onContactEdited:
+            {
+                console.log(contact.id)
+                if(contact.id)
+               {
+                    _contactsList.update(contact, _contactsPage.currentIndex)
+                }else
+                {
+                    _contactsList.insert(contact)
+                    notify("list-add-user", i18n("New contact added"), contact.n)
+                }
+
             }
         }
     }

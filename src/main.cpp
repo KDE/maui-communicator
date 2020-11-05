@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 	MauiApp::instance()->setIconName("qrc:/contacts.svg");
 
 	KLocalizedString::setApplicationDomain("communicator");
-	KAboutData about(QStringLiteral("communicator"), i18n("Communicator"), COMMUNICATOR_VERSION_STRING, i18n("Communicator keeps your contacts synced across devices and allows you to make calls, send messages and organize."),
+    KAboutData about(QStringLiteral("communicator"), i18n("Communicator"), COMMUNICATOR_VERSION_STRING, i18n("Communicator keeps your contacts synced and organized across devices."),
 					 KAboutLicense::LGPL_V3, i18n("© 2019-2020 Nitrux Development Team"));
 	about.addAuthor(i18n("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
 	about.setHomepage("https://mauikit.org");

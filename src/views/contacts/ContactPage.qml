@@ -11,6 +11,11 @@ Maui.Page
     id: control
     property var contact : ({})
 
+    property bool editing : Object.keys(contact).length === 0
+
+    signal contactEdited(var contact)
+
+    floatingHeader: true
     headBar.visible: true
     headBar.middleContent: [
         ToolButton
@@ -37,70 +42,117 @@ Maui.Page
         }
     ]
 
-    footBar.visible: true
-    footBar.middleContent: [
+    footBar.visible: control.editing
 
-        ToolButton
+    footerColumn: Maui.ToolBar
+    {
+        visible: !control.editing
+        width: parent.width
+        position: ToolBar.Footer
+        rightContent: Maui.ToolButtonMenu
         {
-            icon.name: "dialer-call"
-            visible: contact.tel
-            text: i18n("Call")
-            onClicked:
+            icon.name: "overflow-menu"
+            MenuItem
             {
-                if(Maui.Handy.isAndroid)
-                    Maui.Android.call(contact.tel)
-                else
-                    Qt.openUrlExternally("call://" + contact.tel)
+                icon.name: "document-edit"
+                text: i18n("Edit")
+                onTriggered: control.editing = !control.editing
+                icon.color: Kirigami.Theme.positiveTextColor
             }
+
+            MenuItem
+            {
+                text: i18n("Delete")
+                icon.name: "user-trash"
+                icon.color: Kirigami.Theme.negativeTextColor
+                onTriggered: _removeDialog.open()
+            }
+        }
+
+        middleContent: [
+
+            ToolButton
+            {
+                icon.name: "dialer-call"
+                visible: contact.tel
+                text: i18n("Call")
+                onClicked:
+                {
+                    if(Maui.Handy.isAndroid)
+                        Maui.Android.call(contact.tel)
+                    else
+                        Qt.openUrlExternally("call://" + contact.tel)
+                }
+            },
+
+            ToolButton
+            {
+                icon.name: "send-email"
+                visible: contact.email
+                text: i18n("Email")
+                onClicked:
+                {
+                    _dialogLoader.sourceComponent =  _messageComposerComponent
+                    dialog.contact = control.contact
+                    dialog.open()
+                }
+            },
+
+            ToolButton
+            {
+                icon.name: "send-sms"
+                visible: contact.tel
+                text: i18n("SMS")
+                onClicked:
+                {
+                    _dialogLoader.sourceComponent =  _messageComposerComponent
+                    dialog.contact = control.contact
+                    dialog.open()
+                }
+            }
+        ]
+    }
+
+    footBar.leftContent: Button
+    {
+        visible: control.editing
+        text: i18n("Cancel")
+        onClicked: control.editing = !control.editing
+    }
+
+    footBar.rightContent: [
+
+        Button
+        {
+            visible: control.editing
+            text: i18n("Edit")
+            onClicked: control.editing = !control.editing
         },
 
-        ToolButton
+        Button
         {
-            icon.name: "send-email"
-            visible: contact.email
-            text: i18n("Email")
+            visible: control.editing
+            text: i18n("Save")
             onClicked:
             {
-                _dialogLoader.sourceComponent =  _messageComposerComponent
-                dialog.contact = control.contact
-                dialog.open()
-            }
-        },
+                var contact = control.contact
+                contact.n = _nameField.text,
+                contact.tel =_telField.text,
+                contact.email = _emailField.text,
+                contact.org = _orgField.text,
+                //                          adr: _adrField.text,
+                contact.photo = control.contact.photo,
+                contact.account = Maui.Handy.isAndroid ? _accountsCombobox.model[_accountsCombobox.currentIndex] :({})
 
-        ToolButton
-        {
-            icon.name: "send-sms"
-            visible: contact.tel
-            text: i18n("SMS")
-            onClicked:
-            {
-                _dialogLoader.sourceComponent =  _messageComposerComponent
-                dialog.contact = control.contact
-                dialog.open()
+                if(contact.n.length && contact.tel.length)
+                    control.contactEdited(contact)
+
+                control.contact = contact
+                control.editing = false
+
             }
         }
     ]
-
-    footBar.rightContent: Maui.ToolButtonMenu
-    {
-        icon.name: "overflow-menu"
-        MenuItem
-        {
-            icon.name: "document-edit"
-            text: i18n("Edit")
-            onTriggered: _editContactDialog.open()
-            icon.color: Kirigami.Theme.positiveTextColor
-        }
-
-        MenuItem
-        {
-            text: i18n("Delete")
-            icon.name: "user-trash"
-            icon.color: Kirigami.Theme.negativeTextColor
-            onTriggered: _removeDialog.open()
-        }
-    }
-
 
     Maui.Dialog
     {
@@ -115,349 +167,328 @@ Maui.Page
         onRejected:
         {
             close()
-            _contactDialog.close()
             list.remove(_contactsPage.currentIndex)
         }
     }
 
-    EditContactDialog
+    Kirigami.ScrollablePage
     {
-        id: _editContactDialog
-        contact: control.contact
-        onNewContact:
+        anchors.fill: parent
+        Kirigami.Theme.backgroundColor: "transparent"
+        padding: 0
+        leftPadding: padding
+        rightPadding: padding
+        topPadding: padding
+        bottomPadding: padding
+        flickable.bottomMargin: Maui.Style.space.big
+
+        ColumnLayout
         {
-            var con = contact
-            var id = control.contact.id
-            con["id"] = id
-            console.log("trying to edit contact", id)
-            list.update(con, _contactsPage.currentIndex)
-            control.contact =  list.get(_contactsPage.currentIndex)
-            _editContactDialog.close()
-        }
+            id: _formLayout
+            width: parent.width
+            spacing: Maui.Style.space.big
 
-        headBar.rightContent:  Button
-        {
-            icon.name: "user-trash"
-            //            text: i18n("Remove")
-            onClicked:  _removeDialog.open()
-            Kirigami.Theme.backgroundColor: Kirigami.Theme.negativeTextColor
-            Kirigami.Theme.textColor: "#fff"
-        }
-    }
-
-    ColumnLayout
-    {
-        id: _layout
-        height: parent.height
-        width: parent.width
-
-        Item
-        {
-            id: _contactPic
-            Layout.fillWidth: true
-            Layout.preferredHeight: Maui.Style.iconSizes.huge * (contact.photo ? 1.5 : 1)
-
-            Rectangle
+            Item
             {
-                height: Math.min(parent.height, control.width)
-                width: height
-                anchors.centerIn: parent
-                radius: Maui.Style.radiusV* 2
-                color: Qt.rgba(Math.random(),Math.random(),Math.random(),1);
-                border.color: Qt.darker(color, 1.5)
+                id: _contactPic
+                Layout.fillWidth: true
+                Layout.preferredHeight: 200
 
-                Loader
+                Rectangle
                 {
-                    id: _contactPicLoader
-                    anchors.fill: parent
-                    sourceComponent: contact.photo ? _imgComponent : _iconComponent
+                    color: "pink"
+                    //                    radius: Maui.Style.radiusV * 4
+                    height: parent.height / 2
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    anchors.top: parent.top/*
+                    anchors.topMargin: 0
+                    anchors.margins: Maui.Style.space.big*/
                 }
 
-                Component
+                Rectangle
                 {
-                    id: _imgComponent
+                    height: Maui.Style.iconSizes.huge * 1.5
+                    width: height
+                    anchors.centerIn: parent
+                    radius: Maui.Style.radiusV
+                    color: Qt.rgba(Math.random(),Math.random(),Math.random(),1);
+                    border.color: Qt.darker(color, 1.5)
 
-                    Image
+                    MouseArea
                     {
-                        id: _img
-                        width: parent.width
-                        height: width
-
-                        anchors.centerIn: parent
-
-                        sourceSize.width: parent.width
-                        sourceSize.height: parent.height
-
-                        fillMode: Image.PreserveAspectCrop
-                        cache: true
-                        antialiasing: true
-                        smooth: true
-                        asynchronous: true
-
-                        source: "image://contact/"+ contact.id
-
-                        layer.enabled: true
-                        layer.effect: OpacityMask
+                        visible: control.editing
+                        anchors.fill: parent
+                        onClicked:
                         {
-                            maskSource: Item
-                            {
-                                width: _img.width
-                                height: _img.height
+                            _dialogLoader.sourceComponent = _fileDialogComponent
 
-                                Rectangle
+                            dialog.show(function(paths)
+                            {
+                                console.log("selected image", paths)
+                                contact.photo = paths[0]
+                                _contactPicLoader.sourceComponent = _imgComponent
+                                _contactPicLoader.item.source = contact.photo
+                            })
+                        }
+                    }
+
+                    Loader
+                    {
+                        id: _contactPicLoader
+                        anchors.fill: parent
+                        sourceComponent: contact.photo ? _imgComponent : _iconComponent
+                    }
+
+                    Component
+                    {
+                        id: _imgComponent
+
+                        Image
+                        {
+                            id: _img
+                            width: parent.width
+                            height: width
+
+                            anchors.centerIn: parent
+
+                            sourceSize.width: parent.width
+                            sourceSize.height: parent.height
+
+                            fillMode: Image.PreserveAspectCrop
+                            cache: true
+                            antialiasing: true
+                            smooth: true
+                            asynchronous: true
+
+                            source: "image://contact/"+ contact.id
+
+                            layer.enabled: true
+                            layer.effect: OpacityMask
+                            {
+                                maskSource: Item
                                 {
-                                    anchors.centerIn: parent
                                     width: _img.width
                                     height: _img.height
-                                    radius: Maui.Style.radiusV* 2
+
+                                    Rectangle
+                                    {
+                                        anchors.centerIn: parent
+                                        width: _img.width
+                                        height: _img.height
+                                        radius: Maui.Style.radiusV* 2
+                                    }
                                 }
                             }
                         }
                     }
-                }
 
-                Component
-                {
-                    id: _iconComponent
-
-                    //                    Maui.ToolButton
-                    //                    {
-                    //                        iconName: "view-media-artist"
-                    //                        size: iconSizes.big
-                    //                        iconColor: "white"
-                    //                    }
-
-                    Label
+                    Component
                     {
-                        anchors.fill: parent
-                        horizontalAlignment: Qt.AlignHCenter
-                        verticalAlignment: Qt.AlignVCenter
+                        id: _iconComponent
 
-                        color: "white"
-                        font.pointSize: Maui.Style.fontSizes.huge * 1.5
-                        font.bold: true
-                        font.weight: Font.Bold
-                        text: contact.n ? contact.n[0] : "?"
+                        //                    Maui.ToolButton
+                        //                    {
+                        //                        iconName: "view-media-artist"
+                        //                        size: iconSizes.big
+                        //                        iconColor: "white"
+                        //                    }
+
+                        Label
+                        {
+                            anchors.fill: parent
+                            horizontalAlignment: Qt.AlignHCenter
+                            verticalAlignment: Qt.AlignVCenter
+
+                            color: "white"
+                            font.pointSize: Maui.Style.fontSizes.huge * 1.5
+                            font.bold: true
+                            font.weight: Font.Bold
+                            text: contact.n ? contact.n[0] : "+"
+                        }
                     }
+
                 }
-
             }
-        }
-
-        //        Item
-        //        {
-        //            Layout.fillWidth: true
-        //            Layout.preferredHeight: toolBarHeight
-
-        //           Maui.Button
-        //           {
-        //               anchors.centerIn: parent
-        //               icon.name: "document-edit"
-        //               text: i18n("Edit")
-        //               onClicked: _editContactDialog.open()
-        //               colorScheme.backgroundColor: suggestedColor
-        //               colorScheme.textColor: "#fff"
-        //           }
-
-        //        }
 
 
-        Kirigami.ScrollablePage
-        {
-            Layout.fillWidth: true
-            Layout.fillHeight: true
-            Kirigami.Theme.backgroundColor: "transparent"
-            padding: 0
-            leftPadding: padding
-            rightPadding: padding
-            topPadding: padding
-            bottomPadding: padding
-
-            ColumnLayout
+            Maui.ListItemTemplate
             {
-                id: _formLayout
-                width: parent.width
-                spacing: Maui.Style.space.large
+                visible: contact.account || control.editing
 
-                ColumnLayout
+                Layout.maximumWidth: 500
+                Layout.minimumWidth: 100
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.preferredHeight: leftLabels.implicitHeight
+                label1.text: i18n("Account")
+                label1.font.pointSize: Maui.Style.fontSizes.default
+                label1.font.weight: Font.Light
+                label2.visible: !control.editing
+                label2.text: contact.account || ""
+                label2.font.pointSize: Maui.Style.fontSizes.big
+                label2.font.weight: Font.Bold
+                label2.wrapMode: Text.WrapAnywhere
+
+                leftLabels.data: ComboBox
                 {
-                    Layout.fillWidth: true
-                    spacing: Maui.Style.space.small
-                    visible: contact.account
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        text: i18n("Account")
-                        font.pointSize: Maui.Style.fontSizes.default
-                        font.weight: Font.Light
-                        color: Kirigami.Theme.textColor
-                    }
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-
-                        width: parent.width
-                        text: contact.account
-                        font.pointSize: Maui.Style.fontSizes.big
-                        font.weight: Font.Bold
-                        color: Kirigami.Theme.textColor
-                        wrapMode: Text.WrapAnywhere
-                    }
+                    id: _accountsCombobox
+                    visible: control.editing
+                    textRole: "account"
+                    popup.z: control.z +1
+                    width: parent.width
                 }
+            }
 
-                ColumnLayout
+            Maui.ListItemTemplate
+            {
+                visible: contact.n || control.editing
+
+                Layout.maximumWidth: 500
+                Layout.minimumWidth: 100
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.preferredHeight: leftLabels.implicitHeight
+                label1.text: i18n("Name")
+                label1.font.pointSize: Maui.Style.fontSizes.default
+                label1.font.weight: Font.Light
+                label2.visible: !control.editing
+                label2.text: contact.n || ""
+                label2.font.pointSize: Maui.Style.fontSizes.big
+                label2.font.weight: Font.Bold
+                label2.wrapMode: Text.WrapAnywhere
+
+                leftLabels.data: Maui.TextField
                 {
+                    id: _nameField
+                    visible: control.editing
                     Layout.fillWidth: true
-                    spacing: Maui.Style.space.small
-                    visible: contact.n
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        text: i18n("Name")
-                        font.pointSize: Maui.Style.fontSizes.default
-                        font.weight: Font.Light
-                        color: Kirigami.Theme.textColor
-                    }
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-
-                        width: parent.width
-                        text: contact.n
-                        font.pointSize: Maui.Style.fontSizes.big
-                        font.weight: Font.Bold
-                        color: Kirigami.Theme.textColor
-                    }
+                    text: contact.n || ""
                 }
+            }
 
-                ColumnLayout
+            Maui.ListItemTemplate
+            {
+                visible: contact.tel || control.editing
+
+                Layout.maximumWidth: 500
+                Layout.minimumWidth: 100
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.preferredHeight: leftLabels.implicitHeight
+                label1.text: i18n("Phone")
+                label1.font.pointSize: Maui.Style.fontSizes.default
+                label1.font.weight: Font.Light
+                label2.visible: !control.editing
+                label2.text: contact.tel || ""
+                label2.font.pointSize: Maui.Style.fontSizes.big
+                label2.font.weight: Font.Bold
+                label2.wrapMode: Text.WrapAnywhere
+                leftLabels.data: Maui.TextField
                 {
+                    visible: control.editing
+                    id: _telField
                     Layout.fillWidth: true
-                    spacing: Maui.Style.space.small
-                    visible: contact.tel
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        text: i18n("Phone")
-                        font.pointSize: Maui.Style.fontSizes.default
-                        font.weight: Font.Light
-                        color: Kirigami.Theme.textColor
-                    }
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        font.pointSize: Maui.Style.fontSizes.big
-                        font.weight: Font.Bold
-                        color: Kirigami.Theme.textColor
-                        text: contact.tel
-
-                    }
+                    text: contact.tel || ""
                 }
+            }
 
-                ColumnLayout
+            Maui.ListItemTemplate
+            {
+                visible: contact.email || control.editing
+
+                Layout.maximumWidth: 500
+                Layout.minimumWidth: 100
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.preferredHeight: leftLabels.implicitHeight
+                label1.text: i18n("Email")
+                label1.font.pointSize: Maui.Style.fontSizes.default
+                label1.font.weight: Font.Light
+                label2.visible: !control.editing
+                label2.text: contact.email || ""
+                label2.font.pointSize: Maui.Style.fontSizes.big
+                label2.font.weight: Font.Bold
+                label2.wrapMode: Text.WrapAnywhere
+                leftLabels.data: Maui.TextField
                 {
+                    id: _emailField
+                    visible: control.editing
                     Layout.fillWidth: true
-                    spacing: Maui.Style.space.small
-                    visible: contact.email
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        text: i18n("Email")
-                        font.pointSize: Maui.Style.fontSizes.default
-                        font.weight: Font.Light
-                        color: Kirigami.Theme.textColor
-
-                    }
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        font.pointSize: Maui.Style.fontSizes.big
-                        font.weight: Font.Bold
-                        color: Kirigami.Theme.textColor
-                        text: contact.email
-                    }
+                    text: contact.email || ""
                 }
+            }
 
 
-                ColumnLayout
+            Maui.ListItemTemplate
+            {
+                visible: contact.org || control.editing
+
+                Layout.maximumWidth: 500
+                Layout.minimumWidth: 100
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.preferredHeight: leftLabels.implicitHeight
+                label1.text: i18n("Organization")
+                label1.font.pointSize: Maui.Style.fontSizes.default
+                label1.font.weight: Font.Light
+                label2.visible: !control.editing
+                label2.text: contact.org || ""
+                label2.font.pointSize: Maui.Style.fontSizes.big
+                label2.font.weight: Font.Bold
+                label2.wrapMode: Text.WrapAnywhere
+                leftLabels.data: Maui.TextField
                 {
+                    id: _orgField
+                    visible: control.editing
                     Layout.fillWidth: true
-                    spacing: Maui.Style.space.small
-                    visible: contact.org && contact.org.length
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        text: i18n("Organization")
-                        font.pointSize: Maui.Style.fontSizes.default
-                        font.weight: Font.Light
-                        color: Kirigami.Theme.textColor
-                    }
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        width: parent.width
-                        text: contact.org
-                        font.pointSize: Maui.Style.fontSizes.big
-                        font.weight: Font.Bold
-                        color: Kirigami.Theme.textColor
-                    }
+                    text: contact.org || ""
                 }
+            }
 
-                ColumnLayout
+            Maui.ListItemTemplate
+            {
+                visible: contact.title || control.editing
+
+                Layout.maximumWidth: 500
+                Layout.minimumWidth: 100
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.preferredHeight: leftLabels.implicitHeight
+                label1.text: i18n("Title")
+                label1.font.pointSize: Maui.Style.fontSizes.default
+                label1.font.weight: Font.Light
+                label2.visible: !control.editing
+                label2.text: contact.title || ""
+                label2.font.pointSize: Maui.Style.fontSizes.big
+                label2.font.weight: Font.Bold
+                label2.wrapMode: Text.WrapAnywhere
+                leftLabels.data: Maui.TextField
                 {
-                    visible: contact.title && contact.title.length
-                    Layout.fillWidth: visible
-                    spacing: Maui.Style.space.small
-
-                    Label
-                    {
-                        Layout.fillHeight: parent.visible
-                        Layout.fillWidth: parent.visible
-                        text: i18n("Title")
-                        font.pointSize: Maui.Style.fontSizes.default
-                        font.weight: Font.Light
-                        color: Kirigami.Theme.textColor
-                    }
-
-                    Label
-                    {
-                        Layout.fillHeight: true
-                        Layout.fillWidth: true
-                        width: parent.width
-                        text: parent.visible ? contact.title : undefined
-                        font.pointSize: Maui.Style.fontSizes.big
-                        font.weight: Font.Bold
-                        color: Kirigami.Theme.textColor
-                    }
+                    visible: control.editing
+                    Layout.fillWidth: true
+                    text: contact.title || ""
                 }
             }
         }
+    }
+
+    function clear()
+    {
+        _nameField.clear()
+        _telField.clear()
+        _emailField.clear()
+        _orgField.clear()
+        //        _adrField.clear()
+        //        _img.source = ""
+        _contactPicLoader.sourceComponent = _iconComponent
+        control.close()
 
     }
 
-
-    function show(data)
+    Component.onCompleted:
     {
-        control.contact = data
-        console.log("curent itemn account", data.account, data.type)
-        control.open()
+        var androidAccounts = _contacsView.list.getAccounts();
+        _accountsCombobox.model = androidAccounts;
     }
 }

@@ -43,12 +43,10 @@ Maui.Dialog
     rejectButton.visible: false
 
 
-    ComboBox
+    headBar.middleContent: ComboBox
     {
         id: _combobox
         Layout.fillWidth: true
-        Layout.margins: Maui.Style.space.small
-        Layout.preferredHeight: Maui.Style.toolBarHeightAlt
 
         //                text: Maui.Handy.isAndroid ? contact.tel : contact.email
         font.bold: true
@@ -67,24 +65,22 @@ Maui.Dialog
         popup.z: control.z + 1
     }
 
-    Maui.TextField
-    {
-        id: _subjectTextField
-        visible: _combobox.currentText === contact.email
-        Layout.fillWidth: true
-        Layout.margins: Maui.Style.space.small
-        Layout.preferredHeight: Maui.Style.toolBarHeightAlt
-        placeholderText: i18n("Subject")
-        font.bold: true
-        font.weight: Font.Bold
-        font.pointSize: Maui.Style.fontSizes.big
-    }
-
     Maui.Editor
     {
         id: _editor
         Layout.fillHeight: true
         Layout.fillWidth: true
+
+        headBar.middleContent:  Maui.TextField
+        {
+            id: _subjectTextField
+            visible: _combobox.currentText === contact.email
+            Layout.fillWidth: true
+            placeholderText: i18n("Subject")
+            font.bold: true
+            font.weight: Font.Bold
+            font.pointSize: Maui.Style.fontSizes.big
+        }
     }
 
 }

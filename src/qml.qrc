@@ -4,7 +4,6 @@
         <file>views/contacts/ContactsView.qml</file>
         <file>views/contacts/ContactDelegate.qml</file>
         <file>views/contacts/ContactPage.qml</file>
-        <file>views/contacts/EditContactDialog.qml</file>
         <file>views/dialer/Dialer.qml</file>
         <file>views/dialer/DialerView.qml</file>
         <file>widgets/MessageComposer.qml</file>
