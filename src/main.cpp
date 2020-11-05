@@ -62,9 +62,9 @@ int main(int argc, char *argv[])
 #endif
 
 	app.setOrganizationName(QStringLiteral("Maui"));
-	app.setWindowIcon(QIcon(":/contacts.png"));
+    app.setWindowIcon(QIcon("://communicator.svg"));
 	MauiApp::instance()->setHandleAccounts(false); //for now index can not handle cloud accounts
-	MauiApp::instance()->setIconName("qrc:/contacts.svg");
+    MauiApp::instance()->setIconName("qrc:/communicator.svg");
 
 	KLocalizedString::setApplicationDomain("communicator");
     KAboutData about(QStringLiteral("communicator"), i18n("Communicator"), COMMUNICATOR_VERSION_STRING, i18n("Communicator keeps your contacts synced and organized across devices."),

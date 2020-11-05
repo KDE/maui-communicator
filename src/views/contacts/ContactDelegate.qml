@@ -1,7 +1,6 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
-import QtGraphicalEffects 1.0
 
 import org.kde.mauikit 1.2 as Maui
 import org.kde.kirigami 2.9 as Kirigami
@@ -12,14 +11,10 @@ Maui.SwipeBrowserDelegate
     hoverEnabled: true
     clip: true
     Kirigami.Theme.colorSet: Kirigami.Theme.Button
-//    Kirigami.Theme.inherit: false
 
     draggable: true
-//    property alias showMenuIcon: showQuickActions
 
     signal favClicked(int index)
-
-    property int radius : Maui.Style.radiusV
 
     iconSizeHint: Maui.Style.iconSizes.huge
     label1.text: model.n
@@ -45,132 +40,7 @@ Maui.SwipeBrowserDelegate
     label4.font.weight: Font.Light
     label4.wrapMode: Text.WrapAnywhere
     label4.elide: Text.ElideMiddle
-iconVisible:  control.width > Kirigami.Units.gridUnit * 15
-    template.iconComponent:  Item
-    {
-        id: _contactPic
+    iconVisible:  control.width > Kirigami.Units.gridUnit * 15
 
-        Rectangle
-        {
-            Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-            Kirigami.Theme.inherit: false
-            height: parent.height * 0.8
-            width: height
-            anchors.centerIn: parent
-            radius: control.radius
-            color: Kirigami.Theme.backgroundColor
-            border.color: Qt.darker(color, 1.5)
-
-            Loader
-            {
-                id: _contactPicLoader
-                anchors.fill: parent
-                sourceComponent: model.photo ? _imgComponent : _iconComponent
-            }
-
-            Component
-            {
-                id: _imgComponent
-
-                Image
-                {
-                    id: _img
-                    width: parent.width
-                    height: width
-
-                    anchors.centerIn: parent
-
-                    sourceSize.width: parent.width
-                    sourceSize.height: parent.height
-
-                    fillMode: Image.PreserveAspectCrop
-                    cache: true
-                    antialiasing: true
-                    smooth: true
-                    asynchronous: true
-
-                    source:  "image://contact/"+ model.id
-
-                    layer.enabled: true
-                    layer.effect: OpacityMask
-                    {
-                        maskSource: Item
-                        {
-                            width: _img.width
-                            height: _img.height
-
-                            Rectangle
-                            {
-                                anchors.centerIn: parent
-                                width: _img.width
-                                height: _img.height
-                                radius: control.radius
-                            }
-                        }
-                    }
-                }
-            }
-
-            Component
-            {
-                id: _iconComponent
-
-                Label
-                {
-                    anchors.fill: parent
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
-                    color: Kirigami.Theme.textColor
-                    font.pointSize: Maui.Style.fontSizes.huge
-                    font.bold: true
-                    font.weight: Font.Bold
-                    text: model.n[0].toUpperCase()
-                }
-            }
-
-        }
-    }
-
-
-    quickActions: [
-//        Action
-//        {
-//            icon.name: "draw-star"
-//            onTriggered:
-//            {
-//                control.favClicked(index)
-//            }
-
-//            icon.color: model.fav == "1" ? "yellow" : Kirigami.Theme.textColor
-//        },
-
-        Action
-        {
-            icon.name: "message-new"
-            icon.color: Kirigami.Theme.textColor
-            onTriggered:
-            {
-                _dialogLoader.sourceComponent =  _messageComposerComponent
-                dialog.contact = list.get(index)
-                dialog.open()
-            }
-        },
-
-        Action
-        {
-            enabled: Kirigami.Settings.isMobile
-            icon.name: "call-start"
-            icon.color: Kirigami.Theme.textColor
-
-            onTriggered:
-            {
-                if(Maui.Handy.isAndroid)
-                    Maui.Android.call(model.tel)
-                else
-                    Qt.openUrlExternally("call://" + model.tel)
-
-            }
-        }
-    ]
 
 }

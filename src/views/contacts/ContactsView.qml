@@ -1,6 +1,7 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
+import QtGraphicalEffects 1.0
 
 import org.kde.mauikit 1.2 as Maui
 import org.kde.kirigami 2.8 as Kirigami
@@ -24,11 +25,11 @@ StackView
     initialItem: Maui.AltBrowser
     {
         id: _contactsPage
-        margins: Maui.Style.space.big
         holder.visible: !currentView.count
         holder.emojiSize: Maui.Style.iconSizes.huge
         headBar.visible: true
         //        onActionTriggered: _newContactDialog.open()
+
         model: Maui.BaseModel
         {
             id: _contactsModel
@@ -36,6 +37,8 @@ StackView
             {
                 id: _contactsList
             }
+            sort: "n"
+            sortOrder: Qt.AscendingOrder
             recursiveFilteringEnabled: true
             sortCaseSensitivity: Qt.CaseInsensitive
             filterCaseSensitivity: Qt.CaseInsensitive
@@ -83,7 +86,7 @@ StackView
             visible: control.showNewButton
             anchors.right: parent.right
             anchors.bottom: parent.bottom
-            anchors.margins: Maui.Style.space.big
+            anchors.margins: Maui.Style.space.big * 2
             height: Maui.Style.toolBarHeight
             width: height
             icon.name: "list-add-user"
@@ -93,9 +96,7 @@ StackView
             }
         }
 
-        gridView.cellWidth: Maui.Style.unit * 120
-        gridView.cellHeight: Maui.Style.unit * 120
-        gridView.itemSize: Math.min(Maui.Style.unit * 120)
+        gridView.itemSize: 140
 
         listView.spacing: Maui.Style.space.big
         listView.flickable.header: Item
@@ -136,7 +137,6 @@ StackView
             }
 
         }
-        //        headerPositioning: ListView.PullBackHeader
 
         listView.section.property: "n"
         listView.section.criteria: ViewSection.FirstCharacter
@@ -146,54 +146,169 @@ StackView
             label: section.toUpperCase()
             isSection: true
             width: parent.width
+            opacity: 0.6
         }
 
-
-        gridDelegate: GridContactDelegate
+        gridDelegate: Item
         {
-            id: _delegate
+            width: _contactsPage.gridView.cellWidth
+            height: _contactsPage.gridView.cellHeight
 
-            width: _contactsPage.gridView.cellWidth * 0.95
-            height: _contactsPage.gridView.cellHeight * 0.95
+            property bool isCurrentItem : GridView.isCurrentItem
 
-            onClicked:
+            GridContactDelegate
             {
-                _contactsPage.currentIndex = index
+                anchors.fill: parent
+                anchors.margins: Maui.Style.space.medium
+                isCurrentItem: parent.isCurrentItem
 
-                if(Maui.Handy.singleClick)
+                onClicked:
                 {
-                    openContact(_contactsModel.get(index))
+                    _contactsPage.currentIndex = index
+
+                    if(Maui.Handy.singleClick)
+                    {
+                        openContact(_contactsModel.get(index))
+                    }
+                }
+
+                onDoubleClicked:
+                {
+                    _contactsPage.currentIndex = index
+
+                    if(!Maui.Handy.singleClick)
+                    {
+                        openContact(_contactsModel.get(index))
+                    }
+                }
+
+                onFavClicked:
+                {
+                    var item = _contactsList.get(index)
+                    item["fav"] = item.fav == "1" ? "0" : "1"
+                    _contactsList.update(item, index)
                 }
             }
-
-            onDoubleClicked:
-            {
-                _contactsPage.currentIndex = index
-
-                if(!Maui.Handy.singleClick)
-                {
-                    openContact(_contactsModel.get(index))
-                }
-            }
-
-            onFavClicked:
-            {
-                var item = _contactsList.get(index)
-                item["fav"] = item.fav == "1" ? "0" : "1"
-                _contactsList.update(item, index)
-            }
-
         }
 
         listDelegate: ContactDelegate
         {
-            id: _delegate
-
             height: Maui.Style.unit * 60
-            width: isWide ? control.width * 0.8 : ListView.view.width
+            width: Math.min(isWide ? ListView.view.width * 0.8 : ListView.view.width, 500)
             anchors.horizontalCenter: parent.horizontalCenter
             showQuickActions: true
 
+            template.iconComponent: Item
+            {
+                id: _contactPic
+
+                Rectangle
+                {
+                    Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+                    Kirigami.Theme.inherit: false
+                    height: parent.height * 0.8
+                    width: height
+                    anchors.verticalCenter: parent.verticalCenter
+                    radius: Maui.Style.radiusV
+                    color: Kirigami.Theme.backgroundColor
+                    border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
+
+                    Loader
+                    {
+                        id: _contactPicLoader
+                        anchors.fill: parent
+                        anchors.margins: 1
+                        sourceComponent: model.photo ? _imgComponent : _iconComponent
+                    }
+
+                    Component
+                    {
+                        id: _imgComponent
+
+                        Image
+                        {
+                            id: _img
+
+                            sourceSize.width: parent.width
+                            sourceSize.height: parent.height
+
+                            fillMode: Image.PreserveAspectCrop
+                            cache: true
+                            antialiasing: true
+                            smooth: true
+                            asynchronous: true
+
+                            source:  "image://contact/"+ model.id
+
+                            layer.enabled: true
+                            layer.effect: OpacityMask
+                            {
+                                maskSource: Item
+                                {
+                                    width: _img.width
+                                    height: _img.height
+
+                                    Rectangle
+                                    {
+                                        anchors.centerIn: parent
+                                        width: _img.width
+                                        height: _img.height
+                                        radius: control.radius
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    Component
+                    {
+                        id: _iconComponent
+
+                        Label
+                        {
+                            anchors.fill: parent
+                            horizontalAlignment: Qt.AlignHCenter
+                            verticalAlignment: Qt.AlignVCenter
+                            color: Kirigami.Theme.textColor
+                            font.pointSize: Maui.Style.fontSizes.huge
+                            font.bold: true
+                            font.weight: Font.Bold
+                            text: model.n[0].toUpperCase()
+                        }
+                    }
+                }
+            }
+
+            quickActions: [
+
+                Action
+                {
+                    icon.name: "message-new"
+                    icon.color: Kirigami.Theme.textColor
+                    onTriggered:
+                    {
+                        _dialogLoader.sourceComponent =  _messageComposerComponent
+                        dialog.contact = list.get(index)
+                        dialog.open()
+                    }
+                },
+
+                Action
+                {
+                    enabled: Kirigami.Settings.isMobile
+                    icon.name: "call-start"
+                    icon.color: Kirigami.Theme.textColor
+
+                    onTriggered:
+                    {
+                        if(Maui.Handy.isAndroid)
+                            Maui.Android.call(model.tel)
+                        else
+                            Qt.openUrlExternally("call://" + model.tel)
+
+                    }
+                }
+            ]
             onClicked:
             {
                 _contactsPage.currentIndex = index
@@ -225,14 +340,54 @@ StackView
 
     Component
     {
-        id: _contactPage
+        id: _contactPageComponent
+
         ContactPage
         {
+            id: _contactPage
             contact: control.currentContact
             headBar.farLeftContent: ToolButton
             {
                 icon.name: "go-previous"
                 onClicked:
+                {
+                    if(editing)
+                    {
+                        _confirmExit.open()
+
+                    }else
+                    {
+                         control.pop()
+                    }
+                }
+            }
+
+            Maui.Dialog
+            {
+                id: _confirmExit
+                title: i18n("Discard")
+                message: i18n("If you chose to exit the changes made will be lost. Click Discard to exit or cancel to go back and save the changes")
+
+                acceptButton.text : i18n("Cancel")
+                rejectButton.text : i18n("Discard")
+
+                onAccepted: close()
+                onRejected:
+                {
+                    _contactPage.editing = false
+
+                    if(!_contactPage.contact.id)
+                    {
+                        control.pop()
+                    }
+
+                    _confirmExit.close()
+                }
+            }
+
+            onEditCanceled:
+            {
+                if(!contact.id)
                 {
                     control.pop()
                 }
@@ -241,15 +396,21 @@ StackView
             onContactEdited:
             {
                 console.log(contact.id)
-                if(contact.id)
-               {
-                    _contactsList.update(contact, _contactsPage.currentIndex)
+
+                if(contact.n.length && contact.tel.length)
+                {
+                    if(contact.id)
+                    {
+                        _contactsList.update(contact, _contactsPage.currentIndex)
+                    }else
+                    {
+                        _contactsList.insert(contact)
+                        notify("list-add-user", i18n("New contact added"), contact.n)
+                    }
                 }else
                 {
-                    _contactsList.insert(contact)
-                    notify("list-add-user", i18n("New contact added"), contact.n)
+                    control.pop()
                 }
-
             }
         }
     }
@@ -257,7 +418,7 @@ StackView
     function openContact(contact)
     {
         control.currentContact = contact
-        control.push(_contactPage)
+        control.push(_contactPageComponent)
     }
 
 }

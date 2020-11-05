@@ -13,7 +13,7 @@ import "widgets"
 Maui.ApplicationWindow
 {
     id: root
-//    title: Maui.App.displayName
+    altHeader: Kirigami.Settings.isMobile
 
     readonly property var views : ({
                                        favs: 0,
@@ -22,6 +22,8 @@ Maui.ApplicationWindow
                                    })
 
    readonly property alias dialog: _dialogLoader.item
+
+//   autoHideHeader: swipeView.currentItem.currentItem ? swipeView.currentItem.currentItem.editing : false
 
     Maui.AppViews
     {
