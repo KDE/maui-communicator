@@ -28,7 +28,7 @@ Maui.ItemDelegate
         icon.color: "#fff"
         visible: showMenuIcon
         icon.name: "overflow-menu"
-//        onClicked: swipe.position < 0 ? swipe.close() : swipe.open(SwipeDelegate.Right)
+        //        onClicked: swipe.position < 0 ? swipe.close() : swipe.open(SwipeDelegate.Right)
 
     }
 
@@ -38,10 +38,10 @@ Maui.ItemDelegate
         anchors.fill: parent
         radius: Maui.Style.radiusV
         color: Kirigami.Theme.backgroundColor
-//        {
-//            var c = Qt.rgba(Math.random(),Math.random(),Math.random(),1)
-//            return Qt.hsla(c.hslHue, 0.7, c.hslLightness, c.a);
-//        }
+        //        {
+        //            var c = Qt.rgba(Math.random(),Math.random(),Math.random(),1)
+        //            return Qt.hsla(c.hslHue, 0.7, c.hslLightness, c.a);
+        //        }
 
         Loader
         {
@@ -74,24 +74,24 @@ Maui.ItemDelegate
                 source: "image://contact/"+ model.id
             }
         }
-            Component
+        Component
+        {
+            id: _iconComponent
+
+            Label
             {
-                id: _iconComponent
+                anchors.fill: parent
+                anchors.centerIn: parent
+                horizontalAlignment: Qt.AlignHCenter
+                verticalAlignment: Qt.AlignVCenter
 
-                Label
-                {
-                    anchors.fill: parent
-                    anchors.centerIn: parent
-                    horizontalAlignment: Qt.AlignHCenter
-                    verticalAlignment: Qt.AlignVCenter
-
-                    color: "#fff"
-                    font.pointSize: Maui.Style.fontSizes.enormous * 3
-                    font.bold: true
-                    font.weight: Font.Bold
-                    text: model.n[0].toUpperCase()
-                }
+                color: "#fff"
+                font.pointSize: Maui.Style.fontSizes.enormous * 3
+                font.bold: true
+                font.weight: Font.Bold
+                text: model.n[0].toUpperCase()
             }
+        }
 
         Item
         {
@@ -117,7 +117,7 @@ Maui.ItemDelegate
 
                 label1.font.pointSize: Maui.Style.fontSizes.big
                 label1.text: model.n
-//                label2.text: model.tel
+                //                label2.text: model.tel
 
                 label1.visible: label1.text && control.width > 50
                 label1.font.bold: true
@@ -153,8 +153,8 @@ Maui.ItemDelegate
     {
         anchors.centerIn: _cover
 
-                            width: _cover.width
-                            height:  _cover.height
+        width: _cover.width
+        height:  _cover.height
 
         color: "transparent"
         border.color: control.isCurrentItem || control.hovered ? Kirigami.Theme.highlightColor : Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.2)
