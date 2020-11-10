@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Contacts
+Name[ast]=Contautos
 Name[ca]=Contactes
 Name[ca@valencia]=Contactes
 Name[cs]=Kontakty
@@ -27,6 +28,7 @@ Terminal=false
 Type=Application
 Categories=Qt;KDE;System;
 GenericName=Contacts
+GenericName[ast]=Contautos
 GenericName[ca]=Contactes
 GenericName[ca@valencia]=Contactes
 GenericName[cs]=Kontakty
