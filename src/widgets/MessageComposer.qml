@@ -13,20 +13,20 @@ Maui.Dialog
     maxWidth: Maui.Style.unit * 500
     maxHeight: maxWidth
 
-    page.padding: Maui.Style.space.small
+    page.margins: 0
 
     onAccepted:
     {
-        if(!isMobile && !isAndroid)
+        if(!Kirigami.Settings.isMobile && !Maui.Handy.isAndroid)
             Maui.KDE.email(contact.email, "", "", _subjectTextField.text, _editor.text)
-        else if(!isAndroid)
+        else if(!Maui.Handy.isAndroid)
         {
             if(_combobox.currentText === contact.email)
                 Qt.openUrlExternally("mailto:" + contact.email)
             else if(_combobox.currentText === contact.tel)
             {
                 Qt.openUrlExternally("sms:" + contact.tel +"&sms_body:" + _editor.text)
-                notify("emblem-info", qsTr("Message sent"), contact.tel)
+                notify("emblem-info", i18n("Message sent"), contact.tel)
             }
         }else
         {
@@ -38,56 +38,49 @@ Maui.Dialog
         close();
     }
 
-    acceptButton.text: qsTr("Send...")
+    acceptButton.text: i18n("Send...")
     acceptButton.icon.name: "mail-send"
     rejectButton.visible: false
 
-    ColumnLayout
+
+    headBar.middleContent: ComboBox
     {
-        anchors.fill: parent
+        id: _combobox
+        Layout.fillWidth: true
 
-        ComboBox
+        //                text: Maui.Handy.isAndroid ? contact.tel : contact.email
+        font.bold: true
+        font.weight: Font.Bold
+        font.pointSize: Maui.Style.fontSizes.big
+        model:
         {
-            id: _combobox
-            Layout.fillWidth: true
-            Layout.preferredHeight: Maui.Style.toolBarHeightAlt
-
-            //                text: isAndroid ? contact.tel : contact.email
-            font.bold: true
-            font.weight: Font.Bold
-            font.pointSize: Maui.Style.fontSizes.big
-            model:
-            {
-                if(contact.email && contact.tel)
-                    return [contact.email, contact.tel]
-                else if(contact.email)
-                    return [contact.email]
-                else if(contact.tel)
-                    return [contact.tel]
-            }
-
-            popup.z: control.z + 1
+            if(contact.email && contact.tel)
+                return [contact.email, contact.tel]
+            else if(contact.email)
+                return [contact.email]
+            else if(contact.tel)
+                return [contact.tel]
         }
 
-        Maui.TextField
+        popup.z: control.z + 1
+    }
+
+    Maui.Editor
+    {
+        id: _editor
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+
+        headBar.middleContent:  Maui.TextField
         {
             id: _subjectTextField
             visible: _combobox.currentText === contact.email
             Layout.fillWidth: true
-            Layout.preferredHeight: Maui.Style.toolBarHeightAlt
-            placeholderText: qsTr("Subject")
+            placeholderText: i18n("Subject")
             font.bold: true
             font.weight: Font.Bold
             font.pointSize: Maui.Style.fontSizes.big
         }
-
-        Maui.Editor
-        {
-            id: _editor
-            Layout.fillHeight: true
-            Layout.fillWidth: true
-        }
     }
-
 
 }

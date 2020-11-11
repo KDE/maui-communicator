@@ -1,7 +1,7 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.3
 import org.kde.mauikit 1.0 as Maui
-import UnionModels 1.0
+import org.maui.communicator 1.0
 
 import "../contacts"
 
@@ -15,11 +15,10 @@ Maui.Page
         id: _holder
         emoji: "qrc:/amarok_artist.svg"
         isMask: true
-        title: qsTr("There's no recent contacts")
-        body: qsTr("Recently used contacts will appear here")
+        title: i18n("There's no recent contacts")
+        body: i18n("Recently used contacts will appear here")
         emojiSize: Maui.Style.iconSizes.huge
         visible: !_listView.count
-        onActionTriggered: _newContactDialog.open()
     }
 
     Maui.BaseModel
@@ -38,23 +37,23 @@ Maui.Page
         id: _menu
         MenuItem
         {
-            text: qsTr("Call")
+            text: i18n("Call")
             icon.name: "dialer-call"
             onTriggered:
             {
-                if(isAndroid)
+                if(Maui.Handy.isAndroid)
                     Maui.Android.call(_callLogsModel.get(_listView.currentIndex).tel)
             }
         }
 
         MenuItem
         {
-            text: qsTr("Save as..")
+            text: i18n("Save as..")
             icon.name: "list-add-user"
             onTriggered:
             {
-                _newContactDialog.contact = _callLogsModel.get(_listView.currentIndex)
-                _newContactDialog.open()
+//                _newContactDialog.contact = _callLogsModel.get(_listView.currentIndex)
+//                _newContactDialog.open()
             }
         }
     }
@@ -101,9 +100,8 @@ Maui.Page
             height: Maui.Style.unit * 60
             width: isWide ? control.width * 0.8 : control.width * 0.95
             anchors.horizontalCenter: parent.horizontalCenter
-            showMenuIcon: false
 
-            quickButtons: ToolButton
+            quickActions: Action
             {
                 icon.name: switch (model.type)
                           {
@@ -122,15 +120,12 @@ Maui.Page
                            }
             }
 
-            Connections
-            {
-                target: _delegate
                 onClicked:
                 {
                     _listView.currentIndex = index
                     _menu.popup()
                 }
-            }
+
         }
 
         ScrollBar.vertical: ScrollBar {}

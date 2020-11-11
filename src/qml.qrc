@@ -3,13 +3,14 @@
         <file>main.qml</file>
         <file>views/contacts/ContactsView.qml</file>
         <file>views/contacts/ContactDelegate.qml</file>
-        <file>views/contacts/ContactDialog.qml</file>
-        <file>views/contacts/EditContactDialog.qml</file>
+        <file>views/contacts/ContactPage.qml</file>
         <file>views/dialer/Dialer.qml</file>
         <file>views/dialer/DialerView.qml</file>
         <file>widgets/MessageComposer.qml</file>
         <file>views/contacts/GridContactDelegate.qml</file>
         <file>views/logs/LogsView.qml</file>
         <file>views/dialer/DialerButton.qml</file>
+        <file>views/contacts/ContactsBrowser.qml</file>
+        <file>views/contacts/ContactField.qml</file>
     </qresource>
 </RCC>

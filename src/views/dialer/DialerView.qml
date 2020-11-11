@@ -36,7 +36,7 @@ Maui.Page
         id: _textField
         Layout.fillWidth: true
         inputMethodHints: Qt.ImhDialableCharactersOnly
-        placeholderText: qsTr("Number...")
+        placeholderText: i18n("Number...")
         readOnly: true
         font.bold: true
         font.weight: Font.Bold
@@ -87,7 +87,7 @@ Maui.Page
 
                 onClicked:
                 {
-                    if(isAndroid)
+                    if(Maui.Handy.isAndroid)
                         Maui.Android.call(dialString)
                     else
                         Qt.openUrlExternally("call://" + dialString)
@@ -134,15 +134,15 @@ Maui.Page
                 width: _layout.width
                 anchors.horizontalCenter: parent.horizontalCenter
 
-                quickButtons: ToolButton
-                {
-                    icon.name: "view-fullscreen"
-                    onClicked:
-                    {
-                        _suggestionListView.currentIndex = index
-                        control.dialString = _contacsView.list.get(_suggestionListView.currentIndex).tel
-                    }
-                }
+//                quickButtons: ToolButton
+//                {
+//                    icon.name: "view-fullscreen"
+//                    onClicked:
+//                    {
+//                        _suggestionListView.currentIndex = index
+//                        control.dialString = _contacsView.list.get(_suggestionListView.currentIndex).tel
+//                    }
+//                }
 
                 Connections
                 {
@@ -150,7 +150,7 @@ Maui.Page
                     onClicked:
                     {
                         _suggestionListView.currentIndex = index
-                        if(isAndroid)
+                        if(Maui.Handy.isAndroid)
                             Maui.Android.call(_contacsView.list.get(_suggestionListView.currentIndex).tel)
                     }
                 }

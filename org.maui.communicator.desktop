@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Communicator
+TryExec=communicator
+Exec=communicator %U
+Terminal=false
+Type=Application
+Categories=Qt;KDE;System;
+GenericName=Contacts Manager
+StartupNotify=true
+Icon=maui-communicator
+MimeType=application/x-communicator;

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
-set(CONTACTS_VERSION 1.1.1)
-project(contacts LANGUAGES CXX VERSION ${CONTACTS_VERSION})
+set(COMMUNICATOR_VERSION 1.2.0)
+project(communicator LANGUAGES CXX VERSION ${COMMUNICATOR_VERSION})
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_AUTOMOC ON)
@@ -32,7 +32,7 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}/src/models/contacts
     )
 
-set(contacts_SRCS
+set(communicator_SRCS
     src/main.cpp
     src/models/contacts/contactsmodel.cpp
     src/models/contacts/calllogs.cpp
@@ -40,8 +40,7 @@ set(contacts_SRCS
     src/interfaces/contactimage.cpp
     )
 
-set(contacts_HDRS
-    src/union.h
+set(communicator_HDRS
     src/models/contacts/contactsmodel.h
     src/models/contacts/calllogs.h
     src/interfaces/abstractinterface.h
@@ -49,20 +48,20 @@ set(contacts_HDRS
     src/interfaces/contactimage.h
     )
 
-set(contacts_ASSETS
+set(communicator_ASSETS
     src/qml.qrc
-    assets/contacts_assets.qrc
+    assets/communicator_assets.qrc
     )
 
 add_executable(${PROJECT_NAME}
-    ${contacts_SRCS}
-    ${contacts_HDRS}
-    ${contacts_ASSETS}
+    ${communicator_SRCS}
+    ${communicator_HDRS}
+    ${communicator_ASSETS}
     )
 
-ecm_setup_version(${CONTACTS_VERSION}
-    VARIABLE_PREFIX CONTACTS
-    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/contacts_version.h"
+ecm_setup_version(${COMMUNICATOR_VERSION}
+    VARIABLE_PREFIX COMMUNICATOR
+    VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/communicator_version.h"
     )
 
 if (ANDROID)
@@ -71,26 +70,25 @@ if (ANDROID)
     target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras)
     #    kde_source_files_enable_exceptions(union src/pix.cpp)
 elseif(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
-add_subdirectory(src/contacts/linux)
+add_subdirectory(src/communicator/linux)
 else()
     find_package(KF5 ${KF5_VERSION} REQUIRED COMPONENTS I18n Notifications Config KIO Attica Contacts People SyntaxHighlighting)
-    find_package(Qt5 REQUIRED COMPONENTS WebEngine)
 
-    target_link_libraries(${PROJECT_NAME} KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::I18n KF5::Attica KF5::Contacts KF5::People KF5::SyntaxHighlighting)
+    target_link_libraries(${PROJECT_NAME} KF5::ConfigCore KF5::Notifications KF5::KIOCore KF5::I18n KF5::Attica KF5::Contacts KF5::People)
 endif()
 
-if (TARGET create-apk-contacts)
-    set_target_properties(create-apk-contacts PROPERTIES ANDROID_APK_DIR "${MAUIKIT_ANDROID_DIR}")
+if (TARGET create-apk-communicator)
+    set_target_properties(create-apk-communicator PROPERTIES ANDROID_APK_DIR "${MAUIKIT_ANDROID_DIR}")
 endif()
 
 target_link_libraries(${PROJECT_NAME} MauiKit Qt5::Sql Qt5::Qml Qt5::Widgets Qt5::Svg Qt5::Concurrent Qt5::Quick)
 
 install(TARGETS ${PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES org.kde.contacts.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES org.maui.communicator.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 
 #TODO: port to ecm_install_icons()
-install(FILES assets/contacts.svg DESTINATION ${KDE_INSTALL_ICONDIR}/hicolor/scalable/apps)
-install(FILES org.maui.contacts.json DESTINATION /usr/share/maui-accounts/manifests)
+install(FILES assets/communicator.svg DESTINATION ${KDE_INSTALL_ICONDIR}/hicolor/scalable/apps)
+install(FILES org.maui.communicator.json DESTINATION /usr/share/maui-accounts/manifests)
 #install(FILES org.kde.pix.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
