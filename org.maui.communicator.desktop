@@ -1,5 +1,14 @@
 [Desktop Entry]
 Name=Communicator
+Name[ca]=Comunicador
+Name[ca@valencia]=Comunicador
+Name[lt]=Pranešėjas
+Name[nl]=Communicator
+Name[pt]=Comunicador
+Name[sk]=Komunikátor
+Name[sv]=Communicator
+Name[uk]=Комунікатор
+Name[zh_TW]=通訊工具
 TryExec=communicator
 Exec=communicator %U
 Terminal=false
