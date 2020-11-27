@@ -36,7 +36,7 @@ public:
     }; Q_ENUM(ORDER)
 
     explicit CallLogs(QObject *parent = nullptr);
-    FMH::MODEL_LIST items() const override final;
+    const FMH::MODEL_LIST &items() const override final;
 
     void setSortBy(const CallLogs::SORTBY &sort);
     CallLogs::SORTBY getSortBy() const;

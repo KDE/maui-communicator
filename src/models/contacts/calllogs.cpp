@@ -14,7 +14,7 @@ CallLogs::CallLogs(QObject *parent) : MauiList(parent)
     this->getList();
 }
 
-FMH::MODEL_LIST CallLogs::items() const
+const FMH::MODEL_LIST &CallLogs::items() const
 {
     return this->list;
 }

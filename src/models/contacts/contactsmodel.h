@@ -18,7 +18,7 @@ class ContactsModel : public MauiList
 public:
     explicit ContactsModel(QObject *parent = nullptr);
 
-    FMH::MODEL_LIST items() const override final;
+    const FMH::MODEL_LIST &items() const override final;
 
     QString getQuery() const;
     void setQuery(const QString &query);
