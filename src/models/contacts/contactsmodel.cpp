@@ -31,7 +31,7 @@ ContactsModel::ContactsModel(QObject *parent) : MauiList(parent), syncer(new Lin
     this->getList();
 }
 
-FMH::MODEL_LIST ContactsModel::items() const
+const FMH::MODEL_LIST &ContactsModel::items() const
 {
     return this->list;
 }
