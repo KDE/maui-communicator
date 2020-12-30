@@ -16,6 +16,7 @@ find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Qml Quick Sql Svg QuickControls2 
 include(KDEInstallDirs)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDECMakeSettings)
+include(KDEClangFormat)
 include(ECMInstallIcons)
 include(ECMAddAppIcon)
 include(ECMSetupVersion)
@@ -92,3 +93,6 @@ install(FILES org.maui.communicator.json DESTINATION /usr/share/maui-accounts/ma
 #install(FILES org.kde.pix.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL   FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
+kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
