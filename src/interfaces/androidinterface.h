@@ -1,18 +1,14 @@
 #ifndef ANDROIDINTERFACE_H
 #define ANDROIDINTERFACE_H
 
-#include <QObject>
 #include "abstractinterface.h"
+#include <QObject>
 
 class AndroidInterface : public AbstractInterface
 {
     Q_OBJECT
 public:
-    enum GET_TYPE : uint_fast8_t
-    {
-        CACHED,
-        FETCH
-    };
+    enum GET_TYPE : uint_fast8_t { CACHED, FETCH };
 
     static AndroidInterface *getInstance();
     void call(const QString &tel) const;

@@ -19,9 +19,9 @@
 #ifndef DIALERUTILS_H
 #define DIALERUTILS_H
 
+#include <KNotification>
 #include <QObject>
 #include <QPointer>
-#include <KNotification>
 
 #include <TelepathyQt/Account>
 
@@ -35,7 +35,6 @@ class DialerUtils : public QObject
     Q_PROPERTY(bool isIncomingCall READ isIncomingCall NOTIFY isIncomingCallChanged);
 
 public:
-
     DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent = nullptr);
     ~DialerUtils() override;
 
@@ -58,7 +57,7 @@ public:
 
     Q_INVOKABLE void resetMissedCalls();
     Q_INVOKABLE void dial(const QString &number);
-    Q_INVOKABLE const QString formatNumber(const QString& number);
+    Q_INVOKABLE const QString formatNumber(const QString &number);
 
 Q_SIGNALS:
     void missedCallsActionTriggered();
@@ -73,8 +72,8 @@ Q_SIGNALS:
     void callEnded(const QString &callContactNumber, uint callDuration, bool isIncomingCall);
 
 private:
-    QPointer <KNotification> m_callsNotification;
-    QPointer <KNotification> m_ringingNotification;
+    QPointer<KNotification> m_callsNotification;
+    QPointer<KNotification> m_ringingNotification;
     int m_missedCalls;
     QString m_callState;
     Tp::AccountPtr m_simAccount;
@@ -83,6 +82,5 @@ private:
     QString m_callContactAlias;
     bool m_isIncomingCall;
 };
-
 
 #endif

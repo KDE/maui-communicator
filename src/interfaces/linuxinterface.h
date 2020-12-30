@@ -21,8 +21,8 @@
 #ifndef LINUXINTERFACE_H
 #define LINUXINTERFACE_H
 
-#include <QObject>
 #include "abstractinterface.h"
+#include <QObject>
 
 class LinuxInterface : public AbstractInterface
 {
@@ -53,10 +53,7 @@ public:
     static QImage contactPhoto(const QString &id);
 
 private:
-    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
-            + ("/kpeoplevcard");
+    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + ("/kpeoplevcard");
 };
 
 #endif // LINUXINTERFACE_H
-
-

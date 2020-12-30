@@ -39,7 +39,6 @@ private:
      */
     FMH::MODEL_LIST list;
 
-
     void filter();
     void getList();
 
