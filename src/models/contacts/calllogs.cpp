@@ -58,6 +58,8 @@ CallLogs::ORDER CallLogs::getOrder() const
 
 void CallLogs::getList(const bool &cached)
 {
+    Q_UNUSED(cached)
+    
     QFutureWatcher<FMH::MODEL_LIST> *watcher = new QFutureWatcher<FMH::MODEL_LIST>;
     connect(watcher, &QFutureWatcher<FMH::MODEL_LIST>::finished, [=]() {
         emit this->preListChanged();

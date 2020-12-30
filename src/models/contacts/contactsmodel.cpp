@@ -138,7 +138,7 @@ void ContactsModel::filter()
     FMH::MODEL_LIST res;
 
     if (this->m_query.contains("=")) {
-        auto q = this->m_query.split("=", QString::SkipEmptyParts);
+        auto q = this->m_query.split("=", Qt::SkipEmptyParts);
         if (q.size() == 2) {
             for (auto item : this->list) {
                 if (item[FMH::MODEL_NAME_KEY[q.first().trimmed()]].replace(" ", "").contains(q.last().trimmed()))
