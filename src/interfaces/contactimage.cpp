@@ -6,6 +6,13 @@
 #endif
 #include <QDebug>
 
+ContactImage::ContactImage(ImageType type)
+    : QQuickImageProvider(type, Flags())
+    , no_image(QImage(":/portrait.jpg"))
+{
+    //    this->blockSignals(false);
+}
+
 ContactImage::ContactImage(ImageType type, Flags flags)
     : QQuickImageProvider(type, flags)
     , no_image(QImage(":/portrait.jpg"))

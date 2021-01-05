@@ -34,14 +34,10 @@ private:
 public:
     explicit LinuxInterface(QObject *parent = nullptr);
 
-    void getContacts() override final;
-
     FMH::MODEL getContact(const QString &id) override final;
-
+    void getContacts() override final;
     bool insertContact(const FMH::MODEL &contact) override final;
-
     bool updateContact(const QString &id, const FMH::MODEL &contact) override final;
-
     bool removeContact(const QString &id) override final;
 
     /**

@@ -8,7 +8,8 @@ class ContactImage : public QObject, public QQuickImageProvider
 {
     Q_OBJECT
 public:
-    ContactImage(ImageType type, Flags flags = nullptr);
+    ContactImage(ImageType type);
+    ContactImage(ImageType type, Flags flags);
     QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize) override;
 
 public slots:

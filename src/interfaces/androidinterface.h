@@ -13,16 +13,14 @@ public:
     static AndroidInterface *getInstance();
     void call(const QString &tel) const;
 
-    bool insertContact(const FMH::MODEL &contact) const override final;
-
-    FMH::MODEL_LIST getAccounts(const GET_TYPE &type = GET_TYPE::CACHED);
-    void getContacts(const GET_TYPE &type = GET_TYPE::CACHED);
-    void getContacts() override final;
-
     void getCallLogs();
 
-    FMH::MODEL getContact(const QString &id) const override final;
-    bool updateContact(const QString &id, const FMH::MODEL &contact) const override final;
+    FMH::MODEL_LIST getAccounts(const GET_TYPE &type = GET_TYPE::CACHED);
+    FMH::MODEL getContact(const QString &id) override final;
+    void getContacts(const GET_TYPE &type = GET_TYPE::CACHED);
+    void getContacts() override final;
+    bool insertContact(const FMH::MODEL &contact) override final;
+    bool updateContact(const QString &id, const FMH::MODEL &contact) override final;
     bool removeContact(const QString &id) override final;
 
 private:

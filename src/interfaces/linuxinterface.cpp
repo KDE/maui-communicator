@@ -92,7 +92,7 @@ void LinuxInterface::getContacts()
         const auto uri = model.get(i, KPeople::PersonsModel::PersonUriRole).toString();
 
         KPeople::PersonData person(uri);
-        auto contact = FMH::MODEL{
+        auto contact = FMH::MODEL {
             {FMH::MODEL_KEY::ID, person.personUri()}, {FMH::MODEL_KEY::N, person.name()}, {FMH::MODEL_KEY::EMAIL, person.email()}, {FMH::MODEL_KEY::TEL, person.contactCustomProperty("phoneNumber").toString()},
             //        {FMH::MODEL_KEY::PHOTO, person.pictureUrl().toString()}
         };

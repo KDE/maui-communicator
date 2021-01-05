@@ -27,7 +27,7 @@ void AndroidInterface::call(const QString &tel) const
     MAUIAndroid::call(tel);
 }
 
-bool AndroidInterface::insertContact(const FMH::MODEL &contact) const
+bool AndroidInterface::insertContact(const FMH::MODEL &contact)
 {
     qDebug() << "ADDING CONTACT TO ACCOUNT" << contact;
     MAUIAndroid::addContact(contact[FMH::MODEL_KEY::N],
@@ -81,7 +81,7 @@ FMH::MODEL AndroidInterface::getContact(const QString &id) const
     return FMH::toModel(MAUIAndroid::getContact(id));
 }
 
-bool AndroidInterface::updateContact(const QString &id, const FMH::MODEL &contact) const
+bool AndroidInterface::updateContact(const QString &id, const FMH::MODEL &contact)
 {
     for (const auto &key : contact.keys())
         MAUIAndroid::updateContact(id, FMH::MODEL_NAME[key], contact[key]);

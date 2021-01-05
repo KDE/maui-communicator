@@ -40,38 +40,14 @@ public:
      * getContacts must be done async and
      * emit a signal with FMH::MODEL_LIST representing the contacts
      */
-
-    virtual void getContacts() const
-    {
-    }
     virtual void getContacts()
     {
-    }
-
-    /**
-     * getAccounts returns a FMH::MODEL_LIST
-     * representing the avalible accounts handling the contacts
-     */
-
-    virtual FMH::MODEL_LIST getAccounts(...) const
-    {
-        return FMH::MODEL_LIST();
-    }
-    virtual FMH::MODEL_LIST getAccounts(...)
-    {
-        return FMH::MODEL_LIST();
     }
 
     /**
      * getContact returns a contact represented by a FMH::MODEL,
      * to do so, it needs a valid id
      */
-
-    virtual FMH::MODEL getContact(const QString &id) const
-    {
-        Q_UNUSED(id)
-        return FMH::MODEL();
-    }
     virtual FMH::MODEL getContact(const QString &id)
     {
         Q_UNUSED(id)
@@ -85,12 +61,6 @@ public:
      *  FMH::MODEL_KEY::ACCOUNT = name of the account
      *  FMH::MODEL_KEY::ACCOUNT_TYPE = type of the account
      */
-
-    virtual bool insertContact(const FMH::MODEL &contact) const
-    {
-        Q_UNUSED(contact)
-        return false;
-    }
     virtual bool insertContact(const FMH::MODEL &contact)
     {
         Q_UNUSED(contact)
@@ -102,13 +72,6 @@ public:
      * and the up-to-date values represented as a FMH::MODEL,
      * and returns whether the contact was sucessfulyl updated or not
      */
-
-    virtual bool updateContact(const QString &id, const FMH::MODEL &contact) const
-    {
-        Q_UNUSED(id)
-        Q_UNUSED(contact)
-        return false;
-    }
     virtual bool updateContact(const QString &id, const FMH::MODEL &contact)
     {
         Q_UNUSED(id)
@@ -120,16 +83,19 @@ public:
      * removeContact takes the id of the contact to be removed and return
      * whether the contact was sucesfully removed or not
      */
-
-    virtual bool removeContact(const QString &id) const
-    {
-        Q_UNUSED(id)
-        return false;
-    }
     virtual bool removeContact(const QString &id)
     {
         Q_UNUSED(id)
         return false;
+    }
+
+    /**
+     * getAccounts returns a FMH::MODEL_LIST
+     * representing the avalible accounts handling the contacts
+     */
+    virtual FMH::MODEL_LIST getAccounts(...)
+    {
+        return FMH::MODEL_LIST();
     }
 
 signals:
