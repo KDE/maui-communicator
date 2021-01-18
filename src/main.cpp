@@ -10,35 +10,18 @@
 #include <QApplication>
 #endif
 
-#ifdef STATIC_MAUIKIT
-#include "3rdparty/mauikit/src/mauikit.h"
-#include "mauiapp.h"
-#else
 #include <MauiKit/mauiapp.h>
-#endif
-
-#if defined Q_OS_MACOS || defined Q_OS_WIN
-#include <KF5/KI18n/KLocalizedString>
-#else
 #include <KI18n/KLocalizedString>
-#endif
 
 #include "contactimage.h"
-#include "src/models/contacts/calllogs.h"
-#include "src/models/contacts/contactsmodel.h"
+#include "contacts/calllogs.h"
+#include "contacts/contactsmodel.h"
 
-#ifdef STATIC_MAUIKIT
-#include "./3rdparty/mauikit/src/mauikit.h"
-#include <QStyleHints>
-#endif
-
-#ifndef STATIC_MAUIKIT
-#include "communicator_version.h"
-#endif
+#include "../communicator_version.h"
 
 #define COMMUNICATOR_URI "org.maui.communicator"
 
-int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setAttribute(Qt::AA_DontCreateNativeWidgetSiblings);
@@ -83,14 +66,6 @@ int main(int argc, char *argv[])
     about.processCommandLine(&parser);
 
     QQmlApplicationEngine engine;
-
-#ifdef STATIC_KIRIGAMI
-    KirigamiPlugin::getInstance().registerTypes();
-#endif
-
-#ifdef STATIC_MAUIKIT
-    MauiKit::getInstance().registerTypes();
-#endif
 
     engine.addImageProvider("contact", new ContactImage(QQuickImageProvider::ImageType::Image));
     qmlRegisterType<ContactsModel>(COMMUNICATOR_URI, 1, 0, "ContactsList");

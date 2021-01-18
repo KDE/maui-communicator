@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>portrait.jpg</file>
+        <file>view-contacts.svg</file>
+        <file>list-add-user.svg</file>
+        <file>amarok_artist.svg</file>
+        <file>star.svg</file>
+        <file>communicator.svg</file>
+        <file>communicator48.png</file>
+        <file>communicator64.png</file>
+        <file>communicator96.png</file>
+    </qresource>
+</RCC>
