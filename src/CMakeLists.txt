@@ -77,6 +77,8 @@ target_link_libraries(${PROJECT_NAME} MauiKit Qt5::Sql Qt5::Qml Qt5::Svg Qt5::Xm
 if(ANDROID)
     target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras)
 #    kde_source_files_enable_exceptions(pix pix.cpp)
+else()
+    target_link_libraries(${PROJECT_NAME} KF5::Contacts KF5::People)
 endif()
 
 
