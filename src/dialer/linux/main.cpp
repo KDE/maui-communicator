@@ -19,34 +19,33 @@
 
 #include <QApplication>
 
-#include "dialerutils.h"
 #include "call-handler.h"
+#include "dialerutils.h"
 
-#include <TelepathyQt/Types>
-#include <TelepathyQt/Debug>
-#include <TelepathyQt/ClientRegistrar>
+#include <TelepathyQt/Account>
 #include <TelepathyQt/CallChannel>
 #include <TelepathyQt/ChannelClassSpec>
 #include <TelepathyQt/ChannelFactory>
-#include <TelepathyQt/Account>
+#include <TelepathyQt/ClientRegistrar>
+#include <TelepathyQt/Debug>
+#include <TelepathyQt/Types>
 
-#include <klocalizedstring.h>
-#include <qcommandlineparser.h>
-#include <qcommandlineoption.h>
 #include <QQuickItem>
 #include <QtQml>
+#include <klocalizedstring.h>
+#include <qcommandlineoption.h>
+#include <qcommandlineparser.h>
 
-#include <kpackage/package.h>
-#include <kpackage/packageloader.h>
+#include <KAboutData>
+#include <KDBusService>
 #include <QQmlContext>
 #include <QQmlEngine>
 #include <QQmlExpression>
 #include <QQmlProperty>
 #include <QQuickWindow>
 #include <kdeclarative/qmlobject.h>
-#include <KAboutData>
-#include <KDBusService>
-
+#include <kpackage/package.h>
+#include <kpackage/packageloader.h>
 
 void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
@@ -61,11 +60,21 @@ void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QS
     out << context.function << ":" << context.line << " ";
 
     switch (type) {
-        case QtDebugMsg:	  out << "DBG"; break;
-        case QtInfoMsg:     out << "NFO"; break;
-        case QtWarningMsg:  out << "WRN"; break;
-        case QtCriticalMsg: out << "CRT"; break;
-        case QtFatalMsg:    out << "FTL"; break;
+    case QtDebugMsg:
+        out << "DBG";
+        break;
+    case QtInfoMsg:
+        out << "NFO";
+        break;
+    case QtWarningMsg:
+        out << "WRN";
+        break;
+    case QtCriticalMsg:
+        out << "CRT";
+        break;
+    case QtFatalMsg:
+        out << "FTL";
+        break;
     }
 
     out << " " << msg << '\n';
@@ -90,7 +99,7 @@ int main(int argc, char **argv)
     const QString description = i18n("Plasma Phone Dialer");
     const char version[] = PROJECT_VERSION;
 
-//     app.setQuitOnLastWindowClosed(false);
+    //     app.setQuitOnLastWindowClosed(false);
     app.setApplicationVersion(version);
     app.setOrganizationDomain("kde.org");
 
@@ -100,9 +109,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.setApplicationDescription(description);
 
-    QCommandLineOption daemonOption(QStringList() << QStringLiteral("d") <<
-                                 QStringLiteral("daemon"),
-                                 i18n("Daemon mode. run without displaying anything."));
+    QCommandLineOption daemonOption(QStringList() << QStringLiteral("d") << QStringLiteral("daemon"), i18n("Daemon mode. run without displaying anything."));
 
     parser.addPositionalArgument("number", i18n("Call the given number"));
 
@@ -112,43 +119,28 @@ int main(int argc, char **argv)
 
     Tp::registerTypes();
 
-    Tp::AccountFactoryPtr accountFactory = Tp::AccountFactory::create(QDBusConnection::sessionBus(),
-                                                                      Tp::Features() << Tp::Account::FeatureCore
-    );
+    Tp::AccountFactoryPtr accountFactory = Tp::AccountFactory::create(QDBusConnection::sessionBus(), Tp::Features() << Tp::Account::FeatureCore);
 
-    Tp::ConnectionFactoryPtr connectionFactory = Tp::ConnectionFactory::create(QDBusConnection::sessionBus(),
-                                                                               Tp::Features() << Tp::Connection::FeatureCore
-                                                                                              << Tp::Connection::FeatureSelfContact
-                                                                                              << Tp::Connection::FeatureConnected
-    );
+    Tp::ConnectionFactoryPtr connectionFactory = Tp::ConnectionFactory::create(QDBusConnection::sessionBus(), Tp::Features() << Tp::Connection::FeatureCore << Tp::Connection::FeatureSelfContact << Tp::Connection::FeatureConnected);
 
     Tp::ChannelFactoryPtr channelFactory = Tp::ChannelFactory::create(QDBusConnection::sessionBus());
     channelFactory->addCommonFeatures(Tp::Channel::FeatureCore);
-    channelFactory->addFeaturesForCalls(Tp::Features() << Tp::CallChannel::FeatureContents
-                                                       << Tp::CallChannel::FeatureCallState
-                                                       << Tp::CallChannel::FeatureCallMembers
-                                                       << Tp::CallChannel::FeatureLocalHoldState
-    );
+    channelFactory->addFeaturesForCalls(Tp::Features() << Tp::CallChannel::FeatureContents << Tp::CallChannel::FeatureCallState << Tp::CallChannel::FeatureCallMembers << Tp::CallChannel::FeatureLocalHoldState);
 
-//     channelFactory->addFeaturesForTextChats(Tp::Features() << Tp::TextChannel::FeatureMessageQueue
-//                                                            << Tp::TextChannel::FeatureMessageSentSignal
-//                                                            << Tp::TextChannel::FeatureChatState
-//                                                            << Tp::TextChannel::FeatureMessageCapabilities);
+    //     channelFactory->addFeaturesForTextChats(Tp::Features() << Tp::TextChannel::FeatureMessageQueue
+    //                                                            << Tp::TextChannel::FeatureMessageSentSignal
+    //                                                            << Tp::TextChannel::FeatureChatState
+    //                                                            << Tp::TextChannel::FeatureMessageCapabilities);
 
-    Tp::ContactFactoryPtr contactFactory = Tp::ContactFactory::create(Tp::Features() << Tp::Contact::FeatureAlias
-                                                                                     << Tp::Contact::FeatureAvatarData
-    );
+    Tp::ContactFactoryPtr contactFactory = Tp::ContactFactory::create(Tp::Features() << Tp::Contact::FeatureAlias << Tp::Contact::FeatureAvatarData);
 
-    Tp::ClientRegistrarPtr registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory,
-                                                                   channelFactory, contactFactory);
+    Tp::ClientRegistrarPtr registrar = Tp::ClientRegistrar::create(accountFactory, connectionFactory, channelFactory, contactFactory);
 
-    Tp::AccountPtr simAccount = Tp::Account::create(TP_QT_ACCOUNT_MANAGER_BUS_NAME, QStringLiteral("/org/freedesktop/Telepathy/Account/ofono/ofono/account0"),
-                                                    connectionFactory, channelFactory);
-
+    Tp::AccountPtr simAccount = Tp::Account::create(TP_QT_ACCOUNT_MANAGER_BUS_NAME, QStringLiteral("/org/freedesktop/Telepathy/Account/ofono/ofono/account0"), connectionFactory, channelFactory);
 
     const QString packagePath("org.kde.phone.dialer");
 
-    //usually we have an ApplicationWindow here, so we do not need to create a window by ourselves
+    // usually we have an ApplicationWindow here, so we do not need to create a window by ourselves
     auto *obj = new KDeclarative::QmlObject();
     obj->setTranslationDomain(packagePath);
     obj->setInitializationDelayed(true);
@@ -175,8 +167,8 @@ int main(int argc, char **argv)
         aboutData.addAuthor(author.name(), author.task(), author.emailAddress(), author.webAddress(), author.ocsUsername());
     }
 
-    //The root is not a window?
-    //have to use a normal QQuickWindow since the root item is already created
+    // The root is not a window?
+    // have to use a normal QQuickWindow since the root item is already created
     QWindow *window = qobject_cast<QWindow *>(obj->rootObject());
     if (window) {
         QObject::connect(&service, &KDBusService::activateRequested, [=](const QStringList &arguments, const QString &workingDirectory) {

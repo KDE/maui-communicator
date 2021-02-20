@@ -20,34 +20,34 @@
  */
 #include "linuxinterface.h"
 
-#include <QDebug>
-#include <QFile>
-#include <QStandardPaths>
-#include <QCryptographicHash>
 #include <KContacts/Addressee>
 #include <KContacts/VCardConverter>
 #include <KPeople/KPeople/PersonsModel>
-#include <KPeople/PersonData>
 #include <KPeople/KPeopleBackend/AbstractContact>
+#include <KPeople/PersonData>
+#include <QCryptographicHash>
+#include <QDebug>
 #include <QDirIterator>
+#include <QFile>
+#include <QStandardPaths>
 #include <algorithm>
 
 using namespace KContacts;
-LinuxInterface::LinuxInterface(QObject *parent) : AbstractInterface(parent) {}
-
+LinuxInterface::LinuxInterface(QObject *parent)
+    : AbstractInterface(parent)
+{
+}
 
 static FMH::MODEL vCardData(const QString &url)
 {
     FMH::MODEL res;
     QFile file(url);
-    if (!(file.exists()))
-    {
+    if (!(file.exists())) {
         qWarning() << "Can't read vcard, file doesn't exist";
         return res;
     }
 
-    if (!file.open(QIODevice::ReadOnly))
-    {
+    if (!file.open(QIODevice::ReadOnly)) {
         qWarning() << "Couldn't update vCard: Couldn't open file for reading / writing.";
         return res;
     }
@@ -56,53 +56,46 @@ static FMH::MODEL vCardData(const QString &url)
 
     Addressee adr = converter.parseVCard(file.readAll());
 
-    qDebug()<< adr.url().toString() <<adr.customs() << adr.formattedName() << adr.fullEmail();
-    res = {
-//        {FMH::MODEL_KEY::ID, QStringLiteral("vcard:/")+url},
-//            {FMH::MODEL_KEY::N, adr.name()},
-            {FMH::MODEL_KEY::ORG, adr.organization()},
-            {FMH::MODEL_KEY::GENDER, adr.gender().gender()},
-            {FMH::MODEL_KEY::TITLE, adr.title()},
-            {FMH::MODEL_KEY::NOTE, adr.note()},
-            {FMH::MODEL_KEY::URL, adr.url().toString()},
-            {FMH::MODEL_KEY::FAV, adr.custom("fav", "fav")},
-//            {FMH::MODEL_KEY::EMAIL, adr.emails().join(",")},
-//            {FMH::MODEL_KEY::TEL, [phones = adr.phoneNumbers(PhoneNumber::Cell)]()
-//             {
-//                 return std::accumulate(phones.begin(), phones.end(), QStringList(), [](QStringList &value, const PhoneNumber &number) -> QStringList
-//                 {
-//                     return value << number.number();
-//                 });
-//             }().join(",")
-//            },
-            {FMH::MODEL_KEY::PHOTO, adr.photo().url()}
-          };
+    qDebug() << adr.url().toString() << adr.customs() << adr.formattedName() << adr.fullEmail();
+    res = {//        {FMH::MODEL_KEY::ID, QStringLiteral("vcard:/")+url},
+           //            {FMH::MODEL_KEY::N, adr.name()},
+           {FMH::MODEL_KEY::ORG, adr.organization()},
+           {FMH::MODEL_KEY::GENDER, adr.gender().gender()},
+           {FMH::MODEL_KEY::TITLE, adr.title()},
+           {FMH::MODEL_KEY::NOTE, adr.note()},
+           {FMH::MODEL_KEY::URL, adr.url().toString()},
+           {FMH::MODEL_KEY::FAV, adr.custom("fav", "fav")},
+           //            {FMH::MODEL_KEY::EMAIL, adr.emails().join(",")},
+           //            {FMH::MODEL_KEY::TEL, [phones = adr.phoneNumbers(PhoneNumber::Cell)]()
+           //             {
+           //                 return std::accumulate(phones.begin(), phones.end(), QStringList(), [](QStringList &value, const PhoneNumber &number) -> QStringList
+           //                 {
+           //                     return value << number.number();
+           //                 });
+           //             }().join(",")
+           //            },
+           {FMH::MODEL_KEY::PHOTO, adr.photo().url()}};
 
     file.close();
     return res;
 }
 
-
 void LinuxInterface::getContacts()
-{    
-//    QDirIterator it(this->path, {"*.vcf"}, QDir::Files | QDir::NoSymLinks | QDir::NoDotAndDotDot, QDirIterator::Subdirectories);
+{
+    //    QDirIterator it(this->path, {"*.vcf"}, QDir::Files | QDir::NoSymLinks | QDir::NoDotAndDotDot, QDirIterator::Subdirectories);
 
-//    while(it.hasNext())
+    //    while(it.hasNext())
     //        this->m_contacts <<
 
     KPeople::PersonsModel model;
-    for(auto i = 0 ; i< model.rowCount(); i++)
-    {
+    for (auto i = 0; i < model.rowCount(); i++) {
         const auto uri = model.get(i, KPeople::PersonsModel::PersonUriRole).toString();
 
         KPeople::PersonData person(uri);
-        auto contact = FMH::MODEL  {
-        {FMH::MODEL_KEY::ID, person.personUri()},
-        {FMH::MODEL_KEY::N, person.name()},
-        {FMH::MODEL_KEY::EMAIL, person.email()},
-        {FMH::MODEL_KEY::TEL, person.contactCustomProperty("phoneNumber").toString()},
-//        {FMH::MODEL_KEY::PHOTO, person.pictureUrl().toString()}
-    };
+        QMultiHash contact = FMH::MODEL {
+            {FMH::MODEL_KEY::ID, person.personUri()}, {FMH::MODEL_KEY::N, person.name()}, {FMH::MODEL_KEY::EMAIL, person.email()}, {FMH::MODEL_KEY::TEL, person.contactCustomProperty("phoneNumber").toString()},
+            //        {FMH::MODEL_KEY::PHOTO, person.pictureUrl().toString()}
+        };
         this->m_contacts << contact.unite(vCardData(QString(uri).replace("vcard:/", "")));
     }
 
@@ -123,7 +116,7 @@ FMH::MODEL LinuxInterface::getContact(const QString &id)
 
 bool LinuxInterface::insertContact(const FMH::MODEL &contact)
 {
-    qDebug()<< "TRYIN TO INSERT VACRD CONTACT"<< contact;
+    qDebug() << "TRYIN TO INSERT VACRD CONTACT" << contact;
     // addresses
     Addressee adr;
     adr.setName(contact[FMH::MODEL_KEY::N]);
@@ -159,8 +152,7 @@ bool LinuxInterface::insertContact(const FMH::MODEL &contact)
     hash.addData(adr.name().toUtf8());
     QFile file(this->path + "/" + hash.result().toHex() + ".vcf");
 
-    if (!file.open(QFile::WriteOnly))
-    {
+    if (!file.open(QFile::WriteOnly)) {
         qWarning() << "Couldn't save vCard: Couldn't open file for writing.";
         return false;
     }
@@ -193,83 +185,72 @@ bool LinuxInterface::updateContact(const QString &id, const FMH::MODEL &contact)
     VCardConverter converter;
     Addressee adr = converter.parseVCard(file.readAll());
 
-    for(const auto &key : contact.keys())
-    {
+    for (const auto &key : contact.keys()) {
         const auto data = contact[key];
-        qDebug()<< "updating filed:" << key << data;
-        switch(key)
-        {
-            case FMH::MODEL_KEY::N:
-            {
-                if (!data.isEmpty())
-                    adr.setName(data);
-                break;
-            }
+        qDebug() << "updating filed:" << key << data;
+        switch (key) {
+        case FMH::MODEL_KEY::N: {
+            if (!data.isEmpty())
+                adr.setName(data);
+            break;
+        }
 
-            case FMH::MODEL_KEY::TEL:
-            {
-                PhoneNumber::List phoneNums;
-                PhoneNumber phoneNum;
-                phoneNum.setNumber(data);
-                phoneNum.setType(PhoneNumber::Cell);
-                phoneNums.append(phoneNum);
-                adr.setPhoneNumbers(phoneNums);
-                break;
-            }
+        case FMH::MODEL_KEY::TEL: {
+            PhoneNumber::List phoneNums;
+            PhoneNumber phoneNum;
+            phoneNum.setNumber(data);
+            phoneNum.setType(PhoneNumber::Cell);
+            phoneNums.append(phoneNum);
+            adr.setPhoneNumbers(phoneNums);
+            break;
+        }
 
-            case FMH::MODEL_KEY::ORG:
-            {
-                adr.setOrganization(data);
-                break;
-            }
+        case FMH::MODEL_KEY::ORG: {
+            adr.setOrganization(data);
+            break;
+        }
 
-            case FMH::MODEL_KEY::TITLE:
-            {
-                adr.setTitle(data);
-                break;
-            }
+        case FMH::MODEL_KEY::TITLE: {
+            adr.setTitle(data);
+            break;
+        }
 
-            case FMH::MODEL_KEY::FAV:
-            {
-                adr.setCustoms({QString("%1:%2").arg(FMH::MODEL_NAME[FMH::MODEL_KEY::FAV],data)});
-                break;
-            }
+        case FMH::MODEL_KEY::FAV: {
+            adr.setCustoms({QString("%1:%2").arg(FMH::MODEL_NAME[FMH::MODEL_KEY::FAV], data)});
+            break;
+        }
 
-            case FMH::MODEL_KEY::EMAIL:
-            {
-                Email email;
-                email.setEmail(data);
-                adr.setEmailList({email});
-                break;
-            }
+        case FMH::MODEL_KEY::EMAIL: {
+            Email email;
+            email.setEmail(data);
+            adr.setEmailList({email});
+            break;
+        }
 
-            case FMH::MODEL_KEY::NOTE:
-            {
-                adr.setNote(data);
-                break;
-            }
+        case FMH::MODEL_KEY::NOTE: {
+            adr.setNote(data);
+            break;
+        }
 
-            case FMH::MODEL_KEY::GENDER:
-            {
-                adr.setGender(data);
-                break;
-            }
+        case FMH::MODEL_KEY::GENDER: {
+            adr.setGender(data);
+            break;
+        }
 
-            case FMH::MODEL_KEY::PHOTO:
-            {
-                Picture photo;
-                photo.setUrl(data);
-                adr.setPhoto(photo);
-                break;
-            }
+        case FMH::MODEL_KEY::PHOTO: {
+            Picture photo;
+            photo.setUrl(data);
+            adr.setPhoto(photo);
+            break;
+        }
 
-            case FMH::MODEL_KEY::URL:
-            {
-                adr.setUrl(data);
-                break;
-            }
+        case FMH::MODEL_KEY::URL: {
+            adr.setUrl(data);
+            break;
+        }
 
-            default: break;
+        default:
+            break;
         }
     }
 
@@ -283,8 +264,7 @@ bool LinuxInterface::updateContact(const QString &id, const FMH::MODEL &contact)
 
 bool LinuxInterface::removeContact(const QString &id)
 {
-    if (!(QUrl(id).scheme() == "vcard"))
-    {
+    if (!(QUrl(id).scheme() == "vcard")) {
         qWarning() << "uri of contact to remove is not a vcard, cannot remove.";
         return false;
     }
@@ -292,24 +272,21 @@ bool LinuxInterface::removeContact(const QString &id)
     return QFile::remove(QString(id).remove("vcard:/"));
 }
 
-
 QImage LinuxInterface::contactPhoto(const QString &id)
 {
     auto personUri = id;
 
-    if (!(QUrl(personUri).scheme() == "vcard"))
-    {
+    if (!(QUrl(personUri).scheme() == "vcard")) {
         qWarning() << "uri of contact is not a vcard, cannot get photo.";
         return QImage();
     }
 
     QFileInfo file(personUri.remove("vcard:/"));
-    if (!(file.exists()))
-    {
+    if (!(file.exists())) {
         qWarning() << "Can't read vcard, file doesn't exist";
         return QImage();
     }
 
-    qDebug()<< "IMAGE FILE REQUESTED"<< vCardData(personUri)[FMH::MODEL_KEY::PHOTO];
+    qDebug() << "IMAGE FILE REQUESTED" << vCardData(personUri)[FMH::MODEL_KEY::PHOTO];
     return QImage(vCardData(personUri)[FMH::MODEL_KEY::PHOTO].replace("file://", ""));
 }

@@ -17,23 +17,23 @@ class CallLogs : public MauiList
     Q_PROPERTY(CallLogs::ORDER order READ getOrder WRITE setOrder NOTIFY orderChanged)
 
 public:
-    enum SORTBY : uint_fast8_t
-    {
-        DATE = FMH::MODEL_KEY::DATE, //when the contact was last contacted
-        N = FMH::MODEL_KEY::N, //contact name
-        TEL = FMH::MODEL_KEY::TEL, //contact phone
-        DURATION = FMH::MODEL_KEY::DURATION, //how many times contacts has been messaged or called
+    enum SORTBY : uint_fast8_t {
+        DATE = FMH::MODEL_KEY::DATE, // when the contact was last contacted
+        N = FMH::MODEL_KEY::N, // contact name
+        TEL = FMH::MODEL_KEY::TEL, // contact phone
+        DURATION = FMH::MODEL_KEY::DURATION, // how many times contacts has been messaged or called
         TYPE = FMH::MODEL_KEY::TYPE,
         NONE
 
-    }; Q_ENUM(SORTBY)
+    };
+    Q_ENUM(SORTBY)
 
-    enum ORDER : uint_fast8_t
-    {
+    enum ORDER : uint_fast8_t {
         ASC,
         DESC
 
-    }; Q_ENUM(ORDER)
+    };
+    Q_ENUM(ORDER)
 
     explicit CallLogs(QObject *parent = nullptr);
     const FMH::MODEL_LIST &items() const override final;
@@ -59,7 +59,6 @@ signals:
 public slots:
     QVariantMap get(const int &index) const;
     void refresh();
-
 };
 
 #endif // CALLLOGS_H

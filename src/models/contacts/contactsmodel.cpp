@@ -14,13 +14,16 @@
 #endif
 
 #ifdef Q_OS_ANDROID
-ContactsModel::ContactsModel(QObject *parent) : MauiList(parent), syncer(AndroidInterface::getInstance())
+ContactsModel::ContactsModel(QObject *parent)
+    : MauiList(parent)
+    , syncer(AndroidInterface::getInstance())
 #else
-ContactsModel::ContactsModel(QObject *parent) : MauiList(parent), syncer(new LinuxInterface(this))
+ContactsModel::ContactsModel(QObject *parent)
+    : MauiList(parent)
+    , syncer(new LinuxInterface(this))
 #endif
 {
-    connect(syncer, &AbstractInterface::contactsReady, [this](FMH::MODEL_LIST contacts)
-    {
+    connect(syncer, &AbstractInterface::contactsReady, [this](FMH::MODEL_LIST contacts) {
         qDebug() << "CONATCTS READY AT MODEL 1" << contacts;
         emit this->preListChanged();
         this->list = contacts;
@@ -38,7 +41,7 @@ const FMH::MODEL_LIST &ContactsModel::items() const
 
 void ContactsModel::setQuery(const QString &query)
 {
-    if(this->m_query == query || query.isEmpty())
+    if (this->m_query == query || query.isEmpty())
         return;
 
     this->m_query = query;
@@ -57,7 +60,7 @@ QString ContactsModel::getQuery() const
 
 void ContactsModel::getList()
 {
-    qDebug()<< "TRYING TO SET FULL LIST";
+    qDebug() << "TRYING TO SET FULL LIST";
     this->syncer->getContacts();
 }
 
@@ -65,26 +68,26 @@ bool ContactsModel::insert(const QVariantMap &map)
 {
     qDebug() << "INSERTING NEW CONTACT" << map;
 
-    if(map.isEmpty())
+    if (map.isEmpty())
         return false;
 
     const auto model = FMH::toModel(map);
-    if(!this->syncer->insertContact(model))
+    if (!this->syncer->insertContact(model))
         return false;
 
-    qDebug()<< "inserting new contact count" << this->list.count();
+    qDebug() << "inserting new contact count" << this->list.count();
     emit this->preItemAppended();
     this->list << model;
     emit this->postItemAppended();
 
-    qDebug()<< "inserting new contact count" << this->list.count();
+    qDebug() << "inserting new contact count" << this->list.count();
 
     return true;
 }
 
 bool ContactsModel::update(const QVariantMap &map, const int &index)
 {
-    if(index >= this->list.size() || index < 0)
+    if (index >= this->list.size() || index < 0)
         return false;
 
     const auto index_ = this->mappedIndex(index);
@@ -96,16 +99,14 @@ bool ContactsModel::update(const QVariantMap &map, const int &index)
     updatedItem[FMH::MODEL_KEY::ID] = oldItem[FMH::MODEL_KEY::ID];
 
     QVector<int> roles;
-    for(const auto &key : newItem.keys())
-    {
-        if(newItem[key] != oldItem[key])
-        {
+    for (const auto &key : newItem.keys()) {
+        if (newItem[key] != oldItem[key]) {
             updatedItem.insert(key, newItem[key]);
             roles << key;
         }
     }
 
-    qDebug()<< "trying to update contact:" << oldItem << "\n\n" << newItem << "\n\n" << updatedItem;
+    qDebug() << "trying to update contact:" << oldItem << "\n\n" << newItem << "\n\n" << updatedItem;
 
     this->syncer->updateContact(oldItem[FMH::MODEL_KEY::ID], newItem);
     this->list[index_] = newItem;
@@ -116,14 +117,13 @@ bool ContactsModel::update(const QVariantMap &map, const int &index)
 
 bool ContactsModel::remove(const int &index)
 {
-    if(index >= this->list.size() || index < 0)
+    if (index >= this->list.size() || index < 0)
         return false;
 
     const auto index_ = this->mappedIndex(index);
 
-    qDebug()<< "trying to remove :" << this->list[index_][FMH::MODEL_KEY::ID];
-    if(this->syncer->removeContact(this->list[index_][FMH::MODEL_KEY::ID]))
-    {
+    qDebug() << "trying to remove :" << this->list[index_][FMH::MODEL_KEY::ID];
+    if (this->syncer->removeContact(this->list[index_][FMH::MODEL_KEY::ID])) {
         emit this->preItemRemoved(index_);
         this->list.removeAt(index_);
         emit this->postItemRemoved();
@@ -137,53 +137,49 @@ void ContactsModel::filter()
 {
     FMH::MODEL_LIST res;
 
-    if(this->m_query.contains("="))
-    {
-        auto q = this->m_query.split("=", QString::SkipEmptyParts);
-        if(q.size() == 2)
-        {
-            for(auto item : this->list)
-            {
-                if(item[FMH::MODEL_NAME_KEY[q.first().trimmed()]].replace(" ", "").contains(q.last().trimmed()))
+    if (this->m_query.contains("=")) {
+        auto q = this->m_query.split("=", Qt::SkipEmptyParts);
+        if (q.size() == 2) {
+            for (auto item : this->list) {
+                if (item[FMH::MODEL_NAME_KEY[q.first().trimmed()]].replace(" ", "").contains(q.last().trimmed()))
                     res << item;
             }
         }
 
         this->list = res;
     }
-
 }
 
 void ContactsModel::append(const QVariantMap &item)
 {
-    if(item.isEmpty())
+    if (item.isEmpty())
         return;
 
     emit this->preItemAppended();
 
     FMH::MODEL model;
-    for(auto key : item.keys())
+    for (auto key : item.keys())
         model.insert(FMH::MODEL_NAME_KEY[key], item[key].toString());
 
     qDebug() << "Appending item to list" << item;
     this->list << model;
 
-    qDebug()<< this->list;
+    qDebug() << this->list;
 
     emit this->postItemAppended();
 }
 
 void ContactsModel::append(const QVariantMap &item, const int &at)
 {
-    if(item.isEmpty())
+    if (item.isEmpty())
         return;
 
-    if(at > this->list.size() || at < 0)
+    if (at > this->list.size() || at < 0)
         return;
 
     const auto index_ = this->mappedIndex(at);
 
-    qDebug()<< "trying to append at" << index_ << item["title"];
+    qDebug() << "trying to append at" << index_ << item["title"];
 
     emit this->preItemAppendedAt(index_);
     this->list.insert(index_, FMH::toModel(item));

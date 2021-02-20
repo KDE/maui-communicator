@@ -21,8 +21,8 @@
 #ifndef LINUXINTERFACE_H
 #define LINUXINTERFACE_H
 
-#include <QObject>
 #include "abstractinterface.h"
+#include <QObject>
 
 class LinuxInterface : public AbstractInterface
 {
@@ -34,14 +34,10 @@ private:
 public:
     explicit LinuxInterface(QObject *parent = nullptr);
 
-    void getContacts() override final;
-
     FMH::MODEL getContact(const QString &id) override final;
-
+    void getContacts() override final;
     bool insertContact(const FMH::MODEL &contact) override final;
-
     bool updateContact(const QString &id, const FMH::MODEL &contact) override final;
-
     bool removeContact(const QString &id) override final;
 
     /**
@@ -53,10 +49,7 @@ public:
     static QImage contactPhoto(const QString &id);
 
 private:
-    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
-            + ("/kpeoplevcard");
+    const QString path = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + ("/kpeoplevcard");
 };
 
 #endif // LINUXINTERFACE_H
-
-

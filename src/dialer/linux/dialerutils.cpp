@@ -20,27 +20,27 @@
 
 #include <QDebug>
 
-#include <TelepathyQt/PendingOperation>
-#include <TelepathyQt/PendingChannelRequest>
-#include <TelepathyQt/PendingReady>
 #include <TelepathyQt/Constants>
-#include <TelepathyQt/PendingContacts>
-#include <TelepathyQt/Types>
 #include <TelepathyQt/ContactManager>
+#include <TelepathyQt/PendingChannelRequest>
+#include <TelepathyQt/PendingContacts>
+#include <TelepathyQt/PendingOperation>
+#include <TelepathyQt/PendingReady>
+#include <TelepathyQt/Types>
 
-#include "phonenumbers/phonenumberutil.h"
 #include "phonenumbers/asyoutypeformatter.h"
+#include "phonenumbers/phonenumberutil.h"
 
 DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
-: QObject(parent),
-  m_missedCalls(0),
-  m_simAccount(simAccount),
-  m_callDuration(0),
-  m_callContactAlias(QString())
+    : QObject(parent)
+    , m_missedCalls(0)
+    , m_simAccount(simAccount)
+    , m_callDuration(0)
+    , m_callContactAlias(QString())
 {
     Tp::PendingReady *op = m_simAccount->becomeReady(Tp::Features() << Tp::Account::FeatureCore);
 
-    connect(op, &Tp::PendingOperation::finished, [=](){
+    connect(op, &Tp::PendingOperation::finished, [=]() {
         if (op->isError()) {
             qWarning() << "SIM card account failed to get ready:" << op->errorMessage();
         } else {
@@ -49,22 +49,21 @@ DialerUtils::DialerUtils(const Tp::AccountPtr &simAccount, QObject *parent)
     });
 }
 
-DialerUtils::~DialerUtils()
-= default;
+DialerUtils::~DialerUtils() = default;
 
 void DialerUtils::dial(const QString &number)
 {
     // FIXME: this should be replaced by kpeople thing
     auto pendingContact = m_simAccount->connection()->contactManager()->contactsForIdentifiers(QStringList() << number);
 
-    connect(pendingContact, &Tp::PendingOperation::finished, [=](){
+    connect(pendingContact, &Tp::PendingOperation::finished, [=]() {
         if (pendingContact->contacts().size() < 1) {
             qWarning() << " no contacts";
             return;
         }
         qDebug() << "Starting call...";
         Tp::PendingChannelRequest *pendingChannel = m_simAccount->ensureAudioCall(pendingContact->contacts().first());
-        connect(pendingChannel, &Tp::PendingChannelRequest::finished, [=](){
+        connect(pendingChannel, &Tp::PendingChannelRequest::finished, [=]() {
             if (pendingChannel->isError()) {
                 qWarning() << "Error when requesting channel" << pendingChannel->errorMessage();
                 setCallState("failed");
@@ -78,7 +77,7 @@ QString DialerUtils::callState() const
     return m_callState;
 }
 
-const QString DialerUtils::formatNumber(const QString& number)
+const QString DialerUtils::formatNumber(const QString &number)
 {
     using namespace ::i18n::phonenumbers;
 
@@ -86,9 +85,9 @@ const QString DialerUtils::formatNumber(const QString& number)
     QLocale locale;
     QStringList qcountry = locale.name().split('_');
     QString countrycode(qcountry.constLast());
-    const char* country = countrycode.toUtf8().constData();
-    PhoneNumberUtil* util = PhoneNumberUtil::GetInstance();
-    AsYouTypeFormatter* formatter = util->PhoneNumberUtil::GetAsYouTypeFormatter(country);
+    const char *country = countrycode.toUtf8().constData();
+    PhoneNumberUtil *util = PhoneNumberUtil::GetInstance();
+    AsYouTypeFormatter *formatter = util->PhoneNumberUtil::GetAsYouTypeFormatter(country);
 
     // Normalize input
     string stdnumber = number.toUtf8().constData();
@@ -97,7 +96,7 @@ const QString DialerUtils::formatNumber(const QString& number)
     // Format
     string formatted;
     formatter->Clear();
-    for (char& c : stdnumber) {
+    for (char &c : stdnumber) {
         formatter->InputDigit(c, &formatted);
     }
     delete formatter;
