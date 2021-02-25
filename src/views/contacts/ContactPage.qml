@@ -206,7 +206,7 @@ Rectangle
 
                             Maui.Separator
                             {
-                                position: Qt.Horizontal
+                                 edge: Qt.BottomEdge
                                 anchors.bottom: parent.bottom
                                 anchors.left: parent.left
                                 anchors.right: parent.right
