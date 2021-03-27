@@ -44,29 +44,14 @@ StackView
             filterCaseSensitivity: Qt.CaseInsensitive
         }
 
-        headBar.leftContent:  Maui.ToolActions
+        headBar.leftContent: ToolButton
         {
-            autoExclusive: true
-            cyclic: true
-            expanded: headBar.width > Kirigami.Units.gridUnit * 32
+            enabled: _contactsList.count > 0
+           icon.name: _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? "view-list-icons" : "view-list-details"
 
-            currentIndex: _contactsPage.viewType === Maui.AltBrowser.ViewType.Grid ? 0 : 1
-            display: ToolButton.TextBesideIcon
-
-            Action
+            onClicked:
             {
-                icon.name: "view-list-icons"
-                text: i18n("Grid")
-                shortcut: "Ctrl+G"
-                onTriggered:  _contactsPage.viewType = Maui.AltBrowser.ViewType.Grid
-            }
-
-            Action
-            {
-                icon.name: "view-list-details"
-                text: i18n("List")
-                shortcut: "Ctrl+L"
-                onTriggered:  _contactsPage.viewType = Maui.AltBrowser.ViewType.List
+                _contactsPage.viewType =  _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? Maui.AltBrowser.ViewType.Grid : Maui.AltBrowser.ViewType.List
             }
         }
 
@@ -81,14 +66,10 @@ StackView
             onCleared: _contactsModel.filter = ""
         }
 
-        Maui.FloatingButton
+        headBar.rightContent: ToolButton
         {
             visible: control.showNewButton
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            anchors.margins: Maui.Style.space.big * 2
-            height: Maui.Style.toolBarHeight
-            width: height
+
             icon.name: "list-add-user"
             onClicked:
             {

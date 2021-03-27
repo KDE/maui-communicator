@@ -48,5 +48,5 @@ GenericName[sv]=Kontakthanterare
 GenericName[uk]=Керування контактами
 GenericName[x-test]=xxContacts Managerxx
 StartupNotify=true
-Icon=maui-communicator
+Icon=communicator
 MimeType=application/x-communicator;

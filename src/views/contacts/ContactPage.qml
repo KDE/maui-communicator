@@ -140,7 +140,7 @@ Rectangle
             Kirigami.ScrollablePage
             {
                 anchors.fill: parent
-                Kirigami.Theme.backgroundColor: "transparent"
+//                Kirigami.Theme.backgroundColor: "transparent"
                 padding: 0
                 leftPadding: padding
                 rightPadding: padding
@@ -206,7 +206,7 @@ Rectangle
 
                             Maui.Separator
                             {
-                                 edge: Qt.BottomEdge
+                                edge: Qt.BottomEdge
                                 anchors.bottom: parent.bottom
                                 anchors.left: parent.left
                                 anchors.right: parent.right
@@ -342,7 +342,7 @@ Rectangle
                     }
 
                     ContactField
-                                        {
+                    {
                         visible: contact.n || control.editing
                         editing: control.editing
 
