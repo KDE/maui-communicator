@@ -23,6 +23,7 @@
 
 #include "abstractinterface.h"
 #include <QObject>
+#include <QStandardPaths>
 
 class LinuxInterface : public AbstractInterface
 {

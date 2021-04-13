@@ -1,17 +1,15 @@
 #include "contactsmodel.h"
 #include "abstractinterface.h"
 
+#include <QDebug>
+
 #ifdef Q_OS_ANDROID
 #include "androidinterface.h"
 #else
 #include "linuxinterface.h"
 #endif
 
-#ifdef STATIC_MAUIKIT
-#include "fm.h"
-#else
-#include <MauiKit/fm.h>
-#endif
+#include <MauiKit/Core/fmh.h>
 
 #ifdef Q_OS_ANDROID
 ContactsModel::ContactsModel(QObject *parent)

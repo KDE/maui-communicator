@@ -15,38 +15,37 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}/models/contacts
     )
 
-if(ANDROID)
 set(communicator_SRCS
     main.cpp
     models/contacts/contactsmodel.cpp
     models/contacts/calllogs.cpp
-    interfaces/androidinterface.cpp
     interfaces/contactimage.cpp
+    communicator.cpp
     )
 
 set(communicator_HDRS
     models/contacts/contactsmodel.h
     models/contacts/calllogs.h
     interfaces/abstractinterface.h
-    interfaces/androidinterface.h
     interfaces/contactimage.h
+    communicator.h
     )
 
-else()
-    set(communicator_SRCS
-        main.cpp
-        models/contacts/contactsmodel.cpp
-        models/contacts/calllogs.cpp
-        interfaces/linuxinterface.cpp
-        interfaces/contactimage.cpp
+if(ANDROID)
+    set(communicator_android_SRCS
+        interfaces/androidinterface.cpp
         )
 
-    set(communicator_HDRS
-        models/contacts/contactsmodel.h
-        models/contacts/calllogs.h
-        interfaces/abstractinterface.h
+    set(communicator_android_HDRS
+        interfaces/androidinterface.h
+        )
+else()
+    set(communicator_linux_SRCS
+        interfaces/linuxinterface.cpp
+        )
+
+    set(communicator_linux_HDRS
         interfaces/linuxinterface.h
-        interfaces/contactimage.h
         )
 endif()
 
@@ -58,12 +57,14 @@ set(communicator_ASSETS
 if(ANDROID)
     add_library(${PROJECT_NAME} SHARED
         ${communicator_SRCS}
+        ${communicator_android_SRCS}
         ${communicator_HDRS}
         ${communicator_ASSETS}
         )
 else()
     add_executable(${PROJECT_NAME}
         ${communicator_SRCS}
+        ${communicator_linux_SRCS}
         ${communicator_HDRS}
         ${communicator_ASSETS}
         )
@@ -72,7 +73,7 @@ endif()
 target_compile_definitions(${PROJECT_NAME}
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
-target_link_libraries(${PROJECT_NAME} MauiKit Qt5::Sql Qt5::Qml Qt5::Svg Qt5::Xml Qt5::Concurrent Qt5::QuickControls2 Qt5::Positioning KF5::I18n)
+target_link_libraries(${PROJECT_NAME} MauiKit MauiKit::FileBrowsing Qt5::Sql Qt5::Qml Qt5::Svg Qt5::Xml Qt5::Concurrent Qt5::QuickControls2 Qt5::Positioning KF5::I18n KF5::Service)
 
 if(ANDROID)
     target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras)

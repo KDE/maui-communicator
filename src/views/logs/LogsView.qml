@@ -1,6 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.3
-import org.kde.mauikit 1.0 as Maui
+import org.mauikit.controls 1.0 as Maui
 import org.maui.communicator 1.0
 
 import "../contacts"
@@ -94,7 +94,7 @@ Maui.Page
             id: _delegate
 
             label1.text: model.n
-            label2.text: Maui.FM.formatDate(model.date, "HH:mm", "dd-MM-yyyy HH:mm") + " / " + new Date(model.duration * 1000).toISOString().substr(11, 8);
+            label2.text: Maui.Handy.formatDate(model.date, "HH:mm", "dd-MM-yyyy HH:mm") + " / " + new Date(model.duration * 1000).toISOString().substr(11, 8);
             label3.text: model.type
 
             height: Maui.Style.unit * 60

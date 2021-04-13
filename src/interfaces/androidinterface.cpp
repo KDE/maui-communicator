@@ -1,14 +1,16 @@
 #include "androidinterface.h"
-#include "mauiandroid.h"
+
 #include <QDomDocument>
 #include <QException>
-#include "fmh.h"
 #include <QFuture>
 #include <QFutureWatcher>
 #include <QtConcurrent/QtConcurrentRun>
 #include <QtConcurrent>
 
 #include <QImage>
+
+#include <MauiKit/Core/mauiandroid.h>
+#include <MauiKit/Core/fmh.h>
 
 //class InterfaceConnFailedException : public QException
 //{
