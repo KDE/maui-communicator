@@ -7,6 +7,7 @@ import org.kde.kirigami 2.7 as Kirigami
 import org.mauikit.texteditor 1.0 as TE
 import org.mauikit.controls 1.3 as Maui
 
+import org.maui.communicator 1.0 as C
 
 Maui.Dialog
 {
@@ -16,12 +17,16 @@ Maui.Dialog
     maxWidth: Maui.Style.unit * 500
     maxHeight: maxWidth
 
+    acceptButton.text: i18n("Send...")
+    acceptButton.icon.name: "mail-send"
+    rejectButton.visible: false
+
     page.margins: 0
 
     onAccepted:
     {
         if(!Kirigami.Settings.isMobile && !Maui.Handy.isAndroid)
-            Maui.KDE.email(contact.email, "", "", _subjectTextField.text, _editor.text)
+            C.Communicator.email(contact.email, "", "", _subjectTextField.text, _editor.text)
         else if(!Maui.Handy.isAndroid)
         {
             if(_combobox.currentText === contact.email)
@@ -40,11 +45,6 @@ Maui.Dialog
         }
         close();
     }
-
-    acceptButton.text: i18n("Send...")
-    acceptButton.icon.name: "mail-send"
-    rejectButton.visible: false
-
 
     headBar.middleContent: ComboBox
     {
@@ -68,7 +68,7 @@ Maui.Dialog
         popup.z: control.z + 1
     }
 
-    TE.TextEditor
+    stack: TE.TextEditor
     {
         id: _editor
         Layout.fillHeight: true
