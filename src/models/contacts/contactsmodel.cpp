@@ -27,6 +27,7 @@ ContactsModel::ContactsModel(QObject *parent)
         this->list = contacts;
         this->filter();
         emit this->postListChanged();
+        emit this->countChanged();
     });
 
     this->getList();

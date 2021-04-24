@@ -46,8 +46,8 @@ StackView
 
         headBar.leftContent: ToolButton
         {
-            enabled: _contactsList.count > 0
-           icon.name: _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? "view-list-icons" : "view-list-details"
+            //            enabled: _contactsModel.count > 0
+            icon.name: _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? "view-list-icons" : "view-list-details"
 
             onClicked:
             {
@@ -77,7 +77,7 @@ StackView
             }
         }
 
-        gridView.itemSize: 140
+        gridView.itemSize: Math.min(140, Math.floor(width/3))
 
         listView.spacing: Maui.Style.space.big
         listView.flickable.header: Item
@@ -85,6 +85,7 @@ StackView
             visible: showAccountFilter
             height: visible ? Maui.Style.toolBarHeight * 1.5 : 0
             width: visible ? parent.width : 0
+
             ComboBox
             {
                 id: _accountsCombobox
@@ -280,16 +281,11 @@ StackView
                     icon.name: "call-start"
                     icon.color: Kirigami.Theme.textColor
 
-                    onTriggered:
-                    {
-                        if(Maui.Handy.isAndroid)
-                            Maui.Android.call(model.tel)
-                        else
-                            Qt.openUrlExternally("call://" + model.tel)
+                    onTriggered:  _communicator.call(model.tel)
 
-                    }
                 }
             ]
+
             onClicked:
             {
                 _contactsPage.currentIndex = index
@@ -338,7 +334,7 @@ StackView
 
                     }else
                     {
-                         control.pop()
+                        control.pop()
                     }
                 }
             }
@@ -351,6 +347,8 @@ StackView
 
                 acceptButton.text : i18n("Cancel")
                 rejectButton.text : i18n("Discard")
+
+                page.margins: Maui.Style.space.big
 
                 onAccepted: close()
                 onRejected:

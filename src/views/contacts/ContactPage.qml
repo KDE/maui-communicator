@@ -30,6 +30,8 @@ Rectangle
         title: i18n("Remove contact...")
         message: i18n("Are you sure you want to remove this contact? This action can not be undone.")
 
+        page.margins: Maui.Style.space.big
+
         acceptButton.text: i18n("Cancel")
         rejectButton.text: i18n("Remove")
         onAccepted: close()
@@ -408,11 +410,7 @@ Rectangle
 
                             onTriggered:
                             {
-                                if(Maui.Handy.isAndroid)
-                                    Maui.Android.call(model.tel)
-                                else
-                                    Qt.openUrlExternally("call://" + model.tel)
-
+                                _communicator.call(control.contact.tel)
                             }
                         }
 
@@ -426,9 +424,7 @@ Rectangle
                                 Maui.Handy.copyTextToClipboard(control.contact.tel)
                             }
                         }
-
                     }
-
 
                     ContactField
                     {

@@ -1,23 +1,23 @@
 #include "androidinterface.h"
 
 #include <QDomDocument>
-#include <QException>
 #include <QFuture>
 #include <QFutureWatcher>
 #include <QtConcurrent/QtConcurrentRun>
 #include <QtConcurrent>
+#include <QException>
 
 #include <QImage>
 
 #include <MauiKit/Core/mauiandroid.h>
 #include <MauiKit/Core/fmh.h>
 
-//class InterfaceConnFailedException : public QException
-//{
-//public:
-//    void raise() const { throw *this; }
-//    InterfaceConnFailedException *clone() const { return new InterfaceConnFailedException(*this); }
-//};
+class InterfaceConnFailedException : public QException
+{
+public:
+    void raise() const { throw *this; }
+    InterfaceConnFailedException *clone() const { return new InterfaceConnFailedException(*this); }
+};
 
 
 AndroidInterface *AndroidInterface::getInstance()
@@ -30,35 +30,6 @@ AndroidInterface *AndroidInterface::getInstance()
         qDebug() << "getInstance(AndroidInterface): previous AndroidInterface instance\n";
         return instance;
     }
-}
-
-void AndroidInterface::call(const QString &tel)
-{
-    QAndroidJniEnvironment _env;
-       QAndroidJniObject activity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;");   //activity is valid
-       if (_env->ExceptionCheck()) {
-           _env->ExceptionClear();
-//           throw InterfaceConnFailedException();
-       }
-       if ( activity.isValid() )
-       {
-           qDebug()<< "trying to call from senitents" << tel;
-
-           QAndroidJniObject::callStaticMethod<void>("com/kde/maui/tools/SendIntent",
-                                                     "call",
-                                                     "(Landroid/app/Activity;Ljava/lang/String;)V",
-                                                     activity.object<jobject>(),
-                                                     QAndroidJniObject::fromString(tel).object<jstring>());
-
-
-           if (_env->ExceptionCheck())
-           {
-               _env->ExceptionClear();
-//               throw InterfaceConnFailedException();
-           }
-       }/*else
-           throw InterfaceConnFailedException();*/
-
 }
 
 bool AndroidInterface::insertContact(const FMH::MODEL &contact)
@@ -270,3 +241,71 @@ FMH::MODEL_LIST AndroidInterface::fetchAccounts()
     }
     return data;
 }
+
+void AndroidInterface::call(const QString &tel)
+{
+    QAndroidJniEnvironment _env;
+       QAndroidJniObject activity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;");   //activity is valid
+       if (_env->ExceptionCheck()) {
+           _env->ExceptionClear();
+           throw InterfaceConnFailedException();
+       }
+       if ( activity.isValid() )
+       {
+           qDebug()<< "trying to call from senitents" << tel;
+
+           QAndroidJniObject::callStaticMethod<void>("com/kde/maui/tools/SendIntent",
+                                                     "call",
+                                                     "(Landroid/app/Activity;Ljava/lang/String;)V",
+                                                     activity.object<jobject>(),
+                                                     QAndroidJniObject::fromString(tel).object<jstring>());
+
+
+           if (_env->ExceptionCheck())
+           {
+               _env->ExceptionClear();
+               throw InterfaceConnFailedException();
+           }
+       }else
+           throw InterfaceConnFailedException();
+
+}
+
+void AndroidInterface::sendSMS(const QString &tel, const QString &subject, const QString &message)
+{
+    qDebug() << "trying to send sms text";
+    QAndroidJniEnvironment _env;
+    QAndroidJniObject activity = QAndroidJniObject::callStaticObjectMethod("org/qtproject/qt5/android/QtNative", "activity", "()Landroid/app/Activity;"); // activity is valid
+    if (_env->ExceptionCheck()) {
+        _env->ExceptionClear();
+        throw InterfaceConnFailedException();
+    }
+    if (activity.isValid()) {
+        QAndroidJniObject::callStaticMethod<void>("com/kde/maui/tools/SendIntent",
+                                                  "sendSMS",
+                                                  "(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+                                                  activity.object<jobject>(),
+                                                  QAndroidJniObject::fromString(tel).object<jstring>(),
+                                                  QAndroidJniObject::fromString(subject).object<jstring>(),
+                                                  QAndroidJniObject::fromString(message).object<jstring>());
+
+        if (_env->ExceptionCheck()) {
+            _env->ExceptionClear();
+            throw InterfaceConnFailedException();
+        }
+    } else
+        throw InterfaceConnFailedException();
+}
+
+
+void AndroidInterface::shareContact(const QString &id)
+{
+    QAndroidJniObject::callStaticMethod<void>("com/kde/maui/tools/Union",
+                                              "shareContact",
+                                              "(Landroid/content/Context;"
+                                              "Ljava/lang/String;)V",
+                                              QtAndroid::androidActivity().object<jobject>(),
+                                              QAndroidJniObject::fromString(id).object<jstring>());
+}
+
+

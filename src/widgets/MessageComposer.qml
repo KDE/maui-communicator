@@ -7,8 +7,6 @@ import org.kde.kirigami 2.7 as Kirigami
 import org.mauikit.texteditor 1.0 as TE
 import org.mauikit.controls 1.3 as Maui
 
-import org.maui.communicator 1.0 as C
-
 Maui.Dialog
 {
     id: control
@@ -25,24 +23,16 @@ Maui.Dialog
 
     onAccepted:
     {
-        if(!Kirigami.Settings.isMobile && !Maui.Handy.isAndroid)
-            C.Communicator.email(contact.email, "", "", _subjectTextField.text, _editor.text)
-        else if(!Maui.Handy.isAndroid)
+        if(_combobox.currentText === contact.email)
         {
-            if(_combobox.currentText === contact.email)
-                Qt.openUrlExternally("mailto:" + contact.email)
-            else if(_combobox.currentText === contact.tel)
-            {
-                Qt.openUrlExternally("sms:" + contact.tel +"&sms_body:" + _editor.text)
-                notify("emblem-info", i18n("Message sent"), contact.tel)
-            }
-        }else
-        {
-            if(_combobox.currentText === contact.email)
-                Qt.openUrlExternally("mailto:" + contact.email)
-            else if(_combobox.currentText === contact.tel)
-                Maui.Android.sendSMS(contact.tel, _subjectTextField.text, _editor.text)
+            _communicator.email(contact.email, "", "", _subjectTextField.text, _editor.text)
         }
+        else if(_combobox.currentText === contact.tel)
+        {
+            _communicator.sendSMS(contact.tel, _subjectTextField.text, _editor.text)
+        }
+
+        notify("emblem-info", i18n("Message sent"), contact.tel);
         close();
     }
 
