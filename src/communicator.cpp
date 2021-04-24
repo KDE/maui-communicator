@@ -4,6 +4,7 @@
 
 #include <QFileInfo>
 #include <QDebug>
+#include <QUrl>
 
 #ifdef Q_OS_ANDROID
 #include "androidinterface.h"
@@ -44,7 +45,7 @@ void Communicator::call(const QString &tel)
 #ifdef Q_OS_ANDROID
     AndroidInterface::call(tel);
 #else
-    QDesktopServices::openUrl("call://"+tel);
+    QDesktopServices::openUrl(QUrl("call://"+tel));
 #endif
 
 }
@@ -54,6 +55,6 @@ void Communicator::sendSMS(const QString &tel, const QString &subject, const QSt
 #ifdef Q_OS_ANDROID
     AndroidInterface::sendSMS(tel,subject, body);
 #else
-    QDesktopServices::openUrl("smsto:" + tel +"&sms_body:" + dubject+" " + body);
+    QDesktopServices::openUrl(QUrl("smsto:" + tel +"&sms_body:" + subject+" " + body));
 #endif
 }
