@@ -1,12 +1,7 @@
 #ifndef ABSTRACTINTERFACE_H
 #define ABSTRACTINTERFACE_H
 
-#include <QObject>
-#ifdef STATIC_MAUIKIT
-#include "fmh.h"
-#else
-#include <MauiKit/fmh.h>
-#endif
+#include <MauiKit/Core/fmh.h>
 
 /**
  * This is an abstract class for handling the contacts,

@@ -3,7 +3,7 @@ import QtQuick.Controls 2.10
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
-import org.kde.mauikit 1.2 as Maui
+import org.mauikit.controls 1.2 as Maui
 import org.kde.kirigami 2.7 as Kirigami
 
 Rectangle
@@ -29,6 +29,8 @@ Rectangle
 
         title: i18n("Remove contact...")
         message: i18n("Are you sure you want to remove this contact? This action can not be undone.")
+
+        page.margins: Maui.Style.space.big
 
         acceptButton.text: i18n("Cancel")
         rejectButton.text: i18n("Remove")
@@ -140,7 +142,7 @@ Rectangle
             Kirigami.ScrollablePage
             {
                 anchors.fill: parent
-                Kirigami.Theme.backgroundColor: "transparent"
+//                Kirigami.Theme.backgroundColor: "transparent"
                 padding: 0
                 leftPadding: padding
                 rightPadding: padding
@@ -206,7 +208,7 @@ Rectangle
 
                             Maui.Separator
                             {
-                                position: Qt.Horizontal
+                                edge: Qt.BottomEdge
                                 anchors.bottom: parent.bottom
                                 anchors.left: parent.left
                                 anchors.right: parent.right
@@ -342,7 +344,7 @@ Rectangle
                     }
 
                     ContactField
-                                        {
+                    {
                         visible: contact.n || control.editing
                         editing: control.editing
 
@@ -408,11 +410,7 @@ Rectangle
 
                             onTriggered:
                             {
-                                if(Maui.Handy.isAndroid)
-                                    Maui.Android.call(model.tel)
-                                else
-                                    Qt.openUrlExternally("call://" + model.tel)
-
+                                _communicator.call(control.contact.tel)
                             }
                         }
 
@@ -426,9 +424,7 @@ Rectangle
                                 Maui.Handy.copyTextToClipboard(control.contact.tel)
                             }
                         }
-
                     }
-
 
                     ContactField
                     {

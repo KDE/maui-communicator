@@ -10,7 +10,6 @@
         <file>views/contacts/GridContactDelegate.qml</file>
         <file>views/logs/LogsView.qml</file>
         <file>views/dialer/DialerButton.qml</file>
-        <file>views/contacts/ContactsBrowser.qml</file>
         <file>views/contacts/ContactField.qml</file>
     </qresource>
 </RCC>

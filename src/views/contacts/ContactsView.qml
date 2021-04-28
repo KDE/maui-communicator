@@ -3,7 +3,7 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
-import org.kde.mauikit 1.2 as Maui
+import org.mauikit.controls 1.2 as Maui
 import org.kde.kirigami 2.8 as Kirigami
 
 import org.maui.communicator 1.0
@@ -44,29 +44,14 @@ StackView
             filterCaseSensitivity: Qt.CaseInsensitive
         }
 
-        headBar.leftContent:  Maui.ToolActions
+        headBar.leftContent: ToolButton
         {
-            autoExclusive: true
-            cyclic: true
-            expanded: headBar.width > Kirigami.Units.gridUnit * 32
+            //            enabled: _contactsModel.count > 0
+            icon.name: _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? "view-list-icons" : "view-list-details"
 
-            currentIndex: _contactsPage.viewType === Maui.AltBrowser.ViewType.Grid ? 0 : 1
-            display: ToolButton.TextBesideIcon
-
-            Action
+            onClicked:
             {
-                icon.name: "view-list-icons"
-                text: i18n("Grid")
-                shortcut: "Ctrl+G"
-                onTriggered:  _contactsPage.viewType = Maui.AltBrowser.ViewType.Grid
-            }
-
-            Action
-            {
-                icon.name: "view-list-details"
-                text: i18n("List")
-                shortcut: "Ctrl+L"
-                onTriggered:  _contactsPage.viewType = Maui.AltBrowser.ViewType.List
+                _contactsPage.viewType =  _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? Maui.AltBrowser.ViewType.Grid : Maui.AltBrowser.ViewType.List
             }
         }
 
@@ -81,14 +66,10 @@ StackView
             onCleared: _contactsModel.filter = ""
         }
 
-        Maui.FloatingButton
+        headBar.rightContent: ToolButton
         {
             visible: control.showNewButton
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
-            anchors.margins: Maui.Style.space.big * 2
-            height: Maui.Style.toolBarHeight
-            width: height
+
             icon.name: "list-add-user"
             onClicked:
             {
@@ -96,7 +77,7 @@ StackView
             }
         }
 
-        gridView.itemSize: 140
+        gridView.itemSize: Math.min(140, Math.floor(width/3))
 
         listView.spacing: Maui.Style.space.big
         listView.flickable.header: Item
@@ -104,6 +85,7 @@ StackView
             visible: showAccountFilter
             height: visible ? Maui.Style.toolBarHeight * 1.5 : 0
             width: visible ? parent.width : 0
+
             ComboBox
             {
                 id: _accountsCombobox
@@ -299,16 +281,11 @@ StackView
                     icon.name: "call-start"
                     icon.color: Kirigami.Theme.textColor
 
-                    onTriggered:
-                    {
-                        if(Maui.Handy.isAndroid)
-                            Maui.Android.call(model.tel)
-                        else
-                            Qt.openUrlExternally("call://" + model.tel)
+                    onTriggered:  _communicator.call(model.tel)
 
-                    }
                 }
             ]
+
             onClicked:
             {
                 _contactsPage.currentIndex = index
@@ -357,7 +334,7 @@ StackView
 
                     }else
                     {
-                         control.pop()
+                        control.pop()
                     }
                 }
             }
@@ -370,6 +347,8 @@ StackView
 
                 acceptButton.text : i18n("Cancel")
                 rejectButton.text : i18n("Discard")
+
+                page.margins: Maui.Style.space.big
 
                 onAccepted: close()
                 onRejected:

@@ -1,8 +1,13 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.3
-import org.kde.mauikit 1.2 as Maui
-import org.kde.kirigami 2.8 as Kirigami
 import QtQuick.Layouts 1.3
+
+import org.mauikit.controls 1.2 as Maui
+import org.mauikit.filebrowsing 1.3 as FB
+
+import org.maui.communicator 1.0
+
+import org.kde.kirigami 2.8 as Kirigami
 
 import "views/contacts"
 import "views/dialer"
@@ -85,10 +90,10 @@ Maui.ApplicationWindow
     {
         id: _fileDialogComponent
 
-        Maui.FileDialog
+        FB.FileDialog
         {
             mode: modes.OPEN
-            settings.filterType: Maui.FMList.IMAGE
+            settings.filterType: FB.FMList.IMAGE
             singleSelection:  true
         }
     }
@@ -98,11 +103,21 @@ Maui.ApplicationWindow
         id: _dialogLoader
     }
 
+    Communicator
+    {
+        id: _communicator
+    }
+
     Component.onCompleted:
     {
         if(_favsView.currentItem.currentView.count < 1)
             swipeView.currentIndex = views.contacts
+
         if(Maui.Handy.isAndroid)
-            Maui.Android.statusbarColor(backgroundColor, true)
+        {
+            Maui.Android.statusbarColor(headBar.Kirigami.Theme.backgroundColor, false)
+            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, false)
+
+        }
     }
 }

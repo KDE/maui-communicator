@@ -2,13 +2,9 @@
 #define CALLLOGS_H
 
 #include <QObject>
-#ifdef STATIC_MAUIKIT
-#include "fm.h"
-#include "mauilist.h"
-#else
-#include <MauiKit/fm.h>
-#include <MauiKit/mauilist.h>
-#endif
+
+#include <MauiKit/Core/fmh.h>
+#include <MauiKit/Core/mauilist.h>
 
 class CallLogs : public MauiList
 {

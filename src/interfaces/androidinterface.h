@@ -27,6 +27,9 @@ public:
     static void updateContact(const QString &id, const QString &field, const QString &value);
 
     static void call(const QString &tel);
+    static void sendSMS(const QString &tel, const QString &subject, const QString &message);
+    static void shareContact(const QString &id);
+
 
 private:
     inline static AndroidInterface *instance = nullptr;

@@ -2,20 +2,22 @@
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QDate>
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
-#include <QIcon>
+#include <MauiKit/Core/mauiandroid.h>
 #else
 #include <QApplication>
 #endif
 
-#include <MauiKit/mauiapp.h>
+#include <MauiKit/Core/mauiapp.h>
 #include <KI18n/KLocalizedString>
 
 #include "contactimage.h"
 #include "contacts/calllogs.h"
 #include "contacts/contactsmodel.h"
+#include "communicator.h"
 
 #include "../communicator_version.h"
 
@@ -49,7 +51,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("communicator");
     KAboutData about(
-        QStringLiteral("communicator"), i18n("Communicator"), COMMUNICATOR_VERSION_STRING, i18n("Communicator keeps your contacts synced and organized across devices."), KAboutLicense::LGPL_V3, i18n("© 2019-%1 Nitrux Development Team", QString::number(QDate::currentDate().year())));
+        QStringLiteral("communicator"), i18n("Communicator"), COMMUNICATOR_VERSION_STRING, i18n("Communicator keeps your contacts synced and organized across devices."), KAboutLicense::LGPL_V3, i18n("© 2019-%1 Nitrux Development Team", QString::number(QDate::currentDate().year())), QString(GIT_BRANCH) + "/" + QString(GIT_COMMIT_HASH));
     about.addAuthor(i18n("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
     about.setHomepage("https://mauikit.org");
     about.setProductName("maui/communicator");
@@ -70,6 +72,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     engine.addImageProvider("contact", new ContactImage(QQuickImageProvider::ImageType::Image));
     qmlRegisterType<ContactsModel>(COMMUNICATOR_URI, 1, 0, "ContactsList");
     qmlRegisterType<CallLogs>(COMMUNICATOR_URI, 1, 0, "CallLogs");
+    qmlRegisterType<Communicator>(COMMUNICATOR_URI, 1, 0, "Communicator");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
