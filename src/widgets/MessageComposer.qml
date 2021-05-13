@@ -15,6 +15,8 @@ Maui.Dialog
     maxWidth: Maui.Style.unit * 500
     maxHeight: maxWidth
 
+    hint: 1
+
     acceptButton.text: i18n("Send...")
     acceptButton.icon.name: "mail-send"
     rejectButton.visible: false
