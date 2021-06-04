@@ -43,6 +43,16 @@ Maui.ItemDelegate
 
     implicitHeight: _contentLayout.implicitHeight + Maui.Style.space.big
 
+    background: Rectangle
+    {
+        //visible: control.hovered
+        readonly property color m_color : Qt.tint(control.Kirigami.Theme.textColor, Qt.rgba(control.Kirigami.Theme.backgroundColor.r, control.Kirigami.Theme.backgroundColor.g, control.Kirigami.Theme.backgroundColor.b, 0.9))
+        color: Qt.rgba(m_color.r, m_color.g, m_color.b, 0.3)
+        //         opacity: 0.3
+        radius: Maui.Style.radiusV
+        border.color: control.expanded ? control.Kirigami.Theme.highlightColor : "transparent"
+    }
+
     ColumnLayout
     {
         id: _contentLayout
@@ -67,8 +77,7 @@ Maui.ItemDelegate
         Kirigami.Separator
         {
             Layout.fillWidth: true
-//            position: Qt.Horizontal
-            color: control.background.border.color
+            //            position: Qt.Horizontal
             visible: control.expanded && control.actions.length
         }
 
@@ -89,10 +98,9 @@ Maui.ItemDelegate
                     Layout.fillWidth: true
                     Layout.fillHeight: true
                     action: modelData
-//                    display: ToolButton.TextBesideIcon
+                    //                    display: ToolButton.TextBesideIcon
                 }
             }
         }
     }
-
 }

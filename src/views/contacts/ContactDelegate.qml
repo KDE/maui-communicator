@@ -41,6 +41,4 @@ Maui.SwipeBrowserDelegate
     label4.wrapMode: Text.WrapAnywhere
     label4.elide: Text.ElideMiddle
     iconVisible:  control.width > Kirigami.Units.gridUnit * 15
-
-
 }

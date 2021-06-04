@@ -46,7 +46,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     app.setOrganizationName(QStringLiteral("Maui"));
     app.setWindowIcon(QIcon("://communicator.svg"));
-    MauiApp::instance()->setHandleAccounts(false); // for now index can not handle cloud accounts
     MauiApp::instance()->setIconName("qrc:/communicator.svg");
 
     KLocalizedString::setApplicationDomain("communicator");
