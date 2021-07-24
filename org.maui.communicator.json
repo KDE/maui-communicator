@@ -1,7 +1,0 @@
-{
-    "app": {
-        "name": "Dialer",
-        "icon": "phone"
-    },
-    "syncCommand": "dialer --sync"
-}
