@@ -1,5 +1,5 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.3
+import QtQuick 2.15
+import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.2 as Maui
@@ -60,11 +60,19 @@ Maui.ApplicationWindow
             Maui.AppView.iconName: "view-pim-contacts"
             Maui.AppView.title: qsTr("Contacts")
             list.query: ""
-            showNewButton: true
             showAccountFilter: Maui.Handy.isAndroid
             holder.emoji: "qrc:/list-add-user.svg"
             holder.title: i18n("There's no contacts")
             holder.body: i18n("You can add new contacts")
+
+            contactsPage.headBar.rightContent: ToolButton
+            {
+                icon.name: "list-add"
+                onClicked:
+                {
+                    _contacsView.openContact(({}))
+                }
+            }
         }
 
         LogsView

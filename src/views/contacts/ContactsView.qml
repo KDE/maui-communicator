@@ -1,10 +1,11 @@
 import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
+
 import QtGraphicalEffects 1.0
 
-import org.mauikit.controls 1.2 as Maui
-import org.kde.kirigami 2.8 as Kirigami
+import org.mauikit.controls 1.3 as Maui
+import org.kde.kirigami 2.14 as Kirigami
 
 import org.maui.communicator 1.0
 
@@ -16,9 +17,9 @@ StackView
     property alias listModel : _contactsModel
     property alias holder : _contactsPage.holder
     property alias viewType: _contactsPage.viewType
+    property alias contactsPage: _contactsPage
 
     property bool showAccountFilter: false
-    property bool showNewButton: false
 
     property var currentContact : ({})
 
@@ -28,6 +29,7 @@ StackView
         holder.visible: !currentView.count
         holder.emojiSize: Maui.Style.iconSizes.huge
         headBar.visible: true
+        headBar.forceCenterMiddleContent: root.isWide
         //        onActionTriggered: _newContactDialog.open()
 
         model: Maui.BaseModel
@@ -44,16 +46,16 @@ StackView
             filterCaseSensitivity: Qt.CaseInsensitive
         }
 
-        headBar.leftContent: ToolButton
-        {
-            //            enabled: _contactsModel.count > 0
-            icon.name: _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? "view-list-icons" : "view-list-details"
+        //        headBar.leftContent: ToolButton
+        //        {
+        //            //            enabled: _contactsModel.count > 0
+        //            icon.name: _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? "view-list-icons" : "view-list-details"
 
-            onClicked:
-            {
-                _contactsPage.viewType =  _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? Maui.AltBrowser.ViewType.Grid : Maui.AltBrowser.ViewType.List
-            }
-        }
+        //            onClicked:
+        //            {
+        //                _contactsPage.viewType =  _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? Maui.AltBrowser.ViewType.Grid : Maui.AltBrowser.ViewType.List
+        //            }
+        //        }
 
         headBar.middleContent: Maui.TextField
         {
@@ -66,17 +68,6 @@ StackView
             onCleared: _contactsModel.filter = ""
         }
 
-        headBar.rightContent: ToolButton
-        {
-            visible: control.showNewButton
-
-            icon.name: "list-add-user"
-            onClicked:
-            {
-                control.openContact(({}))
-            }
-        }
-
         gridView.itemSize: Math.min(140, Math.floor(width/3))
 
         listView.spacing: Maui.Style.space.big
@@ -86,7 +77,7 @@ StackView
             height: visible ? Maui.Style.toolBarHeight * 1.5 : 0
             width: visible ? parent.width : 0
 
-            ComboBox
+            Maui.ComboBox
             {
                 id: _accountsCombobox
                 width: isWide ? control.width * 0.8 : control.width * 0.95
@@ -168,7 +159,7 @@ StackView
                 {
                     var item = _contactsList.get(index)
                     item["fav"] = item.fav == "1" ? "0" : "1"
-                    _contactsList.update(item, index)
+                    _contactsList.update(item, listModel.mappedToSource(index))
                 }
             }
         }
@@ -232,10 +223,8 @@ StackView
 
                                     Rectangle
                                     {
-                                        anchors.centerIn: parent
-                                        width: _img.width
-                                        height: _img.height
-                                        radius: control.radius
+                                        anchors.fill: parent
+                                        radius: Maui.Style.radiusV
                                     }
                                 }
                             }
@@ -310,7 +299,7 @@ StackView
             {
                 var item = _contactsList.get(index)
                 item["fav"] = item.fav == "1" ? "0" : "1"
-                _contactsList.update(item, index)
+                _contactsList.update(item, listModel.mappedToSource(index))
             }
         }
     }
@@ -380,7 +369,7 @@ StackView
                 {
                     if(contact.id)
                     {
-                        _contactsList.update(contact, _contactsPage.currentIndex)
+                        _contactsList.update(contact, listModel.mappedToSource(_contactsPage.currentIndex))
                     }else
                     {
                         _contactsList.insert(contact)

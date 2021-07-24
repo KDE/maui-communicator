@@ -38,7 +38,7 @@ Rectangle
         onRejected:
         {
             close()
-            list.remove(_contactsPage.currentIndex)
+            list.remove(listModel.mappedToSource(_contactsPage.currentIndex))
         }
     }
 
@@ -63,7 +63,7 @@ Rectangle
             headBar.visible: true
             floatingHeader: true
 
-            headerBackground.color: "transparent"
+            headBar.background: null
 
             headBar.rightContent: [
                 ToolButton
@@ -77,7 +77,7 @@ Rectangle
                     onClicked:
                     {
                         contact["fav"] = contact.fav == "1" ? "0" : "1"
-                        list.update(contact,  _contactsPage.currentIndex)
+                        list.update(contact, listModel.mappedToSource(_contactsPage.currentIndex))
                         control.contact = contact;
                         _favsView.list.refresh()
                     }

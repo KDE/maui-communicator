@@ -73,15 +73,14 @@ endif()
 target_compile_definitions(${PROJECT_NAME}
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
-target_link_libraries(${PROJECT_NAME} MauiKit MauiKit::FileBrowsing Qt5::Sql Qt5::Qml Qt5::Svg Qt5::Xml Qt5::Concurrent Qt5::QuickControls2 Qt5::Positioning KF5::I18n KF5::Service)
+target_link_libraries(${PROJECT_NAME} MauiKit MauiKit::FileBrowsing Qt5::QuickControls2 Qt5::Qml Qt5::Concurrent KF5::I18n KF5::Service)
 
 if(ANDROID)
     target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras)
     kde_source_files_enable_exceptions(${PROJECT_NAME} interfaces/androidinterface.cpp)
 else()
-    target_link_libraries(${PROJECT_NAME} KF5::Contacts KF5::People)
+    target_link_libraries(${PROJECT_NAME} KF5::Contacts KF5::People Qt5::Widgets)
 endif()
-
 
 if(UNIX AND NOT APPLE AND NOT ANDROID)
 install(FILES assets/communicator.svg DESTINATION ${KDE_INSTALL_ICONDIR}/hicolor/scalable/apps)

@@ -89,10 +89,8 @@ bool ContactsModel::update(const QVariantMap &map, const int &index)
     if (index >= this->list.size() || index < 0)
         return false;
 
-    const auto index_ = this->mappedIndex(index);
-
     const auto newItem = FMH::toModel(map);
-    const auto oldItem = this->list[index_];
+    const auto oldItem = this->list[index];
 
     auto updatedItem = FMH::MODEL();
     updatedItem[FMH::MODEL_KEY::ID] = oldItem[FMH::MODEL_KEY::ID];
@@ -108,8 +106,8 @@ bool ContactsModel::update(const QVariantMap &map, const int &index)
     qDebug() << "trying to update contact:" << oldItem << "\n\n" << newItem << "\n\n" << updatedItem;
 
     this->syncer->updateContact(oldItem[FMH::MODEL_KEY::ID], newItem);
-    this->list[index_] = newItem;
-    emit this->updateModel(index_, roles);
+    this->list[index] = newItem;
+    emit this->updateModel(index, roles);
 
     return true;
 }
@@ -119,12 +117,10 @@ bool ContactsModel::remove(const int &index)
     if (index >= this->list.size() || index < 0)
         return false;
 
-    const auto index_ = this->mappedIndex(index);
-
-    qDebug() << "trying to remove :" << this->list[index_][FMH::MODEL_KEY::ID];
-    if (this->syncer->removeContact(this->list[index_][FMH::MODEL_KEY::ID])) {
-        emit this->preItemRemoved(index_);
-        this->list.removeAt(index_);
+    qDebug() << "trying to remove :" << this->list[index][FMH::MODEL_KEY::ID];
+    if (this->syncer->removeContact(this->list[index][FMH::MODEL_KEY::ID])) {
+        emit this->preItemRemoved(index);
+        this->list.removeAt(index);
         emit this->postItemRemoved();
         return true;
     }
@@ -176,12 +172,10 @@ void ContactsModel::append(const QVariantMap &item, const int &at)
     if (at > this->list.size() || at < 0)
         return;
 
-    const auto index_ = this->mappedIndex(at);
+    qDebug() << "trying to append at" << at << item["title"];
 
-    qDebug() << "trying to append at" << index_ << item["title"];
-
-    emit this->preItemAppendedAt(index_);
-    this->list.insert(index_, FMH::toModel(item));
+    emit this->preItemAppendedAt(at);
+    this->list.insert(at, FMH::toModel(item));
     emit this->postItemAppended();
 }
 
