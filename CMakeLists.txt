@@ -38,7 +38,7 @@ find_package(MauiKit REQUIRED)
 find_package(MauiKit REQUIRED COMPONENTS FileBrowsing)
 
 if(ANDROID)
-    find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras)
+    find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras Xml)
 elseif(UNIX)
     find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Contacts People)
     find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets)

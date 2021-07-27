@@ -76,7 +76,7 @@ target_compile_definitions(${PROJECT_NAME}
 target_link_libraries(${PROJECT_NAME} MauiKit MauiKit::FileBrowsing Qt5::QuickControls2 Qt5::Qml Qt5::Concurrent KF5::I18n KF5::Service)
 
 if(ANDROID)
-    target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras)
+    target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras Qt5::Xml)
     kde_source_files_enable_exceptions(${PROJECT_NAME} interfaces/androidinterface.cpp)
 else()
     target_link_libraries(${PROJECT_NAME} KF5::Contacts KF5::People Qt5::Widgets)

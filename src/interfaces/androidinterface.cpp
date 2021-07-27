@@ -207,38 +207,38 @@ FMH::MODEL_LIST AndroidInterface::fetchAccounts()
 {
     FMH::MODEL_LIST data;
 
-    const auto array = MAUIAndroid::getAccounts();
-    QString xmlData(array);
-    QDomDocument doc;
+//    const auto array = MAUIAndroid::getAccounts();
+//    QString xmlData(array);
+//    QDomDocument doc;
 
-    if (!doc.setContent(xmlData))
-        return data;
+//    if (!doc.setContent(xmlData))
+//        return data;
 
-    const QDomNodeList nodeList = doc.documentElement().childNodes();
+//    const QDomNodeList nodeList = doc.documentElement().childNodes();
 
-    for (int i = 0; i < nodeList.count(); i++) {
-        QDomNode n = nodeList.item(i);
+//    for (int i = 0; i < nodeList.count(); i++) {
+//        QDomNode n = nodeList.item(i);
 
-        if (n.nodeName() == "account") {
-            FMH::MODEL model;
-            auto contact = n.toElement().childNodes();
+//        if (n.nodeName() == "account") {
+//            FMH::MODEL model;
+//            auto contact = n.toElement().childNodes();
 
-            for (int i = 0; i < contact.count(); i++) {
-                const QDomNode m = contact.item(i);
+//            for (int i = 0; i < contact.count(); i++) {
+//                const QDomNode m = contact.item(i);
 
-                if (m.nodeName() == "name") {
-                    const auto account = m.toElement().text();
-                    model.insert(FMH::MODEL_KEY::ACCOUNT, account);
+//                if (m.nodeName() == "name") {
+//                    const auto account = m.toElement().text();
+//                    model.insert(FMH::MODEL_KEY::ACCOUNT, account);
 
-                } else if (m.nodeName() == "type") {
-                    const auto type = m.toElement().text();
-                    model.insert(FMH::MODEL_KEY::ACCOUNTTYPE, type);
-                }
-            }
+//                } else if (m.nodeName() == "type") {
+//                    const auto type = m.toElement().text();
+//                    model.insert(FMH::MODEL_KEY::ACCOUNTTYPE, type);
+//                }
+//            }
 
-            data << model;
-        }
-    }
+//            data << model;
+//        }
+//    }
     return data;
 }
 
