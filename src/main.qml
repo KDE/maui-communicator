@@ -50,7 +50,7 @@ Maui.ApplicationWindow
             list.query : "fav=1"
             viewType: Maui.AltBrowser.ViewType.Grid
             holder.emoji: "qrc:/star.svg"
-            holder.title: i18n("There's no favorite contacts")
+            holder.title: i18n("There're no favorite contacts")
             holder.body: i18n("You can mark as favorite your contacts to quickly access them")
         }
 
@@ -62,7 +62,7 @@ Maui.ApplicationWindow
             list.query: ""
             showAccountFilter: Maui.Handy.isAndroid
             holder.emoji: "qrc:/list-add-user.svg"
-            holder.title: i18n("There's no contacts")
+            holder.title: i18n("There're no contacts")
             holder.body: i18n("You can add new contacts")
 
             contactsPage.headBar.rightContent: ToolButton

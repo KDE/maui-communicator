@@ -15,7 +15,7 @@ Maui.Page
         id: _holder
         anchors.fill: parent
         emoji: "qrc:/amarok_artist.svg"
-        title: i18n("There's no recent contacts")
+        title: i18n("There're no recent contacts")
         body: i18n("Recently used contacts will appear here")
         emojiSize: Maui.Style.iconSizes.huge
         visible: !_listView.count
