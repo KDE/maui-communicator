@@ -88,11 +88,10 @@ ecm_setup_version(${COMMUNICATOR_VERSION}
 
 add_subdirectory(src)
 
-
 if(UNIX AND NOT APPLE AND NOT ANDROID)
 install(TARGETS ${PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES org.maui.communicator.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
-install(FILES org.maui.communicator.json DESTINATION /usr/share/maui-accounts/manifests)
+install(FILES org.kde.communicator.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+install(FILES org.kde.communicator.json DESTINATION /usr/share/maui-accounts/manifests)
 endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
