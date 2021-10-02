@@ -18,8 +18,7 @@ import "widgets"
 Maui.ApplicationWindow
 {
     id: root
-    altHeader: Kirigami.Settings.isMobile
-
+    headBar.visible: false
     readonly property var views : ({
                                        favs: 0,
                                        contacts : 1,
@@ -34,7 +33,8 @@ Maui.ApplicationWindow
     {
         id: swipeView
         anchors.fill : parent
-
+        altHeader: Kirigami.Settings.isMobile
+        showCSDControls: true
         onCurrentIndexChanged:
         {
             if(currentIndex === views.contacts)
@@ -75,12 +75,12 @@ Maui.ApplicationWindow
             }
         }
 
-        LogsView
-        {
-            id: _logView
-            Maui.AppView.iconName: "view-media-recent"
-            Maui.AppView.title: qsTr("Recent")
-        }
+//        LogsView
+//        {
+//            id: _logView
+//            Maui.AppView.iconName: "view-media-recent"
+//            Maui.AppView.title: qsTr("Recent")
+//        }
     }
 
     /** DIALOGS **/
