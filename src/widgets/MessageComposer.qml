@@ -12,7 +12,7 @@ Maui.Dialog
     id: control
     property var contact : ({})
 
-    maxWidth: Maui.Style.unit * 500
+    maxWidth: 500
     maxHeight: maxWidth
 
     hint: 1

@@ -26,19 +26,19 @@ Maui.SwipeBrowserDelegate
     label2.text: model.tel
     label2.font.pointSize: Maui.Style.fontSizes.small
     label2.font.weight: Font.Light
-    label2.wrapMode: Text.WrapAnywhere
+//    label2.wrapMode: Text.WrapAnywhere
     label2.elide: Text.ElideMiddle
 
     label3.text: model.email
     label3.font.pointSize: Maui.Style.fontSizes.small
     label3.font.weight: Font.Light
-    label3.wrapMode: Text.WrapAnywhere
+//    label3.wrapMode: Text.WrapAnywhere
     label3.elide: Text.ElideMiddle
 
     label4.text: model.title
     label4.font.pointSize: Maui.Style.fontSizes.small
     label4.font.weight: Font.Light
-    label4.wrapMode: Text.WrapAnywhere
+//    label4.wrapMode: Text.WrapAnywhere
     label4.elide: Text.ElideMiddle
     iconVisible:  control.width > Kirigami.Units.gridUnit * 15
 }

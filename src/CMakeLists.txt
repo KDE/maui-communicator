@@ -3,7 +3,6 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/interfaces
     ${CMAKE_CURRENT_BINARY_DIR}/interfaces
@@ -18,14 +17,12 @@ include_directories(
 set(communicator_SRCS
     main.cpp
     models/contacts/contactsmodel.cpp
-    models/contacts/calllogs.cpp
     interfaces/contactimage.cpp
     communicator.cpp
     )
 
 set(communicator_HDRS
     models/contacts/contactsmodel.h
-    models/contacts/calllogs.h
     interfaces/abstractinterface.h
     interfaces/contactimage.h
     communicator.h
@@ -50,9 +47,14 @@ else()
 endif()
 
 set(communicator_ASSETS
-    qml.qrc
     assets/communicator_assets.qrc
     )
+
+if(QUICK_COMPILER)
+    qtquick_compiler_add_resources(communicator_QML_QRC qml.qrc)
+else()
+    qt5_add_resources(communicator_QML_QRC qml.qrc)
+endif()
 
 if(ANDROID)
     add_library(${PROJECT_NAME} SHARED
@@ -60,6 +62,7 @@ if(ANDROID)
         ${communicator_android_SRCS}
         ${communicator_HDRS}
         ${communicator_ASSETS}
+        ${communicator_QML_QRC}
         )
 else()
     add_executable(${PROJECT_NAME}
@@ -67,6 +70,7 @@ else()
         ${communicator_linux_SRCS}
         ${communicator_HDRS}
         ${communicator_ASSETS}
+        ${communicator_QML_QRC}
         )
 endif()
 

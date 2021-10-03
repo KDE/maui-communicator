@@ -15,7 +15,6 @@
 #include <KI18n/KLocalizedString>
 
 #include "contactimage.h"
-#include "contacts/calllogs.h"
 #include "contacts/contactsmodel.h"
 #include "communicator.h"
 
@@ -70,7 +69,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     engine.addImageProvider("contact", new ContactImage(QQuickImageProvider::ImageType::Image));
     qmlRegisterType<ContactsModel>(COMMUNICATOR_URI, 1, 0, "ContactsList");
-    qmlRegisterType<CallLogs>(COMMUNICATOR_URI, 1, 0, "CallLogs");
     qmlRegisterType<Communicator>(COMMUNICATOR_URI, 1, 0, "Communicator");
 
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));

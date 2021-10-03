@@ -166,7 +166,7 @@ StackView
 
         listDelegate: ContactDelegate
         {
-            height: Maui.Style.unit * 60
+            height: 60
             width: Math.min(isWide ? ListView.view.width * 0.8 : ListView.view.width, 500)
             anchors.horizontalCenter: parent.horizontalCenter
             showQuickActions: true
@@ -244,7 +244,7 @@ StackView
                             font.pointSize: Maui.Style.fontSizes.huge
                             font.bold: true
                             font.weight: Font.Bold
-                            text: model.n[0].toUpperCase()
+                            text: model.n ? model.n[0].toUpperCase() : "?"
                         }
                     }
                 }
