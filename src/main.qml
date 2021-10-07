@@ -65,7 +65,7 @@ Maui.ApplicationWindow
                 holder.title: i18n("There're no contacts")
                 holder.body: i18n("You can add new contacts")
 
-                contactsPage.headBar.rightContent: ToolButton
+                headBar.rightContent: ToolButton
                 {
                     icon.name: "list-add"
                     onClicked:

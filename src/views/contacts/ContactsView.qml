@@ -9,23 +9,17 @@ import org.kde.kirigami 2.14 as Kirigami
 
 import org.maui.communicator 1.0
 
-StackView
-{
-    id: control
-
-    property alias list : _contactsList
-    property alias listModel : _contactsModel
-    property alias holder : _contactsPage.holder
-    property alias viewType: _contactsPage.viewType
-    property alias contactsPage: _contactsPage
-
-    property bool showAccountFilter: false
-
-    property var currentContact : ({})
-
-    initialItem: Maui.AltBrowser
+ Maui.AltBrowser
     {
-        id: _contactsPage
+        id: control
+
+        property alias list : _contactsList
+        property alias listModel : _contactsModel
+
+        property bool showAccountFilter: false
+
+        property var currentContact : ({})
+
         holder.visible: !currentView.count
         holder.emojiSize: Maui.Style.iconSizes.huge
         headBar.visible: true
@@ -49,11 +43,11 @@ StackView
         //        headBar.leftContent: ToolButton
         //        {
         //            //            enabled: _contactsModel.count > 0
-        //            icon.name: _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? "view-list-icons" : "view-list-details"
+        //            icon.name: control.viewType === Maui.AltBrowser.ViewType.List ? "view-list-icons" : "view-list-details"
 
         //            onClicked:
         //            {
-        //                _contactsPage.viewType =  _contactsPage.viewType === Maui.AltBrowser.ViewType.List ? Maui.AltBrowser.ViewType.Grid : Maui.AltBrowser.ViewType.List
+        //                control.viewType =  control.viewType === Maui.AltBrowser.ViewType.List ? Maui.AltBrowser.ViewType.Grid : Maui.AltBrowser.ViewType.List
         //            }
         //        }
 
@@ -124,8 +118,8 @@ StackView
 
         gridDelegate: Item
         {
-            width: _contactsPage.gridView.cellWidth
-            height: _contactsPage.gridView.cellHeight
+            width: control.gridView.cellWidth
+            height: control.gridView.cellHeight
 
             property bool isCurrentItem : GridView.isCurrentItem
 
@@ -137,7 +131,7 @@ StackView
 
                 onClicked:
                 {
-                    _contactsPage.currentIndex = index
+                    control.currentIndex = index
 
                     if(Maui.Handy.singleClick)
                     {
@@ -147,7 +141,7 @@ StackView
 
                 onDoubleClicked:
                 {
-                    _contactsPage.currentIndex = index
+                    control.currentIndex = index
 
                     if(!Maui.Handy.singleClick)
                     {
@@ -277,7 +271,7 @@ StackView
 
             onClicked:
             {
-                _contactsPage.currentIndex = index
+                control.currentIndex = index
 
                 if(Maui.Handy.singleClick)
                 {
@@ -287,7 +281,7 @@ StackView
 
             onDoubleClicked:
             {
-                _contactsPage.currentIndex = index
+                control.currentIndex = index
 
                 if(!Maui.Handy.singleClick)
                 {
@@ -302,7 +296,7 @@ StackView
                 _contactsList.update(item, listModel.mappedToSource(index))
             }
         }
-    }
+
 
     Component
     {
@@ -312,20 +306,16 @@ StackView
         {
             id: _contactPage
             contact: control.currentContact
-            headBar.farLeftContent: ToolButton
+            onCloseTriggered:
             {
-                icon.name: "go-previous"
-                onClicked:
-                {
-                    if(editing)
+                if(editing)
                     {
                         _confirmExit.open()
 
                     }else
                     {
-                        control.pop()
+                        close()
                     }
-                }
             }
 
             Maui.Dialog
@@ -346,7 +336,7 @@ StackView
 
                     if(!_contactPage.contact.id)
                     {
-                        control.pop()
+                        _contactPage.close()
                     }
 
                     _confirmExit.close()
@@ -357,7 +347,7 @@ StackView
             {
                 if(!contact.id)
                 {
-                    control.pop()
+                    _contactPage.close()
                 }
             }
 
@@ -369,7 +359,7 @@ StackView
                 {
                     if(contact.id)
                     {
-                        _contactsList.update(contact, listModel.mappedToSource(_contactsPage.currentIndex))
+                        _contactsList.update(contact, listModel.mappedToSource(control.currentIndex))
                     }else
                     {
                         _contactsList.insert(contact)
@@ -377,7 +367,7 @@ StackView
                     }
                 }else
                 {
-                    control.pop()
+                    _contactPage.close()
                 }
             }
         }
@@ -386,7 +376,8 @@ StackView
     function openContact(contact)
     {
         control.currentContact = contact
-        control.push(_contactPageComponent)
+        _dialogLoader.sourceComponent = _contactPageComponent
+       dialog.open()
     }
 
 }
