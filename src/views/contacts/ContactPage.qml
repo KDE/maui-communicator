@@ -476,9 +476,6 @@ Maui.Dialog
         }
     }
 
-
-
-
     function clear()
     {
         _nameField.clear()
@@ -496,5 +493,11 @@ Maui.Dialog
     {
         var androidAccounts = _contacsView.list.getAccounts();
         _accountsCombobox.model = androidAccounts;
+    }
+
+    onClosed:
+    {
+        control.contact = ({})
+        _dialogLoader.sourceComponent = null
     }
 }
