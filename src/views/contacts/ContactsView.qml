@@ -164,6 +164,7 @@ Maui.AltBrowser
         width: Math.min(isWide ? ListView.view.width * 0.8 : ListView.view.width, 500)
         anchors.horizontalCenter: parent.horizontalCenter
         showQuickActions: true
+        template.headerSizeHint: 100
 
         template.iconComponent: Item
         {
@@ -173,9 +174,7 @@ Maui.AltBrowser
             {
                 Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
                 Kirigami.Theme.inherit: false
-                height: parent.height * 0.8
-                width: height
-                anchors.verticalCenter: parent.verticalCenter
+                anchors.fill: parent
                 radius: Maui.Style.radiusV
                 color: Kirigami.Theme.backgroundColor
                 border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
