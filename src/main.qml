@@ -15,6 +15,8 @@ Maui.ApplicationWindow
 {
     id: root
     headBar.visible: false
+    Maui.App.darkMode: true
+
     readonly property var views : ({ favs: 0, contacts : 1 })
 
     readonly property alias dialog: _dialogLoader.item
@@ -112,14 +114,19 @@ Maui.ApplicationWindow
 
     Component.onCompleted:
     {
+        setAndroidStatusBarColor()
+
         if(_favsView.currentItem.currentView.count < 1)
             swipeView.currentIndex = views.contacts
 
+    }
+
+    function setAndroidStatusBarColor()
+    {
         if(Maui.Handy.isAndroid)
         {
-            Maui.Android.statusbarColor(headBar.Kirigami.Theme.backgroundColor, false)
-            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, false)
-
+            Maui.Android.statusbarColor( Kirigami.Theme.backgroundColor, !Maui.App.darkMode)
+            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, !Maui.App.darkMode)
         }
     }
 }

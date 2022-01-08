@@ -164,7 +164,7 @@ Maui.AltBrowser
         width: Math.min(isWide ? ListView.view.width * 0.8 : ListView.view.width, 500)
         anchors.horizontalCenter: parent.horizontalCenter
         showQuickActions: true
-        template.headerSizeHint: 100
+        template.headerSizeHint: 60
 
         template.iconComponent: Item
         {

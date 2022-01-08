@@ -17,6 +17,7 @@ Maui.SwipeBrowserDelegate
     signal favClicked(int index)
 
     iconSizeHint: Maui.Style.iconSizes.huge
+
     label1.text: model.n
     label1.font.pointSize: Maui.Style.fontSizes.big
     label1.font.bold: true
