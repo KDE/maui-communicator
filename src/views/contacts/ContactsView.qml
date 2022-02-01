@@ -21,7 +21,6 @@ Maui.AltBrowser
     property var currentContact : ({})
 
     holder.visible: !currentView.count
-    holder.emojiSize: Maui.Style.iconSizes.huge
     headBar.visible: true
     headBar.forceCenterMiddleContent: root.isWide
     //        onActionTriggered: _newContactDialog.open()
@@ -51,11 +50,12 @@ Maui.AltBrowser
     //            }
     //        }
 
-    headBar.middleContent: Maui.TextField
+    headBar.middleContent: Maui.SearchField
     {
         id: _searchField
         Layout.fillWidth: true
         Layout.maximumWidth: 500
+        Layout.alignment: Qt.AlignCenter
         focusReason : Qt.PopupFocusReason
         placeholderText: i18n("Search %1 contacts", _contactsList.count)
         onAccepted: _contactsModel.filter = text
