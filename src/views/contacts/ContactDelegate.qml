@@ -10,7 +10,6 @@ Maui.SwipeBrowserDelegate
     id: control
     hoverEnabled: true
     clip: true
-//    Kirigami.Theme.colorSet: Kirigami.Theme.Button
 
     draggable: true
 
