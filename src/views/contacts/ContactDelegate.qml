@@ -3,7 +3,6 @@ import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.2 as Maui
-import org.kde.kirigami 2.9 as Kirigami
 
 Maui.SwipeBrowserDelegate
 {
@@ -40,5 +39,5 @@ Maui.SwipeBrowserDelegate
     label4.font.weight: Font.Light
 //    label4.wrapMode: Text.WrapAnywhere
     label4.elide: Text.ElideMiddle
-    iconVisible:  control.width > Kirigami.Units.gridUnit * 15
+    iconVisible:  control.width > Maui.Style.units.gridUnit * 15
 }
