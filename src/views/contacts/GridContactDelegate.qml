@@ -4,7 +4,6 @@ import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
 import org.mauikit.controls 1.0 as Maui
-import org.kde.kirigami 2.2 as Kirigami
 
 Maui.ItemDelegate
 {
@@ -12,9 +11,9 @@ Maui.ItemDelegate
     property bool showMenuIcon: false
     signal favClicked(int index)
 
-    Kirigami.Theme.inherit: false
-    Kirigami.Theme.backgroundColor: "#333";
-    Kirigami.Theme.textColor: "#fafafa"
+    Maui.Theme.inherit: false
+    Maui.Theme.backgroundColor: "#333";
+    Maui.Theme.textColor: "#fafafa"
 
     ToolButton
     {
@@ -37,7 +36,7 @@ Maui.ItemDelegate
         id: _cover
         anchors.fill: parent
         radius: Maui.Style.radiusV
-        color: Kirigami.Theme.backgroundColor
+        color: Maui.Theme.backgroundColor
         //        {
         //            var c = Qt.rgba(Math.random(),Math.random(),Math.random(),1)
         //            return Qt.hsla(c.hslHue, 0.7, c.hslLightness, c.a);
@@ -103,7 +102,7 @@ Maui.ItemDelegate
             Rectangle
             {
                 anchors.fill: parent
-                color: control.isCurrentItem ? Kirigami.Theme.highlightColor : _labelBg.Kirigami.Theme.backgroundColor
+                color: control.isCurrentItem ? Maui.Theme.highlightColor : _labelBg.Maui.Theme.backgroundColor
                 opacity: control.isCurrentItem || control.hovered ? 1 : 0.7
             }
 
@@ -157,7 +156,7 @@ Maui.ItemDelegate
         height:  _cover.height
 
         color: "transparent"
-        border.color: control.isCurrentItem || control.hovered ? Kirigami.Theme.highlightColor : Qt.rgba(Kirigami.Theme.textColor.r, Kirigami.Theme.textColor.g, Kirigami.Theme.textColor.b, 0.2)
+        border.color: control.isCurrentItem || control.hovered ? Maui.Theme.highlightColor : Qt.rgba(Maui.Theme.textColor.r, Maui.Theme.textColor.g, Maui.Theme.textColor.b, 0.2)
         radius: Maui.Style.radiusV
         opacity: 0.6
 
@@ -166,7 +165,7 @@ Maui.ItemDelegate
             anchors.fill: parent
             color: "transparent"
             radius: parent.radius - 0.5
-            border.color: Qt.lighter(Kirigami.Theme.backgroundColor, 2)
+            border.color: Qt.lighter(Maui.Theme.backgroundColor, 2)
             opacity: 0.8
             anchors.margins: 1
         }

@@ -5,7 +5,6 @@ import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
 import org.mauikit.controls 1.3 as Maui
-import org.kde.kirigami 2.14 as Kirigami
 
 import org.maui.communicator 1.0
 
@@ -172,12 +171,12 @@ Maui.AltBrowser
 
             Rectangle
             {
-                Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
-                Kirigami.Theme.inherit: false
+                Maui.Theme.colorSet: Maui.Theme.Complementary
+                Maui.Theme.inherit: false
                 anchors.fill: parent
                 radius: Maui.Style.radiusV
-                color: Kirigami.Theme.backgroundColor
-                border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
+                color: Maui.Theme.backgroundColor
+                border.color: Qt.tint(Maui.Theme.textColor, Qt.rgba(Maui.Theme.backgroundColor.r, Maui.Theme.backgroundColor.g, Maui.Theme.backgroundColor.b, 0.7))
 
                 Loader
                 {
@@ -233,7 +232,7 @@ Maui.AltBrowser
                         anchors.fill: parent
                         horizontalAlignment: Qt.AlignHCenter
                         verticalAlignment: Qt.AlignVCenter
-                        color: Kirigami.Theme.textColor
+                        color: Maui.Theme.textColor
                         font.pointSize: Maui.Style.fontSizes.huge
                         font.bold: true
                         font.weight: Font.Bold
@@ -248,7 +247,7 @@ Maui.AltBrowser
             Action
             {
                 icon.name: "message-new"
-                icon.color: Kirigami.Theme.textColor
+                icon.color: Maui.Theme.textColor
                 onTriggered:
                 {
                     _dialogLoader.sourceComponent =  _messageComposerComponent
@@ -259,9 +258,9 @@ Maui.AltBrowser
 
             Action
             {
-                enabled: Kirigami.Settings.isMobile
+                enabled: Maui.Handy.isMobile
                 icon.name: "call-start"
-                icon.color: Kirigami.Theme.textColor
+                icon.color: Maui.Theme.textColor
 
                 onTriggered:  _communicator.call(model.tel)
 

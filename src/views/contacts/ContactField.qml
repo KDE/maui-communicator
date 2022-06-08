@@ -2,12 +2,16 @@ import QtQuick 2.14
 import QtQuick.Controls 2.14
 import QtQuick.Layouts 1.3
 
-import org.mauikit.controls 1.2 as Maui
-import org.kde.kirigami 2.9 as Kirigami
+import org.mauikit.controls 1.3 as Maui
 
-Maui.ItemDelegate
+AbstractButton
 {
     id: control
+
+    Maui.Theme.colorSet: Maui.Theme.Button
+    Maui.Theme.inherit: false
+    padding: Maui.Style.space.medium
+    hoverEnabled: !Maui.Handy.isMobile
 
     property alias label1 : _template.label1
     property alias label2 : _template.label2
@@ -29,9 +33,7 @@ Maui.ItemDelegate
 
     property alias leftLabels : _template.leftLabels
 
-    draggable: true
-
-    Layout.margins: Maui.Style.space.medium
+    checked: control.expanded
 
     onClicked:
     {
@@ -41,30 +43,27 @@ Maui.ItemDelegate
         }
     }
 
-    implicitHeight: _contentLayout.implicitHeight + Maui.Style.space.big
+    implicitHeight: implicitContentHeight + topPadding + bottomPadding
 
     background: Rectangle
     {
         //visible: control.hovered
-        readonly property color m_color : Qt.tint(control.Kirigami.Theme.textColor, Qt.rgba(control.Kirigami.Theme.backgroundColor.r, control.Kirigami.Theme.backgroundColor.g, control.Kirigami.Theme.backgroundColor.b, 0.9))
-        color: Qt.rgba(m_color.r, m_color.g, m_color.b, 0.3)
+
+        color: control.checked ? control.Maui.Theme.alternateBackgroundColor : (control.hovered ? control.Maui.Theme.hoverColor :control.Maui.Theme.backgroundColor)
         //         opacity: 0.3
         radius: Maui.Style.radiusV
-        border.color: control.expanded ? control.Kirigami.Theme.highlightColor : "transparent"
+        //        border.color: control.expanded ? control.Maui.Theme.highlightColor : "transparent"
     }
 
-    ColumnLayout
+    contentItem: ColumnLayout
     {
         id: _contentLayout
-        width: parent.width
-        anchors.centerIn: parent
         spacing: Maui.Style.space.medium
 
         Maui.ListItemTemplate
         {
             id: _template
             Layout.fillWidth: true
-            implicitHeight: leftLabels.implicitHeight
             label1.font.pointSize: Maui.Style.fontSizes.default
             label1.font.weight: Font.Light
             label2.visible: !control.editing
@@ -74,10 +73,9 @@ Maui.ItemDelegate
             iconSizeHint: Maui.Style.iconSizes.medium
         }
 
-        Kirigami.Separator
+        Maui.Separator
         {
             Layout.fillWidth: true
-            //            position: Qt.Horizontal
             visible: control.expanded && control.actions.length
         }
 

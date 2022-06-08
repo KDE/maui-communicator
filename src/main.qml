@@ -1,12 +1,10 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-import org.mauikit.controls 1.2 as Maui
+import org.mauikit.controls 1.3 as Maui
 import org.mauikit.filebrowsing 1.3 as FB
 
 import org.maui.communicator 1.0
-
-import org.kde.kirigami 2.8 as Kirigami
 
 import "views/contacts"
 import "widgets"
@@ -15,7 +13,7 @@ Maui.ApplicationWindow
 {
     id: root
     headBar.visible: false
-    Maui.App.darkMode: true
+//    Maui.App.darkMode: true
 
     readonly property var views : ({ favs: 0, contacts : 1 })
 
@@ -27,7 +25,7 @@ Maui.ApplicationWindow
     {
         id: swipeView
         anchors.fill : parent
-        altHeader: Kirigami.Settings.isMobile
+        altHeader: Maui.Handy.isMobile
         showCSDControls: true
         //        onCurrentIndexChanged:
         //        {
@@ -125,8 +123,8 @@ Maui.ApplicationWindow
     {
         if(Maui.Handy.isAndroid)
         {
-            Maui.Android.statusbarColor( Kirigami.Theme.backgroundColor, !Maui.App.darkMode)
-            Maui.Android.navBarColor(headBar.visible ? headBar.Kirigami.Theme.backgroundColor : Kirigami.Theme.backgroundColor, !Maui.App.darkMode)
+            Maui.Android.statusbarColor( Maui.Theme.backgroundColor, !Maui.App.darkMode)
+            Maui.Android.navBarColor(headBar.visible ? headBar.Maui.Theme.backgroundColor : Maui.Theme.backgroundColor, !Maui.App.darkMode)
         }
     }
 }

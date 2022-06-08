@@ -3,8 +3,7 @@ import QtQuick.Controls 2.10
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
 
-import org.mauikit.controls 1.2 as Maui
-import org.kde.kirigami 2.7 as Kirigami
+import org.mauikit.controls 1.3 as Maui
 
 Maui.Dialog
 {
@@ -28,8 +27,8 @@ Maui.Dialog
     page.headBar.visible: true
     page.floatingHeader: true
 
-    Kirigami.Theme.colorSet: Kirigami.Theme.Window
-    Kirigami.Theme.inherit: false
+    Maui.Theme.colorSet: Maui.Theme.Window
+    Maui.Theme.inherit: false
 
     headBar.background: null
 
@@ -40,8 +39,8 @@ Maui.Dialog
             text: i18n("Fav")
             checked: contact.fav == "1"
             checkable: false
-            //                Kirigami.Theme.textColor: checked ? "#FFD700" : Kirigami.Theme.textColor
-            //                Kirigami.Theme.backgroundColor: checked ? "#FFD700" : Kirigami.Theme.textColor
+            //                Maui.Theme.textColor: checked ? "#FFD700" : Maui.Theme.textColor
+            //                Maui.Theme.backgroundColor: checked ? "#FFD700" : Maui.Theme.textColor
             onClicked:
             {
                 contact["fav"] = contact.fav == "1" ? "0" : "1"
@@ -59,14 +58,14 @@ Maui.Dialog
                 icon.name: "document-edit"
                 text: i18n("Edit")
                 onTriggered: control.editing = !control.editing
-                icon.color: Kirigami.Theme.positiveTextColor
+                icon.color: Maui.Theme.positiveTextColor
             }
 
             MenuItem
             {
                 text: i18n("Delete")
                 icon.name: "user-trash"
-                icon.color: Kirigami.Theme.negativeTextColor
+                icon.color: Maui.Theme.negativeTextColor
                 onTriggered: _removeDialog.open()
             }
         }
@@ -158,14 +157,13 @@ Maui.Dialog
                 Rectangle
                 {
                     anchors.fill: parent
-                    color: Kirigami.Theme.backgroundColor
+                    color: Maui.Theme.backgroundColor
                     opacity: 0.7
                 }
             }
 
             Maui.Separator
             {
-                edge: Qt.BottomEdge
                 anchors.bottom: parent.bottom
                 anchors.left: parent.left
                 anchors.right: parent.right
@@ -180,7 +178,7 @@ Maui.Dialog
             anchors.centerIn: parent
             radius: Maui.Style.radiusV
             color: Qt.rgba(Math.random(),Math.random(),Math.random(),1);
-            border.color: Qt.tint(Kirigami.Theme.textColor, Qt.rgba(Kirigami.Theme.backgroundColor.r, Kirigami.Theme.backgroundColor.g, Kirigami.Theme.backgroundColor.b, 0.7))
+            border.color: Qt.tint(Maui.Theme.textColor, Qt.rgba(Maui.Theme.backgroundColor.r, Maui.Theme.backgroundColor.g, Maui.Theme.backgroundColor.b, 0.7))
 
             MouseArea
             {
@@ -349,7 +347,7 @@ Maui.Dialog
         {
             icon.name: "message-new"
             text: i18n("Message")
-            icon.color: Kirigami.Theme.textColor
+            icon.color: Maui.Theme.textColor
             onTriggered:
             {
                 _dialogLoader.sourceComponent =  _messageComposerComponent
@@ -360,10 +358,10 @@ Maui.Dialog
 
         Action
         {
-            enabled: Kirigami.Settings.isMobile
+            enabled: Maui.Handy.isMobile
             icon.name: "call-start"
             text: i18n("Call")
-            icon.color: Kirigami.Theme.textColor
+            icon.color: Maui.Theme.textColor
 
             onTriggered:
             {
@@ -375,7 +373,7 @@ Maui.Dialog
         {
             icon.name: "edit-copy"
             text: i18n("Copy")
-            icon.color: Kirigami.Theme.textColor
+            icon.color: Maui.Theme.textColor
             onTriggered:
             {
                 Maui.Handy.copyTextToClipboard(control.contact.tel)
@@ -409,7 +407,7 @@ Maui.Dialog
         {
             icon.name: "message-new"
             text: i18n("Message")
-            icon.color: Kirigami.Theme.textColor
+            icon.color: Maui.Theme.textColor
             onTriggered:
             {
                 _dialogLoader.sourceComponent =  _messageComposerComponent
@@ -422,7 +420,7 @@ Maui.Dialog
         {
             icon.name: "edit-copy"
             text: i18n("Copy")
-            icon.color: Kirigami.Theme.textColor
+            icon.color: Maui.Theme.textColor
             onTriggered:
             {
                 Maui.Handy.copyTextToClipboard(control.contact.tel)
