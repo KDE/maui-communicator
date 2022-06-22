@@ -12,14 +12,11 @@ import "widgets"
 Maui.ApplicationWindow
 {
     id: root
-    headBar.visible: false
-//    Maui.App.darkMode: true
 
     readonly property var views : ({ favs: 0, contacts : 1 })
 
     readonly property alias dialog: _dialogLoader.item
 
-    //   autoHideHeader: swipeView.currentItem.currentItem ? swipeView.currentItem.currentItem.editing : false
 
     Maui.AppViews
     {
