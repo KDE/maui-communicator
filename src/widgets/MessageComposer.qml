@@ -58,22 +58,23 @@ Maui.Dialog
         popup.z: control.z + 1
     }
 
+//    headBar.middleContent:  Maui.TextField
+//    {
+//        id: _subjectTextField
+//        visible: _combobox.currentText === contact.email
+//        Layout.fillWidth: true
+//        placeholderText: i18n("Subject")
+//        font.bold: true
+//        font.weight: Font.Bold
+//        font.pointSize: Maui.Style.fontSizes.big
+//    }
+
     stack: TE.TextEditor
     {
         id: _editor
         Layout.fillHeight: true
         Layout.fillWidth: true
 
-        headBar.middleContent:  Maui.TextField
-        {
-            id: _subjectTextField
-            visible: _combobox.currentText === contact.email
-            Layout.fillWidth: true
-            placeholderText: i18n("Subject")
-            font.bold: true
-            font.weight: Font.Bold
-            font.pointSize: Maui.Style.fontSizes.big
-        }
     }
 
 }
