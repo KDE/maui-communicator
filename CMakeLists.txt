@@ -102,6 +102,7 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
 install(TARGETS ${PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.communicator.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
 install(FILES org.kde.communicator.json DESTINATION /usr/share/maui-accounts/manifests)
+install(FILES org.kde.communicator.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
