@@ -11,6 +11,7 @@
   <name xml:lang="fr">Communicator</name>
   <name xml:lang="nl">Communicator</name>
   <name xml:lang="pt">Communicator</name>
+  <name xml:lang="pt-BR">Communicator</name>
   <name xml:lang="sl">Communicator</name>
   <name xml:lang="tr">Communicator</name>
   <name xml:lang="uk">Комунікатор</name>
@@ -23,6 +24,7 @@
   <summary xml:lang="fr">Gestionnaire de contacts</summary>
   <summary xml:lang="nl">Beheerder van contactpersonen</summary>
   <summary xml:lang="pt">Gestor de contactos</summary>
+  <summary xml:lang="pt-BR">Gerenciador de contatos</summary>
   <summary xml:lang="sl">Upravljalnik stikov</summary>
   <summary xml:lang="tr">Kişi yöneticisi</summary>
   <summary xml:lang="uk">Керування контактами</summary>
@@ -36,6 +38,7 @@
     <p xml:lang="fr">Le logiciel « Communicator » est un gestionnaire de contacts.</p>
     <p xml:lang="nl">Communicator is een beheerder van contactpersonen.</p>
     <p xml:lang="pt">O Communicator é um gestor de contactos.</p>
+    <p xml:lang="pt-BR">Communicator é um gerenciador de contatos.</p>
     <p xml:lang="sl">Communicator je upravljalnik stikov.</p>
     <p xml:lang="tr">Communicator, bir kişi yöneticisidir.</p>
     <p xml:lang="uk">«Комунікатор» — програма для керування записами контактів.</p>
@@ -55,6 +58,7 @@
       <caption xml:lang="fr">Communicator.</caption>
       <caption xml:lang="nl">Communicator.</caption>
       <caption xml:lang="pt">Communicator.</caption>
+      <caption xml:lang="pt-BR">Communicator.</caption>
       <caption xml:lang="sl">Communicator.</caption>
       <caption xml:lang="tr">Communicator.</caption>
       <caption xml:lang="uk">Комунікатор.</caption>
