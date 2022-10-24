@@ -9,6 +9,7 @@
   <name xml:lang="es">Communicator</name>
   <name xml:lang="eu">Communicator</name>
   <name xml:lang="fr">Communicator</name>
+  <name xml:lang="id">Communicator</name>
   <name xml:lang="nl">Communicator</name>
   <name xml:lang="pt">Communicator</name>
   <name xml:lang="pt-BR">Communicator</name>
@@ -22,6 +23,7 @@
   <summary xml:lang="es">Administrador de contactos</summary>
   <summary xml:lang="eu">Kontaktu-kudeatzailea</summary>
   <summary xml:lang="fr">Gestionnaire de contacts</summary>
+  <summary xml:lang="id">Pengelola kontak</summary>
   <summary xml:lang="nl">Beheerder van contactpersonen</summary>
   <summary xml:lang="pt">Gestor de contactos</summary>
   <summary xml:lang="pt-BR">Gerenciador de contatos</summary>
@@ -36,6 +38,7 @@
     <p xml:lang="es">Communicator es un administrador de contactos.</p>
     <p xml:lang="eu">«Communicator» kontaktu-kudeatzaile bat da.</p>
     <p xml:lang="fr">Le logiciel « Communicator » est un gestionnaire de contacts.</p>
+    <p xml:lang="id">Communicator adalah sebuah pengelola kontak.</p>
     <p xml:lang="nl">Communicator is een beheerder van contactpersonen.</p>
     <p xml:lang="pt">O Communicator é um gestor de contactos.</p>
     <p xml:lang="pt-BR">Communicator é um gerenciador de contatos.</p>
@@ -56,6 +59,7 @@
       <caption xml:lang="es">Communicator.</caption>
       <caption xml:lang="eu">Communicator.</caption>
       <caption xml:lang="fr">Communicator.</caption>
+      <caption xml:lang="id">Communicator.</caption>
       <caption xml:lang="nl">Communicator.</caption>
       <caption xml:lang="pt">Communicator.</caption>
       <caption xml:lang="pt-BR">Communicator.</caption>
