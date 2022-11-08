@@ -98,6 +98,8 @@ ecm_setup_version(${COMMUNICATOR_VERSION}
 
 add_subdirectory(src)
 
+ki18n_install(po)
+
 if(UNIX AND NOT APPLE AND NOT ANDROID)
 install(TARGETS ${PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES org.kde.communicator.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
