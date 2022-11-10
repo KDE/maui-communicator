@@ -1,0 +1,186 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the maui-communicator package.
+#
+# Yuri Chornoivan <yurchor@ukr.net>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: maui-communicator\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-11-09 00:46+0000\n"
+"PO-Revision-Date: 2022-11-09 20:55+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.0\n"
+
+#: src/main.cpp:50
+#, kde-format
+msgid "Communicator"
+msgstr "Комунікатор"
+
+#: src/main.cpp:50
+#, kde-format
+msgid "Organize and sync your contacts."
+msgstr "Упорядкуйте ваші контакти та синхронізуйте їх."
+
+#: src/main.cpp:50
+#, kde-format
+msgid "© 2019-%1 Nitrux Development Team"
+msgstr "© Команда розробників Nitrux, 2019–%1"
+
+#: src/main.cpp:51
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:51
+#, kde-format
+msgid "Developer"
+msgstr "Розробник"
+
+#: src/main.qml:53
+#, kde-format
+msgid "There're no favorite contacts"
+msgstr "Немає улюблених контактів"
+
+#: src/main.qml:54
+#, kde-format
+msgid "You can mark as favorite your contacts to quickly access them"
+msgstr ""
+"Ви можете позначити ваші контакти як улюблені, щоб їх простіше було знайти"
+
+#: src/main.qml:70
+#, kde-format
+msgid "There're no contacts"
+msgstr "Контактів ще немає"
+
+#: src/main.qml:71
+#, kde-format
+msgid "You can add new contacts"
+msgstr "Ви можете додати нові контакти"
+
+#: src/views/contacts/ContactPage.qml:39
+#, kde-format
+msgid "Fav"
+msgstr "Улюбл."
+
+#: src/views/contacts/ContactPage.qml:59
+#, kde-format
+msgid "Edit"
+msgstr "Змінити"
+
+#: src/views/contacts/ContactPage.qml:66
+#, kde-format
+msgid "Delete"
+msgstr "Вилучити"
+
+#: src/views/contacts/ContactPage.qml:100
+#, kde-format
+msgid "Remove contact..."
+msgstr "Вилучити контакт…"
+
+#: src/views/contacts/ContactPage.qml:101
+#, kde-format
+msgid ""
+"Are you sure you want to remove this contact? This action can not be undone."
+msgstr ""
+"Ви справді хочете вилучити цей запис контакту? Наслідки цієї дії не можна "
+"буде скасувати."
+
+#: src/views/contacts/ContactPage.qml:105
+#: src/views/contacts/ContactsView.qml:325
+#, kde-format
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/views/contacts/ContactPage.qml:106
+#, kde-format
+msgid "Remove"
+msgstr "Вилучити"
+
+#: src/views/contacts/ContactPage.qml:286
+#, kde-format
+msgid "Account"
+msgstr "Обліковий запис"
+
+#: src/views/contacts/ContactPage.qml:310
+#, kde-format
+msgid "Name"
+msgstr "Назва"
+
+#: src/views/contacts/ContactPage.qml:334
+#, kde-format
+msgid "Phone"
+msgstr "Телефон"
+
+#: src/views/contacts/ContactPage.qml:349
+#: src/views/contacts/ContactPage.qml:409
+#, kde-format
+msgid "Message"
+msgstr "Повідомлення"
+
+#: src/views/contacts/ContactPage.qml:363
+#, kde-format
+msgid "Call"
+msgstr "Викликати"
+
+#: src/views/contacts/ContactPage.qml:375
+#: src/views/contacts/ContactPage.qml:422
+#, kde-format
+msgid "Copy"
+msgstr "Копіювати"
+
+#: src/views/contacts/ContactPage.qml:394
+#, kde-format
+msgid "Email"
+msgstr "Ел. пошта"
+
+#: src/views/contacts/ContactPage.qml:441
+#, kde-format
+msgid "Organization"
+msgstr "Організація"
+
+#: src/views/contacts/ContactPage.qml:464
+#, kde-format
+msgid "Title"
+msgstr "Заголовок"
+
+#: src/views/contacts/ContactsView.qml:59
+#, kde-format
+msgid "Search %1 contacts"
+msgstr "Шукати контакти (%1)"
+
+#: src/views/contacts/ContactsView.qml:322
+#: src/views/contacts/ContactsView.qml:326
+#, kde-format
+msgid "Discard"
+msgstr "Відкинути"
+
+#: src/views/contacts/ContactsView.qml:323
+#, kde-format
+msgid ""
+"If you chose to exit the changes made will be lost. Click Discard to exit or "
+"cancel to go back and save the changes"
+msgstr ""
+"Якщо ви вибрали варіант із виходом, внесені зміни буде втрачено. Натисніть "
+"«Відкинути», щоб вийти або «Скасувати», щоб повернутися і зберегти зміни."
+
+#: src/views/contacts/ContactsView.qml:364
+#, kde-format
+msgid "New contact added"
+msgstr "Додано новий контакт"
+
+#: src/widgets/MessageComposer.qml:18
+#, kde-format
+msgid "Send..."
+msgstr "Надіслати…"
+
+#: src/widgets/MessageComposer.qml:35
+#, kde-format
+msgid "Message sent"
+msgstr "Повідомлення надіслано"

@@ -1,0 +1,184 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the maui-communicator package.
+#
+# Emir SARI <emir_sari@icloud.com>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: maui-communicator\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-11-09 00:46+0000\n"
+"PO-Revision-Date: 2022-11-09 11:33+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 22.08.2\n"
+
+#: src/main.cpp:50
+#, kde-format
+msgid "Communicator"
+msgstr "Komunikatör"
+
+#: src/main.cpp:50
+#, kde-format
+msgid "Organize and sync your contacts."
+msgstr "Kişilerinizi düzenleyin ve eşzamanlayın."
+
+#: src/main.cpp:50
+#, kde-format
+msgid "© 2019-%1 Nitrux Development Team"
+msgstr "© 2019-%1 Nitrux Geliştirme Takımı"
+
+#: src/main.cpp:51
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:51
+#, kde-format
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: src/main.qml:53
+#, kde-format
+msgid "There're no favorite contacts"
+msgstr "Sık kullanılan kişi yok"
+
+#: src/main.qml:54
+#, kde-format
+msgid "You can mark as favorite your contacts to quickly access them"
+msgstr ""
+"Onlara tez erişmek için, bir kişiyi sık kullanılan olarak imleyebilirsiniz"
+
+#: src/main.qml:70
+#, kde-format
+msgid "There're no contacts"
+msgstr "Kişi yok"
+
+#: src/main.qml:71
+#, kde-format
+msgid "You can add new contacts"
+msgstr "Yeni kişiler ekleyebilirsiniz"
+
+#: src/views/contacts/ContactPage.qml:39
+#, kde-format
+msgid "Fav"
+msgstr "Sık Kullanılanlara Ekle"
+
+#: src/views/contacts/ContactPage.qml:59
+#, kde-format
+msgid "Edit"
+msgstr "Düzenle"
+
+#: src/views/contacts/ContactPage.qml:66
+#, kde-format
+msgid "Delete"
+msgstr "Sil"
+
+#: src/views/contacts/ContactPage.qml:100
+#, kde-format
+msgid "Remove contact..."
+msgstr "Kişiyi Kaldır..."
+
+#: src/views/contacts/ContactPage.qml:101
+#, kde-format
+msgid ""
+"Are you sure you want to remove this contact? This action can not be undone."
+msgstr ""
+"Bu kişiyi kaldırmak istediğinizden emin misiniz? Bu eylem geri alınamaz."
+
+#: src/views/contacts/ContactPage.qml:105
+#: src/views/contacts/ContactsView.qml:325
+#, kde-format
+msgid "Cancel"
+msgstr "İptal"
+
+#: src/views/contacts/ContactPage.qml:106
+#, kde-format
+msgid "Remove"
+msgstr "Kaldır"
+
+#: src/views/contacts/ContactPage.qml:286
+#, kde-format
+msgid "Account"
+msgstr "Hesap"
+
+#: src/views/contacts/ContactPage.qml:310
+#, kde-format
+msgid "Name"
+msgstr "Ad"
+
+#: src/views/contacts/ContactPage.qml:334
+#, kde-format
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/views/contacts/ContactPage.qml:349
+#: src/views/contacts/ContactPage.qml:409
+#, kde-format
+msgid "Message"
+msgstr "İleti"
+
+#: src/views/contacts/ContactPage.qml:363
+#, kde-format
+msgid "Call"
+msgstr "Çağrı"
+
+#: src/views/contacts/ContactPage.qml:375
+#: src/views/contacts/ContactPage.qml:422
+#, kde-format
+msgid "Copy"
+msgstr "Kopyala"
+
+#: src/views/contacts/ContactPage.qml:394
+#, kde-format
+msgid "Email"
+msgstr "E-posta"
+
+#: src/views/contacts/ContactPage.qml:441
+#, kde-format
+msgid "Organization"
+msgstr "Organizasyon"
+
+#: src/views/contacts/ContactPage.qml:464
+#, kde-format
+msgid "Title"
+msgstr "Unvan"
+
+#: src/views/contacts/ContactsView.qml:59
+#, kde-format
+msgid "Search %1 contacts"
+msgstr "%1 kişiyi ara"
+
+#: src/views/contacts/ContactsView.qml:322
+#: src/views/contacts/ContactsView.qml:326
+#, kde-format
+msgid "Discard"
+msgstr "At"
+
+#: src/views/contacts/ContactsView.qml:323
+#, kde-format
+msgid ""
+"If you chose to exit the changes made will be lost. Click Discard to exit or "
+"cancel to go back and save the changes"
+msgstr ""
+"Şu an çıkarsanız tüm değişiklikler kaybolacaktır. Çıkmak için At'a, geri "
+"gidip değişiklikleri kaydetmek için İptal'e basın"
+
+#: src/views/contacts/ContactsView.qml:364
+#, kde-format
+msgid "New contact added"
+msgstr "Yeni kişi eklendi"
+
+#: src/widgets/MessageComposer.qml:18
+#, kde-format
+msgid "Send..."
+msgstr "Gönder..."
+
+#: src/widgets/MessageComposer.qml:35
+#, kde-format
+msgid "Message sent"
+msgstr "İleti gönderildi"
