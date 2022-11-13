@@ -92,7 +92,7 @@ msgstr "Elimina el contacte..."
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
 msgstr ""
-"Segur que voleu eliminar este contacte? Esta operació no es pot desfer."
+"Segur que voleu eliminar este contacte? Esta operació no es podrà desfer."
 
 #: src/views/contacts/ContactPage.qml:105
 #: src/views/contacts/ContactsView.qml:325
