@@ -43,7 +43,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     app.setOrganizationName(QStringLiteral("Maui"));
     app.setWindowIcon(QIcon("://communicator.svg"));
-    MauiApp::instance()->setIconName("qrc:/communicator.svg");
 
     KLocalizedString::setApplicationDomain("communicator");
     KAboutData about(
@@ -56,6 +55,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     about.setProgramLogo(app.windowIcon());
 
     KAboutData::setApplicationData(about);
+    MauiApp::instance()->setIconName("qrc:/communicator.svg");
 
     QCommandLineParser parser;
     parser.process(app);
