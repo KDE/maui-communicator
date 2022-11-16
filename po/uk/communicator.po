@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-09 00:46+0000\n"
+"POT-Creation-Date: 2022-11-16 00:45+0000\n"
 "PO-Revision-Date: 2022-11-09 20:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -18,30 +18,35 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: src/main.cpp:50
+#: src/main.cpp:49
 #, kde-format
 msgid "Communicator"
 msgstr "Комунікатор"
 
-#: src/main.cpp:50
+#: src/main.cpp:49
 #, kde-format
 msgid "Organize and sync your contacts."
 msgstr "Упорядкуйте ваші контакти та синхронізуйте їх."
 
-#: src/main.cpp:50
+#: src/main.cpp:49
 #, kde-format
 msgid "© 2019-%1 Nitrux Development Team"
 msgstr "© Команда розробників Nitrux, 2019–%1"
 
-#: src/main.cpp:51
+#: src/main.cpp:50
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:51
+#: src/main.cpp:50
 #, kde-format
 msgid "Developer"
 msgstr "Розробник"
+
+#: src/main.qml:44
+#, kde-format
+msgid "Favorites"
+msgstr ""
 
 #: src/main.qml:53
 #, kde-format
@@ -53,6 +58,11 @@ msgstr "Немає улюблених контактів"
 msgid "You can mark as favorite your contacts to quickly access them"
 msgstr ""
 "Ви можете позначити ваші контакти як улюблені, щоб їх простіше було знайти"
+
+#: src/main.qml:61
+#, kde-format
+msgid "Contacts"
+msgstr ""
 
 #: src/main.qml:70
 #, kde-format

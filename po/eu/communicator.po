@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-09 00:46+0000\n"
+"POT-Creation-Date: 2022-11-16 00:45+0000\n"
 "PO-Revision-Date: 2022-11-10 07:23+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,30 +20,35 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.08.3\n"
 
-#: src/main.cpp:50
+#: src/main.cpp:49
 #, kde-format
 msgid "Communicator"
 msgstr "Komunikatzailea"
 
-#: src/main.cpp:50
+#: src/main.cpp:49
 #, kde-format
 msgid "Organize and sync your contacts."
 msgstr "Zure kontaktuak antolatu eta sinkronizatu"
 
-#: src/main.cpp:50
+#: src/main.cpp:49
 #, kde-format
 msgid "© 2019-%1 Nitrux Development Team"
 msgstr "© 2019-%1 Nitrux Garapen Taldea"
 
-#: src/main.cpp:51
+#: src/main.cpp:50
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:51
+#: src/main.cpp:50
 #, kde-format
 msgid "Developer"
 msgstr "Garatzailea"
+
+#: src/main.qml:44
+#, kde-format
+msgid "Favorites"
+msgstr ""
 
 #: src/main.qml:53
 #, kde-format
@@ -55,6 +60,11 @@ msgstr "Ez dago gogoko kontakturik"
 msgid "You can mark as favorite your contacts to quickly access them"
 msgstr ""
 "Zure kontaktuak gogoko gisa marka ditzakezu haietara azkarrago iristeko"
+
+#: src/main.qml:61
+#, kde-format
+msgid "Contacts"
+msgstr ""
 
 #: src/main.qml:70
 #, kde-format
