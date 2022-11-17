@@ -41,7 +41,7 @@ msgstr "Desenvolvimento"
 #: src/main.qml:44
 #, kde-format
 msgid "Favorites"
-msgstr ""
+msgstr "Favoritos"
 
 #: src/main.qml:53
 #, kde-format
@@ -58,7 +58,7 @@ msgstr ""
 #: src/main.qml:61
 #, kde-format
 msgid "Contacts"
-msgstr ""
+msgstr "Contactos"
 
 #: src/main.qml:70
 #, kde-format
