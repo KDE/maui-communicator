@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-16 00:45+0000\n"
-"PO-Revision-Date: 2022-11-10 18:48+0100\n"
-"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
+"PO-Revision-Date: 2022-11-16 09:36+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,7 @@ msgstr "Desenvolupador"
 #: src/main.qml:44
 #, kde-format
 msgid "Favorites"
-msgstr ""
+msgstr "Preferits"
 
 #: src/main.qml:53
 #, kde-format
@@ -65,7 +65,7 @@ msgstr ""
 #: src/main.qml:61
 #, kde-format
 msgid "Contacts"
-msgstr ""
+msgstr "Contactes"
 
 #: src/main.qml:70
 #, kde-format
