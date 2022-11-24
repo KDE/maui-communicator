@@ -94,5 +94,8 @@
       <url>https://nxos.org/maui/maui-1-2-2-release/</url>
     </release>
     <release version="0.1.0" date="2018-09-06"/>
+    <release version="2.2.1" date="2022-11-25">
+      <url>https://mauikit.org/blog/maui-2-2-1-release/</url>
+    </release>
   </releases>
 </component>
