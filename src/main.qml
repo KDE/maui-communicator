@@ -118,9 +118,9 @@ Maui.ApplicationWindow
     Component.onCompleted:
     {
         setAndroidStatusBarColor()
-
+/*
         if(_favsView.currentItem.currentView.count < 1)
-            swipeView.currentIndex = views.contacts
+            swipeView.currentIndex = views.contacts*/
 
     }
 
