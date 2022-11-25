@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<manifest package="org.maui.communicator" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="2.1.0" android:versionCode="2" android:installLocation="auto">
+<manifest package="org.maui.communicator" xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="${versionName}" android:versionCode="${versionCode}" android:installLocation="auto">
     <!-- The following comment will be replaced upon deployment with default permissions based on the dependencies of the application.
          Remove the comment if you do not require these default permissions. -->
 
 
     <!-- The following comment will be replaced upon deployment with default features based on the dependencies of the application.
          Remove the comment if you do not require these default features. -->
-    <!-- %%INSERT_FEATURES -->
+
 
     <supports-screens android:largeScreens="true" android:normalScreens="true" android:anyDensity="true" android:smallScreens="true"/>
     <application android:hardwareAccelerated="true" android:name="org.qtproject.qt5.android.bindings.QtApplication" android:label="Communicator" android:extractNativeLibs="true" android:icon="@drawable/icon">
