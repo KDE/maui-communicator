@@ -27,15 +27,9 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
-#if defined Q_OS_ANDROID || defined Q_OS_IOS
+#if defined Q_OS_ANDROID
     QGuiApplication app(argc, argv);
-#else
-    QApplication app(argc, argv);
-#endif
 
-    qDebug() << "APP LOADING SPEED TESTS" << 1;
-
-#ifdef Q_OS_ANDROID
     if (!MAUIAndroid::checkRunTimePermissions({"android.permission.WRITE_EXTERNAL_STORAGE",
                                                "android.permission.READ_CALL_LOG",
                                                "android.permission.SEND_SMS",
@@ -44,7 +38,11 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
                                                "android.permission.GET_ACCOUNTS",
                                                "android.permission.READ_CONTACTS"}))
         return -1;
+#else
+    QApplication app(argc, argv);
 #endif
+
+    qDebug() << "APP LOADING SPEED TESTS" << 1;
 
     app.setOrganizationName(QStringLiteral("Maui"));
     app.setWindowIcon(QIcon("://communicator.svg"));
