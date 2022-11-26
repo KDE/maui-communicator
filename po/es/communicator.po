@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-16 00:45+0000\n"
+"POT-Creation-Date: 2022-11-26 00:45+0000\n"
 "PO-Revision-Date: 2022-11-20 09:59+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.04.2\n"
 
-#: src/main.cpp:49
+#: src/main.cpp:52
 #, kde-format
 msgid "Communicator"
 msgstr "Communicator"
 
-#: src/main.cpp:49
+#: src/main.cpp:52
 #, kde-format
 msgid "Organize and sync your contacts."
 msgstr "Organice y sincronice sus contactos."
 
-#: src/main.cpp:49
+#: src/main.cpp:52
 #, kde-format
 msgid "© 2019-%1 Nitrux Development Team"
 msgstr "© 2019-%1El equipo de desarrollo Nitrux"
 
-#: src/main.cpp:50
+#: src/main.cpp:53
 #, kde-format
 msgid "Camilo Higuita"
 msgstr "Camilo Higuita"
 
-#: src/main.cpp:50
+#: src/main.cpp:53
 #, kde-format
 msgid "Developer"
 msgstr "Desarrollador"
