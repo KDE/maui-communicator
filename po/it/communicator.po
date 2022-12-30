@@ -1,0 +1,195 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the maui-communicator package.
+# Paolo Zamponi <zapaolo@email.it>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maui-communicator\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-11-26 00:45+0000\n"
+"PO-Revision-Date: 2022-12-22 08:47+0100\n"
+"Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 22.12.0\n"
+
+#: src/main.cpp:52
+#, kde-format
+msgid "Communicator"
+msgstr "Communicator"
+
+#: src/main.cpp:52
+#, kde-format
+msgid "Organize and sync your contacts."
+msgstr "Organizza e sincronizza i tuoi contatti."
+
+#: src/main.cpp:52
+#, kde-format
+msgid "© 2019-%1 Nitrux Development Team"
+msgstr "© 2019-%1 La squadra di sviluppo di Nitrux"
+
+#: src/main.cpp:53
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:53
+#, kde-format
+msgid "Developer"
+msgstr "Sviluppatore"
+
+#: src/main.qml:44
+#, kde-format
+msgid "Favorites"
+msgstr "Preferiti"
+
+#: src/main.qml:53
+#, kde-format
+msgid "There're no favorite contacts"
+msgstr "Non ci sono contatti preferiti"
+
+#: src/main.qml:54
+#, kde-format
+msgid "You can mark as favorite your contacts to quickly access them"
+msgstr ""
+"Puoi segnare un contatto come preferito per avere un accesso rapido ad esso"
+
+#: src/main.qml:61
+#, kde-format
+msgid "Contacts"
+msgstr "Contatti"
+
+#: src/main.qml:70
+#, kde-format
+msgid "There're no contacts"
+msgstr "Non ci sono contatti"
+
+#: src/main.qml:71
+#, kde-format
+msgid "You can add new contacts"
+msgstr "Puoi aggiungere nuovi contatti"
+
+#: src/views/contacts/ContactPage.qml:39
+#, kde-format
+msgid "Fav"
+msgstr "Aggiungi ai preferiti"
+
+#: src/views/contacts/ContactPage.qml:59
+#, kde-format
+msgid "Edit"
+msgstr "Modifica"
+
+#: src/views/contacts/ContactPage.qml:66
+#, kde-format
+msgid "Delete"
+msgstr "Elimina"
+
+#: src/views/contacts/ContactPage.qml:100
+#, kde-format
+msgid "Remove contact..."
+msgstr "Rimuovi contatto..."
+
+#: src/views/contacts/ContactPage.qml:101
+#, kde-format
+msgid ""
+"Are you sure you want to remove this contact? This action can not be undone."
+msgstr ""
+"Sei sicuro di voler rimuovere questo contatto? Questa azione non può essere "
+"annullata."
+
+#: src/views/contacts/ContactPage.qml:105
+#: src/views/contacts/ContactsView.qml:325
+#, kde-format
+msgid "Cancel"
+msgstr "Annulla"
+
+#: src/views/contacts/ContactPage.qml:106
+#, kde-format
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: src/views/contacts/ContactPage.qml:286
+#, kde-format
+msgid "Account"
+msgstr "Account"
+
+#: src/views/contacts/ContactPage.qml:310
+#, kde-format
+msgid "Name"
+msgstr "Nome"
+
+#: src/views/contacts/ContactPage.qml:334
+#, kde-format
+msgid "Phone"
+msgstr "Telefono"
+
+#: src/views/contacts/ContactPage.qml:349
+#: src/views/contacts/ContactPage.qml:409
+#, kde-format
+msgid "Message"
+msgstr "Messaggio"
+
+#: src/views/contacts/ContactPage.qml:363
+#, kde-format
+msgid "Call"
+msgstr "Chiamata"
+
+#: src/views/contacts/ContactPage.qml:375
+#: src/views/contacts/ContactPage.qml:422
+#, kde-format
+msgid "Copy"
+msgstr "Copia"
+
+#: src/views/contacts/ContactPage.qml:394
+#, kde-format
+msgid "Email"
+msgstr "Posta elettronica"
+
+#: src/views/contacts/ContactPage.qml:441
+#, kde-format
+msgid "Organization"
+msgstr "Organizzazione"
+
+#: src/views/contacts/ContactPage.qml:464
+#, kde-format
+msgid "Title"
+msgstr "Titolo"
+
+#: src/views/contacts/ContactsView.qml:59
+#, kde-format
+msgid "Search %1 contacts"
+msgstr "Cerca %1 contatti"
+
+#: src/views/contacts/ContactsView.qml:322
+#: src/views/contacts/ContactsView.qml:326
+#, kde-format
+msgid "Discard"
+msgstr "Scarta"
+
+#: src/views/contacts/ContactsView.qml:323
+#, kde-format
+msgid ""
+"If you chose to exit the changes made will be lost. Click Discard to exit or "
+"cancel to go back and save the changes"
+msgstr ""
+"Se scegli di uscire, le modifiche fatte saranno perse. Premi Scarta per "
+"uscire, oppure annulla per tornare indietro e salvare le modifiche"
+
+#: src/views/contacts/ContactsView.qml:364
+#, kde-format
+msgid "New contact added"
+msgstr "Nuovo contatto aggiunto"
+
+#: src/widgets/MessageComposer.qml:18
+#, kde-format
+msgid "Send..."
+msgstr "Invia..."
+
+#: src/widgets/MessageComposer.qml:35
+#, kde-format
+msgid "Message sent"
+msgstr "Messaggio inviato"
