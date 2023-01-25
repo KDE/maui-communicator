@@ -6,6 +6,7 @@
   <name>Communicator</name>
   <name xml:lang="ca">Communicator</name>
   <name xml:lang="ca-valencia">Communicator</name>
+  <name xml:lang="cs">Komunikátor</name>
   <name xml:lang="en-GB">Communicator</name>
   <name xml:lang="es">Communicator</name>
   <name xml:lang="eu">Communicator</name>
@@ -23,6 +24,7 @@
   <summary>Contacts manager</summary>
   <summary xml:lang="ca">Gestor de contactes</summary>
   <summary xml:lang="ca-valencia">Gestor de contactes</summary>
+  <summary xml:lang="cs">Správce kontaktů</summary>
   <summary xml:lang="en-GB">Contacts manager</summary>
   <summary xml:lang="es">Administrador de contactos</summary>
   <summary xml:lang="eu">Kontaktu-kudeatzailea</summary>
@@ -65,6 +67,7 @@
       <caption>Communicator.</caption>
       <caption xml:lang="ca">Communicator.</caption>
       <caption xml:lang="ca-valencia">Communicator.</caption>
+      <caption xml:lang="cs">Komunikátor.</caption>
       <caption xml:lang="en-GB">Communicator.</caption>
       <caption xml:lang="es">Communicator.</caption>
       <caption xml:lang="eu">Communicator.</caption>
