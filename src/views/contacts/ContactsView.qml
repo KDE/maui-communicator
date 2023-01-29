@@ -70,7 +70,7 @@ Maui.AltBrowser
         height: visible ? Maui.Style.toolBarHeight * 1.5 : 0
         width: visible ? parent.width : 0
 
-        Maui.ComboBox
+        ComboBox
         {
             id: _accountsCombobox
             width: isWide ? control.width * 0.8 : control.width * 0.95

@@ -312,7 +312,7 @@ Maui.Dialog
 
         iconSource: "im-user"
 
-        leftLabels.data: Maui.TextField
+        leftLabels.data: TextField
         {
             id: _nameField
             visible: control.editing
@@ -335,7 +335,7 @@ Maui.Dialog
         label2.text: contact.tel || ""
         iconSource: "call-start"
 
-        leftLabels.data: Maui.TextField
+        leftLabels.data: TextField
         {
             visible: control.editing
             id: _telField
@@ -395,7 +395,7 @@ Maui.Dialog
         label2.text: contact.email || ""
         iconSource: "mail-message"
 
-        leftLabels.data: Maui.TextField
+        leftLabels.data: TextField
         {
             id: _emailField
             visible: control.editing
@@ -443,7 +443,7 @@ Maui.Dialog
 
         iconSource: "roll"
 
-        leftLabels.data: Maui.TextField
+        leftLabels.data: TextField
         {
             id: _orgField
             visible: control.editing
@@ -466,7 +466,7 @@ Maui.Dialog
 
         iconSource: "actor"
 
-        leftLabels.data: Maui.TextField
+        leftLabels.data: TextField
         {
             visible: control.editing
             Layout.fillWidth: true
