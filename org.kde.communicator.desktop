@@ -66,6 +66,7 @@ GenericName[tr]=Kişiler Yöneticisi
 GenericName[uk]=Керування контактами
 GenericName[x-test]=xxContacts Managerxx
 GenericName[zh_CN]=联系人管理器
+GenericName[zh_TW]=聯絡人管理工具
 StartupNotify=true
 Icon=communicator
 MimeType=application/x-communicator;
