@@ -1,171 +1,171 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the maui-communicator package.
+#
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-11-26 00:45+0000\n"
-"PO-Revision-Date: 2023-02-07 11:03\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-02-07 23:50+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/maui-communicator/communicator.pot\n"
-"X-Crowdin-File-ID: 41157\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #: src/main.cpp:52
 #, kde-format
 msgid "Communicator"
-msgstr ""
+msgstr "通訊工具"
 
 #: src/main.cpp:52
 #, kde-format
 msgid "Organize and sync your contacts."
-msgstr ""
+msgstr "管理並同步您的聯絡人。"
 
 #: src/main.cpp:52
 #, kde-format
 msgid "© 2019-%1 Nitrux Development Team"
-msgstr ""
+msgstr "© 2019-%1 Nitrux 開發團隊"
 
 #: src/main.cpp:53
 #, kde-format
 msgid "Camilo Higuita"
-msgstr ""
+msgstr "Camilo Higuita"
 
 #: src/main.cpp:53
 #, kde-format
 msgid "Developer"
-msgstr ""
+msgstr "開發者"
 
 #: src/main.qml:44
 #, kde-format
 msgid "Favorites"
-msgstr ""
+msgstr "我的最愛"
 
 #: src/main.qml:53
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr ""
+msgstr "沒有最愛的聯絡人"
 
 #: src/main.qml:54
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
-msgstr ""
+msgstr "您可以將您的聯絡人標記為最愛來快速存取他們"
 
 #: src/main.qml:61
 #, kde-format
 msgid "Contacts"
-msgstr ""
+msgstr "聯絡人"
 
 #: src/main.qml:70
 #, kde-format
 msgid "There're no contacts"
-msgstr ""
+msgstr "沒有聯絡人"
 
 #: src/main.qml:71
 #, kde-format
 msgid "You can add new contacts"
-msgstr ""
+msgstr "您可以新增聯絡人"
 
 #: src/views/contacts/ContactPage.qml:39
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "加到最愛"
 
 #: src/views/contacts/ContactPage.qml:59
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: src/views/contacts/ContactPage.qml:66
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: src/views/contacts/ContactPage.qml:100
 #, kde-format
 msgid "Remove contact..."
-msgstr ""
+msgstr "移除聯絡人…"
 
 #: src/views/contacts/ContactPage.qml:101
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
-msgstr ""
+msgstr "您確定要移除這個聯絡人嗎？這個動作無法復原。"
 
 #: src/views/contacts/ContactPage.qml:105
 #: src/views/contacts/ContactsView.qml:325
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: src/views/contacts/ContactPage.qml:106
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: src/views/contacts/ContactPage.qml:286
 #, kde-format
 msgid "Account"
-msgstr ""
+msgstr "帳號"
 
 #: src/views/contacts/ContactPage.qml:310
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "姓名"
 
 #: src/views/contacts/ContactPage.qml:334
 #, kde-format
 msgid "Phone"
-msgstr ""
+msgstr "電話"
 
 #: src/views/contacts/ContactPage.qml:349
 #: src/views/contacts/ContactPage.qml:409
 #, kde-format
 msgid "Message"
-msgstr ""
+msgstr "傳送訊息"
 
 #: src/views/contacts/ContactPage.qml:363
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "撥打電話"
 
 #: src/views/contacts/ContactPage.qml:375
 #: src/views/contacts/ContactPage.qml:422
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "複製"
 
 #: src/views/contacts/ContactPage.qml:394
 #, kde-format
 msgid "Email"
-msgstr ""
+msgstr "電子郵件"
 
 #: src/views/contacts/ContactPage.qml:441
 #, kde-format
 msgid "Organization"
-msgstr ""
+msgstr "組織"
 
 #: src/views/contacts/ContactPage.qml:464
 #, kde-format
 msgid "Title"
-msgstr ""
+msgstr "稱呼"
 
 #: src/views/contacts/ContactsView.qml:59
 #, kde-format
 msgid "Search %1 contacts"
-msgstr ""
+msgstr "搜尋 %1 個聯絡人"
 
 #: src/views/contacts/ContactsView.qml:322
 #: src/views/contacts/ContactsView.qml:326
 #, kde-format
 msgid "Discard"
-msgstr ""
+msgstr "丟棄"
 
 #: src/views/contacts/ContactsView.qml:323
 #, kde-format
@@ -173,18 +173,19 @@ msgid ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
 "cancel to go back and save the changes"
 msgstr ""
+"如果您選擇離開，所有變更都會遺失。點擊「丟棄」來離開或「取消」來回去儲存變更"
 
 #: src/views/contacts/ContactsView.qml:364
 #, kde-format
 msgid "New contact added"
-msgstr ""
+msgstr "已新增聯絡人"
 
 #: src/widgets/MessageComposer.qml:18
 #, kde-format
 msgid "Send..."
-msgstr ""
+msgstr "傳送…"
 
 #: src/widgets/MessageComposer.qml:35
 #, kde-format
 msgid "Message sent"
-msgstr ""
+msgstr "已送出訊息"
