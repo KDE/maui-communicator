@@ -176,7 +176,6 @@ Maui.AltBrowser
                 anchors.fill: parent
                 radius: Maui.Style.radiusV
                 color: Maui.Theme.backgroundColor
-                border.color: Qt.tint(Maui.Theme.textColor, Qt.rgba(Maui.Theme.backgroundColor.r, Maui.Theme.backgroundColor.g, Maui.Theme.backgroundColor.b, 0.7))
 
                 Loader
                 {

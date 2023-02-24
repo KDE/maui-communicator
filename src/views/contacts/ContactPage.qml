@@ -25,7 +25,6 @@ Maui.Dialog
     filling: !isWide
     page.footBar.visible: control.editing
     page.headBar.visible: true
-    page.floatingHeader: true
 
     Maui.Theme.colorSet: Maui.Theme.Window
     Maui.Theme.inherit: false
@@ -120,57 +119,7 @@ Maui.Dialog
         Layout.fillWidth: true
         Layout.preferredHeight: 160
 
-        Item
-        {
-            height: parent.height / 2
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: parent.top
-
-            Image
-            {
-                id: artworkBg
-                height: parent.height
-                width: parent.width
-
-                sourceSize.width: 100
-                sourceSize.height: height
-
-                fillMode: Image.PreserveAspectCrop
-                antialiasing: true
-                smooth: true
-                asynchronous: true
-                cache: true
-
-                source: contact.photo ? _contactPicLoader.item.source : _iconComponent
-            }
-
-            FastBlur
-            {
-                id: fastBlur
-                anchors.fill: parent
-                source: artworkBg
-                radius: 100
-                transparentBorder: false
-                cached: true
-
-                Rectangle
-                {
-                    anchors.fill: parent
-                    color: Maui.Theme.backgroundColor
-                    opacity: 0.7
-                }
-            }
-
-            Maui.Separator
-            {
-                anchors.bottom: parent.bottom
-                anchors.left: parent.left
-                anchors.right: parent.right
-            }
-        }
-
-        Rectangle
+       Rectangle
         {
             id: _contactPhotoColor
             height: Maui.Style.iconSizes.huge * 1.5
@@ -178,7 +127,6 @@ Maui.Dialog
             anchors.centerIn: parent
             radius: Maui.Style.radiusV
             color: Qt.rgba(Math.random(),Math.random(),Math.random(),1);
-            border.color: Qt.tint(Maui.Theme.textColor, Qt.rgba(Maui.Theme.backgroundColor.r, Maui.Theme.backgroundColor.g, Maui.Theme.backgroundColor.b, 0.7))
 
             MouseArea
             {
@@ -201,8 +149,8 @@ Maui.Dialog
             Loader
             {
                 id: _contactPicLoader
+                asynchronous: true
                 anchors.fill: parent
-                anchors.margins: 1
                 sourceComponent: contact.photo ? _imgComponent : _iconComponent
             }
 
@@ -288,7 +236,7 @@ Maui.Dialog
 
         iconSource: "password-show-on"
 
-        leftLabels.data: ComboBox
+       content: ComboBox
         {
             id: _accountsCombobox
             visible: control.editing
@@ -312,7 +260,7 @@ Maui.Dialog
 
         iconSource: "im-user"
 
-        leftLabels.data: TextField
+      content: TextField
         {
             id: _nameField
             visible: control.editing
@@ -335,7 +283,7 @@ Maui.Dialog
         label2.text: contact.tel || ""
         iconSource: "call-start"
 
-        leftLabels.data: TextField
+        content: TextField
         {
             visible: control.editing
             id: _telField
@@ -395,7 +343,7 @@ Maui.Dialog
         label2.text: contact.email || ""
         iconSource: "mail-message"
 
-        leftLabels.data: TextField
+        content: TextField
         {
             id: _emailField
             visible: control.editing
@@ -443,7 +391,7 @@ Maui.Dialog
 
         iconSource: "roll"
 
-        leftLabels.data: TextField
+         content: TextField
         {
             id: _orgField
             visible: control.editing
@@ -466,7 +414,7 @@ Maui.Dialog
 
         iconSource: "actor"
 
-        leftLabels.data: TextField
+        content: TextField
         {
             visible: control.editing
             Layout.fillWidth: true

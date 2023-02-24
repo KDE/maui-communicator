@@ -147,28 +147,4 @@ Maui.ItemDelegate
             }
         }
     }
-
-    Rectangle
-    {
-        anchors.centerIn: _cover
-
-        width: _cover.width
-        height:  _cover.height
-
-        color: "transparent"
-        border.color: control.isCurrentItem || control.hovered ? Maui.Theme.highlightColor : Qt.rgba(Maui.Theme.textColor.r, Maui.Theme.textColor.g, Maui.Theme.textColor.b, 0.2)
-        radius: Maui.Style.radiusV
-        opacity: 0.6
-
-        Rectangle
-        {
-            anchors.fill: parent
-            color: "transparent"
-            radius: parent.radius - 0.5
-            border.color: Qt.lighter(Maui.Theme.backgroundColor, 2)
-            opacity: 0.8
-            anchors.margins: 1
-        }
-    }
-
 }

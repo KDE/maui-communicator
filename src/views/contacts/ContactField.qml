@@ -8,10 +8,13 @@ AbstractButton
 {
     id: control
 
-    Maui.Theme.colorSet: Maui.Theme.Button
+    Maui.Theme.colorSet: Maui.Theme.View
     Maui.Theme.inherit: false
-    padding: Maui.Style.space.medium
+
+    padding: Maui.Style.contentMargins
     hoverEnabled: !Maui.Handy.isMobile
+
+    property alias content: _content.data
 
     property alias label1 : _template.label1
     property alias label2 : _template.label2
@@ -47,12 +50,8 @@ AbstractButton
 
     background: Rectangle
     {
-        //visible: control.hovered
-
-        color: control.checked ? control.Maui.Theme.alternateBackgroundColor : (control.hovered ? control.Maui.Theme.hoverColor :control.Maui.Theme.backgroundColor)
-        //         opacity: 0.3
+        color: control.hovered ? Maui.Theme.hoverColor : Maui.Theme.alternateBackgroundColor
         radius: Maui.Style.radiusV
-        //        border.color: control.expanded ? control.Maui.Theme.highlightColor : "transparent"
     }
 
     contentItem: ColumnLayout
@@ -71,6 +70,12 @@ AbstractButton
             label2.font.weight: Font.Bold
             label2.wrapMode: Text.WrapAnywhere
             iconSizeHint: Maui.Style.iconSizes.medium
+        }
+
+        ColumnLayout
+        {
+            id: _content
+            Layout.fillWidth: true
         }
 
         Maui.Separator
