@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:45+0000\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
 "PO-Revision-Date: 2022-11-17 09:23+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -73,27 +73,27 @@ msgstr "Tu ni stikov"
 msgid "You can add new contacts"
 msgstr "Lahko dodate nov stik"
 
-#: src/views/contacts/ContactPage.qml:39
+#: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
 msgstr "Priljubljen"
 
-#: src/views/contacts/ContactPage.qml:59
+#: src/views/contacts/ContactPage.qml:58
 #, kde-format
 msgid "Edit"
 msgstr "Uredi"
 
-#: src/views/contacts/ContactPage.qml:66
+#: src/views/contacts/ContactPage.qml:65
 #, kde-format
 msgid "Delete"
 msgstr "Zbriši"
 
-#: src/views/contacts/ContactPage.qml:100
+#: src/views/contacts/ContactPage.qml:99
 #, kde-format
 msgid "Remove contact..."
 msgstr "Odstrani stik..."
 
-#: src/views/contacts/ContactPage.qml:101
+#: src/views/contacts/ContactPage.qml:100
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
@@ -101,60 +101,60 @@ msgstr ""
 "Ali ste prepričani, da želite odstraniti ta stik? Tega dejanja ne morete "
 "povrniti."
 
-#: src/views/contacts/ContactPage.qml:105
-#: src/views/contacts/ContactsView.qml:325
+#: src/views/contacts/ContactPage.qml:104
+#: src/views/contacts/ContactsView.qml:324
 #, kde-format
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: src/views/contacts/ContactPage.qml:106
+#: src/views/contacts/ContactPage.qml:105
 #, kde-format
 msgid "Remove"
 msgstr "Odstrani"
 
-#: src/views/contacts/ContactPage.qml:286
+#: src/views/contacts/ContactPage.qml:234
 #, kde-format
 msgid "Account"
 msgstr "Račun"
 
-#: src/views/contacts/ContactPage.qml:310
+#: src/views/contacts/ContactPage.qml:258
 #, kde-format
 msgid "Name"
 msgstr "Ime"
 
-#: src/views/contacts/ContactPage.qml:334
+#: src/views/contacts/ContactPage.qml:282
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: src/views/contacts/ContactPage.qml:349
-#: src/views/contacts/ContactPage.qml:409
+#: src/views/contacts/ContactPage.qml:297
+#: src/views/contacts/ContactPage.qml:357
 #, kde-format
 msgid "Message"
 msgstr "Sporočilo"
 
-#: src/views/contacts/ContactPage.qml:363
+#: src/views/contacts/ContactPage.qml:311
 #, kde-format
 msgid "Call"
 msgstr "Klic"
 
-#: src/views/contacts/ContactPage.qml:375
-#: src/views/contacts/ContactPage.qml:422
+#: src/views/contacts/ContactPage.qml:323
+#: src/views/contacts/ContactPage.qml:370
 #, kde-format
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: src/views/contacts/ContactPage.qml:394
+#: src/views/contacts/ContactPage.qml:342
 #, kde-format
 msgid "Email"
 msgstr "E-pošta"
 
-#: src/views/contacts/ContactPage.qml:441
+#: src/views/contacts/ContactPage.qml:389
 #, kde-format
 msgid "Organization"
 msgstr "Organizacija"
 
-#: src/views/contacts/ContactPage.qml:464
+#: src/views/contacts/ContactPage.qml:412
 #, kde-format
 msgid "Title"
 msgstr "Naslov"
@@ -164,13 +164,13 @@ msgstr "Naslov"
 msgid "Search %1 contacts"
 msgstr "Poišči %1 stikov"
 
-#: src/views/contacts/ContactsView.qml:322
-#: src/views/contacts/ContactsView.qml:326
+#: src/views/contacts/ContactsView.qml:321
+#: src/views/contacts/ContactsView.qml:325
 #, kde-format
 msgid "Discard"
 msgstr "Zavrzi"
 
-#: src/views/contacts/ContactsView.qml:323
+#: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
@@ -179,7 +179,7 @@ msgstr ""
 "Če ste se odločili za izhod, bodo vaše spremembe izgubljene. Kliknite na "
 "Zavrzi za izhod ali Prekliči, da se vrnete nazaj in shranite spremembe"
 
-#: src/views/contacts/ContactsView.qml:364
+#: src/views/contacts/ContactsView.qml:363
 #, kde-format
 msgid "New contact added"
 msgstr "Dodan nov stik"

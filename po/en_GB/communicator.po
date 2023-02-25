@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-11-26 00:45+0000\n"
+"POT-Creation-Date: 2023-02-25 00:59+0000\n"
 "PO-Revision-Date: 2022-12-31 16:21+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -72,87 +72,87 @@ msgstr "There are no contacts"
 msgid "You can add new contacts"
 msgstr "You can add new contacts"
 
-#: src/views/contacts/ContactPage.qml:39
+#: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
 msgstr "Fav"
 
-#: src/views/contacts/ContactPage.qml:59
+#: src/views/contacts/ContactPage.qml:58
 #, kde-format
 msgid "Edit"
 msgstr "Edit"
 
-#: src/views/contacts/ContactPage.qml:66
+#: src/views/contacts/ContactPage.qml:65
 #, kde-format
 msgid "Delete"
 msgstr "Delete"
 
-#: src/views/contacts/ContactPage.qml:100
+#: src/views/contacts/ContactPage.qml:99
 #, kde-format
 msgid "Remove contact..."
 msgstr "Remove contact..."
 
-#: src/views/contacts/ContactPage.qml:101
+#: src/views/contacts/ContactPage.qml:100
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
 msgstr ""
 "Are you sure you want to remove this contact? This action can not be undone."
 
-#: src/views/contacts/ContactPage.qml:105
-#: src/views/contacts/ContactsView.qml:325
+#: src/views/contacts/ContactPage.qml:104
+#: src/views/contacts/ContactsView.qml:324
 #, kde-format
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/views/contacts/ContactPage.qml:106
+#: src/views/contacts/ContactPage.qml:105
 #, kde-format
 msgid "Remove"
 msgstr "Remove"
 
-#: src/views/contacts/ContactPage.qml:286
+#: src/views/contacts/ContactPage.qml:234
 #, kde-format
 msgid "Account"
 msgstr "Account"
 
-#: src/views/contacts/ContactPage.qml:310
+#: src/views/contacts/ContactPage.qml:258
 #, kde-format
 msgid "Name"
 msgstr "Name"
 
-#: src/views/contacts/ContactPage.qml:334
+#: src/views/contacts/ContactPage.qml:282
 #, kde-format
 msgid "Phone"
 msgstr "Phone"
 
-#: src/views/contacts/ContactPage.qml:349
-#: src/views/contacts/ContactPage.qml:409
+#: src/views/contacts/ContactPage.qml:297
+#: src/views/contacts/ContactPage.qml:357
 #, kde-format
 msgid "Message"
 msgstr "Message"
 
-#: src/views/contacts/ContactPage.qml:363
+#: src/views/contacts/ContactPage.qml:311
 #, kde-format
 msgid "Call"
 msgstr "Call"
 
-#: src/views/contacts/ContactPage.qml:375
-#: src/views/contacts/ContactPage.qml:422
+#: src/views/contacts/ContactPage.qml:323
+#: src/views/contacts/ContactPage.qml:370
 #, kde-format
 msgid "Copy"
 msgstr "Copy"
 
-#: src/views/contacts/ContactPage.qml:394
+#: src/views/contacts/ContactPage.qml:342
 #, kde-format
 msgid "Email"
 msgstr "Email"
 
-#: src/views/contacts/ContactPage.qml:441
+#: src/views/contacts/ContactPage.qml:389
 #, kde-format
 msgid "Organization"
 msgstr "Organisation"
 
-#: src/views/contacts/ContactPage.qml:464
+#: src/views/contacts/ContactPage.qml:412
 #, kde-format
 msgid "Title"
 msgstr "Title"
@@ -162,13 +162,13 @@ msgstr "Title"
 msgid "Search %1 contacts"
 msgstr "Search %1 contacts"
 
-#: src/views/contacts/ContactsView.qml:322
-#: src/views/contacts/ContactsView.qml:326
+#: src/views/contacts/ContactsView.qml:321
+#: src/views/contacts/ContactsView.qml:325
 #, kde-format
 msgid "Discard"
 msgstr "Discard"
 
-#: src/views/contacts/ContactsView.qml:323
+#: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
@@ -177,7 +177,7 @@ msgstr ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
 "cancel to go back and save the changes"
 
-#: src/views/contacts/ContactsView.qml:364
+#: src/views/contacts/ContactsView.qml:363
 #, kde-format
 msgid "New contact added"
 msgstr "New contact added"
