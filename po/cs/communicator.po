@@ -30,7 +30,7 @@ msgstr ""
 #: src/main.cpp:52
 #, kde-format
 msgid "© 2019-%1 Nitrux Development Team"
-msgstr ""
+msgstr "© 2019-%1 Vývojový tým Nitrux"
 
 #: src/main.cpp:53
 #, kde-format
