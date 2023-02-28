@@ -30,6 +30,8 @@ import android.content.Context;
 import android.provider.CallLog.Calls;
 import android.provider.CallLog;
 
+import android.telephony.gsm.SmsManager;
+
 public class Union
 {
     enum KEY
@@ -49,6 +51,12 @@ public class Union
 
     public Union() {}
 
+    public static void sendSMS(Activity context, String tel, String subject, String message)
+    {
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(tel, null, message, null, null);
+    }
+
     public static void call(Activity context, String tel)
     {
 //        Intent callIntent = new Intent(Intent.ACTION_CALL);
@@ -65,6 +73,7 @@ public class Union
         callIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(callIntent);
     }
+
 
 //      public static void contacts()
 //      {

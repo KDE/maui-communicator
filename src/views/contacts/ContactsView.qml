@@ -245,8 +245,7 @@ Maui.AltBrowser
 
             Action
             {
-                icon.name: "message-new"
-                icon.color: Maui.Theme.textColor
+                icon.name: "send-sms"
                 onTriggered:
                 {
                     _dialogLoader.sourceComponent =  _messageComposerComponent
@@ -258,9 +257,7 @@ Maui.AltBrowser
             Action
             {
                 enabled: Maui.Handy.isMobile
-                icon.name: "call-start"
-                icon.color: Maui.Theme.textColor
-
+                icon.name: "dialer-call"
                 onTriggered:  _communicator.call(model.tel)
 
             }

@@ -254,7 +254,7 @@ void AndroidInterface::call(const QString &tel)
        {
            qDebug()<< "trying to call from senitents" << tel;
 
-           QAndroidJniObject::callStaticMethod<void>("com/kde/maui/tools/SendIntent",
+           QAndroidJniObject::callStaticMethod<void>("com/kde/maui/tools/Union",
                                                      "call",
                                                      "(Landroid/app/Activity;Ljava/lang/String;)V",
                                                      activity.object<jobject>(),
@@ -281,7 +281,7 @@ void AndroidInterface::sendSMS(const QString &tel, const QString &subject, const
         throw InterfaceConnFailedException();
     }
     if (activity.isValid()) {
-        QAndroidJniObject::callStaticMethod<void>("com/kde/maui/tools/SendIntent",
+        QAndroidJniObject::callStaticMethod<void>("com/kde/maui/tools/Union",
                                                   "sendSMS",
                                                   "(Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
                                                   activity.object<jobject>(),
