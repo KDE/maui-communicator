@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-03-02 00:53+0000\n"
 "PO-Revision-Date: 2022-11-09 22:26+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -99,7 +99,7 @@ msgstr ""
 "anulada."
 
 #: src/views/contacts/ContactPage.qml:104
-#: src/views/contacts/ContactsView.qml:324
+#: src/views/contacts/ContactsView.qml:321
 #, kde-format
 msgid "Cancel"
 msgstr "Cancelar"
@@ -125,7 +125,7 @@ msgid "Phone"
 msgstr "Telefone"
 
 #: src/views/contacts/ContactPage.qml:297
-#: src/views/contacts/ContactPage.qml:357
+#: src/views/contacts/ContactPage.qml:357 src/widgets/MessageComposer.qml:74
 #, kde-format
 msgid "Message"
 msgstr "Mensagem"
@@ -161,13 +161,13 @@ msgstr "Título"
 msgid "Search %1 contacts"
 msgstr "Procurar por %1 contactos"
 
-#: src/views/contacts/ContactsView.qml:321
-#: src/views/contacts/ContactsView.qml:325
+#: src/views/contacts/ContactsView.qml:318
+#: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid "Discard"
 msgstr "Apagar"
 
-#: src/views/contacts/ContactsView.qml:322
+#: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
@@ -176,17 +176,22 @@ msgstr ""
 "Se optou por sair, as alterações efectuadas perder-se-ão. Carregue em Apagar "
 "para sair ou em Cancelar para voltar atrás e gravar as alterações"
 
-#: src/views/contacts/ContactsView.qml:363
+#: src/views/contacts/ContactsView.qml:360
 #, kde-format
 msgid "New contact added"
 msgstr "Novo contacto adicionado"
 
-#: src/widgets/MessageComposer.qml:18
+#: src/widgets/MessageComposer.qml:17
 #, kde-format
 msgid "Send..."
 msgstr "Enviar..."
 
-#: src/widgets/MessageComposer.qml:35
+#: src/widgets/MessageComposer.qml:34
 #, kde-format
 msgid "Message sent"
 msgstr "Mensagem enviada"
+
+#: src/widgets/MessageComposer.qml:64
+#, kde-format
+msgid "Subject"
+msgstr ""

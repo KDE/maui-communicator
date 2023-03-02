@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-03-02 00:53+0000\n"
 "PO-Revision-Date: 2022-11-17 09:23+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -102,7 +102,7 @@ msgstr ""
 "povrniti."
 
 #: src/views/contacts/ContactPage.qml:104
-#: src/views/contacts/ContactsView.qml:324
+#: src/views/contacts/ContactsView.qml:321
 #, kde-format
 msgid "Cancel"
 msgstr "Prekliči"
@@ -128,7 +128,7 @@ msgid "Phone"
 msgstr "Telefon"
 
 #: src/views/contacts/ContactPage.qml:297
-#: src/views/contacts/ContactPage.qml:357
+#: src/views/contacts/ContactPage.qml:357 src/widgets/MessageComposer.qml:74
 #, kde-format
 msgid "Message"
 msgstr "Sporočilo"
@@ -164,13 +164,13 @@ msgstr "Naslov"
 msgid "Search %1 contacts"
 msgstr "Poišči %1 stikov"
 
-#: src/views/contacts/ContactsView.qml:321
-#: src/views/contacts/ContactsView.qml:325
+#: src/views/contacts/ContactsView.qml:318
+#: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid "Discard"
 msgstr "Zavrzi"
 
-#: src/views/contacts/ContactsView.qml:322
+#: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
@@ -179,17 +179,22 @@ msgstr ""
 "Če ste se odločili za izhod, bodo vaše spremembe izgubljene. Kliknite na "
 "Zavrzi za izhod ali Prekliči, da se vrnete nazaj in shranite spremembe"
 
-#: src/views/contacts/ContactsView.qml:363
+#: src/views/contacts/ContactsView.qml:360
 #, kde-format
 msgid "New contact added"
 msgstr "Dodan nov stik"
 
-#: src/widgets/MessageComposer.qml:18
+#: src/widgets/MessageComposer.qml:17
 #, kde-format
 msgid "Send..."
 msgstr "Pošlji..."
 
-#: src/widgets/MessageComposer.qml:35
+#: src/widgets/MessageComposer.qml:34
 #, kde-format
 msgid "Message sent"
 msgstr "Sporočilo poslano"
+
+#: src/widgets/MessageComposer.qml:64
+#, kde-format
+msgid "Subject"
+msgstr ""

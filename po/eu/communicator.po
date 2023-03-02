@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-25 00:59+0000\n"
+"POT-Creation-Date: 2023-03-02 00:53+0000\n"
 "PO-Revision-Date: 2022-11-16 06:21+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -105,7 +105,7 @@ msgstr ""
 "bueltarik."
 
 #: src/views/contacts/ContactPage.qml:104
-#: src/views/contacts/ContactsView.qml:324
+#: src/views/contacts/ContactsView.qml:321
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
@@ -131,7 +131,7 @@ msgid "Phone"
 msgstr "Telefonoa"
 
 #: src/views/contacts/ContactPage.qml:297
-#: src/views/contacts/ContactPage.qml:357
+#: src/views/contacts/ContactPage.qml:357 src/widgets/MessageComposer.qml:74
 #, kde-format
 msgid "Message"
 msgstr "Mezua"
@@ -167,13 +167,13 @@ msgstr "Titulua"
 msgid "Search %1 contacts"
 msgstr "Bilatu %1 kontaktu"
 
-#: src/views/contacts/ContactsView.qml:321
-#: src/views/contacts/ContactsView.qml:325
+#: src/views/contacts/ContactsView.qml:318
+#: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid "Discard"
 msgstr "Baztertu"
 
-#: src/views/contacts/ContactsView.qml:322
+#: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
@@ -182,17 +182,22 @@ msgstr ""
 "Irtetea erabakitzen baduzu, egindako aldaketak galdu egingo dira. Egin klik "
 "«Baztertu»ri irteteko edo «Utzi» atzera joan eta aldaketak gordetzeko"
 
-#: src/views/contacts/ContactsView.qml:363
+#: src/views/contacts/ContactsView.qml:360
 #, kde-format
 msgid "New contact added"
 msgstr "Kontaktu berria gehitu da"
 
-#: src/widgets/MessageComposer.qml:18
+#: src/widgets/MessageComposer.qml:17
 #, kde-format
 msgid "Send..."
 msgstr "Bidali..."
 
-#: src/widgets/MessageComposer.qml:35
+#: src/widgets/MessageComposer.qml:34
 #, kde-format
 msgid "Message sent"
 msgstr "Mezua bidali da"
+
+#: src/widgets/MessageComposer.qml:64
+#, kde-format
+msgid "Subject"
+msgstr ""
