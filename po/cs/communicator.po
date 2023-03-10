@@ -192,4 +192,4 @@ msgstr "Zpráva byla odeslána"
 #: src/widgets/MessageComposer.qml:64
 #, kde-format
 msgid "Subject"
-msgstr ""
+msgstr "Předmět"
