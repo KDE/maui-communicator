@@ -1,36 +1,37 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the maui-communicator package.
-# Paolo Zamponi <feus73@gmail.com>, 2022, 2023.
 #
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-03-05 16:10+0100\n"
-"Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
-"Language-Team: Italian <kde-i18n-it@kde.org>\n"
-"Language: it\n"
+"PO-Revision-Date: 2023-04-23 12:03+0200\n"
+"Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: pl_PL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: src/main.cpp:52
 #, kde-format
 msgid "Communicator"
-msgstr "Communicator"
+msgstr "Komunikator"
 
 #: src/main.cpp:52
 #, kde-format
 msgid "Organize and sync your contacts."
-msgstr "Organizza e sincronizza i tuoi contatti."
+msgstr "Porządkuj i synchronizuj swojej kontakty."
 
 #: src/main.cpp:52
 #, kde-format
 msgid "© 2019-%1 Nitrux Development Team"
-msgstr "© 2019-%1 La squadra di sviluppo di Nitrux"
+msgstr "© 2019-%1 Zespół programistów Nitrux"
 
 #: src/main.cpp:53
 #, kde-format
@@ -40,135 +41,135 @@ msgstr "Camilo Higuita"
 #: src/main.cpp:53
 #, kde-format
 msgid "Developer"
-msgstr "Sviluppatore"
+msgstr "Programista"
 
 #: src/main.qml:44
 #, kde-format
 msgid "Favorites"
-msgstr "Preferiti"
+msgstr "Ulubione"
 
 #: src/main.qml:53
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr "Non ci sono contatti preferiti"
+msgstr "Nie ma żadnych ulubionych kontaktów"
 
 #: src/main.qml:54
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
 msgstr ""
-"Puoi segnare un contatto come preferito per avere un accesso rapido ad esso"
+"Możesz oznaczyć swoje kontakty jako ulubione, aby szybko uzyskać do nich "
+"dostęp"
 
 #: src/main.qml:61
 #, kde-format
 msgid "Contacts"
-msgstr "Contatti"
+msgstr "Kontakty"
 
 #: src/main.qml:70
 #, kde-format
 msgid "There're no contacts"
-msgstr "Non ci sono contatti"
+msgstr "Nie ma żadnych kontaktów"
 
 #: src/main.qml:71
 #, kde-format
 msgid "You can add new contacts"
-msgstr "Puoi aggiungere nuovi contatti"
+msgstr "Możesz dodać nowe kontakty"
 
 #: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
-msgstr "Aggiungi ai preferiti"
+msgstr "Ulubione"
 
 #: src/views/contacts/ContactPage.qml:58
 #, kde-format
 msgid "Edit"
-msgstr "Modifica"
+msgstr "Edytuj"
 
 #: src/views/contacts/ContactPage.qml:65
 #, kde-format
 msgid "Delete"
-msgstr "Elimina"
+msgstr "Usuń"
 
 #: src/views/contacts/ContactPage.qml:99
 #, kde-format
 msgid "Remove contact..."
-msgstr "Rimuovi contatto..."
+msgstr "Usuń kontakt..."
 
 #: src/views/contacts/ContactPage.qml:100
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
 msgstr ""
-"Sei sicuro di voler rimuovere questo contatto? Questa azione non può essere "
-"annullata."
+"Czy na pewno usunąć ten kontakt? Nie będzie można wycofać tego działania."
 
 #: src/views/contacts/ContactPage.qml:104
 #: src/views/contacts/ContactsView.qml:321
 #, kde-format
 msgid "Cancel"
-msgstr "Annulla"
+msgstr "Anuluj"
 
 #: src/views/contacts/ContactPage.qml:105
 #, kde-format
 msgid "Remove"
-msgstr "Rimuovi"
+msgstr "Usuń"
 
 #: src/views/contacts/ContactPage.qml:234
 #, kde-format
 msgid "Account"
-msgstr "Account"
+msgstr "Konto"
 
 #: src/views/contacts/ContactPage.qml:258
 #, kde-format
 msgid "Name"
-msgstr "Nome"
+msgstr "Nazwa"
 
 #: src/views/contacts/ContactPage.qml:282
 #, kde-format
 msgid "Phone"
-msgstr "Telefono"
+msgstr "Telefon"
 
 #: src/views/contacts/ContactPage.qml:297
 #: src/views/contacts/ContactPage.qml:357 src/widgets/MessageComposer.qml:74
 #, kde-format
 msgid "Message"
-msgstr "Messaggio"
+msgstr "Wiadomość"
 
 #: src/views/contacts/ContactPage.qml:311
 #, kde-format
 msgid "Call"
-msgstr "Chiamata"
+msgstr "Zadzwoń"
 
 #: src/views/contacts/ContactPage.qml:323
 #: src/views/contacts/ContactPage.qml:370
 #, kde-format
 msgid "Copy"
-msgstr "Copia"
+msgstr "Skopiuj"
 
 #: src/views/contacts/ContactPage.qml:342
 #, kde-format
 msgid "Email"
-msgstr "Posta elettronica"
+msgstr "E-mail"
 
 #: src/views/contacts/ContactPage.qml:389
 #, kde-format
 msgid "Organization"
-msgstr "Organizzazione"
+msgstr "Organizacja"
 
 #: src/views/contacts/ContactPage.qml:412
 #, kde-format
 msgid "Title"
-msgstr "Titolo"
+msgstr "Tytuł"
 
 #: src/views/contacts/ContactsView.qml:59
 #, kde-format
 msgid "Search %1 contacts"
-msgstr "Cerca %1 contatti"
+msgstr "Poszukaj %1 kontaktów"
 
 #: src/views/contacts/ContactsView.qml:318
 #: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid "Discard"
-msgstr "Scarta"
+msgstr "Porzuć"
 
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
@@ -176,25 +177,25 @@ msgid ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
 "cancel to go back and save the changes"
 msgstr ""
-"Se scegli di uscire, le modifiche fatte saranno perse. Premi Scarta per "
-"uscire, oppure annulla per tornare indietro e salvare le modifiche"
+"Jeśli zakończysz, to utracisz zmiany. Naciśnij porzuć, aby wyjść lub anuluj, "
+"aby wrócić i zapisać zmiany"
 
 #: src/views/contacts/ContactsView.qml:360
 #, kde-format
 msgid "New contact added"
-msgstr "Nuovo contatto aggiunto"
+msgstr "Dodano nowy kontakt"
 
 #: src/widgets/MessageComposer.qml:17
 #, kde-format
 msgid "Send..."
-msgstr "Invia..."
+msgstr "Wyślij..."
 
 #: src/widgets/MessageComposer.qml:34
 #, kde-format
 msgid "Message sent"
-msgstr "Messaggio inviato"
+msgstr "Wysłano wiadomość"
 
 #: src/widgets/MessageComposer.qml:64
 #, kde-format
 msgid "Subject"
-msgstr "Oggetto"
+msgstr "Temat"
