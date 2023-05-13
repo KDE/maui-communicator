@@ -13,6 +13,7 @@
   <name xml:lang="eu">Communicator</name>
   <name xml:lang="fi">Communicator</name>
   <name xml:lang="fr">Communicator</name>
+  <name xml:lang="gl">Communicator</name>
   <name xml:lang="id">Communicator</name>
   <name xml:lang="it">Communicator</name>
   <name xml:lang="ka">Communicator</name>
@@ -36,6 +37,7 @@
   <summary xml:lang="eu">Kontaktu-kudeatzailea</summary>
   <summary xml:lang="fi">Yhteystietojen hallinta</summary>
   <summary xml:lang="fr">Gestionnaire de contacts</summary>
+  <summary xml:lang="gl">Xestor de contactos</summary>
   <summary xml:lang="id">Pengelola kontak</summary>
   <summary xml:lang="it">Gestore dei contatti</summary>
   <summary xml:lang="ka">კონტაქტების მმართველი</summary>
@@ -60,6 +62,7 @@
     <p xml:lang="eu">«Communicator» kontaktu-kudeatzaile bat da.</p>
     <p xml:lang="fi">Communicator on yhteystietojen hallintaohjelma.</p>
     <p xml:lang="fr">Le logiciel « Communicator » est un gestionnaire de contacts.</p>
+    <p xml:lang="gl">Communicator é un xestor de contactos.</p>
     <p xml:lang="id">Communicator adalah sebuah pengelola kontak.</p>
     <p xml:lang="it">Communicator è un gestore dei contatti.</p>
     <p xml:lang="ka">Communicator კონტაქტების მმართველია.</p>
@@ -90,6 +93,7 @@
       <caption xml:lang="eu">Communicator.</caption>
       <caption xml:lang="fi">Communicator.</caption>
       <caption xml:lang="fr">Communicator.</caption>
+      <caption xml:lang="gl">Communicator.</caption>
       <caption xml:lang="id">Communicator.</caption>
       <caption xml:lang="it">Communicator.</caption>
       <caption xml:lang="ka">Communicator.</caption>
