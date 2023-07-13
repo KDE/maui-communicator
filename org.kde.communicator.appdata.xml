@@ -9,6 +9,7 @@
   <name xml:lang="cs">Komunikátor</name>
   <name xml:lang="de">Communicator</name>
   <name xml:lang="en-GB">Communicator</name>
+  <name xml:lang="eo">Komunikator</name>
   <name xml:lang="es">Communicator</name>
   <name xml:lang="eu">Communicator</name>
   <name xml:lang="fi">Communicator</name>
@@ -33,6 +34,7 @@
   <summary xml:lang="cs">Správce kontaktů</summary>
   <summary xml:lang="de">Kontaktverwaltung</summary>
   <summary xml:lang="en-GB">Contacts manager</summary>
+  <summary xml:lang="eo">Kontaktadministrilo</summary>
   <summary xml:lang="es">Administrador de contactos</summary>
   <summary xml:lang="eu">Kontaktu-kudeatzailea</summary>
   <summary xml:lang="fi">Yhteystietojen hallinta</summary>
@@ -58,6 +60,7 @@
     <p xml:lang="cs">Komunikátor je správce kontaktů.</p>
     <p xml:lang="de">Communicator ist eine Kontaktverwaltung.</p>
     <p xml:lang="en-GB">Communicator is a contacts manager.</p>
+    <p xml:lang="eo">Komunikator estas kontaktadministrilo.</p>
     <p xml:lang="es">Communicator es un administrador de contactos.</p>
     <p xml:lang="eu">«Communicator» kontaktu-kudeatzaile bat da.</p>
     <p xml:lang="fi">Communicator on yhteystietojen hallintaohjelma.</p>
@@ -89,6 +92,7 @@
       <caption xml:lang="cs">Komunikátor.</caption>
       <caption xml:lang="de">Communicator.</caption>
       <caption xml:lang="en-GB">Communicator.</caption>
+      <caption xml:lang="eo">Komunikator.</caption>
       <caption xml:lang="es">Communicator.</caption>
       <caption xml:lang="eu">Communicator.</caption>
       <caption xml:lang="fi">Communicator.</caption>
