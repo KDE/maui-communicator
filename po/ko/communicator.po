@@ -1,0 +1,197 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the maui-communicator package.
+# Shinjo Park <kde@peremen.name>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maui-communicator\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"PO-Revision-Date: 2023-07-26 00:28+0200\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 22.12.3\n"
+
+#: src/main.cpp:52
+#, kde-format
+msgid "Communicator"
+msgstr "Communicator"
+
+#: src/main.cpp:52
+#, kde-format
+msgid "Organize and sync your contacts."
+msgstr "연락처를 관리하고 동기화합니다."
+
+#: src/main.cpp:52
+#, kde-format
+msgid "© 2019-%1 Nitrux Development Team"
+msgstr "© 2019-%1 Nitrux Development Team"
+
+#: src/main.cpp:53
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:53
+#, kde-format
+msgid "Developer"
+msgstr "개발자"
+
+#: src/main.qml:44
+#, kde-format
+msgid "Favorites"
+msgstr "책갈피"
+
+#: src/main.qml:53
+#, kde-format
+msgid "There're no favorite contacts"
+msgstr "책갈피에 등록된 연락처 없음"
+
+#: src/main.qml:54
+#, kde-format
+msgid "You can mark as favorite your contacts to quickly access them"
+msgstr "연락처를 책갈피에 등록해서 빠르게 접근할 수 있습니다"
+
+#: src/main.qml:61
+#, kde-format
+msgid "Contacts"
+msgstr "연락처"
+
+#: src/main.qml:70
+#, kde-format
+msgid "There're no contacts"
+msgstr "연락처가 없음"
+
+#: src/main.qml:71
+#, kde-format
+msgid "You can add new contacts"
+msgstr "연락처를 추가할 수 있습니다"
+
+#: src/views/contacts/ContactPage.qml:38
+#, kde-format
+msgid "Fav"
+msgstr "책갈피"
+
+#: src/views/contacts/ContactPage.qml:58
+#, kde-format
+msgid "Edit"
+msgstr "편집"
+
+#: src/views/contacts/ContactPage.qml:65
+#, kde-format
+msgid "Delete"
+msgstr "삭제"
+
+#: src/views/contacts/ContactPage.qml:99
+#, kde-format
+msgid "Remove contact..."
+msgstr "연락처 삭제..."
+
+#: src/views/contacts/ContactPage.qml:100
+#, kde-format
+msgid ""
+"Are you sure you want to remove this contact? This action can not be undone."
+msgstr "이 연락처를 삭제하시겠습니까? 실행 취소할 수 없습니다."
+
+#: src/views/contacts/ContactPage.qml:104
+#: src/views/contacts/ContactsView.qml:321
+#, kde-format
+msgid "Cancel"
+msgstr "취소"
+
+#: src/views/contacts/ContactPage.qml:105
+#, kde-format
+msgid "Remove"
+msgstr "삭제"
+
+#: src/views/contacts/ContactPage.qml:234
+#, kde-format
+msgid "Account"
+msgstr "계정"
+
+#: src/views/contacts/ContactPage.qml:258
+#, kde-format
+msgid "Name"
+msgstr "이름"
+
+#: src/views/contacts/ContactPage.qml:282
+#, kde-format
+msgid "Phone"
+msgstr "전화"
+
+#: src/views/contacts/ContactPage.qml:297
+#: src/views/contacts/ContactPage.qml:357 src/widgets/MessageComposer.qml:74
+#, kde-format
+msgid "Message"
+msgstr "메시지"
+
+#: src/views/contacts/ContactPage.qml:311
+#, kde-format
+msgid "Call"
+msgstr "통화"
+
+#: src/views/contacts/ContactPage.qml:323
+#: src/views/contacts/ContactPage.qml:370
+#, kde-format
+msgid "Copy"
+msgstr "복사"
+
+#: src/views/contacts/ContactPage.qml:342
+#, kde-format
+msgid "Email"
+msgstr "이메일"
+
+#: src/views/contacts/ContactPage.qml:389
+#, kde-format
+msgid "Organization"
+msgstr "조직"
+
+#: src/views/contacts/ContactPage.qml:412
+#, kde-format
+msgid "Title"
+msgstr "직함"
+
+#: src/views/contacts/ContactsView.qml:59
+#, kde-format
+msgid "Search %1 contacts"
+msgstr "%1 연락처 검색"
+
+#: src/views/contacts/ContactsView.qml:318
+#: src/views/contacts/ContactsView.qml:322
+#, kde-format
+msgid "Discard"
+msgstr "무시"
+
+#: src/views/contacts/ContactsView.qml:319
+#, kde-format
+msgid ""
+"If you chose to exit the changes made will be lost. Click Discard to exit or "
+"cancel to go back and save the changes"
+msgstr ""
+"종료하면 변경 사항이 손실됩니다. 무시를 클릭하면 종료하고, 취소를 클릭하면 돌"
+"아가서 변경 사항을 저장할 수 있습니다"
+
+#: src/views/contacts/ContactsView.qml:360
+#, kde-format
+msgid "New contact added"
+msgstr "새 연락처 추가됨"
+
+#: src/widgets/MessageComposer.qml:17
+#, kde-format
+msgid "Send..."
+msgstr "보내기..."
+
+#: src/widgets/MessageComposer.qml:34
+#, kde-format
+msgid "Message sent"
+msgstr "메시지 보냄"
+
+#: src/widgets/MessageComposer.qml:64
+#, kde-format
+msgid "Subject"
+msgstr "제목"
