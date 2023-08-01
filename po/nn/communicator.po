@@ -1,0 +1,198 @@
+# Translation of communicator to Norwegian Nynorsk
+#
+# Karl Ove Hufthammer <karl@huftis.org>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: maui-communicator\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"PO-Revision-Date: 2023-07-31 21:21+0200\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.3\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: src/main.cpp:52
+#, kde-format
+msgid "Communicator"
+msgstr ""
+
+#: src/main.cpp:52
+#, kde-format
+msgid "Organize and sync your contacts."
+msgstr ""
+
+#: src/main.cpp:52
+#, kde-format
+msgid "© 2019-%1 Nitrux Development Team"
+msgstr ""
+
+#: src/main.cpp:53
+#, kde-format
+msgid "Camilo Higuita"
+msgstr "Camilo Higuita"
+
+#: src/main.cpp:53
+#, kde-format
+msgid "Developer"
+msgstr "Utviklar"
+
+#: src/main.qml:44
+#, kde-format
+msgid "Favorites"
+msgstr "Favorittar"
+
+#: src/main.qml:53
+#, kde-format
+msgid "There're no favorite contacts"
+msgstr ""
+
+#: src/main.qml:54
+#, kde-format
+msgid "You can mark as favorite your contacts to quickly access them"
+msgstr ""
+
+#: src/main.qml:61
+#, kde-format
+msgid "Contacts"
+msgstr "Kontaktar"
+
+#: src/main.qml:70
+#, kde-format
+msgid "There're no contacts"
+msgstr ""
+
+#: src/main.qml:71
+#, kde-format
+msgid "You can add new contacts"
+msgstr ""
+
+#: src/views/contacts/ContactPage.qml:38
+#, kde-format
+msgid "Fav"
+msgstr ""
+
+#: src/views/contacts/ContactPage.qml:58
+#, kde-format
+msgid "Edit"
+msgstr "Rediger"
+
+#: src/views/contacts/ContactPage.qml:65
+#, kde-format
+msgid "Delete"
+msgstr "Slett"
+
+#: src/views/contacts/ContactPage.qml:99
+#, kde-format
+msgid "Remove contact..."
+msgstr "Fjern kontakt …"
+
+#: src/views/contacts/ContactPage.qml:100
+#, kde-format
+msgid ""
+"Are you sure you want to remove this contact? This action can not be undone."
+msgstr ""
+
+#: src/views/contacts/ContactPage.qml:104
+#: src/views/contacts/ContactsView.qml:321
+#, kde-format
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/views/contacts/ContactPage.qml:105
+#, kde-format
+msgid "Remove"
+msgstr "Fjern"
+
+#: src/views/contacts/ContactPage.qml:234
+#, kde-format
+msgid "Account"
+msgstr "Konto"
+
+#: src/views/contacts/ContactPage.qml:258
+#, kde-format
+msgid "Name"
+msgstr "Namn"
+
+#: src/views/contacts/ContactPage.qml:282
+#, kde-format
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/views/contacts/ContactPage.qml:297
+#: src/views/contacts/ContactPage.qml:357
+#: src/widgets/MessageComposer.qml:74
+#, kde-format
+msgid "Message"
+msgstr "Melding"
+
+#: src/views/contacts/ContactPage.qml:311
+#, kde-format
+msgid "Call"
+msgstr "Ring"
+
+#: src/views/contacts/ContactPage.qml:323
+#: src/views/contacts/ContactPage.qml:370
+#, kde-format
+msgid "Copy"
+msgstr "Kopier"
+
+#: src/views/contacts/ContactPage.qml:342
+#, kde-format
+msgid "Email"
+msgstr "E-post"
+
+#: src/views/contacts/ContactPage.qml:389
+#, kde-format
+msgid "Organization"
+msgstr "Organisasjon"
+
+#: src/views/contacts/ContactPage.qml:412
+#, kde-format
+msgid "Title"
+msgstr "Tittel"
+
+#: src/views/contacts/ContactsView.qml:59
+#, kde-format
+msgid "Search %1 contacts"
+msgstr ""
+
+#: src/views/contacts/ContactsView.qml:318
+#: src/views/contacts/ContactsView.qml:322
+#, kde-format
+msgid "Discard"
+msgstr ""
+
+#: src/views/contacts/ContactsView.qml:319
+#, kde-format
+msgid ""
+"If you chose to exit the changes made will be lost. Click Discard to exit or "
+"cancel to go back and save the changes"
+msgstr ""
+
+#: src/views/contacts/ContactsView.qml:360
+#, kde-format
+msgid "New contact added"
+msgstr ""
+
+#: src/widgets/MessageComposer.qml:17
+#, kde-format
+msgid "Send..."
+msgstr ""
+
+#: src/widgets/MessageComposer.qml:34
+#, kde-format
+msgid "Message sent"
+msgstr ""
+
+#: src/widgets/MessageComposer.qml:64
+#, kde-format
+msgid "Subject"
+msgstr ""
