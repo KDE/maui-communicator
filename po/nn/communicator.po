@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-02 00:53+0000\n"
-"PO-Revision-Date: 2023-07-31 21:21+0200\n"
+"PO-Revision-Date: 2023-08-05 23:29+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -22,17 +22,17 @@ msgstr ""
 #: src/main.cpp:52
 #, kde-format
 msgid "Communicator"
-msgstr ""
+msgstr "Communicator"
 
 #: src/main.cpp:52
 #, kde-format
 msgid "Organize and sync your contacts."
-msgstr ""
+msgstr "Organiser og synkroniser kontaktar."
 
 #: src/main.cpp:52
 #, kde-format
 msgid "© 2019-%1 Nitrux Development Team"
-msgstr ""
+msgstr "© 2019 %1 Nitrux-utviklingslaget"
 
 #: src/main.cpp:53
 #, kde-format
@@ -52,12 +52,12 @@ msgstr "Favorittar"
 #: src/main.qml:53
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr ""
+msgstr "Det finst ingen favorittkontaktar"
 
 #: src/main.qml:54
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
-msgstr ""
+msgstr "Du kan merkja kontaktar som favorittar for kjapp tilgang"
 
 #: src/main.qml:61
 #, kde-format
@@ -67,17 +67,17 @@ msgstr "Kontaktar"
 #: src/main.qml:70
 #, kde-format
 msgid "There're no contacts"
-msgstr ""
+msgstr "Det finst ingen  kontaktar"
 
 #: src/main.qml:71
 #, kde-format
 msgid "You can add new contacts"
-msgstr ""
+msgstr "Du kan leggja til nye kontaktar"
 
 #: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "Fav"
 
 #: src/views/contacts/ContactPage.qml:58
 #, kde-format
@@ -99,6 +99,8 @@ msgstr "Fjern kontakt …"
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
 msgstr ""
+"Er du sikker på at du vil fjerna denne kontakten? Du kan ikkje angra denne "
+"hendinga."
 
 #: src/views/contacts/ContactPage.qml:104
 #: src/views/contacts/ContactsView.qml:321
@@ -162,13 +164,13 @@ msgstr "Tittel"
 #: src/views/contacts/ContactsView.qml:59
 #, kde-format
 msgid "Search %1 contacts"
-msgstr ""
+msgstr "Søk i %1 kontaktar"
 
 #: src/views/contacts/ContactsView.qml:318
 #: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid "Discard"
-msgstr ""
+msgstr "Forkast"
 
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
@@ -176,23 +178,25 @@ msgid ""
 "If you chose to exit the changes made will be lost. Click Discard to exit or "
 "cancel to go back and save the changes"
 msgstr ""
+"Viss du avsluttar, går alle endringane tapt. Trykk «Forkast» for å avslutta "
+"eller «Avbryt» for å gå tilbake og lagra endringane."
 
 #: src/views/contacts/ContactsView.qml:360
 #, kde-format
 msgid "New contact added"
-msgstr ""
+msgstr "Ny kontakt lagd til"
 
 #: src/widgets/MessageComposer.qml:17
 #, kde-format
 msgid "Send..."
-msgstr ""
+msgstr "Send …"
 
 #: src/widgets/MessageComposer.qml:34
 #, kde-format
 msgid "Message sent"
-msgstr ""
+msgstr "Melding send"
 
 #: src/widgets/MessageComposer.qml:64
 #, kde-format
 msgid "Subject"
-msgstr ""
+msgstr "Emne"
