@@ -5,7 +5,7 @@ import QtGraphicalEffects 1.0
 
 import org.mauikit.controls 1.3 as Maui
 
-Maui.Dialog
+Maui.PopupPage
 {
     id: control
     autoClose: false
@@ -20,9 +20,10 @@ Maui.Dialog
     signal contactEdited(var contact)
     signal editCanceled()
 
-    defaultButtons: control.editing
+    actionBar.visible: control.editing
 
     filling: !isWide
+
     page.footBar.visible: control.editing
     page.headBar.visible: true
 
@@ -57,7 +58,6 @@ Maui.Dialog
                 icon.name: "document-edit"
                 text: i18n("Edit")
                 onTriggered: control.editing = !control.editing
-                icon.color: Maui.Theme.positiveTextColor
             }
 
             MenuItem
@@ -70,44 +70,52 @@ Maui.Dialog
         }
     ]
 
-    onRejected:
-    {
-        control.editing = false
-        editCanceled()
-    }
 
-    onAccepted:
-    {
-        var contact = control.contact
-        contact.n = _nameField.text
-        contact.tel =_telField.text
-        contact.email = _emailField.text
-        contact.org = _orgField.text
-        //                          adr: _adrField.text,
-        contact.photo = control.contact.photo
-        contact.account = Maui.Handy.isAndroid ? _accountsCombobox.model[_accountsCombobox.currentIndex] :({})
+    actions: [
+        Action
+        {
+            text: i18n("Save")
+            onTriggered:
+            {
+                var contact = control.contact
+                contact.n = _nameField.text
+                contact.tel =_telField.text
+                contact.email = _emailField.text
+                contact.org = _orgField.text
+                //                          adr: _adrField.text,
+                contact.photo = control.contact.photo
+                contact.account = Maui.Handy.isAndroid ? _accountsCombobox.model[_accountsCombobox.currentIndex] :({})
 
-        control.contactEdited(contact)
-        control.contact = contact
-        control.editing = false
-    }
+                control.contactEdited(contact)
+                control.contact = contact
+                control.editing = false
+            }
+        },
+        Action
+        {
+            text: i18n("Cancel")
+            onTriggered:
+            {
+                control.editing = false
+                editCanceled()
+            }
+        }
+    ]
 
-    Maui.Dialog
+    Maui.InfoDialog
     {
         id: _removeDialog
 
         title: i18n("Remove contact...")
         message: i18n("Are you sure you want to remove this contact? This action can not be undone.")
 
-        page.margins: Maui.Style.space.big
+        standardButtons: Dialog.Yes | Dialog.No
 
-        acceptButton.text: i18n("Cancel")
-        rejectButton.text: i18n("Remove")
-        onAccepted: close()
-        onRejected:
+        onRejected: close()
+        onAccepted:
         {
-            close()
             list.remove(listModel.mappedToSource(_contactsPage.currentIndex))
+            close()
         }
     }
 
@@ -119,7 +127,7 @@ Maui.Dialog
         Layout.fillWidth: true
         Layout.preferredHeight: 160
 
-       Rectangle
+        Rectangle
         {
             id: _contactPhotoColor
             height: Maui.Style.iconSizes.huge * 1.5
@@ -236,7 +244,7 @@ Maui.Dialog
 
         iconSource: "password-show-on"
 
-       content: ComboBox
+        content: ComboBox
         {
             id: _accountsCombobox
             visible: control.editing
@@ -260,7 +268,7 @@ Maui.Dialog
 
         iconSource: "im-user"
 
-      content: TextField
+        content: TextField
         {
             id: _nameField
             visible: control.editing
@@ -391,7 +399,7 @@ Maui.Dialog
 
         iconSource: "roll"
 
-         content: TextField
+        content: TextField
         {
             id: _orgField
             visible: control.editing

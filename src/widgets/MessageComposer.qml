@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.3
 
 import org.mauikit.controls 1.3 as Maui
 
-Maui.Dialog
+Maui.PopupPage
 {
     id: control
     property var contact : ({})
@@ -14,25 +14,25 @@ Maui.Dialog
 
     hint: 1
 
-    acceptButton.text: i18n("Send...")
-    acceptButton.icon.name: "mail-send"
-    rejectButton.visible: false
-
-    page.margins: 0
-
-    onAccepted:
+    actions: Action
     {
-        if(_combobox.currentText === contact.email)
-        {
-            _communicator.email(contact.email, "", "", _subjectTextField.text, _editor.text)
-        }
-        else if(_combobox.currentText === contact.tel)
-        {
-            _communicator.sendSMS(contact.tel, _subjectTextField.text, _editor.text)
-        }
+        text: i18n("Send")
+        icon.name: "mail-send"
 
-        notify("emblem-info", i18n("Message sent"), contact.tel);
-        close();
+        onTriggered:
+        {
+            if(_combobox.currentText === contact.email)
+            {
+                _communicator.email(contact.email, "", "", _subjectTextField.text, _editor.text)
+            }
+            else if(_combobox.currentText === contact.tel)
+            {
+                _communicator.sendSMS(contact.tel, _subjectTextField.text, _editor.text)
+            }
+
+            notify("emblem-info", i18n("Message sent"), contact.tel);
+            close();
+        }
     }
 
     headBar.forceCenterMiddleContent: false
@@ -74,6 +74,4 @@ Maui.Dialog
         placeholderText: i18n("Message")
 
     }
-
-
 }

@@ -312,16 +312,11 @@ Maui.AltBrowser
                 }
             }
 
-            Maui.Dialog
+            Maui.InfoDialog
             {
                 id: _confirmExit
                 title: i18n("Discard")
-                message: i18n("If you chose to exit the changes made will be lost. Click Discard to exit or cancel to go back and save the changes")
-
-                acceptButton.text : i18n("Cancel")
-                rejectButton.text : i18n("Discard")
-
-                page.margins: Maui.Style.space.big
+                message: i18n("If you chose to exit the changes made will be lost. Do you want to exit?")
 
                 onAccepted: close()
                 onRejected:
@@ -335,6 +330,7 @@ Maui.AltBrowser
 
                     _confirmExit.close()
                 }
+
             }
 
             onEditCanceled:

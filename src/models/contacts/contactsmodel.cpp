@@ -9,7 +9,7 @@
 #include "linuxinterface.h"
 #endif
 
-#include <MauiKit/Core/fmh.h>
+#include <MauiKit3/Core/fmh.h>
 
 #ifdef Q_OS_ANDROID
 ContactsModel::ContactsModel(QObject *parent)

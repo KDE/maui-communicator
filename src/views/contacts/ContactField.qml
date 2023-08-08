@@ -63,7 +63,6 @@ AbstractButton
         {
             id: _template
             Layout.fillWidth: true
-            label1.font.pointSize: Maui.Style.fontSizes.default
             label1.font.weight: Font.Light
             label2.visible: !control.editing
             label2.font.pointSize: Maui.Style.fontSizes.big

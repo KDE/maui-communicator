@@ -9,8 +9,8 @@
 
 #include <QImage>
 
-#include <MauiKit/Core/mauiandroid.h>
-#include <MauiKit/Core/fmh.h>
+#include <MauiKit3/Core/mauiandroid.h>
+#include <MauiKit3/Core/fmh.h>
 
 class InterfaceConnFailedException : public QException
 {
