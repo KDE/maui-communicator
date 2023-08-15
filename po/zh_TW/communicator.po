@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-08-15 00:44+0000\n"
 "PO-Revision-Date: 2023-02-07 23:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -72,12 +72,12 @@ msgstr "沒有聯絡人"
 msgid "You can add new contacts"
 msgstr "您可以新增聯絡人"
 
-#: src/views/contacts/ContactPage.qml:38
+#: src/views/contacts/ContactPage.qml:39
 #, kde-format
 msgid "Fav"
 msgstr "加到最愛"
 
-#: src/views/contacts/ContactPage.qml:58
+#: src/views/contacts/ContactPage.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "編輯"
@@ -87,71 +87,70 @@ msgstr "編輯"
 msgid "Delete"
 msgstr "刪除"
 
-#: src/views/contacts/ContactPage.qml:99
+#: src/views/contacts/ContactPage.qml:77
+#, kde-format
+msgid "Save"
+msgstr ""
+
+#: src/views/contacts/ContactPage.qml:96
+#, kde-format
+msgid "Cancel"
+msgstr "取消"
+
+#: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid "Remove contact..."
 msgstr "移除聯絡人…"
 
-#: src/views/contacts/ContactPage.qml:100
+#: src/views/contacts/ContactPage.qml:110
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
 msgstr "您確定要移除這個聯絡人嗎？這個動作無法復原。"
 
-#: src/views/contacts/ContactPage.qml:104
-#: src/views/contacts/ContactsView.qml:321
-#, kde-format
-msgid "Cancel"
-msgstr "取消"
-
-#: src/views/contacts/ContactPage.qml:105
-#, kde-format
-msgid "Remove"
-msgstr "移除"
-
-#: src/views/contacts/ContactPage.qml:234
+#: src/views/contacts/ContactPage.qml:242
 #, kde-format
 msgid "Account"
 msgstr "帳號"
 
-#: src/views/contacts/ContactPage.qml:258
+#: src/views/contacts/ContactPage.qml:266
 #, kde-format
 msgid "Name"
 msgstr "姓名"
 
-#: src/views/contacts/ContactPage.qml:282
+#: src/views/contacts/ContactPage.qml:290
 #, kde-format
 msgid "Phone"
 msgstr "電話"
 
-#: src/views/contacts/ContactPage.qml:297
-#: src/views/contacts/ContactPage.qml:357 src/widgets/MessageComposer.qml:74
+#: src/views/contacts/ContactPage.qml:305
+#: src/views/contacts/ContactPage.qml:365 src/widgets/MessageComposer.qml:74
 #, kde-format
 msgid "Message"
 msgstr "傳送訊息"
 
-#: src/views/contacts/ContactPage.qml:311
+#: src/views/contacts/ContactPage.qml:319
 #, kde-format
 msgid "Call"
 msgstr "撥打電話"
 
-#: src/views/contacts/ContactPage.qml:323
-#: src/views/contacts/ContactPage.qml:370
+#: src/views/contacts/ContactPage.qml:331
+#: src/views/contacts/ContactPage.qml:378
 #, kde-format
 msgid "Copy"
 msgstr "複製"
 
-#: src/views/contacts/ContactPage.qml:342
+#: src/views/contacts/ContactPage.qml:350
 #, kde-format
 msgid "Email"
 msgstr "電子郵件"
 
-#: src/views/contacts/ContactPage.qml:389
+#: src/views/contacts/ContactPage.qml:397
 #, kde-format
 msgid "Organization"
 msgstr "組織"
 
-#: src/views/contacts/ContactPage.qml:412
+#: src/views/contacts/ContactPage.qml:420
 #, kde-format
 msgid "Title"
 msgstr "稱呼"
@@ -162,30 +161,32 @@ msgid "Search %1 contacts"
 msgstr "搜尋 %1 個聯絡人"
 
 #: src/views/contacts/ContactsView.qml:318
-#: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid "Discard"
 msgstr "丟棄"
 
 #: src/views/contacts/ContactsView.qml:319
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "If you chose to exit the changes made will be lost. Click Discard to exit "
+#| "or cancel to go back and save the changes"
 msgid ""
-"If you chose to exit the changes made will be lost. Click Discard to exit or "
-"cancel to go back and save the changes"
+"If you chose to exit the changes made will be lost. Do you want to exit?"
 msgstr ""
 "如果您選擇離開，所有變更都會遺失。點擊「丟棄」來離開或「取消」來回去儲存變更"
 
-#: src/views/contacts/ContactsView.qml:360
+#: src/views/contacts/ContactsView.qml:356
 #, kde-format
 msgid "New contact added"
 msgstr "已新增聯絡人"
 
-#: src/widgets/MessageComposer.qml:17
-#, kde-format
-msgid "Send..."
+#: src/widgets/MessageComposer.qml:19
+#, fuzzy, kde-format
+#| msgid "Send..."
+msgid "Send"
 msgstr "傳送…"
 
-#: src/widgets/MessageComposer.qml:34
+#: src/widgets/MessageComposer.qml:33
 #, kde-format
 msgid "Message sent"
 msgstr "已送出訊息"
@@ -194,3 +195,6 @@ msgstr "已送出訊息"
 #, kde-format
 msgid "Subject"
 msgstr ""
+
+#~ msgid "Remove"
+#~ msgstr "移除"
