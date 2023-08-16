@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-02 13:58+0200\n"
+"PO-Revision-Date: 2023-08-15 09:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -92,7 +92,7 @@ msgstr "Вилучити"
 #: src/views/contacts/ContactPage.qml:77
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Зберегти"
 
 #: src/views/contacts/ContactPage.qml:96
 #, kde-format
@@ -170,15 +170,12 @@ msgid "Discard"
 msgstr "Відкинути"
 
 #: src/views/contacts/ContactsView.qml:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "If you chose to exit the changes made will be lost. Click Discard to exit "
-#| "or cancel to go back and save the changes"
+#, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
 msgstr ""
-"Якщо ви вибрали варіант із виходом, внесені зміни буде втрачено. Натисніть "
-"«Відкинути», щоб вийти або «Скасувати», щоб повернутися і зберегти зміни."
+"Якщо ви вибрали варіант із виходом, внесені зміни буде втрачено. Хочете "
+"вийти?"
 
 #: src/views/contacts/ContactsView.qml:356
 #, kde-format
@@ -186,10 +183,9 @@ msgid "New contact added"
 msgstr "Додано новий контакт"
 
 #: src/widgets/MessageComposer.qml:19
-#, fuzzy, kde-format
-#| msgid "Send..."
+#, kde-format
 msgid "Send"
-msgstr "Надіслати…"
+msgstr "Надіслати"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format

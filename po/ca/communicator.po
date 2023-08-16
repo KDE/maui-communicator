@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-02 11:03+0100\n"
+"PO-Revision-Date: 2023-08-15 10:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: src/main.cpp:52
 #, kde-format
@@ -95,7 +95,7 @@ msgstr "Suprimeix"
 #: src/views/contacts/ContactPage.qml:77
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Desa"
 
 #: src/views/contacts/ContactPage.qml:96
 #, kde-format
@@ -173,15 +173,10 @@ msgid "Discard"
 msgstr "Descarta"
 
 #: src/views/contacts/ContactsView.qml:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "If you chose to exit the changes made will be lost. Click Discard to exit "
-#| "or cancel to go back and save the changes"
+#, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
-msgstr ""
-"Si trieu sortir, els canvis que heu fet es perdran. Feu clic a Descarta per "
-"a sortir o cancel·leu per a tornar enrere i desar els canvis"
+msgstr "Si trieu sortir, els canvis que heu fet es perdran. Voleu sortir?"
 
 #: src/views/contacts/ContactsView.qml:356
 #, kde-format
@@ -189,10 +184,9 @@ msgid "New contact added"
 msgstr "S'ha afegit un contacte nou"
 
 #: src/widgets/MessageComposer.qml:19
-#, fuzzy, kde-format
-#| msgid "Send..."
+#, kde-format
 msgid "Send"
-msgstr "Envia..."
+msgstr "Envia"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
@@ -203,6 +197,3 @@ msgstr "El missatge s'ha enviat"
 #, kde-format
 msgid "Subject"
 msgstr "Assumpte"
-
-#~ msgid "Remove"
-#~ msgstr "Elimina"

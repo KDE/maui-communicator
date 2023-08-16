@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-02 00:53+0000\n"
+"POT-Creation-Date: 2023-08-15 00:44+0000\n"
 "PO-Revision-Date: 2023-08-05 23:29+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -74,12 +74,12 @@ msgstr "Det finst ingen  kontaktar"
 msgid "You can add new contacts"
 msgstr "Du kan leggja til nye kontaktar"
 
-#: src/views/contacts/ContactPage.qml:38
+#: src/views/contacts/ContactPage.qml:39
 #, kde-format
 msgid "Fav"
 msgstr "Fav"
 
-#: src/views/contacts/ContactPage.qml:58
+#: src/views/contacts/ContactPage.qml:59
 #, kde-format
 msgid "Edit"
 msgstr "Rediger"
@@ -89,12 +89,22 @@ msgstr "Rediger"
 msgid "Delete"
 msgstr "Slett"
 
-#: src/views/contacts/ContactPage.qml:99
+#: src/views/contacts/ContactPage.qml:77
+#, kde-format
+msgid "Save"
+msgstr ""
+
+#: src/views/contacts/ContactPage.qml:96
+#, kde-format
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid "Remove contact..."
 msgstr "Fjern kontakt …"
 
-#: src/views/contacts/ContactPage.qml:100
+#: src/views/contacts/ContactPage.qml:110
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
@@ -102,61 +112,49 @@ msgstr ""
 "Er du sikker på at du vil fjerna denne kontakten? Du kan ikkje angra denne "
 "hendinga."
 
-#: src/views/contacts/ContactPage.qml:104
-#: src/views/contacts/ContactsView.qml:321
-#, kde-format
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: src/views/contacts/ContactPage.qml:105
-#, kde-format
-msgid "Remove"
-msgstr "Fjern"
-
-#: src/views/contacts/ContactPage.qml:234
+#: src/views/contacts/ContactPage.qml:242
 #, kde-format
 msgid "Account"
 msgstr "Konto"
 
-#: src/views/contacts/ContactPage.qml:258
+#: src/views/contacts/ContactPage.qml:266
 #, kde-format
 msgid "Name"
 msgstr "Namn"
 
-#: src/views/contacts/ContactPage.qml:282
+#: src/views/contacts/ContactPage.qml:290
 #, kde-format
 msgid "Phone"
 msgstr "Telefon"
 
-#: src/views/contacts/ContactPage.qml:297
-#: src/views/contacts/ContactPage.qml:357
-#: src/widgets/MessageComposer.qml:74
+#: src/views/contacts/ContactPage.qml:305
+#: src/views/contacts/ContactPage.qml:365 src/widgets/MessageComposer.qml:74
 #, kde-format
 msgid "Message"
 msgstr "Melding"
 
-#: src/views/contacts/ContactPage.qml:311
+#: src/views/contacts/ContactPage.qml:319
 #, kde-format
 msgid "Call"
 msgstr "Ring"
 
-#: src/views/contacts/ContactPage.qml:323
-#: src/views/contacts/ContactPage.qml:370
+#: src/views/contacts/ContactPage.qml:331
+#: src/views/contacts/ContactPage.qml:378
 #, kde-format
 msgid "Copy"
 msgstr "Kopier"
 
-#: src/views/contacts/ContactPage.qml:342
+#: src/views/contacts/ContactPage.qml:350
 #, kde-format
 msgid "Email"
 msgstr "E-post"
 
-#: src/views/contacts/ContactPage.qml:389
+#: src/views/contacts/ContactPage.qml:397
 #, kde-format
 msgid "Organization"
 msgstr "Organisasjon"
 
-#: src/views/contacts/ContactPage.qml:412
+#: src/views/contacts/ContactPage.qml:420
 #, kde-format
 msgid "Title"
 msgstr "Tittel"
@@ -167,7 +165,6 @@ msgid "Search %1 contacts"
 msgstr "Søk i %1 kontaktar"
 
 #: src/views/contacts/ContactsView.qml:318
-#: src/views/contacts/ContactsView.qml:322
 #, kde-format
 msgid "Discard"
 msgstr "Forkast"
@@ -175,23 +172,20 @@ msgstr "Forkast"
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid ""
-"If you chose to exit the changes made will be lost. Click Discard to exit or "
-"cancel to go back and save the changes"
+"If you chose to exit the changes made will be lost. Do you want to exit?"
 msgstr ""
-"Viss du avsluttar, går alle endringane tapt. Trykk «Forkast» for å avslutta "
-"eller «Avbryt» for å gå tilbake og lagra endringane."
 
-#: src/views/contacts/ContactsView.qml:360
+#: src/views/contacts/ContactsView.qml:356
 #, kde-format
 msgid "New contact added"
 msgstr "Ny kontakt lagd til"
 
-#: src/widgets/MessageComposer.qml:17
+#: src/widgets/MessageComposer.qml:19
 #, kde-format
-msgid "Send..."
-msgstr "Send …"
+msgid "Send"
+msgstr ""
 
-#: src/widgets/MessageComposer.qml:34
+#: src/widgets/MessageComposer.qml:33
 #, kde-format
 msgid "Message sent"
 msgstr "Melding send"

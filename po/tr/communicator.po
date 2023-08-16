@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:44+0000\n"
-"PO-Revision-Date: 2023-03-04 14:09+0300\n"
+"PO-Revision-Date: 2023-08-15 05:08+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #: src/main.cpp:52
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "Sil"
 #: src/views/contacts/ContactPage.qml:77
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #: src/views/contacts/ContactPage.qml:96
 #, kde-format
@@ -168,15 +168,12 @@ msgid "Discard"
 msgstr "At"
 
 #: src/views/contacts/ContactsView.qml:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "If you chose to exit the changes made will be lost. Click Discard to exit "
-#| "or cancel to go back and save the changes"
+#, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
 msgstr ""
-"Şu an çıkarsanız tüm değişiklikler kaybolacaktır. Çıkmak için At'a, geri "
-"gidip değişiklikleri kaydetmek için İptal'e basın"
+"Şimdi çıkarsanız yapılan tüm değişiklikler kaybolacaktır. Çıkmak istiyor "
+"musunuz?"
 
 #: src/views/contacts/ContactsView.qml:356
 #, kde-format
@@ -184,10 +181,9 @@ msgid "New contact added"
 msgstr "Yeni kişi eklendi"
 
 #: src/widgets/MessageComposer.qml:19
-#, fuzzy, kde-format
-#| msgid "Send..."
+#, kde-format
 msgid "Send"
-msgstr "Gönder..."
+msgstr "Gönder"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
