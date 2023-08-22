@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:44+0000\n"
-"PO-Revision-Date: 2023-08-05 23:29+0200\n"
+"PO-Revision-Date: 2023-08-21 19:52+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -92,7 +92,7 @@ msgstr "Slett"
 #: src/views/contacts/ContactPage.qml:77
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Lagra"
 
 #: src/views/contacts/ContactPage.qml:96
 #, kde-format
@@ -173,7 +173,7 @@ msgstr "Forkast"
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
-msgstr ""
+msgstr "Viss du avsluttar, går alle endringane tapt. Vil du avslutta?"
 
 #: src/views/contacts/ContactsView.qml:356
 #, kde-format
@@ -183,7 +183,7 @@ msgstr "Ny kontakt lagd til"
 #: src/widgets/MessageComposer.qml:19
 #, kde-format
 msgid "Send"
-msgstr ""
+msgstr "Send"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
