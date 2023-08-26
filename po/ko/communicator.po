@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:44+0000\n"
-"PO-Revision-Date: 2023-07-26 00:28+0200\n"
+"PO-Revision-Date: 2023-08-25 23:03+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -90,7 +90,7 @@ msgstr "삭제"
 #: src/views/contacts/ContactPage.qml:77
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "저장"
 
 #: src/views/contacts/ContactPage.qml:96
 #, kde-format
@@ -166,15 +166,10 @@ msgid "Discard"
 msgstr "무시"
 
 #: src/views/contacts/ContactsView.qml:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "If you chose to exit the changes made will be lost. Click Discard to exit "
-#| "or cancel to go back and save the changes"
+#, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
-msgstr ""
-"종료하면 변경 사항이 손실됩니다. 무시를 클릭하면 종료하고, 취소를 클릭하면 돌"
-"아가서 변경 사항을 저장할 수 있습니다"
+msgstr "종료하면 변경 사항이 손실됩니다. 종료하시겠습니까?"
 
 #: src/views/contacts/ContactsView.qml:356
 #, kde-format
@@ -182,10 +177,9 @@ msgid "New contact added"
 msgstr "새 연락처 추가됨"
 
 #: src/widgets/MessageComposer.qml:19
-#, fuzzy, kde-format
-#| msgid "Send..."
+#, kde-format
 msgid "Send"
-msgstr "보내기..."
+msgstr "보내기"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
