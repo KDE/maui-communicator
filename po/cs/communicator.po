@@ -90,7 +90,7 @@ msgstr "Smazat"
 #: src/views/contacts/ContactPage.qml:77
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: src/views/contacts/ContactPage.qml:96
 #, kde-format
@@ -177,10 +177,9 @@ msgid "New contact added"
 msgstr ""
 
 #: src/widgets/MessageComposer.qml:19
-#, fuzzy, kde-format
-#| msgid "Send..."
+#, kde-format
 msgid "Send"
-msgstr "Poslat..."
+msgstr "Odeslat"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
@@ -191,6 +190,3 @@ msgstr "Zpráva byla odeslána"
 #, kde-format
 msgid "Subject"
 msgstr "Předmět"
-
-#~ msgid "Remove"
-#~ msgstr "Odstranit"
