@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-15 00:44+0000\n"
-"PO-Revision-Date: 2023-09-14 15:53+0200\n"
+"PO-Revision-Date: 2023-11-01 14:36+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.0\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: src/main.cpp:52
 #, kde-format
@@ -47,7 +47,7 @@ msgstr "Favoris"
 #: src/main.qml:53
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr "Il n'y a aucun contact dans les favoris"
+msgstr "Il n'y a aucun contact dans les signets"
 
 #: src/main.qml:54
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "Vous pouvez ajouter de nouveaux contacts"
 #: src/views/contacts/ContactPage.qml:39
 #, kde-format
 msgid "Fav"
-msgstr "Mettre en favori"
+msgstr "Mettre en signet"
 
 #: src/views/contacts/ContactPage.qml:59
 #, kde-format
