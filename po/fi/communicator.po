@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:29+0000\n"
-"PO-Revision-Date: 2023-03-06 13:40+0200\n"
+"PO-Revision-Date: 2023-09-27 21:33+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -90,7 +90,7 @@ msgstr "Poista"
 #: src/views/contacts/ContactPage.qml:77
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Tallenna"
 
 #: src/views/contacts/ContactPage.qml:96
 #, kde-format
@@ -166,15 +166,10 @@ msgid "Discard"
 msgstr "Hylkää"
 
 #: src/views/contacts/ContactsView.qml:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "If you chose to exit the changes made will be lost. Click Discard to exit "
-#| "or cancel to go back and save the changes"
+#, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
-msgstr ""
-"Jos lopetat, tekemäsi muutokset menetetään. Lopeta valitsemalla ”Hylkää” tai "
-"palaa tallentamaan muutokset"
+msgstr "Jos lopetat, tekemäsi muutokset menetetään. Haluatko lopettaa?"
 
 #: src/views/contacts/ContactsView.qml:356
 #, kde-format
@@ -182,10 +177,9 @@ msgid "New contact added"
 msgstr "Uusi yhteystieto lisätty"
 
 #: src/widgets/MessageComposer.qml:19
-#, fuzzy, kde-format
-#| msgid "Send..."
+#, kde-format
 msgid "Send"
-msgstr "Lähetä…"
+msgstr "Lähetä"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
