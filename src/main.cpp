@@ -2,7 +2,6 @@
 #include <QIcon>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
-#include <QDate>
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
@@ -48,9 +47,15 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     app.setWindowIcon(QIcon("://communicator.svg"));
 
     KLocalizedString::setApplicationDomain("communicator");
-    KAboutData about(
-        QStringLiteral("communicator"), i18n("Communicator"), COMMUNICATOR_VERSION_STRING, i18n("Organize and sync your contacts."), KAboutLicense::LGPL_V3, i18n("© 2019-%1 Nitrux Development Team", QString::number(QDate::currentDate().year())), QString(GIT_BRANCH) + "/" + QString(GIT_COMMIT_HASH));
-    about.addAuthor(i18n("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
+    KAboutData about(QStringLiteral("communicator"), 
+                     QStringLiteral("Communicator"), 
+                     COMMUNICATOR_VERSION_STRING,
+                     i18n("Organize and sync your contacts."),
+                     KAboutLicense::LGPL_V3,
+                     APP_COPYRIGHT_NOTICE, 
+                     QString(GIT_BRANCH) + "/" + QString(GIT_COMMIT_HASH));
+    
+    about.addAuthor(QStringLiteral("Camilo Higuita"), i18n("Developer"), QStringLiteral("milo.h@aol.com"));
     about.setHomepage("https://mauikit.org");
     about.setProductName("maui/communicator");
     about.setBugAddress("https://invent.kde.org/maui/communicator/-/issues");
