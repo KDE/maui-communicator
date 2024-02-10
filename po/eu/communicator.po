@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:29+0000\n"
+"POT-Creation-Date: 2024-02-10 01:51+0000\n"
 "PO-Revision-Date: 2023-08-16 19:05+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,27 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: src/main.cpp:52
-#, kde-format
-msgid "Communicator"
-msgstr "Komunikatzailea"
-
-#: src/main.cpp:52
+#: src/main.cpp:53
 #, kde-format
 msgid "Organize and sync your contacts."
 msgstr "Zure kontaktuak antolatu eta sinkronizatu"
 
-#: src/main.cpp:52
-#, kde-format
-msgid "© 2019-%1 Nitrux Development Team"
-msgstr "© 2019-%1 Nitrux Garapen Taldea"
-
-#: src/main.cpp:53
-#, kde-format
-msgid "Camilo Higuita"
-msgstr "Camilo Higuita"
-
-#: src/main.cpp:53
+#: src/main.cpp:58
 #, kde-format
 msgid "Developer"
 msgstr "Garatzailea"
@@ -198,6 +183,15 @@ msgstr "Mezua bidali da"
 #, kde-format
 msgid "Subject"
 msgstr "Gaia"
+
+#~ msgid "Communicator"
+#~ msgstr "Komunikatzailea"
+
+#~ msgid "© 2019-%1 Nitrux Development Team"
+#~ msgstr "© 2019-%1 Nitrux Garapen Taldea"
+
+#~ msgid "Camilo Higuita"
+#~ msgstr "Camilo Higuita"
 
 #~ msgid "Remove"
 #~ msgstr "Kendu"
