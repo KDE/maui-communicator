@@ -13,7 +13,6 @@ import "widgets"
 Maui.ApplicationWindow
 {
     id: root
-    Maui.Style.styleType: Maui.Handy.isAndroid ? (appSettings.darkMode ? Maui.Style.Dark : Maui.Style.Light) : undefined
 
     readonly property var views : ({ favs: 0, contacts : 1 })
 
@@ -23,7 +22,6 @@ Maui.ApplicationWindow
     Settings
     {
         id: settings
-        property bool darkMode : true
     }
 
     Maui.AppViews
@@ -113,23 +111,5 @@ Maui.ApplicationWindow
     Communicator
     {
         id: _communicator
-    }
-
-    Component.onCompleted:
-    {
-        setAndroidStatusBarColor()
-/*
-        if(_favsView.currentItem.currentView.count < 1)
-            swipeView.currentIndex = views.contacts*/
-
-    }
-
-    function setAndroidStatusBarColor()
-    {
-        if(Maui.Handy.isAndroid)
-        {
-            Maui.Android.statusbarColor(Maui.Theme.backgroundColor, !appSettings.darkMode)
-            Maui.Android.navBarColor(Maui.Theme.backgroundColor, !appSettings.darkMode)
-        }
     }
 }
