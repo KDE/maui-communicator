@@ -176,12 +176,3 @@ msgstr "Zpráva byla odeslána"
 #, kde-format
 msgid "Subject"
 msgstr "Předmět"
-
-#~ msgid "Communicator"
-#~ msgstr "Komunikátor"
-
-#~ msgid "© 2019-%1 Nitrux Development Team"
-#~ msgstr "© 2019-%1 Vývojový tým Nitrux"
-
-#~ msgid "Camilo Higuita"
-#~ msgstr "Camilo Higuita"
