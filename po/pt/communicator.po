@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-10 01:51+0000\n"
+"POT-Creation-Date: 2024-02-14 01:39+0000\n"
 "PO-Revision-Date: 2022-11-09 22:26+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -23,34 +23,34 @@ msgstr "Organiza e sincroniza os seus contactos."
 msgid "Developer"
 msgstr "Desenvolvimento"
 
-#: src/main.qml:44
+#: src/main.qml:42
 #, kde-format
 msgid "Favorites"
 msgstr "Favoritos"
 
-#: src/main.qml:53
+#: src/main.qml:51
 #, kde-format
 msgid "There're no favorite contacts"
 msgstr "Não existem contactos favoritos"
 
-#: src/main.qml:54
+#: src/main.qml:52
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
 msgstr ""
 "Poderá marcar os seus contactos como favoritos para aceder rapidamente aos "
 "mesmos"
 
-#: src/main.qml:61
+#: src/main.qml:59
 #, kde-format
 msgid "Contacts"
 msgstr "Contactos"
 
-#: src/main.qml:70
+#: src/main.qml:68
 #, kde-format
 msgid "There're no contacts"
 msgstr "Não existem contactos"
 
-#: src/main.qml:71
+#: src/main.qml:69
 #, kde-format
 msgid "You can add new contacts"
 msgstr "Poderá adicionar novos contactos"
