@@ -69,7 +69,7 @@
     <p xml:lang="es">Communicator es un administrador de contactos.</p>
     <p xml:lang="eu">«Communicator» kontaktu-kudeatzaile bat da.</p>
     <p xml:lang="fi">Communicator on yhteystietojen hallintaohjelma.</p>
-    <p xml:lang="fr">Le logiciel « Communicator » est un gestionnaire de contacts.</p>
+    <p xml:lang="fr">Le logiciel « Communicator » est un gestionnaire de contacts.</p>
     <p xml:lang="gl">Communicator é un xestor de contactos.</p>
     <p xml:lang="id">Communicator adalah sebuah pengelola kontak.</p>
     <p xml:lang="it">Communicator è un gestore dei contatti.</p>
@@ -135,9 +135,9 @@
   </provides>
   <project_group>KDE</project_group>
   <releases>
-  <release version="3.1.0" date="2024-02-26">
-    <url>https://mauikit.org/blog/maui-release-briefing-5/</url>
-  </release>
+    <release version="3.1.0" date="2024-02-26">
+      <url>https://mauikit.org/blog/maui-release-briefing-5/</url>
+    </release>
     <release version="3.0.2" date="2023-11-30">
       <url>https://mauikit.org/blog/maui-release-briefing-4/</url>
     </release>
