@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-14 01:39+0000\n"
-"PO-Revision-Date: 2024-02-26 21:30+0100\n"
+"PO-Revision-Date: 2024-03-24 10:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
 "Language: eo\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: src/main.cpp:53
 #, kde-format
 msgid "Organize and sync your contacts."
-msgstr ""
+msgstr "Organizi kaj sinkronigi viajn kontaktojn."
 
 #: src/main.cpp:58
 #, kde-format
@@ -36,12 +36,13 @@ msgstr "Plej ŝatataj"
 #: src/main.qml:51
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr ""
+msgstr "Ne estas ŝatataj kontaktoj"
 
 #: src/main.qml:52
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
 msgstr ""
+"Vi povas marki kiel plej ŝatatajn viajn kontaktojn por rapide aliri ilin"
 
 #: src/main.qml:59
 #, kde-format
@@ -51,17 +52,17 @@ msgstr "Kontaktoj"
 #: src/main.qml:68
 #, kde-format
 msgid "There're no contacts"
-msgstr ""
+msgstr "Ne estas kontaktoj"
 
 #: src/main.qml:69
 #, kde-format
 msgid "You can add new contacts"
-msgstr ""
+msgstr "Vi povas aldoni novajn kontaktojn"
 
 #: src/views/contacts/ContactPage.qml:39
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "Fav"
 
 #: src/views/contacts/ContactPage.qml:59
 #, kde-format
@@ -86,7 +87,7 @@ msgstr "Nuligi"
 #: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid "Remove contact..."
-msgstr ""
+msgstr "Forigi kontakton..."
 
 #: src/views/contacts/ContactPage.qml:110
 #, kde-format
@@ -144,7 +145,7 @@ msgstr "Titolo"
 #: src/views/contacts/ContactsView.qml:59
 #, kde-format
 msgid "Search %1 contacts"
-msgstr ""
+msgstr "Serĉu %1 kontaktojn"
 
 #: src/views/contacts/ContactsView.qml:318
 #, kde-format
@@ -160,7 +161,7 @@ msgstr ""
 #: src/views/contacts/ContactsView.qml:356
 #, kde-format
 msgid "New contact added"
-msgstr ""
+msgstr "Nova kontakto aldonita"
 
 #: src/widgets/MessageComposer.qml:19
 #, kde-format
