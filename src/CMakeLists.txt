@@ -3,6 +3,8 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_STRICT_ITERATORS -DQT_NO_CAST_FROM_BYTEARRAY -DQT_NO_URL_CAST_FROM_STRING)
+
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/interfaces
     ${CMAKE_CURRENT_BINARY_DIR}/interfaces
@@ -42,11 +44,7 @@ endif()
 set(communicator_ASSETS
     assets/communicator_assets.qrc)
 
-if(QUICK_COMPILER)
-    qtquick_compiler_add_resources(communicator_QML_QRC qml.qrc)
-else()
-    qt5_add_resources(communicator_QML_QRC qml.qrc)
-endif()
+qt_add_resources(communicator_QML_QRC qml.qrc)
 
 if(ANDROID)
     add_library(${PROJECT_NAME} SHARED
@@ -68,19 +66,25 @@ target_compile_definitions(${PROJECT_NAME}
     PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
 target_link_libraries(${PROJECT_NAME}
-    MauiKit3
-    MauiKit3::FileBrowsing
-    Qt5::QuickControls2
-    Qt5::Qml
-    Qt5::Concurrent
-    KF5::I18n
-    KF5::Service)
+    MauiKit4
+    MauiKit4::FileBrowsing
+    Qt6::QuickControls2
+    Qt6::Qml
+    Qt6::Concurrent
+    KF6::I18n
+    KF6::Service
+    KF6::KIOCore KF6::KIOFileWidgets KF6::KIOWidgets)
 
 if(ANDROID)
-    target_link_libraries(${PROJECT_NAME} Qt5::AndroidExtras Qt5::Xml)
+    target_link_libraries(${PROJECT_NAME}
+    Qt6::AndroidExtras 
+    Qt6::Xml)
     kde_source_files_enable_exceptions(${PROJECT_NAME} interfaces/androidinterface.cpp)
 else()
-    target_link_libraries(${PROJECT_NAME} KF5::Contacts KF5::People Qt5::Widgets)
+    target_link_libraries(${PROJECT_NAME} 
+    KF6::Contacts 
+    KF6::People 
+    Qt6::Widgets)
 endif()
 
 if(UNIX AND NOT APPLE AND NOT ANDROID)

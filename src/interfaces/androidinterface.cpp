@@ -9,8 +9,8 @@
 
 #include <QImage>
 
-#include <MauiKit3/Core/mauiandroid.h>
-#include <MauiKit3/Core/fmh.h>
+#include <MauiKit4/Core/mauiandroid.h>
+#include <MauiKit4/Core/fmh.h>
 
 class InterfaceConnFailedException : public QException
 {
@@ -67,7 +67,7 @@ void AndroidInterface::getContacts(const GET_TYPE &type)
 {
     if (type == GET_TYPE::CACHED) {
         if (!this->m_contacts.isEmpty())
-            emit this->contactsReady(this->m_contacts);
+            Q_EMIT this->contactsReady(this->m_contacts);
         else
             this->fetchContacts();
 
@@ -183,7 +183,7 @@ void AndroidInterface::fetchContacts()
     QFutureWatcher<FMH::MODEL_LIST> *watcher = new QFutureWatcher<FMH::MODEL_LIST>;
     connect(watcher, &QFutureWatcher<FMH::MODEL_LIST>::finished, [=]() {
         this->m_contacts = watcher->future().result();
-        emit this->contactsReady(this->m_contacts);
+        Q_EMIT this->contactsReady(this->m_contacts);
 
         watcher->deleteLater();
     });

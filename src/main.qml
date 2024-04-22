@@ -1,11 +1,11 @@
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+import QtQuick
+import QtCore
+import QtQuick.Controls
 
-import org.mauikit.controls 1.3 as Maui
-import org.mauikit.filebrowsing 1.3 as FB
+import org.mauikit.controls as Maui
+import org.mauikit.filebrowsing as FB
 
-import org.maui.communicator 1.0
-import Qt.labs.settings 1.0
+import org.maui.communicator
 
 import "views/contacts"
 import "widgets"
@@ -29,7 +29,7 @@ Maui.ApplicationWindow
         id: swipeView
         anchors.fill : parent
         altHeader: Maui.Handy.isMobile
-        showCSDControls: true
+        Maui.Controls.showCSD: true
         //        onCurrentIndexChanged:
         //        {
         //            if(currentIndex === views.contacts)
@@ -98,7 +98,7 @@ Maui.ApplicationWindow
         FB.FileDialog
         {
             mode: modes.OPEN
-            settings.filterType: FB.FMList.IMAGE
+            browser.settings.filterType: FB.FMList.IMAGE
             singleSelection:  true
         }
     }

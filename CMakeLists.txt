@@ -5,7 +5,7 @@
 
 cmake_minimum_required(VERSION 3.16)
 
-set(COMMUNICATOR_VERSION 3.1.1)
+set(COMMUNICATOR_VERSION 4.0.0)
 add_compile_definitions(APP_COPYRIGHT_NOTICE="© 2019-2024 Maui Development Team")
 
 set(CMAKE_CXX_STANDARD 17)
@@ -19,8 +19,10 @@ set(CMAKE_AUTORCC ON)
 
 project(communicator VERSION ${COMMUNICATOR_VERSION})
 
-set(REQUIRED_QT_VERSION 5.14.0)
-set(REQUIRED_KF5_VERSION 5.60)
+set(QT_MAJOR_VERSION 6)
+
+set(REQUIRED_QT_VERSION 6.5.2)
+set(REQUIRED_KF_VERSION 5.240.0)
 
 if(ANDROID)
     set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
@@ -28,31 +30,21 @@ if(ANDROID)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android_files/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 endif()
 
-option(QUICK_COMPILER "Use QtQuick compiler to improve performance" TRUE)
-
-find_package(ECM ${REQUIRED_KF5_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${REQUIRED_KF_VERSION} REQUIRED NO_MODULE)
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH})
 
-find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick  QuickControls2 Concurrent)
+find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Qml Quick QuickControls2 Concurrent)
 
-find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS I18n CoreAddons Service)
+find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS I18n KIO CoreAddons Service)
 
-find_package(MauiKit3 REQUIRED)
-find_package(MauiKit3 REQUIRED COMPONENTS FileBrowsing)
+find_package(MauiKit4 REQUIRED COMPONENTS FileBrowsing)
 
 if(ANDROID)
-    find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras Xml)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras Xml)
 elseif(UNIX)
-    find_package(KF5 ${REQUIRED_KF5_VERSION} REQUIRED COMPONENTS Contacts People)
-    find_package(Qt5 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets)
-endif()
-
-if(QUICK_COMPILER)
-    find_package(Qt5QuickCompiler)
-    set_package_properties(Qt5QuickCompiler PROPERTIES
-        DESCRIPTION "Compile QML at build time"
-        TYPE OPTIONAL)
+    find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS Contacts People)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets)
 endif()
 
 if(UNIX AND NOT APPLE AND NOT ANDROID)
@@ -100,7 +92,7 @@ ki18n_install(po)
 
 if(UNIX AND NOT APPLE AND NOT ANDROID)
     install(TARGETS ${PROJECT_NAME} ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-    install(FILES org.kde.communicator.desktop DESTINATION ${XDG_APPS_INSTALL_DIR})
+    install(FILES org.kde.communicator.desktop DESTINATION ${KDE_INSTALL_APPDIR})
     install(FILES org.kde.communicator.json DESTINATION /usr/share/maui-accounts/manifests)
     install(FILES org.kde.communicator.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 endif()

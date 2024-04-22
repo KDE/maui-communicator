@@ -1,9 +1,8 @@
-import QtQuick 2.10
-import QtQuick.Controls 2.10
-import QtQuick.Layouts 1.3
-import QtGraphicalEffects 1.0
-
-import org.mauikit.controls 1.3 as Maui
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import QtQuick.Effects
+import org.mauikit.controls  as Maui
 
 Maui.PopupPage
 {
@@ -182,8 +181,9 @@ Maui.PopupPage
                     source: "image://contact/"+ contact.id
 
                     layer.enabled: true
-                    layer.effect: OpacityMask
+                    layer.effect: MultiEffect
                     {
+                        maskEnabled: true
                         maskSource: Item
                         {
                             width: _img.width

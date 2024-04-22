@@ -1,9 +1,8 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.3
-import QtQuick.Layouts 1.3
-import QtGraphicalEffects 1.0
-
-import org.mauikit.controls 1.0 as Maui
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
+import QtQuick.Effects
+import org.mauikit.controls as Maui
 
 Maui.ItemDelegate
 {
@@ -130,8 +129,9 @@ Maui.ItemDelegate
         }
 
         layer.enabled: true
-        layer.effect: OpacityMask
+        layer.effect: MultiEffect
         {
+            maskEnabled: true
             maskSource: Item
             {
                 width: _cover.width

@@ -1,12 +1,12 @@
-import QtQuick 2.14
-import QtQuick.Controls 2.14
-import QtQuick.Layouts 1.3
+import QtQuick
+import QtQuick.Controls
+import QtQuick.Layouts
 
-import QtGraphicalEffects 1.0
+ import QtQuick.Effects
 
-import org.mauikit.controls 1.3 as Maui
+import org.mauikit.controls as Maui
 
-import org.maui.communicator 1.0
+import org.maui.communicator
 
 Maui.AltBrowser
 {
@@ -109,7 +109,7 @@ Maui.AltBrowser
     listView.section.labelPositioning: ViewSection.InlineLabels
     listView.section.delegate: Maui.LabelDelegate
     {
-        label: section.toUpperCase()
+        text: section.toUpperCase()
         isSection: true
         width: parent.width
         opacity: 0.6
@@ -205,8 +205,9 @@ Maui.AltBrowser
                         source:  "image://contact/"+ model.id
 
                         layer.enabled: true
-                        layer.effect: OpacityMask
+                        layer.effect: MultiEffect
                         {
+                            maskEnabled: true
                             maskSource: Item
                             {
                                 width: _img.width
