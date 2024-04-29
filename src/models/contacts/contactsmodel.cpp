@@ -9,7 +9,11 @@
 #include "linuxinterface.h"
 #endif
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 #include <MauiKit3/Core/fmh.h>
+#else
+#include <MauiKit4/Core/fmh.h>
+#endif
 
 #ifdef Q_OS_ANDROID
 ContactsModel::ContactsModel(QObject *parent)
