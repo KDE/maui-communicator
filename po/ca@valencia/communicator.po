@@ -90,7 +90,7 @@ msgstr "Cancel·la"
 #: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid "Remove contact..."
-msgstr "Elimina el contacte..."
+msgstr "Elimina el contacte…"
 
 #: src/views/contacts/ContactPage.qml:110
 #, kde-format
@@ -181,12 +181,3 @@ msgstr "El missatge s'ha enviat"
 #, kde-format
 msgid "Subject"
 msgstr "Assumpte"
-
-#~ msgid "Communicator"
-#~ msgstr "Communicator"
-
-#~ msgid "© 2019-%1 Nitrux Development Team"
-#~ msgstr "© 2019-%1 L'equip de desenvolupament de Nitrux"
-
-#~ msgid "Camilo Higuita"
-#~ msgstr "Camilo Higuita"
