@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the maui-communicator package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-14 01:39+0000\n"
-"PO-Revision-Date: 2023-03-02 22:08+0000\n"
+"PO-Revision-Date: 2024-05-24 19:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: src/main.cpp:53
 #, kde-format
@@ -75,7 +75,7 @@ msgstr "Delete"
 #: src/views/contacts/ContactPage.qml:77
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Save"
 
 #: src/views/contacts/ContactPage.qml:96
 #, kde-format
@@ -152,15 +152,11 @@ msgid "Discard"
 msgstr "Discard"
 
 #: src/views/contacts/ContactsView.qml:319
-#, fuzzy, kde-format
-#| msgid ""
-#| "If you chose to exit the changes made will be lost. Click Discard to exit "
-#| "or cancel to go back and save the changes"
+#, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
 msgstr ""
-"If you chose to exit the changes made will be lost. Click Discard to exit or "
-"cancel to go back and save the changes"
+"If you chose to exit the changes made will be lost. Do you want to exit?"
 
 #: src/views/contacts/ContactsView.qml:356
 #, kde-format
@@ -168,10 +164,9 @@ msgid "New contact added"
 msgstr "New contact added"
 
 #: src/widgets/MessageComposer.qml:19
-#, fuzzy, kde-format
-#| msgid "Send..."
+#, kde-format
 msgid "Send"
-msgstr "Send..."
+msgstr "Send"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
