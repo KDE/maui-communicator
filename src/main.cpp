@@ -5,13 +5,13 @@
 
 #ifdef Q_OS_ANDROID
 #include <QGuiApplication>
-#include <MauiKit3/Core/mauiandroid.h>
+#include <MauiKit4/Core/mauiandroid.h>
 #else
 #include <QApplication>
 #endif
 
-#include <MauiKit3/Core/mauiapp.h>
-#include <KI18n/KLocalizedString>
+#include <MauiKit4/Core/mauiapp.h>
+#include <KLocalizedString>
 
 #include "contactimage.h"
 #include "contacts/contactsmodel.h"
@@ -23,9 +23,7 @@
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    QCoreApplication::setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-
+    
 #if defined Q_OS_ANDROID
     QGuiApplication app(argc, argv);
 

@@ -1,6 +1,6 @@
 #include "communicator.h"
 
-#include <KToolInvocation>
+#include <KEMailClientLauncherJob>
 
 #include <QFileInfo>
 #include <QDebug>
@@ -24,14 +24,31 @@ void Communicator::attachEmail(const QStringList &urls)
 
     QFileInfo file(urls[0]);
 
-    KToolInvocation::invokeMailer("", "", "", file.baseName(), "Files shared... ", "", urls);
+    auto job = new KEMailClientLauncherJob();
+    job->setAttachments(QUrl::fromStringList(urls));
+    job->setSubject(file.baseName());
+    job->start();
+
+        
+    // KToolInvocation::invokeMailer("", "", "", file.baseName(), "Files shared... ", "", urls);
     //    QDesktopServices::openUrl(QUrl("mailto:?subject=test&body=test&attachment;="
     //    + url));
 }
 
 void Communicator::email(const QString &to, const QString &cc, const QString &bcc, const QString &subject, const QString &body, const QString &messageFile, const QStringList &urls)
 {
-    KToolInvocation::invokeMailer(to, cc, bcc, subject, body, messageFile, urls);
+    // KToolInvocation::invokeMailer(to, cc, bcc, subject, body, messageFile, urls);
+    
+     auto job = new KEMailClientLauncherJob();
+    job->setAttachments(QUrl::fromStringList(urls));
+    job->setTo({to});
+    job->setCc({cc});
+    job->setBcc({bcc});
+    job->setSubject(subject);
+    job->setBody(body);
+    job->setBody(body);
+    job->start();
+
     //    QDesktopServices::openUrl(QUrl("mailto:?subject=test&body=test&attachment;="
     //    + url));
 

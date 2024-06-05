@@ -1,7 +1,7 @@
 #ifndef ABSTRACTINTERFACE_H
 #define ABSTRACTINTERFACE_H
 
-#include <MauiKit3/Core/fmh.h>
+#include <MauiKit4/Core/fmh.h>
 
 /**
  * This is an abstract class for handling the contacts,
@@ -93,7 +93,7 @@ public:
         return FMH::MODEL_LIST();
     }
 
-signals:
+Q_SIGNALS:
 
     /**
      * contactsReady is emitted when all the contacts are ready,

@@ -22,8 +22,8 @@
 
 #include <KContacts/Addressee>
 #include <KContacts/VCardConverter>
-#include <KPeople/KPeople/PersonsModel>
-#include <KPeople/KPeopleBackend/AbstractContact>
+#include <KPeople/PersonsModel>
+// #include <KPeople/KPeopleBackend/AbstractContact>
 #include <KPeople/PersonData>
 #include <QCryptographicHash>
 #include <QDebug>
@@ -92,14 +92,15 @@ void LinuxInterface::getContacts()
         const auto uri = model.get(i, KPeople::PersonsModel::PersonUriRole).toString();
 
         KPeople::PersonData person(uri);
-        QMultiHash contact = FMH::MODEL {
-            {FMH::MODEL_KEY::ID, person.personUri()}, {FMH::MODEL_KEY::N, person.name()}, {FMH::MODEL_KEY::EMAIL, person.email()}, {FMH::MODEL_KEY::TEL, person.contactCustomProperty("phoneNumber").toString()},
-            //        {FMH::MODEL_KEY::PHOTO, person.pictureUrl().toString()}
-        };
-        this->m_contacts << contact.unite(vCardData(QString(uri).replace("vcard:/", "")));
+        auto contact = FMH::MODEL {
+            {FMH::MODEL_KEY::ID, person.personUri()}, {FMH::MODEL_KEY::N, person.name()}, {FMH::MODEL_KEY::EMAIL, person.email()}, {FMH::MODEL_KEY::TEL, person.contactCustomProperty("phoneNumber").toString()}  };
+
+        contact.insert(vCardData(QString(uri).replace("vcard:/", "")));
+
+        this->m_contacts << contact;
     }
 
-    emit this->contactsReady(this->m_contacts);
+    Q_EMIT this->contactsReady(this->m_contacts);
 }
 
 FMH::MODEL LinuxInterface::getContact(const QString &id)

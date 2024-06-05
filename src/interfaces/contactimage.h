@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QQuickImageProvider>
 
-class ContactImage : public QObject, public QQuickImageProvider
+class ContactImage : public QQuickImageProvider
 {
     Q_OBJECT
 public:
@@ -12,10 +12,10 @@ public:
     ContactImage(ImageType type, Flags flags);
     QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize) override;
 
-public slots:
+public Q_SLOTS:
     void updateImage(const QImage &image);
 
-signals:
+Q_SIGNALS:
     void imageChanged();
 
 private:

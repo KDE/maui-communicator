@@ -9,7 +9,7 @@
 #include "linuxinterface.h"
 #endif
 
-#include <MauiKit3/Core/fmh.h>
+#include <MauiKit4/Core/fmh.h>
 
 #ifdef Q_OS_ANDROID
 ContactsModel::ContactsModel(QObject *parent)
@@ -23,11 +23,11 @@ ContactsModel::ContactsModel(QObject *parent)
 {
     connect(syncer, &AbstractInterface::contactsReady, [this](FMH::MODEL_LIST contacts) {
         qDebug() << "CONATCTS READY AT MODEL 1" << contacts;
-        emit this->preListChanged();
+        Q_EMIT this->preListChanged();
         this->list = contacts;
         this->filter();
-        emit this->postListChanged();
-        emit this->countChanged();
+        Q_EMIT this->postListChanged();
+        Q_EMIT this->countChanged();
     });
 
     this->getList();
@@ -45,11 +45,11 @@ void ContactsModel::setQuery(const QString &query)
 
     this->m_query = query;
 
-    emit this->preListChanged();
+    Q_EMIT this->preListChanged();
     this->filter();
-    emit this->postListChanged();
+    Q_EMIT this->postListChanged();
 
-    emit this->queryChanged();
+    Q_EMIT this->queryChanged();
 }
 
 QString ContactsModel::getQuery() const
@@ -75,9 +75,9 @@ bool ContactsModel::insert(const QVariantMap &map)
         return false;
 
     qDebug() << "inserting new contact count" << this->list.count();
-    emit this->preItemAppended();
+    Q_EMIT this->preItemAppended();
     this->list << model;
-    emit this->postItemAppended();
+    Q_EMIT this->postItemAppended();
 
     qDebug() << "inserting new contact count" << this->list.count();
 
@@ -107,7 +107,7 @@ bool ContactsModel::update(const QVariantMap &map, const int &index)
 
     this->syncer->updateContact(oldItem[FMH::MODEL_KEY::ID], newItem);
     this->list[index] = newItem;
-    emit this->updateModel(index, roles);
+    Q_EMIT this->updateModel(index, roles);
 
     return true;
 }
@@ -119,9 +119,9 @@ bool ContactsModel::remove(const int &index)
 
     qDebug() << "trying to remove :" << this->list[index][FMH::MODEL_KEY::ID];
     if (this->syncer->removeContact(this->list[index][FMH::MODEL_KEY::ID])) {
-        emit this->preItemRemoved(index);
+        Q_EMIT this->preItemRemoved(index);
         this->list.removeAt(index);
-        emit this->postItemRemoved();
+        Q_EMIT this->postItemRemoved();
         return true;
     }
 
@@ -150,7 +150,7 @@ void ContactsModel::append(const QVariantMap &item)
     if (item.isEmpty())
         return;
 
-    emit this->preItemAppended();
+    Q_EMIT this->preItemAppended();
 
     FMH::MODEL model;
     for (auto key : item.keys())
@@ -161,7 +161,7 @@ void ContactsModel::append(const QVariantMap &item)
 
     qDebug() << this->list;
 
-    emit this->postItemAppended();
+    Q_EMIT this->postItemAppended();
 }
 
 void ContactsModel::append(const QVariantMap &item, const int &at)
@@ -174,16 +174,16 @@ void ContactsModel::append(const QVariantMap &item, const int &at)
 
     qDebug() << "trying to append at" << at << item["title"];
 
-    emit this->preItemAppendedAt(at);
+    Q_EMIT this->preItemAppendedAt(at);
     this->list.insert(at, FMH::toModel(item));
-    emit this->postItemAppended();
+    Q_EMIT this->postItemAppended();
 }
 
 void ContactsModel::clear()
 {
-    emit this->preListChanged();
+    Q_EMIT this->preListChanged();
     this->list.clear();
-    emit this->postListChanged();
+    Q_EMIT this->postListChanged();
 }
 
 void ContactsModel::reset()

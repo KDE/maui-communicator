@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#include <MauiKit3/Core/mauilist.h>
+#include <MauiKit4/Core/mauilist.h>
 
 class AbstractInterface;
 class ContactsModel : public MauiList
@@ -44,10 +44,10 @@ private:
      */
     QString m_query;
 
-signals:
+Q_SIGNALS:
     void queryChanged();
 
-public slots:
+public Q_SLOTS:
     bool insert(const QVariantMap &map);
     bool update(const QVariantMap &map, const int &index);
     bool remove(const int &index);

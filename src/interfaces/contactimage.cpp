@@ -49,6 +49,6 @@ void ContactImage::updateImage(const QImage &image)
 {
     if (this->image != image) {
         this->image = image;
-        emit imageChanged();
+        Q_EMIT imageChanged();
     }
 }
