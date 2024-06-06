@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:47+0000\n"
 "PO-Revision-Date: 2023-08-16 19:05+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: src/main.cpp:53
+#: src/main.cpp:51
 #, kde-format
 msgid "Organize and sync your contacts."
 msgstr "Zure kontaktuak antolatu eta sinkronizatu"
 
-#: src/main.cpp:58
+#: src/main.cpp:56
 #, kde-format
 msgid "Developer"
 msgstr "Garatzailea"
@@ -61,37 +61,37 @@ msgstr "Ez dago kontakturik"
 msgid "You can add new contacts"
 msgstr "Kontaktu berriak gehi ditzakezu"
 
-#: src/views/contacts/ContactPage.qml:39
+#: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
 msgstr "Gog"
 
-#: src/views/contacts/ContactPage.qml:59
+#: src/views/contacts/ContactPage.qml:58
 #, kde-format
 msgid "Edit"
 msgstr "Editatu"
 
-#: src/views/contacts/ContactPage.qml:65
+#: src/views/contacts/ContactPage.qml:64
 #, kde-format
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: src/views/contacts/ContactPage.qml:77
+#: src/views/contacts/ContactPage.qml:76
 #, kde-format
 msgid "Save"
 msgstr "Gorde"
 
-#: src/views/contacts/ContactPage.qml:96
+#: src/views/contacts/ContactPage.qml:95
 #, kde-format
 msgid "Cancel"
 msgstr "Utzi"
 
-#: src/views/contacts/ContactPage.qml:109
+#: src/views/contacts/ContactPage.qml:108
 #, kde-format
 msgid "Remove contact..."
 msgstr "Kendu kontaktua..."
 
-#: src/views/contacts/ContactPage.qml:110
+#: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
@@ -151,12 +151,12 @@ msgstr "Titulua"
 msgid "Search %1 contacts"
 msgstr "Bilatu %1 kontaktu"
 
-#: src/views/contacts/ContactsView.qml:318
+#: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Discard"
 msgstr "Baztertu"
 
-#: src/views/contacts/ContactsView.qml:319
+#: src/views/contacts/ContactsView.qml:320
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
@@ -164,7 +164,7 @@ msgstr ""
 "Irtetea erabakitzen baduzu, egindako aldaketak galdu egingo dira. Irtennahi "
 "duzu?"
 
-#: src/views/contacts/ContactsView.qml:356
+#: src/views/contacts/ContactsView.qml:357
 #, kde-format
 msgid "New contact added"
 msgstr "Kontaktu berria gehitu da"

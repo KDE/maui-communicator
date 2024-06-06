@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:47+0000\n"
 "PO-Revision-Date: 2023-08-15 09:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: src/main.cpp:53
+#: src/main.cpp:51
 #, kde-format
 msgid "Organize and sync your contacts."
 msgstr "Упорядкуйте ваші контакти та синхронізуйте їх."
 
-#: src/main.cpp:58
+#: src/main.cpp:56
 #, kde-format
 msgid "Developer"
 msgstr "Розробник"
@@ -59,37 +59,37 @@ msgstr "Контактів ще немає"
 msgid "You can add new contacts"
 msgstr "Ви можете додати нові контакти"
 
-#: src/views/contacts/ContactPage.qml:39
+#: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
 msgstr "Улюбл."
 
-#: src/views/contacts/ContactPage.qml:59
+#: src/views/contacts/ContactPage.qml:58
 #, kde-format
 msgid "Edit"
 msgstr "Змінити"
 
-#: src/views/contacts/ContactPage.qml:65
+#: src/views/contacts/ContactPage.qml:64
 #, kde-format
 msgid "Delete"
 msgstr "Вилучити"
 
-#: src/views/contacts/ContactPage.qml:77
+#: src/views/contacts/ContactPage.qml:76
 #, kde-format
 msgid "Save"
 msgstr "Зберегти"
 
-#: src/views/contacts/ContactPage.qml:96
+#: src/views/contacts/ContactPage.qml:95
 #, kde-format
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: src/views/contacts/ContactPage.qml:109
+#: src/views/contacts/ContactPage.qml:108
 #, kde-format
 msgid "Remove contact..."
 msgstr "Вилучити контакт…"
 
-#: src/views/contacts/ContactPage.qml:110
+#: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
@@ -149,12 +149,12 @@ msgstr "Заголовок"
 msgid "Search %1 contacts"
 msgstr "Шукати контакти (%1)"
 
-#: src/views/contacts/ContactsView.qml:318
+#: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Discard"
 msgstr "Відкинути"
 
-#: src/views/contacts/ContactsView.qml:319
+#: src/views/contacts/ContactsView.qml:320
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
@@ -162,7 +162,7 @@ msgstr ""
 "Якщо ви вибрали варіант із виходом, внесені зміни буде втрачено. Хочете "
 "вийти?"
 
-#: src/views/contacts/ContactsView.qml:356
+#: src/views/contacts/ContactsView.qml:357
 #, kde-format
 msgid "New contact added"
 msgstr "Додано новий контакт"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-14 01:39+0000\n"
+"POT-Creation-Date: 2024-06-06 01:47+0000\n"
 "PO-Revision-Date: 2024-02-19 07:32+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: src/main.cpp:53
+#: src/main.cpp:51
 #, kde-format
 msgid "Organize and sync your contacts."
 msgstr "管理並同步您的聯絡人。"
 
-#: src/main.cpp:58
+#: src/main.cpp:56
 #, kde-format
 msgid "Developer"
 msgstr "開發者"
@@ -57,37 +57,37 @@ msgstr "沒有聯絡人"
 msgid "You can add new contacts"
 msgstr "您可以新增聯絡人"
 
-#: src/views/contacts/ContactPage.qml:39
+#: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
 msgstr "加到最愛"
 
-#: src/views/contacts/ContactPage.qml:59
+#: src/views/contacts/ContactPage.qml:58
 #, kde-format
 msgid "Edit"
 msgstr "編輯"
 
-#: src/views/contacts/ContactPage.qml:65
+#: src/views/contacts/ContactPage.qml:64
 #, kde-format
 msgid "Delete"
 msgstr "刪除"
 
-#: src/views/contacts/ContactPage.qml:77
+#: src/views/contacts/ContactPage.qml:76
 #, kde-format
 msgid "Save"
 msgstr "儲存"
 
-#: src/views/contacts/ContactPage.qml:96
+#: src/views/contacts/ContactPage.qml:95
 #, kde-format
 msgid "Cancel"
 msgstr "取消"
 
-#: src/views/contacts/ContactPage.qml:109
+#: src/views/contacts/ContactPage.qml:108
 #, kde-format
 msgid "Remove contact..."
 msgstr "移除聯絡人…"
 
-#: src/views/contacts/ContactPage.qml:110
+#: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
@@ -145,18 +145,18 @@ msgstr "稱呼"
 msgid "Search %1 contacts"
 msgstr "搜尋 %1 個聯絡人"
 
-#: src/views/contacts/ContactsView.qml:318
+#: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Discard"
 msgstr "丟棄"
 
-#: src/views/contacts/ContactsView.qml:319
+#: src/views/contacts/ContactsView.qml:320
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
 msgstr "如果您選擇離開，所有變更都會遺失。您確定要離開嗎？"
 
-#: src/views/contacts/ContactsView.qml:356
+#: src/views/contacts/ContactsView.qml:357
 #, kde-format
 msgid "New contact added"
 msgstr "已新增聯絡人"
