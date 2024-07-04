@@ -38,8 +38,8 @@ Maui.ApplicationWindow
 
         Maui.AppViewLoader
         {
-            Maui.AppView.iconName: "draw-star"
-            Maui.AppView.title: i18n("Favorites")
+            Maui.Controls.iconName: "draw-star"
+            Maui.Controls.title: i18n("Favorites")
 
             ContactsView
             {
@@ -55,8 +55,8 @@ Maui.ApplicationWindow
 
         Maui.AppViewLoader
         {
-            Maui.AppView.iconName: "view-pim-contacts"
-            Maui.AppView.title: i18n("Contacts")
+            Maui.Controls.iconName: "view-pim-contacts"
+            Maui.Controls.title: i18n("Contacts")
 
             ContactsView
             {
