@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-06 01:47+0000\n"
-"PO-Revision-Date: 2024-03-24 10:34+0100\n"
+"PO-Revision-Date: 2024-07-06 16:50+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -94,6 +94,8 @@ msgstr "Forigi kontakton..."
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
 msgstr ""
+"Ĉu vi certas, ke vi volas forigi ĉi tiun kontakton? Tiu ago ne estas "
+"malfarebla."
 
 #: src/views/contacts/ContactPage.qml:242
 #, kde-format
@@ -157,6 +159,7 @@ msgstr "Forĵeti"
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
 msgstr ""
+"Se vi elektas eliri, la faritaj ŝanĝoj estos perditaj. Ĉu vi volas eliri?"
 
 #: src/views/contacts/ContactsView.qml:357
 #, kde-format
