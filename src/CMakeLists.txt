@@ -41,31 +41,43 @@ else()
         interfaces/linuxinterface.h)
 endif()
 
-set(communicator_ASSETS
+qt_add_resources(communicator_ASSETS
     assets/communicator_assets.qrc)
 
-qt_add_resources(communicator_QML_QRC qml.qrc)
-
 if(ANDROID)
-    add_library(${PROJECT_NAME} SHARED
+    qt_add_executable(${PROJECT_NAME}
+        MANUAL_FINALIZATION
         ${communicator_SRCS}
         ${communicator_android_SRCS}
         ${communicator_HDRS}
-        ${communicator_ASSETS}
-        ${communicator_QML_QRC})
+        ${communicator_ASSETS})
+
+    set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android_files/version.gradle.in ${CMAKE_BINARY_DIR}/src/version.gradle)
 else()
-    add_executable(${PROJECT_NAME}
+    qt_add_executable(${PROJECT_NAME}
         ${communicator_SRCS}
         ${communicator_linux_SRCS}
         ${communicator_HDRS}
-        ${communicator_ASSETS}
-        ${communicator_QML_QRC})
+        ${communicator_ASSETS})
 endif()
+
+qt_add_qml_module(${PROJECT_NAME} URI app.maui.communicator
+    NO_PLUGIN
+    QML_FILES
+    main.qml
+    views/contacts/ContactsView.qml
+    views/contacts/ContactDelegate.qml
+    views/contacts/ContactPage.qml
+    widgets/MessageComposer.qml
+    views/contacts/GridContactDelegate.qml
+    views/contacts/ContactField.qml)
 
 target_compile_definitions(${PROJECT_NAME}
     PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 
 target_link_libraries(${PROJECT_NAME}
+    PRIVATE
     MauiKit4
     MauiKit4::FileBrowsing
     Qt6::QuickControls2
@@ -73,22 +85,27 @@ target_link_libraries(${PROJECT_NAME}
     Qt6::Concurrent
     KF6::I18n
     KF6::Service
-    KF6::KIOCore KF6::KIOFileWidgets KF6::KIOWidgets)
+    KF6::KIOCore
+    # KF6::KIOFileWidgets
+    #[[KF6::KIOWidgets]])
 
 if(ANDROID)
     target_link_libraries(${PROJECT_NAME}
-    Qt6::AndroidExtras 
-    Qt6::Xml)
+        PRIVATE
+        Qt6::Multimedia
+        Qt6::Sql
+        Qt6::Xml)
     kde_source_files_enable_exceptions(${PROJECT_NAME} interfaces/androidinterface.cpp)
 else()
-    target_link_libraries(${PROJECT_NAME} 
-    KF6::Contacts 
-    KF6::People 
-    Qt6::Widgets)
+    target_link_libraries(${PROJECT_NAME}
+        PRIVATE
+        KF6::Contacts
+        KF6::People
+        Qt6::Widgets)
 endif()
 
 if(UNIX AND NOT APPLE AND NOT ANDROID)
     install(FILES assets/communicator.svg DESTINATION ${KDE_INSTALL_ICONDIR}/hicolor/scalable/apps)
 endif()
 
-
+qt_finalize_target(${PROJECT_NAME})

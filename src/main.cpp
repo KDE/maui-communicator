@@ -77,7 +77,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterType<ContactsModel>(COMMUNICATOR_URI, 1, 0, "ContactsList");
     qmlRegisterType<Communicator>(COMMUNICATOR_URI, 1, 0, "Communicator");
 
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/app/maui/communicator/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 

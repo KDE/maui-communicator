@@ -1,5 +1,4 @@
-#ifndef ANDROIDINTERFACE_H
-#define ANDROIDINTERFACE_H
+#pragma once
 
 #include "abstractinterface.h"
 #include <QObject>
@@ -39,7 +38,4 @@ private:
     void fetchContacts();
     FMH::MODEL_LIST fetchAccounts();
 
-public slots:
 };
-
-#endif // ANDROIDINTERFACE_H

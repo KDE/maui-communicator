@@ -25,9 +25,7 @@ set(REQUIRED_QT_VERSION 6.5.2)
 set(REQUIRED_KF_VERSION 5.240.0)
 
 if(ANDROID)
-    set(ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android_files)
     set(ANDROID_ABIS "armeabi-v7a")
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/android_files/version.gradle.in ${CMAKE_BINARY_DIR}/version.gradle)
 endif()
 
 find_package(ECM ${REQUIRED_KF_VERSION} REQUIRED NO_MODULE)
@@ -41,7 +39,7 @@ find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS I18n KIO CoreAddons 
 find_package(MauiKit4 REQUIRED COMPONENTS FileBrowsing)
 
 if(ANDROID)
-    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS AndroidExtras Xml)
+    find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Sql Multimedia Xml)
 elseif(UNIX)
     find_package(KF6 ${REQUIRED_KF_VERSION} REQUIRED COMPONENTS Contacts People)
     find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE COMPONENTS Widgets)
@@ -101,3 +99,5 @@ feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+
+qt_finalize_project()

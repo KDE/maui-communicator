@@ -1,7 +1,6 @@
 #include "communicator.h"
 
-#include <KEMailClientLauncherJob>
-
+#include <QDesktopServices>
 #include <QFileInfo>
 #include <QDebug>
 #include <QUrl>
@@ -9,7 +8,7 @@
 #ifdef Q_OS_ANDROID
 #include "androidinterface.h"
 #else
-#include <QDesktopServices>
+#include <KEMailClientLauncherJob>
 #endif
 
 Communicator::Communicator(QObject *parent) : QObject(parent)
@@ -19,6 +18,8 @@ Communicator::Communicator(QObject *parent) : QObject(parent)
 
 void Communicator::attachEmail(const QStringList &urls)
 {
+#ifndef Q_OS_ANDROID
+
     if (urls.isEmpty())
         return;
 
@@ -33,10 +34,14 @@ void Communicator::attachEmail(const QStringList &urls)
     // KToolInvocation::invokeMailer("", "", "", file.baseName(), "Files shared... ", "", urls);
     //    QDesktopServices::openUrl(QUrl("mailto:?subject=test&body=test&attachment;="
     //    + url));
+#endif
 }
 
 void Communicator::email(const QString &to, const QString &cc, const QString &bcc, const QString &subject, const QString &body, const QString &messageFile, const QStringList &urls)
 {
+#ifdef Q_OS_ANDROID
+    QDesktopServices::openUrl(QString("mailto:%1?cc=%2&bcc=%3&subject=%4&body=%5").arg(to, cc, bcc, subject, body));
+#else
     // KToolInvocation::invokeMailer(to, cc, bcc, subject, body, messageFile, urls);
     
      auto job = new KEMailClientLauncherJob();
@@ -53,6 +58,7 @@ void Communicator::email(const QString &to, const QString &cc, const QString &bc
     //    + url));
 
 //    Qt.openUrlExternally("mailto:" + contact.email)
+#endif
 
 }
 
