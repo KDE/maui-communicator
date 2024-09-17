@@ -27,14 +27,13 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #if defined Q_OS_ANDROID
     QGuiApplication app(argc, argv);
 
-    if (!MAUIAndroid::checkRunTimePermissions({"android.permission.WRITE_EXTERNAL_STORAGE",
-                                               "android.permission.READ_CALL_LOG",
+    if (!MAUIAndroid::checkRunTimePermissions({"android.permission.READ_CALL_LOG",
                                                "android.permission.SEND_SMS",
                                                "android.permission.CALL_PHONE",
                                                "android.permission.MANAGE_ACCOUNTS",
                                                "android.permission.GET_ACCOUNTS",
                                                "android.permission.READ_CONTACTS"}))
-        return -1;
+        qWarning() << "Failed to grant some Android permissions";
 #else
     QApplication app(argc, argv);
 #endif
