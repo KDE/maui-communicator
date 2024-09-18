@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-06 01:47+0000\n"
+"POT-Creation-Date: 2024-09-18 01:54+0000\n"
 "PO-Revision-Date: 2024-05-24 19:12+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.2\n"
 
-#: src/main.cpp:51
+#: src/main.cpp:50
 #, kde-format
 msgid "Organize and sync your contacts."
 msgstr "Organise and sync your contacts."
 
-#: src/main.cpp:56
+#: src/main.cpp:55
 #, kde-format
 msgid "Developer"
 msgstr "Developer"
