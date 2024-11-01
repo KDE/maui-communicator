@@ -24,7 +24,7 @@ Maui.ApplicationWindow
         id: settings
     }
 
-    Maui.AppViews
+    Maui.SwipeView
     {
         id: swipeView
         anchors.fill : parent
@@ -36,7 +36,7 @@ Maui.ApplicationWindow
         //                _contacsView.list.query = ""
         //        }
 
-        Maui.AppViewLoader
+        Maui.SwipeViewLoader
         {
             Maui.Controls.iconName: "draw-star"
             Maui.Controls.title: i18n("Favorites")
@@ -53,7 +53,7 @@ Maui.ApplicationWindow
             }
         }
 
-        Maui.AppViewLoader
+        Maui.SwipeViewLoader
         {
             Maui.Controls.iconName: "view-pim-contacts"
             Maui.Controls.title: i18n("Contacts")
