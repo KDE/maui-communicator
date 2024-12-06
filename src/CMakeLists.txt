@@ -86,6 +86,7 @@ target_link_libraries(${PROJECT_NAME}
     KF6::I18n
     KF6::Service
     KF6::KIOCore
+    KF6::KIOGui
     # KF6::KIOFileWidgets
     #[[KF6::KIOWidgets]])
 
