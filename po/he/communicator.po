@@ -1,0 +1,177 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the maui-communicator package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: maui-communicator\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-09-18 01:54+0000\n"
+"PO-Revision-Date: 2024-12-28 11:07+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.12.0\n"
+
+#: src/main.cpp:50
+#, kde-format
+msgid "Organize and sync your contacts."
+msgstr "סידור וסנכרון אנשי הקשר שלך."
+
+#: src/main.cpp:55
+#, kde-format
+msgid "Developer"
+msgstr "מפתח"
+
+#: src/main.qml:42
+#, kde-format
+msgid "Favorites"
+msgstr "מועדפים"
+
+#: src/main.qml:51
+#, kde-format
+msgid "There're no favorite contacts"
+msgstr "אין אנשי קשר מועדפים"
+
+#: src/main.qml:52
+#, kde-format
+msgid "You can mark as favorite your contacts to quickly access them"
+msgstr "אפשר לסמן אנשי קשר כמועדפים כדי לגשת אליהם במהרה"
+
+#: src/main.qml:59
+#, kde-format
+msgid "Contacts"
+msgstr "אנשי קשר"
+
+#: src/main.qml:68
+#, kde-format
+msgid "There're no contacts"
+msgstr "אין אנשי קשר"
+
+#: src/main.qml:69
+#, kde-format
+msgid "You can add new contacts"
+msgstr "אפשר להוסיף אנשי קשר חדשים"
+
+#: src/views/contacts/ContactPage.qml:38
+#, kde-format
+msgid "Fav"
+msgstr "מועדפים"
+
+#: src/views/contacts/ContactPage.qml:58
+#, kde-format
+msgid "Edit"
+msgstr "עריכה"
+
+#: src/views/contacts/ContactPage.qml:64
+#, kde-format
+msgid "Delete"
+msgstr "מחיקה"
+
+#: src/views/contacts/ContactPage.qml:76
+#, kde-format
+msgid "Save"
+msgstr "שמירה"
+
+#: src/views/contacts/ContactPage.qml:95
+#, kde-format
+msgid "Cancel"
+msgstr "ביטול"
+
+#: src/views/contacts/ContactPage.qml:108
+#, kde-format
+msgid "Remove contact..."
+msgstr "הסרת איש קשר…"
+
+#: src/views/contacts/ContactPage.qml:109
+#, kde-format
+msgid ""
+"Are you sure you want to remove this contact? This action can not be undone."
+msgstr "להסיר את איש הקשר הזה? הפעולה הזאת היא בלתי הפיכה."
+
+#: src/views/contacts/ContactPage.qml:242
+#, kde-format
+msgid "Account"
+msgstr "חשבון"
+
+#: src/views/contacts/ContactPage.qml:266
+#, kde-format
+msgid "Name"
+msgstr "שם"
+
+#: src/views/contacts/ContactPage.qml:290
+#, kde-format
+msgid "Phone"
+msgstr "טלפון"
+
+#: src/views/contacts/ContactPage.qml:305
+#: src/views/contacts/ContactPage.qml:365 src/widgets/MessageComposer.qml:74
+#, kde-format
+msgid "Message"
+msgstr "הודעה"
+
+#: src/views/contacts/ContactPage.qml:319
+#, kde-format
+msgid "Call"
+msgstr "התקשרות"
+
+#: src/views/contacts/ContactPage.qml:331
+#: src/views/contacts/ContactPage.qml:378
+#, kde-format
+msgid "Copy"
+msgstr "העתקה"
+
+#: src/views/contacts/ContactPage.qml:350
+#, kde-format
+msgid "Email"
+msgstr "דוא״ל"
+
+#: src/views/contacts/ContactPage.qml:397
+#, kde-format
+msgid "Organization"
+msgstr "ארגון"
+
+#: src/views/contacts/ContactPage.qml:420
+#, kde-format
+msgid "Title"
+msgstr "תפקיד"
+
+#: src/views/contacts/ContactsView.qml:59
+#, kde-format
+msgid "Search %1 contacts"
+msgstr "חיפוש בין %1 אנשי קשר"
+
+#: src/views/contacts/ContactsView.qml:319
+#, kde-format
+msgid "Discard"
+msgstr "התעלמות"
+
+#: src/views/contacts/ContactsView.qml:320
+#, kde-format
+msgid ""
+"If you chose to exit the changes made will be lost. Do you want to exit?"
+msgstr "בחירה ביציאה תוביל לאובדן השינויים. לצאת?"
+
+#: src/views/contacts/ContactsView.qml:357
+#, kde-format
+msgid "New contact added"
+msgstr "נוסף איש קשר חדש"
+
+#: src/widgets/MessageComposer.qml:19
+#, kde-format
+msgid "Send"
+msgstr "שליחה"
+
+#: src/widgets/MessageComposer.qml:33
+#, kde-format
+msgid "Message sent"
+msgstr "ההודעה נשלחה"
+
+#: src/widgets/MessageComposer.qml:64
+#, kde-format
+msgid "Subject"
+msgstr "נושא"
