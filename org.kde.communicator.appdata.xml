@@ -25,6 +25,7 @@
   <name xml:lang="pl">Komunikator</name>
   <name xml:lang="pt">Communicator</name>
   <name xml:lang="pt-BR">Communicator</name>
+  <name xml:lang="sa">संचारकः</name>
   <name xml:lang="sk">Komunikátor</name>
   <name xml:lang="sl">Communicator</name>
   <name xml:lang="sv">Communicator</name>
@@ -54,6 +55,7 @@
   <summary xml:lang="pl">Zarządzanie kontaktami</summary>
   <summary xml:lang="pt">Gestor de contactos</summary>
   <summary xml:lang="pt-BR">Gerenciador de contatos</summary>
+  <summary xml:lang="sa">सम्पर्क प्रबन्धक</summary>
   <summary xml:lang="sk">Správca kontaktov</summary>
   <summary xml:lang="sl">Upravljalnik stikov</summary>
   <summary xml:lang="sv">Kontakthanterare</summary>
@@ -84,6 +86,7 @@
     <p xml:lang="pl">Komunikator jest od zarządzania kontaktami.</p>
     <p xml:lang="pt">O Communicator é um gestor de contactos.</p>
     <p xml:lang="pt-BR">Communicator é um gerenciador de contatos.</p>
+    <p xml:lang="sa">संचारकः सम्पर्कप्रबन्धकः अस्ति ।</p>
     <p xml:lang="sk">Komunikátor je správca kontaktov.</p>
     <p xml:lang="sl">Communicator je upravljalnik stikov.</p>
     <p xml:lang="sv">Communicator är en kontakthanterare.</p>
@@ -120,6 +123,7 @@
       <caption xml:lang="pl">Komunikator</caption>
       <caption xml:lang="pt">Communicator.</caption>
       <caption xml:lang="pt-BR">Communicator.</caption>
+      <caption xml:lang="sa">संचारकः ।</caption>
       <caption xml:lang="sk">Komunikátor</caption>
       <caption xml:lang="sl">Communicator.</caption>
       <caption xml:lang="sv">Communicator.</caption>
