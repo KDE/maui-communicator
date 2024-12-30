@@ -1,178 +1,178 @@
+# Sanskrit translations for maui-communicator package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the maui-communicator package.
+# Kali <EMAIL@ADDRESS>, 2024.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-18 01:54+0000\n"
-"PO-Revision-Date: 2024-12-28 11:07+0200\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
-"Language: he\n"
+"PO-Revision-Date: 2024-12-29 16:05+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
+"Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.12.0\n"
 
 #: src/main.cpp:50
 #, kde-format
 msgid "Organize and sync your contacts."
-msgstr "סידור וסנכרון אנשי הקשר שלך."
+msgstr "स्वसम्पर्कं व्यवस्थितं कृत्वा समन्वययन्तु।"
 
 #: src/main.cpp:55
 #, kde-format
 msgid "Developer"
-msgstr "מפתח"
+msgstr "विकासकः"
 
 #: src/main.qml:42
 #, kde-format
 msgid "Favorites"
-msgstr "מועדפים"
+msgstr "प्रियाः"
 
 #: src/main.qml:51
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr "אין אנשי קשר מועדפים"
+msgstr "तत्र प्रियसम्पर्काः नास्ति"
 
 #: src/main.qml:52
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
-msgstr "אפשר לסמן אנשי קשר כמועדפים כדי לגשת אליהם במהרה"
+msgstr "शीघ्रं प्राप्तुं भवान् स्वसम्पर्कं प्रियरूपेण चिह्नितुं शक्नोति"
 
 #: src/main.qml:59
 #, kde-format
 msgid "Contacts"
-msgstr "אנשי קשר"
+msgstr "सम्पर्क"
 
 #: src/main.qml:68
 #, kde-format
 msgid "There're no contacts"
-msgstr "אין אנשי קשר"
+msgstr "तत्र सम्पर्काः न सन्ति"
 
 #: src/main.qml:69
 #, kde-format
 msgid "You can add new contacts"
-msgstr "אפשר להוסיף אנשי קשר חדשים"
+msgstr "भवन्तः नूतनान् सम्पर्कं योजयितुं शक्नुवन्ति"
 
 #: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
-msgstr "מועדפים"
+msgstr "Fav"
 
 #: src/views/contacts/ContactPage.qml:58
 #, kde-format
 msgid "Edit"
-msgstr "עריכה"
+msgstr "सम्पादन"
 
 #: src/views/contacts/ContactPage.qml:64
 #, kde-format
 msgid "Delete"
-msgstr "מחיקה"
+msgstr "लुप्"
 
 #: src/views/contacts/ContactPage.qml:76
 #, kde-format
 msgid "Save"
-msgstr "שמירה"
+msgstr "रक्ष्"
 
 #: src/views/contacts/ContactPage.qml:95
 #, kde-format
 msgid "Cancel"
-msgstr "ביטול"
+msgstr "निरसयतु"
 
 #: src/views/contacts/ContactPage.qml:108
 #, kde-format
 msgid "Remove contact..."
-msgstr "הסרת איש קשר…"
+msgstr "सम्पर्क हटाये..."
 
 #: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
-msgstr "להסיר את איש הקשר הזה? הפעולה הזאת היא בלתי הפיכה."
+msgstr "किं भवन्तः निश्चितरूपेण एतत् सम्पर्कं दूरीकर्तुं इच्छन्ति? एतत् कर्म न निवर्तयितुं शक्यते।"
 
 #: src/views/contacts/ContactPage.qml:242
 #, kde-format
 msgid "Account"
-msgstr "חשבון"
+msgstr "वृतांत्तः"
 
 #: src/views/contacts/ContactPage.qml:266
 #, kde-format
 msgid "Name"
-msgstr "שם"
+msgstr "नामः"
 
 #: src/views/contacts/ContactPage.qml:290
 #, kde-format
 msgid "Phone"
-msgstr "טלפון"
+msgstr "फोनं"
 
 #: src/views/contacts/ContactPage.qml:305
 #: src/views/contacts/ContactPage.qml:365 src/widgets/MessageComposer.qml:74
 #, kde-format
 msgid "Message"
-msgstr "הודעה"
+msgstr "सन्देशः"
 
 #: src/views/contacts/ContactPage.qml:319
 #, kde-format
 msgid "Call"
-msgstr "התקשרות"
+msgstr "आह्वानम्‌"
 
 #: src/views/contacts/ContactPage.qml:331
 #: src/views/contacts/ContactPage.qml:378
 #, kde-format
 msgid "Copy"
-msgstr "העתקה"
+msgstr "प्रतिलिपि"
 
 #: src/views/contacts/ContactPage.qml:350
 #, kde-format
 msgid "Email"
-msgstr "דוא״ל"
+msgstr "ईमेल"
 
 #: src/views/contacts/ContactPage.qml:397
 #, kde-format
 msgid "Organization"
-msgstr "ארגון"
+msgstr "संघठनं"
 
 #: src/views/contacts/ContactPage.qml:420
 #, kde-format
 msgid "Title"
-msgstr "תפקיד"
+msgstr "शीर्षक"
 
 #: src/views/contacts/ContactsView.qml:59
 #, kde-format
 msgid "Search %1 contacts"
-msgstr "חיפוש בין %1 אנשי קשר"
+msgstr "%1 सम्पर्कं अन्वेष्टुम्"
 
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Discard"
-msgstr "התעלמות"
+msgstr "तनूकृ"
 
 #: src/views/contacts/ContactsView.qml:320
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
-msgstr "בחירה ביציאה תוביל לאובדן השינויים. לצאת?"
+msgstr ""
+"यदि भवान् निर्गन्तुं चिनोति तर्हि कृताः परिवर्तनाः नष्टाः भविष्यन्ति । किं त्वं निर्गन्तुं "
+"इच्छसि ?"
 
 #: src/views/contacts/ContactsView.qml:357
 #, kde-format
 msgid "New contact added"
-msgstr "נוסף איש קשר חדש"
+msgstr "नव सम्पर्कः योजितः"
 
 #: src/widgets/MessageComposer.qml:19
 #, kde-format
 msgid "Send"
-msgstr "שליחה"
+msgstr "प्रेषयतु"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
 msgid "Message sent"
-msgstr "ההודעה נשלחה"
+msgstr "सन्देशः प्रेषितः"
 
 #: src/widgets/MessageComposer.qml:64
 #, kde-format
 msgid "Subject"
-msgstr "נושא"
+msgstr "विषयः"
