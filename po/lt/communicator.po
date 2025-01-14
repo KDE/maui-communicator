@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-18 01:54+0000\n"
-"PO-Revision-Date: 2023-02-25 00:59+0000\n"
+"PO-Revision-Date: 2025-01-14 01:02+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,162 +17,166 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/main.cpp:50
 #, kde-format
 msgid "Organize and sync your contacts."
-msgstr ""
+msgstr "Tvarkyti ir sinchronizuoti adresatus."
 
 #: src/main.cpp:55
 #, kde-format
 msgid "Developer"
-msgstr ""
+msgstr "Plėtotojas"
 
 #: src/main.qml:42
 #, kde-format
 msgid "Favorites"
-msgstr ""
+msgstr "Mėgstami"
 
 #: src/main.qml:51
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr ""
+msgstr "Nėra mėgstamų adresatų"
 
 #: src/main.qml:52
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
 msgstr ""
+"Galite pažymėti adresatą kaip mėgstamą, kad gautumėte greitą prieigą prie jo"
 
 #: src/main.qml:59
 #, kde-format
 msgid "Contacts"
-msgstr ""
+msgstr "Adresatai"
 
 #: src/main.qml:68
 #, kde-format
 msgid "There're no contacts"
-msgstr ""
+msgstr "Nėra adresatų"
 
 #: src/main.qml:69
 #, kde-format
 msgid "You can add new contacts"
-msgstr ""
+msgstr "Galite pridėti naujus adresatus"
 
 #: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "Mėgstamas"
 
 #: src/views/contacts/ContactPage.qml:58
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Taisyti"
 
 #: src/views/contacts/ContactPage.qml:64
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Ištrinti"
 
 #: src/views/contacts/ContactPage.qml:76
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Įrašyti"
 
 #: src/views/contacts/ContactPage.qml:95
 #, kde-format
 msgid "Cancel"
-msgstr ""
+msgstr "Atsisakyti"
 
 #: src/views/contacts/ContactPage.qml:108
 #, kde-format
 msgid "Remove contact..."
-msgstr ""
+msgstr "Šalinti adresatą..."
 
 #: src/views/contacts/ContactPage.qml:109
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
 msgstr ""
+"Ar tikrai norite pašalinti šį adresatą? Šio veiksmo neįmanoma bus atšaukti."
 
 #: src/views/contacts/ContactPage.qml:242
 #, kde-format
 msgid "Account"
-msgstr ""
+msgstr "Paskyra"
 
 #: src/views/contacts/ContactPage.qml:266
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Vardas"
 
 #: src/views/contacts/ContactPage.qml:290
 #, kde-format
 msgid "Phone"
-msgstr ""
+msgstr "Telefonas"
 
 #: src/views/contacts/ContactPage.qml:305
 #: src/views/contacts/ContactPage.qml:365 src/widgets/MessageComposer.qml:74
 #, kde-format
 msgid "Message"
-msgstr ""
+msgstr "Žinutė"
 
 #: src/views/contacts/ContactPage.qml:319
 #, kde-format
 msgid "Call"
-msgstr ""
+msgstr "Skambutis"
 
 #: src/views/contacts/ContactPage.qml:331
 #: src/views/contacts/ContactPage.qml:378
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopijuoti"
 
 #: src/views/contacts/ContactPage.qml:350
 #, kde-format
 msgid "Email"
-msgstr ""
+msgstr "El. paštas"
 
 #: src/views/contacts/ContactPage.qml:397
 #, kde-format
 msgid "Organization"
-msgstr ""
+msgstr "Organizacija"
 
 #: src/views/contacts/ContactPage.qml:420
 #, kde-format
 msgid "Title"
-msgstr ""
+msgstr "Pavadinimas"
 
 #: src/views/contacts/ContactsView.qml:59
 #, kde-format
 msgid "Search %1 contacts"
-msgstr ""
+msgstr "Ieškoti tarp %1 adresatų"
 
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Discard"
-msgstr ""
+msgstr "Atmesti"
 
 #: src/views/contacts/ContactsView.qml:320
 #, kde-format
 msgid ""
 "If you chose to exit the changes made will be lost. Do you want to exit?"
 msgstr ""
+"Jei pasirinkote išeiti, visi pakeitimai bus prarasti. Ar norite išeiti?"
 
 #: src/views/contacts/ContactsView.qml:357
 #, kde-format
 msgid "New contact added"
-msgstr ""
+msgstr "Pridėtas naujas adresatas"
 
 #: src/widgets/MessageComposer.qml:19
 #, kde-format
 msgid "Send"
-msgstr ""
+msgstr "Siųsti"
 
 #: src/widgets/MessageComposer.qml:33
 #, kde-format
 msgid "Message sent"
-msgstr ""
+msgstr "Žinutė išsiųsta"
 
 #: src/widgets/MessageComposer.qml:64
 #, kde-format
 msgid "Subject"
-msgstr ""
+msgstr "Tema"
