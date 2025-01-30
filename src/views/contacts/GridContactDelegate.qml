@@ -128,16 +128,13 @@ Maui.ItemDelegate
             }
         }
 
-        layer.enabled: true
+        layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
         layer.effect: MultiEffect
         {
             maskEnabled: true
-            maskSource: Item
+            maskSource: ShaderEffectSource
             {
-                width: _cover.width
-                height: _cover.height
-
-                Rectangle
+                sourceItem: Rectangle
                 {
                     anchors.centerIn: parent
                     width: _cover.width

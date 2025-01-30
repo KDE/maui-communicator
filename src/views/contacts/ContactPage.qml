@@ -141,15 +141,16 @@ Maui.PopupPage
                 anchors.fill: parent
                 onClicked:
                 {
-                    _dialogLoader.sourceComponent = _fileDialogComponent
+                    _fileDialogLoader.sourceComponent = _fileDialogComponent
 
-                    dialog.show(function(paths)
+                    _fileDialogLoader.item.callback = function(paths)
                     {
                         console.log("selected image", paths)
                         contact.photo = paths[0]
                         _contactPicLoader.sourceComponent = _imgComponent
                         _contactPicLoader.item.source = contact.photo
-                    })
+                    }
+                    _fileDialogLoader.item.open()
                 }
             }
 
@@ -180,16 +181,13 @@ Maui.PopupPage
 
                     source: "image://contact/"+ contact.id
 
-                    layer.enabled: true
+                    layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                     layer.effect: MultiEffect
                     {
                         maskEnabled: true
-                        maskSource: Item
+                        maskSource: ShaderEffectSource
                         {
-                            width: _img.width
-                            height: _img.height
-
-                            Rectangle
+                            sourceItem: Rectangle
                             {
                                 anchors.centerIn: parent
                                 width: _img.width

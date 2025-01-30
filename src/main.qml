@@ -97,7 +97,7 @@ Maui.ApplicationWindow
 
         FB.FileDialog
         {
-            mode: modes.OPEN
+            mode: FB.FileDialog.Modes.Open
             browser.settings.filterType: FB.FMList.IMAGE
             singleSelection:  true
         }
@@ -106,6 +106,11 @@ Maui.ApplicationWindow
     Loader
     {
         id: _dialogLoader
+    }
+
+    Loader
+    {
+        id: _fileDialogLoader
     }
 
     Communicator

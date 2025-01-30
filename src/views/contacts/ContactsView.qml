@@ -205,18 +205,17 @@ Maui.AltBrowser
 
                         source:  "image://contact/"+ model.id
 
-                        layer.enabled: true
+                        layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
                         layer.effect: MultiEffect
                         {
                             maskEnabled: true
-                            maskSource: Item
+                            maskSource: ShaderEffectSource
                             {
-                                width: _img.width
-                                height: _img.height
-
-                                Rectangle
+                                sourceItem: Rectangle
                                 {
-                                    anchors.fill: parent
+                                    anchors.centerIn: parent
+                                    width: _img.width
+                                    height: _img.height
                                     radius: Maui.Style.radiusV
                                 }
                             }
