@@ -316,11 +316,12 @@ Maui.AltBrowser
             Maui.InfoDialog
             {
                 id: _confirmExit
-                title: i18n("Discard")
-                message: i18n("If you chose to exit the changes made will be lost. Do you want to exit?")
+                title: i18n("Unsaved changes")
+                message: i18n("You have unsaved changes. Do you want to go back and save them or discard all changes?")
+                standardButtons: Dialog.Ok | Dialog.Discard
 
                 onAccepted: close()
-                onRejected:
+                onDiscarded:
                 {
                     _contactPage.editing = false
 
