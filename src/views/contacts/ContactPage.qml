@@ -43,9 +43,9 @@ Maui.PopupPage
             onClicked:
             {
                 contact["fav"] = contact.fav == "1" ? "0" : "1"
-                list.update(contact, listModel.mappedToSource(_contactsPage.currentIndex))
+                list.update(contact, listModel.mappedToSource(list.currentIndex))
                 control.contact = contact;
-                _favsView.list.refresh()
+                //                _favsView.list.refresh()
             }
         },
 
@@ -113,8 +113,8 @@ Maui.PopupPage
         onRejected: close()
         onAccepted:
         {
-            list.remove(listModel.mappedToSource(_contactsPage.currentIndex))
-            close()
+            list.remove(listModel.mappedToSource(list.currentIndex))
+            control.close()
         }
     }
 

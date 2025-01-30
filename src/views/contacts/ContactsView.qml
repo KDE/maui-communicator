@@ -30,6 +30,7 @@ Maui.AltBrowser
         list: ContactsList
         {
             id: _contactsList
+            property var currentIndex: -1
         }
         sort: "n"
         sortOrder: Qt.AscendingOrder
@@ -130,7 +131,7 @@ Maui.AltBrowser
 
             onClicked:
             {
-                control.currentIndex = index
+                list.currentIndex = index
 
                 if(Maui.Handy.singleClick)
                 {
@@ -140,7 +141,7 @@ Maui.AltBrowser
 
             onDoubleClicked:
             {
-                control.currentIndex = index
+                list.currentIndex = index
 
                 if(!Maui.Handy.singleClick)
                 {
@@ -266,7 +267,7 @@ Maui.AltBrowser
 
         onClicked:
         {
-            control.currentIndex = index
+            list.currentIndex = index
 
             if(Maui.Handy.singleClick)
             {
@@ -276,7 +277,7 @@ Maui.AltBrowser
 
         onDoubleClicked:
         {
-            control.currentIndex = index
+            list.currentIndex = index
 
             if(!Maui.Handy.singleClick)
             {
@@ -350,7 +351,7 @@ Maui.AltBrowser
                 {
                     if(contact.id)
                     {
-                        _contactsList.update(contact, listModel.mappedToSource(control.currentIndex))
+                        _contactsList.update(contact, listModel.mappedToSource(list.currentIndex))
                     }else
                     {
                         _contactsList.insert(contact)
