@@ -21,6 +21,7 @@
   <name xml:lang="ka">Communicator</name>
   <name xml:lang="ko">Communicator</name>
   <name xml:lang="lt">Communicator</name>
+  <name xml:lang="lv">Communicator</name>
   <name xml:lang="nl">Communicator</name>
   <name xml:lang="nn">Communicator</name>
   <name xml:lang="pl">Komunikator</name>
@@ -52,6 +53,7 @@
   <summary xml:lang="ka">კონტაქტების მმართველი</summary>
   <summary xml:lang="ko">연락처 관리자</summary>
   <summary xml:lang="lt">Adresatų tvarkytuvė</summary>
+  <summary xml:lang="lv">Kontaktu pārvaldnieks</summary>
   <summary xml:lang="nl">Beheerder van contactpersonen</summary>
   <summary xml:lang="nn">Kontakthandsamar</summary>
   <summary xml:lang="pl">Zarządzanie kontaktami</summary>
@@ -84,6 +86,7 @@
     <p xml:lang="ka">Communicator კონტაქტების მმართველია.</p>
     <p xml:lang="ko">Communicator는 연락처 관리자입니다.</p>
     <p xml:lang="lt">Communicator yra adresatų tvarkytuvė.</p>
+    <p xml:lang="lv">„Communicator“ ir kontaktu pārvaldnieks.</p>
     <p xml:lang="nl">Communicator is een beheerder van contactpersonen.</p>
     <p xml:lang="nn">Kommunicator er ein kontakthandsamar.</p>
     <p xml:lang="pl">Komunikator jest od zarządzania kontaktami.</p>
@@ -122,6 +125,7 @@
       <caption xml:lang="ka">Communicator.</caption>
       <caption xml:lang="ko">Communicator.</caption>
       <caption xml:lang="lt">Communicator.</caption>
+      <caption xml:lang="lv">Communicator.</caption>
       <caption xml:lang="nl">Communicator.</caption>
       <caption xml:lang="nn">Communicator.</caption>
       <caption xml:lang="pl">Komunikator</caption>
