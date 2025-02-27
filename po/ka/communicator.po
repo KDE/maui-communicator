@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-26 00:40+0000\n"
-"PO-Revision-Date: 2023-08-16 06:03+0200\n"
+"PO-Revision-Date: 2025-02-26 08:05+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: src/main.cpp:50
 #, kde-format
@@ -151,7 +151,7 @@ msgstr "%1 კონტაქტის ძებნა"
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Unsaved changes"
-msgstr ""
+msgstr "შეუნახავი ცვლილებები"
 
 #: src/views/contacts/ContactsView.qml:320
 #, kde-format
@@ -159,6 +159,7 @@ msgid ""
 "You have unsaved changes. Do you want to go back and save them or discard "
 "all changes?"
 msgstr ""
+"გაქვთ შეუნახავი ცვლილებები. გნებავთ დაბრუნდეთ და შეინახოთ, თუ მოაცილებთ მათ?"
 
 #: src/views/contacts/ContactsView.qml:358
 #, kde-format
