@@ -148,7 +148,7 @@ msgstr "Hledat %1 kontakty"
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Unsaved changes"
-msgstr ""
+msgstr "Neuložené změny"
 
 #: src/views/contacts/ContactsView.qml:320
 #, kde-format
