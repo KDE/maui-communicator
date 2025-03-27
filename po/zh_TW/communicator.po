@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the maui-communicator package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-26 00:40+0000\n"
-"PO-Revision-Date: 2024-02-19 07:32+0900\n"
+"PO-Revision-Date: 2025-03-26 18:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: src/main.cpp:50
 #, kde-format
@@ -148,14 +148,14 @@ msgstr "搜尋 %1 個聯絡人"
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Unsaved changes"
-msgstr ""
+msgstr "未儲存的變更"
 
 #: src/views/contacts/ContactsView.qml:320
 #, kde-format
 msgid ""
 "You have unsaved changes. Do you want to go back and save them or discard "
 "all changes?"
-msgstr ""
+msgstr "您有未儲存的變更。您要返回以儲存變更，還是要放棄所有變更？"
 
 #: src/views/contacts/ContactsView.qml:358
 #, kde-format
