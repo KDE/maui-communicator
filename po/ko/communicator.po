@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the maui-communicator package.
-# Shinjo Park <kde@peremen.name>, 2023.
+# SPDX-FileCopyrightText: 2023, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-26 00:40+0000\n"
-"PO-Revision-Date: 2023-08-25 23:03+0200\n"
+"PO-Revision-Date: 2025-04-08 00:03+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: src/main.cpp:50
 #, kde-format
@@ -148,7 +148,7 @@ msgstr "%1 연락처 검색"
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Unsaved changes"
-msgstr ""
+msgstr "저장하지 않은 변경 사항"
 
 #: src/views/contacts/ContactsView.qml:320
 #, kde-format
@@ -156,6 +156,8 @@ msgid ""
 "You have unsaved changes. Do you want to go back and save them or discard "
 "all changes?"
 msgstr ""
+"저장하지 않은 변경 사항이 있습니다. 뒤로 돌아가서 저장하거나 모든 변경 사항"
+"을 저장하지 않으시겠습니까?"
 
 #: src/views/contacts/ContactsView.qml:358
 #, kde-format
