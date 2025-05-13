@@ -176,11 +176,3 @@ msgstr "Zpráva byla odeslána"
 #, kde-format
 msgid "Subject"
 msgstr "Předmět"
-
-#~ msgid "Discard"
-#~ msgstr "Zahodit"
-
-#~ msgid ""
-#~ "If you chose to exit the changes made will be lost. Do you want to exit?"
-#~ msgstr ""
-#~ "Pokud se rozhodnete odejít, provedené změny budou ztraceny. Chcete odejít?"
