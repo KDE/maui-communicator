@@ -4,6 +4,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-3.0</project_license>
   <name>Communicator</name>
+  <name xml:lang="ar">تواصل</name>
   <name xml:lang="ca">Communicator</name>
   <name xml:lang="ca-valencia">Communicator</name>
   <name xml:lang="cs">Komunikátor</name>
@@ -36,6 +37,7 @@
   <name xml:lang="x-test">xxCommunicatorxx</name>
   <name xml:lang="zh-TW">通訊工具</name>
   <summary>Contacts manager</summary>
+  <summary xml:lang="ar">مدير المتراسلين</summary>
   <summary xml:lang="ca">Gestor de contactes</summary>
   <summary xml:lang="ca-valencia">Gestor de contactes</summary>
   <summary xml:lang="cs">Správce kontaktů</summary>
@@ -69,6 +71,7 @@
   <summary xml:lang="zh-TW">聯絡人管理工具</summary>
   <description>
     <p>Communicator is a contacts manager.</p>
+    <p xml:lang="ar">تواصل هو مدير المتراسلين</p>
     <p xml:lang="ca">El Communicator és un gestor de contactes.</p>
     <p xml:lang="ca-valencia">Communicator és un gestor de contactes.</p>
     <p xml:lang="cs">Komunikátor je správce kontaktů.</p>
@@ -108,6 +111,7 @@
     <screenshot type="default">
       <image type="source">https://cdn.kde.org/screenshots/communicator/communicator.png</image>
       <caption>Communicator.</caption>
+      <caption xml:lang="ar">تواصل.</caption>
       <caption xml:lang="ca">Communicator.</caption>
       <caption xml:lang="ca-valencia">Communicator.</caption>
       <caption xml:lang="cs">Komunikátor.</caption>
