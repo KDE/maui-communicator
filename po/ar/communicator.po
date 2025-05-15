@@ -1,0 +1,180 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the maui-communicator package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: maui-communicator\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-02-26 00:40+0000\n"
+"PO-Revision-Date: 2025-05-14 18:35+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: src/main.cpp:50
+#, kde-format
+msgid "Organize and sync your contacts."
+msgstr "نظّم وزامن متراسليك."
+
+#: src/main.cpp:55
+#, kde-format
+msgid "Developer"
+msgstr "مطوّر"
+
+#: src/main.qml:42
+#, kde-format
+msgid "Favorites"
+msgstr "المفضّلة"
+
+#: src/main.qml:51
+#, kde-format
+msgid "There're no favorite contacts"
+msgstr "لا يوجد متراسلون مفضلون"
+
+#: src/main.qml:52
+#, kde-format
+msgid "You can mark as favorite your contacts to quickly access them"
+msgstr "يمكنك جعل المتراسلين في المفضلة لتصل إليهم بسرعة"
+
+#: src/main.qml:59
+#, kde-format
+msgid "Contacts"
+msgstr "المتراسلون"
+
+#: src/main.qml:68
+#, kde-format
+msgid "There're no contacts"
+msgstr "لا يوجد متراسلون"
+
+#: src/main.qml:69
+#, kde-format
+msgid "You can add new contacts"
+msgstr "أضف متراسلين جدد"
+
+#: src/views/contacts/ContactPage.qml:38
+#, kde-format
+msgid "Fav"
+msgstr "فضل"
+
+#: src/views/contacts/ContactPage.qml:58
+#, kde-format
+msgid "Edit"
+msgstr "حرّر"
+
+#: src/views/contacts/ContactPage.qml:64
+#, kde-format
+msgid "Delete"
+msgstr "احذف"
+
+#: src/views/contacts/ContactPage.qml:76
+#, kde-format
+msgid "Save"
+msgstr "احفظ"
+
+#: src/views/contacts/ContactPage.qml:95
+#, kde-format
+msgid "Cancel"
+msgstr "ألغِ"
+
+#: src/views/contacts/ContactPage.qml:108
+#, kde-format
+msgid "Remove contact..."
+msgstr "أزِل متراسل…"
+
+#: src/views/contacts/ContactPage.qml:109
+#, kde-format
+msgid ""
+"Are you sure you want to remove this contact? This action can not be undone."
+msgstr "هل ترغب في حذف هذا المتراسل؟ لا يمكن التراجع عن هذا."
+
+#: src/views/contacts/ContactPage.qml:240
+#, kde-format
+msgid "Account"
+msgstr "الحساب"
+
+#: src/views/contacts/ContactPage.qml:264
+#, kde-format
+msgid "Name"
+msgstr "الاسم"
+
+#: src/views/contacts/ContactPage.qml:288
+#, kde-format
+msgid "Phone"
+msgstr "الهاتف"
+
+#: src/views/contacts/ContactPage.qml:303
+#: src/views/contacts/ContactPage.qml:363 src/widgets/MessageComposer.qml:74
+#, kde-format
+msgid "Message"
+msgstr "الرسالة"
+
+#: src/views/contacts/ContactPage.qml:317
+#, kde-format
+msgid "Call"
+msgstr "اتصل"
+
+#: src/views/contacts/ContactPage.qml:329
+#: src/views/contacts/ContactPage.qml:376
+#, kde-format
+msgid "Copy"
+msgstr "انسخ"
+
+#: src/views/contacts/ContactPage.qml:348
+#, kde-format
+msgid "Email"
+msgstr "البريد الإلكترونيّ"
+
+#: src/views/contacts/ContactPage.qml:395
+#, kde-format
+msgid "Organization"
+msgstr "المنظّمة"
+
+#: src/views/contacts/ContactPage.qml:418
+#, kde-format
+msgid "Title"
+msgstr "العنوان"
+
+#: src/views/contacts/ContactsView.qml:60
+#, kde-format
+msgid "Search %1 contacts"
+msgstr "ابحث عن متراسلي %1"
+
+#: src/views/contacts/ContactsView.qml:319
+#, kde-format
+msgid "Unsaved changes"
+msgstr "تغييرات غير محفوظة"
+
+#: src/views/contacts/ContactsView.qml:320
+#, kde-format
+msgid ""
+"You have unsaved changes. Do you want to go back and save them or discard "
+"all changes?"
+msgstr ""
+"لديك تغييرات غير محفوظة. هل تريد العودة وحفظها أو تجاهل جميع التغييرات؟"
+
+#: src/views/contacts/ContactsView.qml:358
+#, kde-format
+msgid "New contact added"
+msgstr "أضفت متراسل جديد"
+
+#: src/widgets/MessageComposer.qml:19
+#, kde-format
+msgid "Send"
+msgstr "أرسل"
+
+#: src/widgets/MessageComposer.qml:33
+#, kde-format
+msgid "Message sent"
+msgstr "أُرسلت الرّسالة"
+
+#: src/widgets/MessageComposer.qml:64
+#, kde-format
+msgid "Subject"
+msgstr "الموضوع"
