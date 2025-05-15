@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Communicator
+Name[ar]=تواصل
 Name[ca]=Communicator
 Name[ca@valencia]=Communicator
 Name[cs]=Komunikátor
@@ -42,6 +43,7 @@ Terminal=false
 Type=Application
 Categories=Qt;KDE;System;
 GenericName=Contacts Manager
+GenericName[ar]=مدير المتراسلين
 GenericName[ca]=Gestor de contactes
 GenericName[ca@valencia]=Gestor de contactes
 GenericName[cs]=Správce kontaktů
