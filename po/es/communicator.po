@@ -1,4 +1,4 @@
-# Translation of communicator.po to Spanish
+# Spanish translations for communicator.po package.
 # Copyright (C) 2022-2025 This file is copyright:
 # This file is distributed under the same license as the maui-communicator package.
 #
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-26 00:40+0000\n"
-"PO-Revision-Date: 2025-03-01 17:20+0100\n"
+"PO-Revision-Date: 2025-06-09 02:17+0100\n"
 "Last-Translator: Víctor Rodrigo Córdoba <vrcordoba@gmail.com>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -87,7 +87,7 @@ msgstr "Cancelar"
 #: src/views/contacts/ContactPage.qml:108
 #, kde-format
 msgid "Remove contact..."
-msgstr "Eliminar contactos..."
+msgstr "Eliminar contactos…"
 
 #: src/views/contacts/ContactPage.qml:109
 #, kde-format
