@@ -148,14 +148,14 @@ msgstr ""
 #: src/views/contacts/ContactsView.qml:319
 #, kde-format
 msgid "Unsaved changes"
-msgstr ""
+msgstr "尚未保存的更改"
 
 #: src/views/contacts/ContactsView.qml:320
 #, kde-format
 msgid ""
 "You have unsaved changes. Do you want to go back and save them or discard "
 "all changes?"
-msgstr ""
+msgstr "您有未保存的更改。你想返回保存，还是放弃所有更改？"
 
 #: src/views/contacts/ContactsView.qml:358
 #, kde-format
