@@ -18,7 +18,7 @@ msgstr ""
 #: src/main.cpp:50
 #, kde-format
 msgid "Organize and sync your contacts."
-msgstr ""
+msgstr "Organizujte a synchronizujte vaše kontakty."
 
 #: src/main.cpp:55
 #, kde-format
@@ -33,12 +33,12 @@ msgstr "Obľúbené"
 #: src/main.qml:51
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr ""
+msgstr "Nemáte žiadne obľúbené kontakty"
 
 #: src/main.qml:52
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
-msgstr ""
+msgstr "Kontakty môžete označiť ako obľúbené pre rýchly prístup k nim"
 
 #: src/main.qml:59
 #, kde-format
@@ -48,12 +48,12 @@ msgstr "Kontakty"
 #: src/main.qml:68
 #, kde-format
 msgid "There're no contacts"
-msgstr ""
+msgstr "Nemáte žiadne kontakty"
 
 #: src/main.qml:69
 #, kde-format
 msgid "You can add new contacts"
-msgstr ""
+msgstr "Môžete pridať nové kontakty"
 
 #: src/views/contacts/ContactPage.qml:38
 #, kde-format
@@ -89,7 +89,7 @@ msgstr "Odstrániť kontakt..."
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
-msgstr ""
+msgstr "Naozaj chcete odstrániť tento kontakt? Túto akciu nemožno vrátiť späť."
 
 #: src/views/contacts/ContactPage.qml:240
 #, kde-format
@@ -154,11 +154,13 @@ msgid ""
 "You have unsaved changes. Do you want to go back and save them or discard "
 "all changes?"
 msgstr ""
+"Máte neuložené zmeny. Chcete sa vrátiť a uložiť ich alebo zahodiť všetky "
+"zmeny?"
 
 #: src/views/contacts/ContactsView.qml:358
 #, kde-format
 msgid "New contact added"
-msgstr ""
+msgstr "Nový kontakt pridaný"
 
 #: src/widgets/MessageComposer.qml:19
 #, kde-format
