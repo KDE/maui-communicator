@@ -1,26 +1,27 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the maui-communicator package.
 # SPDX-FileCopyrightText: 2023, 2025 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:51+0000\n"
-"PO-Revision-Date: 2025-05-16 14:49+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-05-21 11:19+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: src/main.cpp:50
 #, kde-format
 msgid "Organize and sync your contacts."
-msgstr ""
+msgstr "Uspořádejte si a synchronizujte své kontakty."
 
 #: src/main.cpp:55
 #, kde-format
@@ -35,12 +36,13 @@ msgstr "Oblíbené"
 #: src/main.qml:51
 #, kde-format
 msgid "There're no favorite contacts"
-msgstr ""
+msgstr "Nemáte žádné oblíbené kontakty"
 
 #: src/main.qml:52
 #, kde-format
 msgid "You can mark as favorite your contacts to quickly access them"
 msgstr ""
+"Kontakty si můžete označit jako oblíbené, abyste k nim měli rychlý přístup"
 
 #: src/main.qml:59
 #, kde-format
@@ -50,17 +52,17 @@ msgstr "Kontakty"
 #: src/main.qml:68
 #, kde-format
 msgid "There're no contacts"
-msgstr ""
+msgstr "Nejsou zde žádné kontakty"
 
 #: src/main.qml:69
 #, kde-format
 msgid "You can add new contacts"
-msgstr ""
+msgstr "Můžete přidat nové kontakty"
 
 #: src/views/contacts/ContactPage.qml:38
 #, kde-format
 msgid "Fav"
-msgstr ""
+msgstr "Oblíbené"
 
 #: src/views/contacts/ContactPage.qml:58
 #, kde-format
@@ -91,7 +93,7 @@ msgstr "Odstranit kontakt..."
 #, kde-format
 msgid ""
 "Are you sure you want to remove this contact? This action can not be undone."
-msgstr ""
+msgstr "Opravdu chcete tento kontakt odstranit? Tuto akci nelze vrátit zpět."
 
 #: src/views/contacts/ContactPage.qml:240
 #, kde-format
@@ -162,7 +164,7 @@ msgstr ""
 #: src/views/contacts/ContactsView.qml:358
 #, kde-format
 msgid "New contact added"
-msgstr ""
+msgstr "Přidán nový kontakt"
 
 #: src/widgets/MessageComposer.qml:19
 #, kde-format
