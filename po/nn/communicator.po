@@ -1,5 +1,6 @@
 # Translation of communicator to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2023, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: maui-communicator\n"
